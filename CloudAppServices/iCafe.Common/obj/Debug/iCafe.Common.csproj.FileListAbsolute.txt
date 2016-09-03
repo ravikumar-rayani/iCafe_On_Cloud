@@ -1,0 +1,5 @@
+X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Common\obj\Debug\iCafe.Common.csprojResolveAssemblyReference.cache
+X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Common\bin\Debug\iCafe.Common.dll
+X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Common\bin\Debug\iCafe.Common.pdb
+X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Common\obj\Debug\iCafe.Common.dll
+X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Common\obj\Debug\iCafe.Common.pdb

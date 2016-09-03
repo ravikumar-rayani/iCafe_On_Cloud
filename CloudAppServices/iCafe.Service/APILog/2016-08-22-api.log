@@ -1,0 +1,7 @@
+2016-08-22 21:03:30.7154|INFO|iCafe.Service.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/iCafe.Service/Api/Menu/allitemcategories
+Controller : iCafe.Service.Controllers.MenuController
+Action : GetItemCategories
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+

@@ -1,0 +1,234 @@
+﻿@model iCafe.Web.ViewModels.CategoriesVM
+@{
+    ViewBag.Title = "Categories";
+}
+<div class="col-lg-12" style="margin-top:15px;">
+    <div class="row">
+        <div class="col-md-9 col-sm-12 col-xs-12">
+            <div class="input-group primary">
+                <span class="input-group-addon">
+                    <span class="arrow"></span>
+                    <i class="fa fa-search"></i>
+                </span>
+                <input type="text" class="form-control search-page-input" placeholder="Search" value="Graphic Design">
+            </div>
+            <br>
+        </div>
+        <div class="col-md-3 col-sm-12 col-xs-12">
+            <nav class='pull-right'>
+                <ul class="pagination pull-right" style="margin: 0px;">
+                    <li><a href="#">«</a></li>
+                    <li class="active"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">»</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12 search_data" style="margin-top: 12px;">
+            <div class="page page-gallery">
+                <div role="tabpanel">
+                <ul class="mix-controls">
+                    <li class="select-all">
+                        <label class="checkbox checkbox-custom checkbox-custom inline-block m-0">
+                            <input type="checkbox">Select all
+                        </label>
+                    </li>
+                    <li class="mix-control disabled">
+                        <a href="javascript:;"><i class="fa fa-pencil"></i> Edit</a>
+                    </li>
+                    <li class="mix-control disabled">
+                        <a href="javascript:;"><i class="fa fa-trash-o"></i> Delete</a>
+                    </li>
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="col4">
+                        <div class="row mix-grid">
+                            <div class="gallery" data-lightbox="gallery">
+                                @foreach (var category in Model.CategoryList) { 
+                                  <div class="col-md-3 col-sm-4 mb-20 mix mix_all">
+                                    <div class="img-container">
+                                        <img class="img-responsive" alt="Image not available" src="@Url.Content(category.ImagePath)">
+                                        <div class="img-details">
+                                            <div class="img-controls">
+                                                <a href="javascript:;" class="img-select">
+                                                    <i class="fa fa-circle-o"></i>
+                                                    <i class="fa fa-circle"></i>
+                                                </a>
+                                                <a class="img-preview" data-lightbox="gallery-item" href="@Url.Content(category.ImagePath)" title="Canai Roti">
+                                                    <i class="fa fa-search"></i>
+                                                </a>
+                                                <a href="javascript:;" class="img-visible">
+                                                    <i class="fa fa-eye"></i>
+                                                </a>
+                                                @*<a href="javascript:;" class="img-edit">
+                                                    <i class="fa fa-edit"></i>
+                                                </a>                                                
+                                                <a href="javascript:;" class="img-remove">
+                                                    <i class="fa fa-trash-o"></i>
+                                                </a>*@
+                                            </div>                                            
+                                            <h3 class="custom-font">@category.Title</h3>
+                                            <h5 class="custom-font" style="margin-left:10px; text-align:left;">@category.Description</h5>
+                                            <h5 class="custom-font" style="margin-left:10px; text-align:left;">Total Items: @category.TotalItems</h5>
+                                            <h5 class="custom-font" style="margin-right:10px; text-align:right;">Discount:@category.Discount%</h5> 
+                                        </div>
+                                    </div>
+                                </div>                              
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <!--Add Item form -->
+        <button class="site-action btn-raised btn btn-success btn-floating" data-target="#CreateTabs"
+                data-toggle="modal" type="button">
+                <i class="icon glyphicon glyphicon-plus" aria-hidden="true"></i>
+                </button>
+        <div class="modal fade modal-success" id="CreateTabs" aria-hidden="true" aria-labelledby="exampleModalTabs"
+                  role="dialog" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                          </button>
+                          <h4 class="modal-title" id="CreateModalTabs">New Category</h4>
+                        </div>
+                    <ul class="nav nav-tabs modal-nav-tabs-line" data-plugin="nav-tabs" role="tablist">
+                          <li class="active" style="width:25%; text-align:center;" role="presentation"><a data-toggle="tab" href="#BasicTab" aria-controls="BasicTab"
+                            role="tab">Basic</a></li>
+                          <li role="presentation" style="width:25%; text-align:center;"><a data-toggle="tab" href="#ImageTab" aria-controls="ImageTab"
+                            role="tab">Images</a></li>
+                          <li role="presentation" style="width:25%; text-align:center;"><a data-toggle="tab" href="#DetailsTab" aria-controls="DetailsTab"
+                            role="tab">Advanced</a></li>
+                          <li role="presentation" style="width:25%; text-align:center;"><a data-toggle="tab" href="#AdditionalTab" aria-controls="AdditionalTab"
+                            role="tab">Additional</a></li>
+                        </ul>
+                    <div class="modal-body">
+                          <div class="tab-content padding-top-10">
+                            <div class="tab-pane active" id="BasicTab" role="tabpanel">                              
+                                <div class="row">
+                            <div class="col-lg-4 form-group">
+                              <input type="text" class="form-control" name="firstName" placeholder="First Name">
+                            </div>
+                            <div class="col-lg-4 form-group">
+                              <input type="email" class="form-control" name="lastName" placeholder="Last Name">
+                            </div>
+                            <div class="col-lg-4 form-group">
+                              <input type="email" class="form-control" name="email" placeholder="Your Email">
+                            </div>
+                            <div class="col-lg-12 form-group">
+                              <textarea class="form-control" rows="5" placeholder="Type your message"></textarea>
+                            </div>
+                            @*<div class="col-sm-12 pull-right">
+                              <button class="btn btn-primary btn-outline" data-dismiss="modal" type="button">Add Comment</button>
+                            </div>*@
+                          </div>
+                            </div>
+
+                            <div class="tab-pane" id="ImageTab" role="tabpanel">
+                              Tenuit omni magistra quale honoris, maluisti invidi, successerit feramus fere omnium
+                              impetum locus suscipiantur ullum, gessisse afranius
+                              stabilique repellendus longinquitate sentiamus torquatos
+                              rem. Bene continens, depulsa soluta domesticarum
+                              inscientia excruciant artes epicuri, huic similique
+                              constringendos probo animadversionis claris sententia
+                              atqui vocent constituit, epicuri hosti iniuste naturales
+                              multos, optimus animadvertat stoicis nullae, fieri
+                              futura tempore philosophia expleantur putarent doloris
+                              delectus viris.
+                            </div>
+
+                            <div class="tab-pane" id="DetailsTab" role="tabpanel">
+                              Cernimus nutu. Maioribus solet. Iustitiam conciliant reliquisti instituendarum
+                              solido quicquid, superstitione placet illis privatione
+                              clariora audeam repellat morbos accusantibus, quaeso
+                              copulationes. Percurri salutatus derigatur praeter
+                              involuta canes afflueret iam amotio quin. Dicent
+                              dialectica evertunt astris venire senserit. Vulgo
+                              supplicii amputata ipsarum ennius insolens meminerunt
+                              quisquam, volumus occulte l videor contenta numen,
+                              patrioque. Dixerit cernimus consequentium definitiones
+                              interrogari, maximo, avocent opes.
+                            </div>
+
+                            <div class="tab-pane" id="AdditionalTab" role="tabpanel">
+                              Nec iste vellem, accusamus inesse exhorrescere tertium dominationis licebit perpetiuntur,
+                              adduci concederetur memoriter omnesque aliquem etsi
+                              salutatus administrari aliquid graviter, mandamus
+                              celeritas patet fortibus. Dolorum tantis nostram
+                              fortitudo probarentur utrumvis insipientiam, putent,
+                              esset p fortitudo repetitis concursionibus interiret
+                              clariora. Fabulae aperiri. Omnes aspernari placuit
+                              detraxit familias aeternum eum mediocritatem, videantur
+                              partis nondum indoctis, emancipaverat probatum intus
+                              iactant petulantes, levitatibus copiosae.
+                            </div>
+                          </div>
+                        </div>
+                    <div class="modal-footer">
+                          <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+                          <button type="button" class="btn btn-success">Add</button>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--/ Page Specific Scripts -->
+<script>
+            $(window).load(function(){
+                $('.mix-grid').mixItUp();
+                $('.mix-controls .select-all input').change(function(){
+                    if($(this).is(":checked")) {
+                        $('.gallery').find('.mix').addClass('selected');
+                        enableGalleryTools(true);
+                    } else {
+                        $('.gallery').find('.mix').removeClass('selected');
+                        enableGalleryTools(false);
+                    }
+                });
+                $('.mix .img-select').click(function(){
+                    var mix = $(this).parents('.mix');
+                    if(mix.hasClass('selected')) {
+                        mix.removeClass('selected');
+                        enableGalleryTools(false);
+                    } else {
+                        mix.addClass('selected');
+                        enableGalleryTools(true);
+                    }
+                });
+                var enableGalleryTools = function(enable) {
+                    if (enable) {
+                        $('.mix-controls li.mix-control').removeClass('disabled');
+                    } else {
+                        var selected = false;
+                        $('.gallery .mix').each(function(){
+                            if($(this).hasClass('selected')) {
+                                selected = true;
+                            }
+                        });
+                        if(!selected) {
+                            $('.mix-controls li.mix-control').addClass('disabled');
+                        }
+                    }
+                }
+
+                $('.img-visible').click(function () {
+                    var itag = $(this).children('i');
+                    if (itag.hasClass('fa-eye')) {
+                        itag.removeClass('fa-eye');
+                        itag.addClass('fa-eye-slash');
+                    } else {
+                        itag.removeClass('fa-eye-slash');
+                        itag.addClass('fa-eye');
+                    }
+                });
+            });
+        </script>
+        

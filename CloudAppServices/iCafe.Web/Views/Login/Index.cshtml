@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+@{
+    Layout = null;
+}
+<html>
+<head>
+    <title>Login - iCafe</title>
+    <meta charset="UTF-8">
+    @Styles.Render("~/Content/loginstyles")
+</head>
+<body style="background-image:url(../images/login/login-bg2.jpg)">
+    <div class="body"></div>
+    <div class="grad"></div>
+    <div class="header">
+        <div>Login to <span>iCafe</span></div>
+    </div>
+    <div class="login">
+        @Html.TextBox("username", string.Empty,  new { placeholder = "username" })<br>        
+        @Html.Password("password", string.Empty,  new { placeholder = "password" })<br>
+        <button type="button" onclick="location.href='@Url.Action("Login", "Login")'">Login</button>
+    </div>
+
+    @Scripts.Render("~/bundles/loginscripts")
+</body>
+</html>

@@ -1,0 +1,1 @@
+Copy any third party library which are using in iCafe application

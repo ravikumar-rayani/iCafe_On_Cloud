@@ -1,0 +1,4 @@
+X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Model\bin\Release\iCafe.Model.dll
+X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Model\bin\Release\iCafe.Model.pdb
+X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Model\obj\Release\iCafe.Model.dll
+X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Model\obj\Release\iCafe.Model.pdb

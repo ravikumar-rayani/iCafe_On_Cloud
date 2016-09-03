@@ -1,0 +1,4 @@
+X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Common\bin\Release\iCafe.Common.dll
+X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Common\bin\Release\iCafe.Common.pdb
+X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Common\obj\Release\iCafe.Common.dll
+X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Common\obj\Release\iCafe.Common.pdb

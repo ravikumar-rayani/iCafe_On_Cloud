@@ -1,0 +1,2 @@
+Copy the Test result files here.
+Ignore the folder if it is not required

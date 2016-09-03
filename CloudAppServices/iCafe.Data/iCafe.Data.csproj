@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{63AE2F04-E4D8-43A5-BDEA-21B7C15F80F3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>iCafe.Data</RootNamespace>
+    <AssemblyName>iCafe.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configuration\CustomerConfiguration.cs" />
+    <Compile Include="Configuration\DeviceConfiguration.cs" />
+    <Compile Include="Configuration\FeatureConfiguration.cs" />
+    <Compile Include="Configuration\ItemCategoryConfiguration.cs" />
+    <Compile Include="Configuration\ItemConfiguration.cs" />
+    <Compile Include="Configuration\ItemTagConfiguration.cs" />
+    <Compile Include="Configuration\OrderConfiguration.cs" />
+    <Compile Include="Configuration\OrderDetailConfiguration.cs" />
+    <Compile Include="Configuration\PaymentStatusConfiguration.cs" />
+    <Compile Include="Configuration\RoleAccessConfiguration.cs" />
+    <Compile Include="Configuration\RoleConfiguration.cs" />
+    <Compile Include="Configuration\SubOrderDetailConfiguration.cs" />
+    <Compile Include="Configuration\TableConfiguration.cs" />
+    <Compile Include="Configuration\TagConfiguration.cs" />
+    <Compile Include="Configuration\UserConfiguration.cs" />
+    <Compile Include="Infrastructure\DbFactory.cs" />
+    <Compile Include="Infrastructure\Disposable.cs" />
+    <Compile Include="Infrastructure\IDbFactory.cs" />
+    <Compile Include="Infrastructure\IRepository.cs" />
+    <Compile Include="Infrastructure\IUnitOfWork.cs" />
+    <Compile Include="Infrastructure\RepositoryBase.cs" />
+    <Compile Include="Infrastructure\UnitOfWork.cs" />
+    <Compile Include="Migrations\201608221529542_iCafeDB2.cs" />
+    <Compile Include="Migrations\201608221529542_iCafeDB2.Designer.cs">
+      <DependentUpon>201608221529542_iCafeDB2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201608221544514_iCafeDB3.cs" />
+    <Compile Include="Migrations\201608221544514_iCafeDB3.Designer.cs">
+      <DependentUpon>201608221544514_iCafeDB3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201608221546392_iCafeDB.cs" />
+    <Compile Include="Migrations\201608221546392_iCafeDB.Designer.cs">
+      <DependentUpon>201608221546392_iCafeDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201608221549256_iCafeDB1.cs" />
+    <Compile Include="Migrations\201608221549256_iCafeDB1.Designer.cs">
+      <DependentUpon>201608221549256_iCafeDB1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="iCafeEntities.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\iCafe.Model\iCafe.Model.csproj">
+      <Project>{4847ce66-d092-41b4-bdff-9146ff7d20b8}</Project>
+      <Name>iCafe.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201608221529542_iCafeDB2.resx">
+      <DependentUpon>201608221529542_iCafeDB2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608221544514_iCafeDB3.resx">
+      <DependentUpon>201608221544514_iCafeDB3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608221546392_iCafeDB.resx">
+      <DependentUpon>201608221546392_iCafeDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608221549256_iCafeDB1.resx">
+      <DependentUpon>201608221549256_iCafeDB1.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

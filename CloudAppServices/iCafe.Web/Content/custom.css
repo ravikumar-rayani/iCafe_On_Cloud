@@ -1,0 +1,273 @@
+/* Write your custom CSS here */
+
+/*vertical left*/
+
+.nav-tabs.vertical.left-aligned li {
+    display: block;
+    width: 100%;
+    min-width: 120px;
+}
+.nav-tabs.vertical.left-aligned li a {
+    margin-right: 0px;
+}
+.nav-tabs.vertical.left-aligned {
+    padding-right: 0px;
+    z-index: 2;
+}
+.tab-content.vertical.left-aligned {
+    padding-left: 0px;
+    border: 1px solid #eaeaea;
+    border-left: 1px solid #eaeaea;
+    margin-left: -1px;
+    z-index: 1;
+}
+.tab-content.vertical.left-aligned .tab-pane {
+    padding-left: 15px;
+    padding-right: 15px;
+
+}
+.nav-tabs.vertical.left-aligned>li.active>a, .nav-tabs.vertical.left-aligned>li.active>a:hover, .nav-tabs.vertical.left-aligned>li.active>a:focus {
+    color: #555555;
+    background-color: #fff;
+    border: 1px solid #eaeaea;
+    border-right-color: transparent;
+}
+.nav-tabs.vertical.left-aligned li a {
+    border-right: 1px solid #eaeaea;
+    background-color:#ccc;
+}
+.nav-tabs.vertical.left-aligned > li > a {
+    margin-bottom: 5px;
+}
+.nav-tabs.vertical.left-aligned > li:last-child > a {
+    margin-bottom: 0px;
+}
+/*vertical primary*/
+
+.nav-tabs .vertical .left-aligned .primary {
+    border-right: 1px solid rgba(31, 181, 172, 1);
+    border-bottom: 0px;
+    z-index: 2;
+}
+.nav-tabs .vertical .left-aligned .primary > li.active > a, .nav-tabs .vertical .left-aligned .primary > li.active > a:hover, .nav-tabs .vertical .left-aligned .primary > li.active > a:focus {
+    color: #555555;
+    background-color: #fff;
+    border: 1px solid rgba(31, 181, 172, 1);
+    border-right-color: transparent;
+}
+.nav .vertical .left-aligned .primary > li > a:hover, .nav .vertical .left-aligned .primary > li > a:focus {
+    border-bottom-color: rgba(31, 181, 172, 1);
+    border-right-color: transparent;
+}
+.tab-content .vertical .left-aligned .primary {
+    border: 1px solid rgba(31, 181, 172, 1);
+    border-left: 1px solid rgba(31, 181, 172, 1);
+    margin-left: -1px;
+    z-index: 1;
+}
+.nav-tabs .vertical .left-aligned .primary>li>a {
+    margin-right: -1px;
+}
+.nav-tabs .vertical .left-aligned .primary > li {
+    margin-bottom: 0px;
+}
+
+/*.tab-content .tab-pane {
+    height:450px;
+}*/
+ 
+/*---------------------------------------------
+     Portfolio Gallery
+----------------------------------------------*/
+
+#portfolio {
+    padding: 0;
+}
+#portfolio .portfolio-filter {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 15px;
+    display: inline-block;
+}
+#portfolio .portfolio-filter > li {
+    float: left;
+    display: block;
+    margin-bottom: 15px;
+}
+#portfolio .portfolio-filter > li a {
+    display: block;
+    position: relative;
+}
+#portfolio .portfolio-filter > li a:hover, #portfolio .portfolio-filter > li a.active {
+    background-color: rgba(153, 114, 181, 1.0);
+}
+#portfolio .portfolio-filter > li a.active:after {} #portfolio .portfolio-item {
+    /*  width: 33.2%;*/
+    
+    float: left;
+    padding: 5px;
+}
+#portfolio .portfolio-item .portfolio-item-inner {
+    position: relative;
+    overflow: hidden;
+}
+#portfolio .portfolio-item .portfolio-item-inner .portfolio-info {
+    opacity: 0;
+    -moz-transition: opacity 400ms;
+    -o-transition: opacity 400ms;
+    transition: opacity 400ms;
+    -webkit-transition: opacity 400ms;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    background: rgba(250, 133, 100, 1);
+    color: #fff;
+    display: none;
+}
+#portfolio .portfolio-item .portfolio-item-inner .portfolio-info h3 {
+    font-size: 15px;
+    line-height: 24px;
+    margin: 0;
+    color: #fff;
+    font-weight: 400;
+}
+#portfolio .portfolio-item .portfolio-item-inner .portfolio-info .desc {
+    font-size: 13px;
+    line-height: 21px;
+    margin: 0;
+    color: #eee;
+    font-weight: 400;
+}
+
+#portfolio .portfolio-item .portfolio-item-inner .portfolio-info .delete {
+    position: absolute;
+    top: -15px;
+    right: 10px;
+    background-image: none;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: #ffffff;
+    background-color: rgba(153, 114, 181, 1.0);
+}
+
+#portfolio .portfolio-item .portfolio-item-inner .portfolio-info .edit {
+    position: absolute;
+    top: -15px;
+    right: 50px;
+    background-image: none;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: #ffffff;
+    background-color: rgba(153, 114, 181, 1.0);
+}
+
+
+#portfolio .portfolio-item .portfolio-item-inner .portfolio-info .visiblity {
+    position: absolute;
+    top: -15px;
+    right: 90px;
+    background-image: none;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: #ffffff;
+    background-color: rgba(153, 114, 181, 1.0);
+}
+
+#portfolio .portfolio-item .portfolio-item-inner .portfolio-info .preview {
+    position: absolute;
+    top: -15px;
+    right: 130px;
+    background-image: none;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: #ffffff;
+    background-color: rgba(153, 114, 181, 1.0);
+}
+
+#portfolio .portfolio-item:hover .portfolio-info {
+    opacity: 1;
+    display: block;
+}
+
+
+
+/*---------------------------------------------
+    Fab button
+----------------------------------------------*/
+.site-action {
+    position: fixed;
+    right: 32px;
+    bottom: 55px;
+    z-index: 1290;
+    border-radius:100%;
+}
+
+    .site-action input {
+        display: none;
+    }
+
+    .site-action .btn {
+        -webkit-box-shadow: 0 10px 10px 0 rgba(60,60,60,.1);
+        box-shadow: 0 10px 10px 0 rgba(60,60,60,.1);
+    }
+
+    .site-action .back-icon {
+        display: none;
+    }
+
+.site-action-buttons {
+    position: absolute;
+    top: -130px;
+    left: 0;
+    display: none;
+    width: 100%;
+    text-align: center;
+}
+
+    .site-action-buttons .btn {
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 10px;
+    }
+
+.site-action-toggle .back-icon {
+    display: block;
+}
+
+.site-action-toggle .front-icon {
+    display: none;
+}
+
+.site-action-toggle .site-action-buttons {
+    display: block;
+}
+
+@media (max-width:480px) {
+    .site-action-buttons {
+        top: -100px;
+    }
+
+    .site-action .btn {
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        font-size: 15px;
+        -webkit-box-shadow: 0 6px 6px 0 rgba(60,60,60,.1);
+        box-shadow: 0 6px 6px 0 rgba(60,60,60,.1);
+    }
+}
+
+/*************Data Tables customize****************/
+.dataTables_paginate .paginate_button.current {
+    background:#22BAA0;
+}

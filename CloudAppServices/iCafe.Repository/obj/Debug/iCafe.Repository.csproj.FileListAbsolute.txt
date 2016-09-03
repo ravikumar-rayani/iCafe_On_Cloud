@@ -1,0 +1,16 @@
+X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Repository\bin\Debug\iCafe.Repository.dll.config
+X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Repository\bin\Debug\iCafe.Repository.dll
+X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Repository\bin\Debug\iCafe.Repository.pdb
+X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Repository\bin\Debug\EntityFramework.dll
+X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Repository\bin\Debug\EntityFramework.SqlServer.dll
+X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Repository\bin\Debug\iCafe.Data.dll
+X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Repository\bin\Debug\iCafe.DTO.dll
+X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Repository\bin\Debug\iCafe.Model.dll
+X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Repository\bin\Debug\iCafe.Data.pdb
+X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Repository\bin\Debug\iCafe.DTO.pdb
+X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Repository\bin\Debug\iCafe.Model.pdb
+X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Repository\bin\Debug\EntityFramework.xml
+X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Repository\bin\Debug\EntityFramework.SqlServer.xml
+X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Repository\obj\Debug\iCafe.Repository.csprojResolveAssemblyReference.cache
+X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Repository\obj\Debug\iCafe.Repository.dll
+X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Repository\obj\Debug\iCafe.Repository.pdb

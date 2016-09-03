@@ -1,0 +1,57 @@
+X:\WorkSpace\VS\iCafe\iCafe.Web\obj\Debug\iCafe.Web.csprojResolveAssemblyReference.cache
+X:\WorkSpace\VS\iCafe\iCafe.Web\bin\iCafe.Web.dll
+X:\WorkSpace\VS\iCafe\iCafe.Web\bin\iCafe.Web.pdb
+X:\WorkSpace\VS\iCafe\iCafe.Web\bin\Microsoft.Web.Infrastructure.dll
+X:\WorkSpace\VS\iCafe\iCafe.Web\bin\System.Web.Helpers.dll
+X:\WorkSpace\VS\iCafe\iCafe.Web\bin\System.Web.Optimization.dll
+X:\WorkSpace\VS\iCafe\iCafe.Web\bin\System.Web.Razor.dll
+X:\WorkSpace\VS\iCafe\iCafe.Web\bin\System.Web.Webpages.Deployment.dll
+X:\WorkSpace\VS\iCafe\iCafe.Web\bin\System.Web.Webpages.dll
+X:\WorkSpace\VS\iCafe\iCafe.Web\bin\System.Web.Webpages.Razor.dll
+X:\WorkSpace\VS\iCafe\iCafe.Web\bin\WebGrease.dll
+X:\WorkSpace\VS\iCafe\iCafe.Web\bin\System.Web.Optimization.xml
+X:\WorkSpace\VS\iCafe\iCafe.Web\bin\System.Web.Razor.xml
+X:\WorkSpace\VS\iCafe\iCafe.Web\bin\System.Web.Webpages.xml
+X:\WorkSpace\VS\iCafe\iCafe.Web\bin\System.Web.Webpages.Deployment.xml
+X:\WorkSpace\VS\iCafe\iCafe.Web\bin\System.Web.Webpages.Razor.xml
+X:\WorkSpace\VS\iCafe\iCafe.Web\bin\System.Web.Helpers.xml
+X:\WorkSpace\VS\iCafe\iCafe.Web\obj\Debug\iCafe.Web.dll
+X:\WorkSpace\VS\iCafe\iCafe.Web\obj\Debug\iCafe.Web.pdb
+X:\WorkSpace\VS\iCafe v1.0\iCafe.Web\bin\iCafe.Web.dll
+X:\WorkSpace\VS\iCafe v1.0\iCafe.Web\bin\iCafe.Web.pdb
+X:\WorkSpace\VS\iCafe v1.0\iCafe.Web\bin\Microsoft.Web.Infrastructure.dll
+X:\WorkSpace\VS\iCafe v1.0\iCafe.Web\bin\System.Web.Helpers.dll
+X:\WorkSpace\VS\iCafe v1.0\iCafe.Web\bin\System.Web.Optimization.dll
+X:\WorkSpace\VS\iCafe v1.0\iCafe.Web\bin\System.Web.Razor.dll
+X:\WorkSpace\VS\iCafe v1.0\iCafe.Web\bin\System.Web.Webpages.Deployment.dll
+X:\WorkSpace\VS\iCafe v1.0\iCafe.Web\bin\System.Web.Webpages.dll
+X:\WorkSpace\VS\iCafe v1.0\iCafe.Web\bin\System.Web.Webpages.Razor.dll
+X:\WorkSpace\VS\iCafe v1.0\iCafe.Web\bin\WebGrease.dll
+X:\WorkSpace\VS\iCafe v1.0\iCafe.Web\bin\System.Web.Optimization.xml
+X:\WorkSpace\VS\iCafe v1.0\iCafe.Web\bin\System.Web.Razor.xml
+X:\WorkSpace\VS\iCafe v1.0\iCafe.Web\bin\System.Web.Webpages.xml
+X:\WorkSpace\VS\iCafe v1.0\iCafe.Web\bin\System.Web.Webpages.Deployment.xml
+X:\WorkSpace\VS\iCafe v1.0\iCafe.Web\bin\System.Web.Webpages.Razor.xml
+X:\WorkSpace\VS\iCafe v1.0\iCafe.Web\bin\System.Web.Helpers.xml
+X:\WorkSpace\VS\iCafe v1.0\iCafe.Web\obj\Debug\iCafe.Web.csprojResolveAssemblyReference.cache
+X:\WorkSpace\VS\iCafe v1.0\iCafe.Web\obj\Debug\iCafe.Web.dll
+X:\WorkSpace\VS\iCafe v1.0\iCafe.Web\obj\Debug\iCafe.Web.pdb
+X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Web\bin\iCafe.Web.dll
+X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Web\bin\iCafe.Web.pdb
+X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Web\bin\Microsoft.Web.Infrastructure.dll
+X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Web\bin\System.Web.Helpers.dll
+X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Web\bin\System.Web.Optimization.dll
+X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Web\bin\System.Web.Razor.dll
+X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Web\bin\System.Web.Webpages.Deployment.dll
+X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Web\bin\System.Web.Webpages.dll
+X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Web\bin\System.Web.Webpages.Razor.dll
+X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Web\bin\WebGrease.dll
+X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Web\bin\System.Web.Optimization.xml
+X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Web\bin\System.Web.Razor.xml
+X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Web\bin\System.Web.Webpages.xml
+X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Web\bin\System.Web.Webpages.Deployment.xml
+X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Web\bin\System.Web.Webpages.Razor.xml
+X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Web\bin\System.Web.Helpers.xml
+X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Web\obj\Debug\iCafe.Web.csprojResolveAssemblyReference.cache
+X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Web\obj\Debug\iCafe.Web.dll
+X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Web\obj\Debug\iCafe.Web.pdb

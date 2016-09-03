@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A6F3066F-B7F6-4C39-87E4-72386969831C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>iCafe.Repository</RootNamespace>
+    <AssemblyName>iCafe.Repository</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\CustomerRepository.cs" />
+    <Compile Include="Classes\DeviceRepository.cs" />
+    <Compile Include="Classes\FeatureRepository.cs" />
+    <Compile Include="Classes\ItemCategoryRepository.cs" />
+    <Compile Include="Classes\ItemRepository.cs" />
+    <Compile Include="Classes\ItemTagRepository.cs" />
+    <Compile Include="Classes\OrderDetailRepository.cs" />
+    <Compile Include="Classes\OrderRepository.cs" />
+    <Compile Include="Classes\PaymentStatusRepository.cs" />
+    <Compile Include="Classes\RoleAccessRepository.cs" />
+    <Compile Include="Classes\RoleRepository.cs" />
+    <Compile Include="Classes\SubOrderDetailRepository.cs" />
+    <Compile Include="Classes\TableRepository.cs" />
+    <Compile Include="Classes\TagRepository.cs" />
+    <Compile Include="Classes\UserRepository.cs" />
+    <Compile Include="Interfaces\ICustomerRepository.cs" />
+    <Compile Include="Interfaces\IDeviceRepository.cs" />
+    <Compile Include="Interfaces\IFeatureRepository.cs" />
+    <Compile Include="Interfaces\IItemCategoryRepository.cs" />
+    <Compile Include="Interfaces\IItemRepository.cs" />
+    <Compile Include="Interfaces\IItemTagRepository.cs" />
+    <Compile Include="Interfaces\IOrderDetailRepository.cs" />
+    <Compile Include="Interfaces\IOrderRepository.cs" />
+    <Compile Include="Interfaces\IPaymentStatusRepository.cs" />
+    <Compile Include="Interfaces\IRoleAccessRepository.cs" />
+    <Compile Include="Interfaces\IRoleRepository.cs" />
+    <Compile Include="Interfaces\ISubOrderDetailRepository.cs" />
+    <Compile Include="Interfaces\ITableRepository.cs" />
+    <Compile Include="Interfaces\ITagRepository.cs" />
+    <Compile Include="Interfaces\IUserRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\iCafe.Data\iCafe.Data.csproj">
+      <Project>{63ae2f04-e4d8-43a5-bdea-21b7c15f80f3}</Project>
+      <Name>iCafe.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\iCafe.DTO\iCafe.DTO.csproj">
+      <Project>{4cc6d0a9-2db3-4198-b82b-29e81d87858c}</Project>
+      <Name>iCafe.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\iCafe.Model\iCafe.Model.csproj">
+      <Project>{4847ce66-d092-41b4-bdff-9146ff7d20b8}</Project>
+      <Name>iCafe.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
