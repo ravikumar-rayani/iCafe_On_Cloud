@@ -69,21 +69,9 @@
     <Compile Include="Infrastructure\IUnitOfWork.cs" />
     <Compile Include="Infrastructure\RepositoryBase.cs" />
     <Compile Include="Infrastructure\UnitOfWork.cs" />
-    <Compile Include="Migrations\201608221529542_iCafeDB2.cs" />
-    <Compile Include="Migrations\201608221529542_iCafeDB2.Designer.cs">
-      <DependentUpon>201608221529542_iCafeDB2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201608221544514_iCafeDB3.cs" />
-    <Compile Include="Migrations\201608221544514_iCafeDB3.Designer.cs">
-      <DependentUpon>201608221544514_iCafeDB3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201608221546392_iCafeDB.cs" />
-    <Compile Include="Migrations\201608221546392_iCafeDB.Designer.cs">
-      <DependentUpon>201608221546392_iCafeDB.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201608221549256_iCafeDB1.cs" />
-    <Compile Include="Migrations\201608221549256_iCafeDB1.Designer.cs">
-      <DependentUpon>201608221549256_iCafeDB1.cs</DependentUpon>
+    <Compile Include="Migrations\201609110857597_iCafeDB.cs" />
+    <Compile Include="Migrations\201609110857597_iCafeDB.Designer.cs">
+      <DependentUpon>201609110857597_iCafeDB.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -102,17 +90,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201608221529542_iCafeDB2.resx">
-      <DependentUpon>201608221529542_iCafeDB2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201608221544514_iCafeDB3.resx">
-      <DependentUpon>201608221544514_iCafeDB3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201608221546392_iCafeDB.resx">
-      <DependentUpon>201608221546392_iCafeDB.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201608221549256_iCafeDB1.resx">
-      <DependentUpon>201608221549256_iCafeDB1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201609110857597_iCafeDB.resx">
+      <DependentUpon>201609110857597_iCafeDB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

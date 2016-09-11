@@ -7,13 +7,13 @@ namespace iCafe.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class iCafeDB3 : IMigrationMetadata
+    public sealed partial class iCafeDB : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(iCafeDB3));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(iCafeDB));
         
         string IMigrationMetadata.Id
         {
-            get { return "201608221544514_iCafeDB3"; }
+            get { return "201609110857597_iCafeDB"; }
         }
         
         string IMigrationMetadata.Source
