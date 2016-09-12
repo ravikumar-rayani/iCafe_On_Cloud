@@ -12,6 +12,8 @@ namespace iCafe.Model.Models
         //public string ModifiedBy { get; set; }
         public DateTime CreatedOn { get; set; }
         public DateTime ModifiedOn { get; set; }
+        public int TenantId { get; set; }
+        public int BranchId { get; set; }
 
         //public virtual User User { get; set; }
     }

@@ -1,6 +1,7 @@
 using System;
 using System.Web.Http;
 using System.Web.Mvc;
+using iCafe.Service.Areas.HelpPage.ModelDescriptions;
 using iCafe.Service.Areas.HelpPage.Models;
 
 namespace iCafe.Service.Areas.HelpPage.Controllers
@@ -10,30 +11,23 @@ namespace iCafe.Service.Areas.HelpPage.Controllers
     /// </summary>
     public class HelpController : Controller
     {
-        //Remove constructors and existing Configuration property.
+        private const string ErrorViewName = "Error";
 
-        //public HelpController()
-        //    : this(GlobalConfiguration.Configuration)
-        //{
-        //}
-
-        //public HelpController(HttpConfiguration config)
-        //{
-        //    Configuration = config;
-        //}
-
-        //public HttpConfiguration Configuration { get; private set; }
-
-        /// <summary>
-        /// Add new Configuration Property
-        /// </summary>
-        protected static HttpConfiguration Configuration
+        public HelpController()
+            : this(GlobalConfiguration.Configuration)
         {
-            get { return GlobalConfiguration.Configuration; }
         }
+
+        public HelpController(HttpConfiguration config)
+        {
+            Configuration = config;
+        }
+
+        public HttpConfiguration Configuration { get; private set; }
 
         public ActionResult Index()
         {
+            ViewBag.DocumentationProvider = Configuration.Services.GetDocumentationProvider();
             return View(Configuration.Services.GetApiExplorer().ApiDescriptions);
         }
 
@@ -48,7 +42,22 @@ namespace iCafe.Service.Areas.HelpPage.Controllers
                 }
             }
 
-            return View("Error");
+            return View(ErrorViewName);
+        }
+
+        public ActionResult ResourceModel(string modelName)
+        {
+            if (!String.IsNullOrEmpty(modelName))
+            {
+                ModelDescriptionGenerator modelDescriptionGenerator = Configuration.GetModelDescriptionGenerator();
+                ModelDescription modelDescription;
+                if (modelDescriptionGenerator.GeneratedModels.TryGetValue(modelName, out modelDescription))
+                {
+                    return View(modelDescription);
+                }
+            }
+
+            return View(ErrorViewName);
         }
     }
 }

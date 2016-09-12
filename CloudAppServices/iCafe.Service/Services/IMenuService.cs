@@ -20,8 +20,12 @@ namespace iCafe.Service.Services
         IEnumerable<Tag> GetTags();
         
         IList<ItemsClientDTO> GetItems();
-        
-        //void DeleteItemCategoiesById(int id);
+
+        IList<ItemsClientDTO> GetItemsByCategoryId(int CategoryId);
+
+        IList<ItemsClientDTO> GetItemsByTagId(int TagId);
+
+        IList<ItemsClientDTO> GetItemsByCategoryIdAndTagId(int CategoryId, int TagId);
 
         #endregion
         

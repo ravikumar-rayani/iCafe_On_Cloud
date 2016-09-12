@@ -10,11 +10,15 @@ namespace iCafe.DTO.Client
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public Nullable<bool> IsAvailable { get; set; }
-        public string Image { get; set; }
+        public int ItemCategoryId {get; set;}
+        public bool IsAvailable { get; set; }
         public Nullable<decimal> Discount { get; set; }
         public decimal Price { get; set; }
-        public string SpicyLevel { get; set; }
+        public int SpicyLevel { get; set; }
+        public string[] Ingrediants {get; set;}
+        public int[] Tags {get; set;}
         public string Description { get; set; }
+        public string SmallImage { get; set; }
+        public string FullImage { get; set; }
     }
 }
