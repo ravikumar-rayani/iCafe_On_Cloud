@@ -25,6 +25,10 @@ namespace iCafe.Service
             config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
             //config.Filters.Add(new LoggingFilterAttribute());
             //config.Filters.Add(new GlobalExceptionAttribute());
+
+            config.Formatters.JsonFormatter
+                        .SerializerSettings
+                        .ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
         }
     }
 }

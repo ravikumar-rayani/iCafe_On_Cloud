@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace iCafe.DTO.Client
 {
-    public class ItemsClientDTO
+    public class ItemClientDTO
     {
         public int Id { get; set; }
         public string Name { get; set; }

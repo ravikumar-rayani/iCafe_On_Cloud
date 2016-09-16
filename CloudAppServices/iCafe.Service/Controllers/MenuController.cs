@@ -35,23 +35,23 @@ namespace iCafe.Service.Controllers
         #region GetAll
 
         [Route("AllItems")]
-        public IList<ItemsClientDTO> GetItems()
+        public IList<ItemClientDTO> GetItems()
         {
-            var items = _service.GetItems();
+            var items = _service.GetAllItems();
             return items;
         }
 
         [Route("AllItemCategories")]
         public IEnumerable<ItemCategory> GetItemCategories()
         {
-            var categories = _service.GetItemCategories();
+            var categories = _service.GetAllItemCategories();
             return categories;
         }
 
         [Route("AllTags")]
         public IEnumerable<Tag> GetTags()
         {
-            var tags = _service.GetTags();
+            var tags = _service.GetAllTags();
             return tags;
         }
 
@@ -59,57 +59,71 @@ namespace iCafe.Service.Controllers
 
         #region GetById
 
+        [HttpGet]
         [Route("Item/{id}")]
-        public IList<ItemsClientDTO> GetItem(int id)
+        public ItemClientDTO GetItem(int id)
         {
-            var items = _service.GetItems();
-            return items;
+            var item = _service.GetItemById(id);
+            return item;
         }
 
         [HttpGet]
         [Route("Category/{id}")]
-        public IEnumerable<ItemCategory> GetItemCategory(int id)
+        public ItemCategory GetItemCategory(int id)
         {
-            var categories = _service.GetItemCategories();
-            return categories;
+            var category = _service.GetItemCategoryById(id);
+            return category;
         }
 
+        [HttpGet]
         [Route("tag/{id}")]
-        public IEnumerable<Tag> GetTag(int id)
+        public Tag GetTag(int id)
         {
-            var tags = _service.GetTags();
-            return tags;
+            var tag = _service.GetTagById(id);
+            return tag;
         }
 
         #endregion GetById
 
         #region GetByParentId
 
+        [HttpGet]
         [Route("{categoryid}/items")]
-        public IList<ItemsClientDTO> GetItemsByCategory(int categoryid)
+        public IList<ItemClientDTO> GetItemsByCategory(int categoryid)
         {
-            var items = _service.GetItems();
+            var items = _service.GetItemsByCategoryId(categoryid);
             return items;
         }
 
+        [HttpGet]
         [Route("{tagid}/Items")]
-        public IEnumerable<ItemCategory> GetItemsByTag(int tagid)
+        public IEnumerable<ItemClientDTO> GetItemsByTag(int tagid)
         {
-            var categories = _service.GetItemCategories();
+            var categories = _service.GetItemsByTagId(tagid);
             return categories;
         }
 
-        [Route("{categoryid}/tags")]
-        public IEnumerable<Tag> GetTagsByCategory(int categoryid)
+        [HttpGet]
+        [Route("{categoryid}/{tagid}/Items")]
+        public IEnumerable<ItemClientDTO> GetItemsByCategoryAndTag(int categoryid, int tagid)
         {
-            var tags = _service.GetTags();
+            var categories = _service.GetItemsByCategoryIdAndTagId(categoryid, tagid);
+            return categories;
+        }
+
+        [HttpGet]
+        [Route("{categoryid}/tags")]
+        public int[] GetTagsByCategory(int categoryid)
+        {
+            var tags = _service.GetTagsbyItem(categoryid);
             return tags;
         }
 
+        [HttpGet]
         [Route("{itemid}/tags")]
-        public IEnumerable<Tag> GetTagsByItem(int itemid)
+        public int[] GetTagsByItem(int itemid)
         {
-            var tags = _service.GetTags();
+            var tags = _service.GetTagsbyItem(itemid);
             return tags;
         }
 

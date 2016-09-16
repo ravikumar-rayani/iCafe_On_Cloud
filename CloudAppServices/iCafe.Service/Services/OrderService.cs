@@ -44,7 +44,7 @@ namespace iCafe.Service.Services
                 orders.Add(new OrderClientDTO()
                 {
                     Id = order.Id,
-                    PaymentStatus = order.PaymentStatus,
+                    PaymentStatus = order.PaymentStatus.ToString(),
                     TotalPrice = order.TotalPrice,
                     SubOrderIds = orderDetailRepository.GetAll().Where(o => o.OrderId.Equals(order.Id)).Select(od => od.SubOrderId).ToArray()
 
@@ -62,7 +62,7 @@ namespace iCafe.Service.Services
                 orders.Add(new OrderClientDTO()
                 {
                     Id = order.Id,
-                    PaymentStatus = order.PaymentStatus,
+                    PaymentStatus = order.PaymentStatus.ToString(),
                     TotalPrice = order.TotalPrice,
                     SubOrderIds = orderDetailRepository.GetAll().Where(o => o.OrderId.Equals(order.Id)).Select(od => od.SubOrderId).ToArray()
 

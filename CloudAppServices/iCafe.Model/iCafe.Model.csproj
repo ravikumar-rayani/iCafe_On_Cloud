@@ -39,22 +39,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Account.cs" />
+    <Compile Include="Models\AccountSubscriptionDetail.cs" />
+    <Compile Include="Models\AccountType.cs" />
+    <Compile Include="Models\AccountTypeFeatures.cs" />
     <Compile Include="Models\BaseModel.cs" />
+    <Compile Include="Models\Branch.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Device.cs" />
     <Compile Include="Models\Feature.cs" />
+    <Compile Include="Models\FeatureSubscriptionPricing.cs" />
     <Compile Include="Models\Item.cs" />
+    <Compile Include="Models\ItemCategoriesAvailablity.cs" />
     <Compile Include="Models\ItemCategory.cs" />
+    <Compile Include="Models\ItemsAvailablity.cs" />
     <Compile Include="Models\ItemTag.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\OrderDetail.cs" />
     <Compile Include="Models\PaymentStatus.cs" />
     <Compile Include="Models\Role.cs" />
-    <Compile Include="Models\RoleAccess.cs" />
+    <Compile Include="Models\RoleFeatureAccess.cs" />
     <Compile Include="Models\SubOrderDetail.cs" />
+    <Compile Include="Models\SubscriptionType.cs" />
     <Compile Include="Models\Table.cs" />
     <Compile Include="Models\Tag.cs" />
+    <Compile Include="Models\TagsAvailablity.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="Models\WaiterTable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -21,9 +21,15 @@ namespace iCafe.Data.Configuration
             HasKey(p => p.Id);
             Property(p => p.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             Property(p => p.Name).IsRequired().HasColumnType("NVARCHAR").HasMaxLength(50);
+            Property(p => p.Description).HasColumnType("NVARCHAR").HasMaxLength(255);
             Property(p => p.CreatedOn).IsRequired().HasColumnType("datetime2");
             Property(p => p.ModifiedOn).HasColumnType("datetime2");
+            Property(p => p.AccountId).IsRequired().HasColumnType("int");
+            Property(p => p.BranchId).HasColumnType("int");
 
+            //Foreign Keys
+            HasRequired(p => p.Account).WithMany(i => i.Devices).HasForeignKey(f => f.AccountId).WillCascadeOnDelete(true);
+            HasRequired(p => p.Branch).WithMany(i => i.Devices).HasForeignKey(f => f.BranchId).WillCascadeOnDelete(false);
             //HasRequired(p => p.User).WithMany(i => i.Devices).HasForeignKey(f => f.CreatedBy).WillCascadeOnDelete(false);
             //HasRequired(p => p.User).WithMany(i => i.Devices).HasForeignKey(f => f.ModifiedBy).WillCascadeOnDelete(false);
         }

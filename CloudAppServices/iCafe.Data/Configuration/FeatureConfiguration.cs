@@ -21,6 +21,7 @@ namespace iCafe.Data.Configuration
             HasKey(p => p.Id);
             Property(p => p.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             Property(p => p.Name).IsRequired().HasColumnType("NVARCHAR").HasMaxLength(50);
+            Property(p => p.IsActive).IsRequired().HasColumnType("BIT");
             Property(p => p.Description).HasColumnType("NVARCHAR").HasMaxLength(255);
             Property(p => p.CreatedOn).IsRequired().HasColumnType("datetime2");
             Property(p => p.ModifiedOn).HasColumnType("datetime2");

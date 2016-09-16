@@ -21,14 +21,21 @@ namespace iCafe.Data.Configuration
             HasKey(p => p.Id);
             Property(p => p.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             Property(p => p.Name).IsRequired().HasColumnType("NVARCHAR").HasMaxLength(50);
-            Property(p => p.IsAvailable).IsRequired();
-            Property(p => p.SmallImage).HasColumnType("NVARCHAR").HasMaxLength(255);
-            Property(p => p.FullImage).HasColumnType("NVARCHAR").HasMaxLength(255);
+            Property(p => p.Price).IsRequired().HasColumnType("DECIMAL").HasPrecision(10, 2);
+            Property(p => p.Discount).HasColumnType("DECIMAL").HasPrecision(3, 2);
+            Property(p => p.SpicyLevel).HasColumnType("INT");
             Property(p => p.Ingrediants).HasColumnType("NVARCHAR").HasMaxLength(255);
             Property(p => p.Description).HasColumnType("NVARCHAR").HasMaxLength(255);
+            Property(p => p.SmallImage).HasColumnType("NVARCHAR").HasMaxLength(255);
+            Property(p => p.FullImage).HasColumnType("NVARCHAR").HasMaxLength(255);
             Property(p => p.CreatedOn).IsRequired().HasColumnType("datetime2");
             Property(p => p.ModifiedOn).HasColumnType("datetime2");
+            Property(p => p.ItemCategoryId).IsRequired().HasColumnType("INT");
+            Property(p => p.AccountId).IsRequired().HasColumnType("INT");
 
+            //Foreign Keys
+            HasRequired(p => p.ItemCategory).WithMany(i => i.Items).HasForeignKey(f => f.ItemCategoryId);
+            HasRequired(p => p.Account).WithMany(i => i.Items).HasForeignKey(f => f.AccountId);
             //HasRequired(p => p.User).WithMany(i => i.Items).HasForeignKey(f => f.CreatedBy).WillCascadeOnDelete(false);
             //HasRequired(p => p.User).WithMany(i => i.Items).HasForeignKey(f => f.ModifiedBy).WillCascadeOnDelete(false);
         }

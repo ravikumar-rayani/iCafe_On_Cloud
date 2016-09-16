@@ -19,11 +19,16 @@ namespace iCafe.Data.Configuration
                 ToTable("Customers", Schema);
             HasKey(p => p.Id);
             Property(p => p.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-            Property(p => p.Name).HasColumnType("NVARCHAR").IsRequired().HasMaxLength(15);
+            Property(p => p.Name).HasColumnType("NVARCHAR").IsRequired().HasMaxLength(50);
             Property(p => p.Phone).HasColumnType("DECIMAL").HasPrecision(12, 0).IsRequired();
             Property(p => p.EmailId).HasColumnType("NVARCHAR").HasMaxLength(100);
+            Property(p => p.Address).HasColumnType("NVARCHAR").HasMaxLength(255);
+            Property(p => p.Description).HasColumnType("NVARCHAR").HasMaxLength(255);
             Property(p => p.CreatedOn).IsRequired().HasColumnType("datetime2");
             Property(p => p.ModifiedOn).HasColumnType("datetime2");
+
+            //Foreign Keys
+            HasRequired(p => p.Account).WithMany(i => i.Customers).HasForeignKey(f => f.AccountId).WillCascadeOnDelete(false);
         }
     }
 }

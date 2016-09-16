@@ -33,7 +33,7 @@ namespace iCafe.Service.Services
 
         void Add(Feature feature);
 
-        void Add(RoleAccess roleAccess);
+        void Add(RoleFeatureAccess roleAccess);
 
         #endregion
 
@@ -45,7 +45,7 @@ namespace iCafe.Service.Services
 
         void Update(Feature feature);
 
-        void Update(RoleAccess roleAccess);
+        void Update(RoleFeatureAccess roleAccess);
 
         #endregion
 

@@ -74,7 +74,7 @@ namespace iCafe.Service.Controllers
 
         [HttpPost]
         [Route("addRoleAccess")]
-        public IHttpActionResult PostRoleAccess([FromBody] RoleAccess roleAccess)
+        public IHttpActionResult PostRoleAccess([FromBody] RoleFeatureAccess roleAccess)
         {
             _service.Add(roleAccess);
             _service.Save();
@@ -114,7 +114,7 @@ namespace iCafe.Service.Controllers
 
         [HttpPut]
         [Route("updateRoleAccess/{roleId}/{featureId}")]
-        public IHttpActionResult PutRoleAccess(int roleId, int featureId, [FromBody] RoleAccess roleAccess)
+        public IHttpActionResult PutRoleAccess(int roleId, int featureId, [FromBody] RoleFeatureAccess roleAccess)
         {
             _service.Update(roleAccess);
             _service.Save();

@@ -146,5 +146,36 @@ namespace Store.Data
  
             };
         }
+
+        /*
+        context.AccountTypes.AddOrUpdate(
+                p => p.Id,
+                new AccountType { Id = 1, Name = "Trail", IsActive = true, Description = "Trail Version"}
+                );
+
+            context.Accounts.AddOrUpdate(
+                p => p.Id,
+                new Account { Id = 1, Name = "Trail", IsActive = true, AccoutTypeId = 1, CompanyName = "iCafe", EmailId = "trail@trail.com", EndDate = DateTime.Now.AddMonths(1), IsMultiBranchesAllowed = true, MaxBranches = 1}
+                );
+
+            context.Branches.AddOrUpdate(
+                p => p.Id,
+                new Branch { Id = 1, Name = "HeadQuater", AccountId = 1 }
+                );
+
+            context.ItemCategories.AddOrUpdate(
+                p => p.Id,
+                new ItemCategory { Id = 1, Name = "Roti", AccountId = 1, Description = "Rotis" },
+                new ItemCategory { Id = 2, Name = "Curries", AccountId = 1, Description = "Curries" }
+            );
+
+            context.Items.AddOrUpdate(
+                p => p.Id,
+                new Item { Id = 1, Name = "Naan", ItemCategoryId = 1, Price = 40.00m, SpicyLevel = 3, Ingrediants = "", Discount = 10.00m, SmallImage = "small image", FullImage = "full image" },
+                new Item { Id = 1, Name = "Pulka", ItemCategoryId = 1, Price = 50.00m, SpicyLevel = 2, Ingrediants = "", Discount = 20.00m, SmallImage = "small image", FullImage = "full image" },
+                new Item { Id = 1, Name = "Paneer Masala", ItemCategoryId = 2, Price = 210.00m, SpicyLevel = 1, Ingrediants = "", Discount = 12.00m, SmallImage = "small image", FullImage = "full image" },
+                new Item { Id = 1, Name = "Chicken Masala", ItemCategoryId = 2, Price = 250.00m, SpicyLevel = 5, Ingrediants = "", Discount = 15.00m, SmallImage = "small image", FullImage = "full image" }
+                );
+         */
     }
 }

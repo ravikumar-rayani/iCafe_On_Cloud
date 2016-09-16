@@ -9,18 +9,18 @@ using iCafe.Repository.Interfaces;
 
 namespace iCafe.Repository.Classes
 {
-    public class RoleAccessRepository : RepositoryBase<RoleAccess, int>, IRoleAccessRepository
+    public class RoleAccessRepository : RepositoryBase<RoleFeatureAccess, int>, IRoleAccessRepository
     {
         public RoleAccessRepository(IDbFactory dbFactory)
             : base(dbFactory) { }
         
-        public override void Add(RoleAccess entity)
+        public override void Add(RoleFeatureAccess entity)
         {
             entity.CreatedOn = DateTime.Now;
             base.Add(entity);
         }
 
-        public override void Update(RoleAccess entity)
+        public override void Update(RoleFeatureAccess entity)
         {
             entity.ModifiedOn = DateTime.Now;
             base.Update(entity);

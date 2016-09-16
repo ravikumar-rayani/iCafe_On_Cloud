@@ -8,7 +8,7 @@ using iCafe.Data.Infrastructure;
 
 namespace iCafe.Repository.Interfaces
 {
-    public interface IRoleAccessRepository : IRepository<RoleAccess, int>
+    public interface IRoleAccessRepository : IRepository<RoleFeatureAccess, int>
     {
 
     }

@@ -18,7 +18,7 @@ namespace iCafe.Data.Configuration
                 ToTable("SubOrderDetails", Schema);
 
             HasKey(s => new { s.SubOrderId, s.ItemId });
-            Property(c => c.OrderQuantiry).IsRequired();
+            Property(p => p.OrderQuantity).IsRequired();
             Property(p => p.CreatedOn).IsRequired().HasColumnType("datetime2");
             Property(p => p.ModifiedOn).HasColumnType("datetime2");
 

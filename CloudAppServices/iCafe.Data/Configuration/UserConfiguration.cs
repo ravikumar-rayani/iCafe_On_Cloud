@@ -27,11 +27,15 @@ namespace iCafe.Data.Configuration
             Property(p => p.LastName).HasColumnType("NVARCHAR").HasMaxLength(50);
             Property(c => c.Password).IsRequired();
             Property(p => p.Description).HasColumnType("NVARCHAR").HasMaxLength(255);
-            //Property(p => p.CreatedOn).IsRequired().HasColumnType("datetime2");
-            //Property(p => p.ModifiedOn).HasColumnType("datetime2");
+            Property(p => p.CreatedOn).IsRequired().HasColumnType("datetime2");
+            Property(p => p.ModifiedOn).HasColumnType("datetime2");
+            Property(p => p.AccountId).IsRequired().HasColumnType("INT");
+            Property(p => p.BranchId).HasColumnType("INT");
 
             //Foreign Keys
-            HasRequired(p => p.Role).WithMany(i => i.Users).HasForeignKey(f => f.RoleId);
+            HasRequired(p => p.Role).WithMany(i => i.Users).HasForeignKey(f => f.RoleId).WillCascadeOnDelete(true);
+            HasRequired(p => p.Account).WithMany(i => i.Users).HasForeignKey(f => f.AccountId).WillCascadeOnDelete(false);
+            HasRequired(p => p.Branch).WithMany(i => i.Users).HasForeignKey(f => f.BranchId).WillCascadeOnDelete(false);
             //HasRequired(p => p.User).WithMany(i => i.Users).HasForeignKey(f => f.CreatedBy);
             //HasRequired(p => p.User).WithMany(i => i.Users).HasForeignKey(f => f.ModifiedBy);
         }

@@ -84,7 +84,7 @@ namespace iCafe.Service.Services
             featureRepository.Add(feature);
         }
 
-        public void Add(RoleAccess roleAccess)
+        public void Add(RoleFeatureAccess roleAccess)
         {
             roleAccessRepository.Add(roleAccess);
         }
@@ -108,7 +108,7 @@ namespace iCafe.Service.Services
             featureRepository.Update(feature);
         }
 
-        public void Update(RoleAccess roleAccess)
+        public void Update(RoleFeatureAccess roleAccess)
         {
             roleAccessRepository.Update(roleAccess);
         }

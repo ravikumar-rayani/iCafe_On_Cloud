@@ -47,21 +47,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration\AccountConfiguration.cs" />
+    <Compile Include="Configuration\AccountSubscriptionDetailConfiguration.cs" />
+    <Compile Include="Configuration\AccountTypeConfiguration.cs" />
+    <Compile Include="Configuration\AccountTypeFeaturesConfiguration.cs" />
+    <Compile Include="Configuration\BranchConfiguration.cs" />
     <Compile Include="Configuration\CustomerConfiguration.cs" />
     <Compile Include="Configuration\DeviceConfiguration.cs" />
     <Compile Include="Configuration\FeatureConfiguration.cs" />
+    <Compile Include="Configuration\FeatureSubscriptionPricingConfiguration.cs" />
+    <Compile Include="Configuration\ItemCategoriesAvailablityConfiguration.cs" />
     <Compile Include="Configuration\ItemCategoryConfiguration.cs" />
     <Compile Include="Configuration\ItemConfiguration.cs" />
+    <Compile Include="Configuration\ItemsAvailablityConfiguration.cs" />
     <Compile Include="Configuration\ItemTagConfiguration.cs" />
     <Compile Include="Configuration\OrderConfiguration.cs" />
     <Compile Include="Configuration\OrderDetailConfiguration.cs" />
     <Compile Include="Configuration\PaymentStatusConfiguration.cs" />
-    <Compile Include="Configuration\RoleAccessConfiguration.cs" />
+    <Compile Include="Configuration\RoleFeatureAccessConfiguration.cs" />
     <Compile Include="Configuration\RoleConfiguration.cs" />
     <Compile Include="Configuration\SubOrderDetailConfiguration.cs" />
+    <Compile Include="Configuration\SubscriptionTypeConfiguration.cs" />
     <Compile Include="Configuration\TableConfiguration.cs" />
     <Compile Include="Configuration\TagConfiguration.cs" />
+    <Compile Include="Configuration\TagsAvailablityConfiguration.cs" />
     <Compile Include="Configuration\UserConfiguration.cs" />
+    <Compile Include="Configuration\WaiterTableConfiguration.cs" />
     <Compile Include="Infrastructure\DbFactory.cs" />
     <Compile Include="Infrastructure\Disposable.cs" />
     <Compile Include="Infrastructure\IDbFactory.cs" />
@@ -69,9 +80,21 @@
     <Compile Include="Infrastructure\IUnitOfWork.cs" />
     <Compile Include="Infrastructure\RepositoryBase.cs" />
     <Compile Include="Infrastructure\UnitOfWork.cs" />
-    <Compile Include="Migrations\201609110857597_iCafeDB.cs" />
-    <Compile Include="Migrations\201609110857597_iCafeDB.Designer.cs">
-      <DependentUpon>201609110857597_iCafeDB.cs</DependentUpon>
+    <Compile Include="Migrations\201609161847125_iCafeDB.cs" />
+    <Compile Include="Migrations\201609161847125_iCafeDB.Designer.cs">
+      <DependentUpon>201609161847125_iCafeDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609161848105_iCafeDB1.cs" />
+    <Compile Include="Migrations\201609161848105_iCafeDB1.Designer.cs">
+      <DependentUpon>201609161848105_iCafeDB1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609161850011_iCafeDB2.cs" />
+    <Compile Include="Migrations\201609161850011_iCafeDB2.Designer.cs">
+      <DependentUpon>201609161850011_iCafeDB2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609161852466_iCafeDB3.cs" />
+    <Compile Include="Migrations\201609161852466_iCafeDB3.Designer.cs">
+      <DependentUpon>201609161852466_iCafeDB3.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -90,8 +113,17 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201609110857597_iCafeDB.resx">
-      <DependentUpon>201609110857597_iCafeDB.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201609161847125_iCafeDB.resx">
+      <DependentUpon>201609161847125_iCafeDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609161848105_iCafeDB1.resx">
+      <DependentUpon>201609161848105_iCafeDB1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609161850011_iCafeDB2.resx">
+      <DependentUpon>201609161850011_iCafeDB2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609161852466_iCafeDB3.resx">
+      <DependentUpon>201609161852466_iCafeDB3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

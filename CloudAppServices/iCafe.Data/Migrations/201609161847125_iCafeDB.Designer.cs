@@ -13,7 +13,7 @@ namespace iCafe.Data.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201609110857597_iCafeDB"; }
+            get { return "201609161847125_iCafeDB"; }
         }
         
         string IMigrationMetadata.Source
