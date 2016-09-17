@@ -23,8 +23,8 @@ namespace iCafe.Model.Models
         public Nullable<decimal> Discount { get; set; }
         public string Ingrediants { get; set; }
         public string Description { get; set; }
-        public string SmallImage { get; set; }
-        public string FullImage { get; set; }
+        public string SmallImageUrl { get; set; }
+        public string FullImageUrl { get; set; }
         public System.DateTime CreatedOn { get; set; }
         public Nullable<System.DateTime> ModifiedOn { get; set; }
         public string CreatedBy { get; set; }

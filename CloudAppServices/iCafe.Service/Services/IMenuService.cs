@@ -15,11 +15,11 @@ namespace iCafe.Service.Services
     {
         #region Get Methods
 
-        IEnumerable<ItemCategory> GetAllItemCategories();
-        
-        ItemCategory GetItemCategoryById(int CategoryId);
+        IEnumerable<ItemCategoryClientDTO> GetAllItemCategories();
 
-        IEnumerable<Tag> GetAllTags();
+        ItemCategoryClientDTO GetItemCategoryById(int CategoryId);
+
+        IEnumerable<TagClientDTO> GetAllTags();
 
         Tag GetTagById(int tagId);
         

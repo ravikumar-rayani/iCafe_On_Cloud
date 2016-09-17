@@ -46,11 +46,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\AccountRepository.cs" />
+    <Compile Include="Classes\AccountSubscriptionDetailRepository.cs" />
+    <Compile Include="Classes\AccountTypeFeaturesRepository.cs" />
+    <Compile Include="Classes\AccountTypeRepository.cs" />
+    <Compile Include="Classes\BranchRepository.cs" />
     <Compile Include="Classes\CustomerRepository.cs" />
     <Compile Include="Classes\DeviceRepository.cs" />
     <Compile Include="Classes\FeatureRepository.cs" />
+    <Compile Include="Classes\FeatureSubscriptionPricingRepository.cs" />
+    <Compile Include="Classes\ItemCategoriesAvailablityRepository.cs" />
     <Compile Include="Classes\ItemCategoryRepository.cs" />
     <Compile Include="Classes\ItemRepository.cs" />
+    <Compile Include="Classes\ItemsAvailablityRepository.cs" />
     <Compile Include="Classes\ItemTagRepository.cs" />
     <Compile Include="Classes\OrderDetailRepository.cs" />
     <Compile Include="Classes\OrderRepository.cs" />
@@ -58,14 +66,25 @@
     <Compile Include="Classes\RoleAccessRepository.cs" />
     <Compile Include="Classes\RoleRepository.cs" />
     <Compile Include="Classes\SubOrderDetailRepository.cs" />
+    <Compile Include="Classes\SubscriptionTypeRepository.cs" />
     <Compile Include="Classes\TableRepository.cs" />
     <Compile Include="Classes\TagRepository.cs" />
+    <Compile Include="Classes\TagsAvailablityRepository.cs" />
     <Compile Include="Classes\UserRepository.cs" />
+    <Compile Include="Classes\WaiterTableRepository.cs" />
+    <Compile Include="Interfaces\IAccountRepository.cs" />
+    <Compile Include="Interfaces\IAccountSubscriptionDetailRepository.cs" />
+    <Compile Include="Interfaces\IAccountTypeFeaturesRepository.cs" />
+    <Compile Include="Interfaces\IAccountTypeRepository.cs" />
+    <Compile Include="Interfaces\IBranchRepository.cs" />
     <Compile Include="Interfaces\ICustomerRepository.cs" />
     <Compile Include="Interfaces\IDeviceRepository.cs" />
     <Compile Include="Interfaces\IFeatureRepository.cs" />
+    <Compile Include="Interfaces\IFeatureSubscriptionPricingRepository.cs" />
+    <Compile Include="Interfaces\IItemCategoriesAvailablityRepository.cs" />
     <Compile Include="Interfaces\IItemCategoryRepository.cs" />
     <Compile Include="Interfaces\IItemRepository.cs" />
+    <Compile Include="Interfaces\IItemsAvailablityRepository.cs" />
     <Compile Include="Interfaces\IItemTagRepository.cs" />
     <Compile Include="Interfaces\IOrderDetailRepository.cs" />
     <Compile Include="Interfaces\IOrderRepository.cs" />
@@ -73,9 +92,12 @@
     <Compile Include="Interfaces\IRoleAccessRepository.cs" />
     <Compile Include="Interfaces\IRoleRepository.cs" />
     <Compile Include="Interfaces\ISubOrderDetailRepository.cs" />
+    <Compile Include="Interfaces\ISubscriptionTypeRepository.cs" />
     <Compile Include="Interfaces\ITableRepository.cs" />
     <Compile Include="Interfaces\ITagRepository.cs" />
+    <Compile Include="Interfaces\ITagsAvailablityRepository.cs" />
     <Compile Include="Interfaces\IUserRepository.cs" />
+    <Compile Include="Interfaces\IWaiterTableRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

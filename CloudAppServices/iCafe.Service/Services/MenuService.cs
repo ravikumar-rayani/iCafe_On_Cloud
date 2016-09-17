@@ -16,9 +16,12 @@ namespace iCafe.Service.Services
     public class MenuService : IMenuService
     {
         private readonly IItemCategoryRepository itemCategoriesRepository;
+        private readonly IItemCategoriesAvailablityRepository itemCategoriesAvailablityRepository;
         private readonly ITagRepository tagRepository;
+        private readonly ITagsAvailablityRepository tagsAvailablityRepository;
         private readonly IItemTagRepository itemTagRepository;
         private readonly IItemRepository itemRepository;
+        private readonly IItemsAvailablityRepository itemsAvailablityRepository;
         private readonly IUserRepository userRepository;
         private readonly IUnitOfWork unitOfWork;
 
@@ -26,8 +29,11 @@ namespace iCafe.Service.Services
         {
             var dbFactory = new DbFactory();    //("iCafe-" + "CompanyCode", "CompanyCode-" + "branchcode");
             this.itemCategoriesRepository = new ItemCategoryRepository(dbFactory);
+            this.itemCategoriesAvailablityRepository = new ItemCategoriesAvailablityRepository(dbFactory);
             this.tagRepository = new TagRepository(dbFactory);
+            this.tagsAvailablityRepository = new TagsAvailablityRepository(dbFactory);
             this.itemRepository = new ItemRepository(dbFactory);
+            this.itemsAvailablityRepository = new ItemsAvailablityRepository(dbFactory);
             this.itemTagRepository = new ItemTagRepository(dbFactory);
             this.userRepository = new UserRepository(dbFactory);
             this.unitOfWork = new UnitOfWork(dbFactory);
@@ -37,22 +43,55 @@ namespace iCafe.Service.Services
 
         #region Get Methods
 
-        public IEnumerable<ItemCategory> GetAllItemCategories()
+        public IEnumerable<ItemCategoryClientDTO> GetAllItemCategories()
         {
-            var categories = itemCategoriesRepository.GetAll();
-            return categories;
+            var itemCategories = new List<ItemCategoryClientDTO>();
+            var itemCategoryAvailablity = itemCategoriesAvailablityRepository.GetAll();
+            foreach (var itemCategory in itemCategoriesRepository.GetAll())
+            {
+                itemCategories.Add(new ItemCategoryClientDTO()
+                {
+                    Id = itemCategory.Id,
+                    Name = itemCategory.Name,
+                    IsAvailable = (bool)itemCategoryAvailablity.Where(i => i.ItemCategoryId.Equals(itemCategory.Id)).Select(p => p.IsAvailable).First(),
+                    Discount = itemCategory.Discount,
+                    Description = itemCategory.Description,
+                    ImageUrl = itemCategory.ImageUrl,
+                });
+            }
+            return itemCategories;
         }
 
-        public ItemCategory GetItemCategoryById(int categoryId)
+        public ItemCategoryClientDTO GetItemCategoryById(int categoryId)
         {
-            var category = itemCategoriesRepository.GetById(categoryId);
-            return category;
+            var itemCategory = itemCategoriesRepository.GetById(categoryId);
+            ItemCategoryClientDTO _itemCategory = new ItemCategoryClientDTO()
+            {
+                Id = itemCategory.Id,
+                Name = itemCategory.Name,
+                IsAvailable = (bool) itemCategoriesAvailablityRepository.GetAll().Where(i => i.ItemCategoryId.Equals(categoryId)).Select(p => p.IsAvailable).First(),
+                Discount = itemCategory.Discount,
+                Description = itemCategory.Description,
+                ImageUrl = itemCategory.ImageUrl,
+            };
+            return _itemCategory;
         }
 
-        public IEnumerable<Tag> GetAllTags()
+        public IEnumerable<TagClientDTO> GetAllTags()
         {
             var tags = tagRepository.GetAll();
-            return tags;
+            var allTags = new List<TagClientDTO>();
+            foreach (var tag in tagRepository.GetAll().Where(i =>
+                                    tagsAvailablityRepository.GetById(i.Id).IsAvailable).ToList())
+            {
+                allTags.Add(new TagClientDTO()
+                {
+                    Id = tag.Id,
+                    Name = tag.Name,
+                    Description = tag.Comments 
+                });
+            }
+            return allTags;
         }
 
         public Tag GetTagById(int tagId)
@@ -70,15 +109,16 @@ namespace iCafe.Service.Services
                     Id = item.Id,
                     Name = item.Name,
                     ItemCategoryId = item.ItemCategoryId,
-                    //IsAvailable = (bool)item.IsAvailable,
+                    IsAvailable = (bool)itemsAvailablityRepository.GetAll()
+                                    .Where(i => i.ItemId.Equals(item.Id)).Select(p => p.IsAvailable).First(),
                     Discount = item.Discount,
                     Price = item.Price, 
                     SpicyLevel = item.SpicyLevel,
                     Ingrediants = item.Ingrediants.Trim().Split(',').ToArray(),
                     Tags = GetTagsbyItem(item.Id),
                     Description = item.Description, 
-                    SmallImage = item.SmallImage,
-                    FullImage = item.FullImage, 
+                    SmallImage = item.SmallImageUrl,
+                    FullImage = item.FullImageUrl, 
                 });
             }            
             return items;
@@ -92,15 +132,16 @@ namespace iCafe.Service.Services
                 Id = item.Id,
                 Name = item.Name,
                 ItemCategoryId = item.ItemCategoryId,
-                //IsAvailable = (bool)item.IsAvailable,
+                IsAvailable = (bool)itemsAvailablityRepository.GetAll()
+                                .Where(i => i.ItemId.Equals(item.Id)).Select(p => p.IsAvailable).First(),
                 Discount = item.Discount,
                 Price = item.Price,
                 SpicyLevel = item.SpicyLevel,
                 Ingrediants = item.Ingrediants.Trim().Split(',').ToArray(),
                 Tags = GetTagsbyItem(item.Id),
                 Description = item.Description,
-                SmallImage = item.SmallImage,
-                FullImage = item.FullImage,
+                SmallImage = item.SmallImageUrl,
+                FullImage = item.FullImageUrl,
             };
             return _item;
         }
@@ -115,15 +156,16 @@ namespace iCafe.Service.Services
                     Id = item.Id,
                     Name = item.Name,
                     ItemCategoryId = item.ItemCategoryId,
-                    //IsAvailable = (bool)item.IsAvailable,
+                    IsAvailable = (bool) itemsAvailablityRepository.GetAll()
+                                    .Where(i => i.ItemId.Equals(item.Id)).Select(p => p.IsAvailable).First(),
                     Discount = item.Discount,
                     Price = item.Price,
                     SpicyLevel = item.SpicyLevel,
                     Ingrediants = item.Ingrediants.Trim().Split(',').ToArray(),
                     Tags = GetTagsbyItem(item.Id),
                     Description = item.Description,
-                    SmallImage = item.SmallImage,
-                    FullImage = item.FullImage,
+                    SmallImage = item.SmallImageUrl,
+                    FullImage = item.FullImageUrl,
                 });
             }
             return items;
@@ -139,15 +181,16 @@ namespace iCafe.Service.Services
                     Id = item.Id,
                     Name = item.Name,
                     ItemCategoryId = item.ItemCategoryId,
-                    //IsAvailable = (bool)item.IsAvailable,
+                    IsAvailable = (bool)itemsAvailablityRepository.GetAll()
+                                    .Where(i => i.ItemId.Equals(item.Id)).Select(p => p.IsAvailable).First(),
                     Discount = item.Discount,
                     Price = item.Price,
                     SpicyLevel = item.SpicyLevel,
                     Ingrediants = item.Ingrediants.Trim().Split(',').ToArray(),
                     Tags = GetTagsbyItem(item.Id),
                     Description = item.Description,
-                    SmallImage = item.SmallImage,
-                    FullImage = item.FullImage,
+                    SmallImage = item.SmallImageUrl,
+                    FullImage = item.FullImageUrl,
                 });
             }
             return items;
@@ -164,15 +207,16 @@ namespace iCafe.Service.Services
                     Id = item.Id,
                     Name = item.Name,
                     ItemCategoryId = item.ItemCategoryId,
-                    //IsAvailable = (bool)item.IsAvailable,
+                    IsAvailable = (bool)itemsAvailablityRepository.GetAll()
+                                    .Where(i => i.ItemId.Equals(item.Id)).Select(p => p.IsAvailable).First(),
                     Discount = item.Discount,
                     Price = item.Price,
                     SpicyLevel = item.SpicyLevel,
                     Ingrediants = item.Ingrediants.Trim().Split(',').ToArray(),
                     Tags = GetTagsbyItem(item.Id),
                     Description = item.Description,
-                    SmallImage = item.SmallImage,
-                    FullImage = item.FullImage,
+                    SmallImage = item.SmallImageUrl,
+                    FullImage = item.FullImageUrl,
                 });
             }
             return items;
@@ -181,7 +225,9 @@ namespace iCafe.Service.Services
         public IList<ItemTagsClientDTO> GetAllItemTags()
         {
             var allitemTags = new List<ItemTagsClientDTO>();
-            foreach (var itemtag in itemTagRepository.GetAll())
+            foreach (var itemtag in itemTagRepository.GetAll().Where(i => 
+                                    tagsAvailablityRepository.GetById(i.TagID).IsAvailable && 
+                                    itemsAvailablityRepository.GetById(i.ItemID).IsAvailable).ToList())
             {
                 allitemTags.Add(new ItemTagsClientDTO()
                 {
@@ -194,7 +240,9 @@ namespace iCafe.Service.Services
         
         public int[] GetTagsbyItem(int itemId)
         {
-            var tags = itemTagRepository.GetAll().Where(t => t.ItemID.Equals(itemId)).Select(i => i.TagID).ToArray();
+            var tags = itemTagRepository.GetAll().Where(t => t.ItemID.Equals(itemId) && 
+                        tagsAvailablityRepository.GetById(t.TagID).IsAvailable).Select(i => i.TagID).ToArray();
+            
             return tags;
         }
 

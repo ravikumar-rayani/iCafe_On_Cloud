@@ -2,3 +2,8 @@ X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.DTO\bin\Release\iCafe.DTO.dll
 X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.DTO\bin\Release\iCafe.DTO.pdb
 X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.DTO\obj\Release\iCafe.DTO.dll
 X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.DTO\obj\Release\iCafe.DTO.pdb
+X:\WorkSpace\GitHub\iCafe_On_Cloud\CloudAppServices\iCafe.DTO\bin\Release\iCafe.DTO.dll
+X:\WorkSpace\GitHub\iCafe_On_Cloud\CloudAppServices\iCafe.DTO\bin\Release\iCafe.DTO.pdb
+X:\WorkSpace\GitHub\iCafe_On_Cloud\CloudAppServices\iCafe.DTO\obj\Release\iCafe.DTO.dll
+X:\WorkSpace\GitHub\iCafe_On_Cloud\CloudAppServices\iCafe.DTO\obj\Release\iCafe.DTO.pdb
+X:\WorkSpace\GitHub\iCafe_On_Cloud\CloudAppServices\iCafe.DTO\obj\Release\iCafe.DTO.csprojResolveAssemblyReference.cache

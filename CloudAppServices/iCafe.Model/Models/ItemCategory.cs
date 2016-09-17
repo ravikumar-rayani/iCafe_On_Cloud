@@ -17,6 +17,7 @@ namespace iCafe.Model.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public Nullable<decimal> Discount { get; set; }
+        public string ImageUrl { get; set; }
         public string Description { get; set; }
         public System.DateTime CreatedOn { get; set; }
         public Nullable<System.DateTime> ModifiedOn { get; set; }

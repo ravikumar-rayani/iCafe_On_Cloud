@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace iCafe.DTO.Client
 {
-    class TagsClientDTO : BasicClientDTO
+    public class TagClientDTO : BasicClientDTO
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Comments { get; set; }
+        public string Description { get; set; }
     }
 }

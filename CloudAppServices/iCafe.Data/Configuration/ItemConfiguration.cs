@@ -26,8 +26,8 @@ namespace iCafe.Data.Configuration
             Property(p => p.SpicyLevel).HasColumnType("INT");
             Property(p => p.Ingrediants).HasColumnType("NVARCHAR").HasMaxLength(255);
             Property(p => p.Description).HasColumnType("NVARCHAR").HasMaxLength(255);
-            Property(p => p.SmallImage).HasColumnType("NVARCHAR").HasMaxLength(255);
-            Property(p => p.FullImage).HasColumnType("NVARCHAR").HasMaxLength(255);
+            Property(p => p.SmallImageUrl).HasColumnType("NVARCHAR").HasMaxLength(255);
+            Property(p => p.FullImageUrl).HasColumnType("NVARCHAR").HasMaxLength(255);
             Property(p => p.CreatedOn).IsRequired().HasColumnType("datetime2");
             Property(p => p.ModifiedOn).HasColumnType("datetime2");
             Property(p => p.ItemCategoryId).IsRequired().HasColumnType("INT");
