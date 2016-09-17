@@ -21,7 +21,7 @@ namespace iCafe.Service.Services
 
         IEnumerable<TagClientDTO> GetAllTags();
 
-        Tag GetTagById(int tagId);
+        TagClientDTO GetTagById(int tagId);
         
         IList<ItemClientDTO> GetAllItems();
 

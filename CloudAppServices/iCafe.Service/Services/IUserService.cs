@@ -12,15 +12,23 @@ namespace iCafe.Service.Services
     public interface IUserService
     {
         #region Get Methods
+
+        string RegisterDevice(string username, string password, string DeviceUniqueId);
+
+        string Signin(string username, string password);
+ 
+        #endregion
+
+        #region Get Methods
         //Get data
         IEnumerable<User> GetUsers();
+
         IEnumerable<Role> GetRoles();
+        
         IEnumerable<Feature> GetFeatures();
         //IEnumerable<User> GetUsersByRoleId();
         //User GetUserById();
         //User GetUserFeaturesByID();
-
-        int Signin(string username, string password);
         //UserDTO GetUsersById();
 
         #endregion

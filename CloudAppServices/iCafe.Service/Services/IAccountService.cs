@@ -8,5 +8,6 @@ namespace iCafe.Service.Services
 {
     interface IAccountService
     {
+
     }
 }

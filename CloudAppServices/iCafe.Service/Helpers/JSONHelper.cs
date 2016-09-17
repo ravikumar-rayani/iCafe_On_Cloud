@@ -26,7 +26,7 @@ namespace iCafe.Service.Helpers
             }
             catch(Exception ex)
             {
-                return "";
+                return ex.Message;
             }
         }
          #endregion

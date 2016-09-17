@@ -94,10 +94,16 @@ namespace iCafe.Service.Services
             return allTags;
         }
 
-        public Tag GetTagById(int tagId)
+        public TagClientDTO GetTagById(int tagId)
         {
             var tag = tagRepository.GetById(tagId);
-            return tag;
+            TagClientDTO _tag = new TagClientDTO()
+                {
+                    Id = tag.Id,
+                    Name = tag.Name,
+                    Description = tag.Comments
+                };
+            return _tag;
         }
 
         public IList<ItemClientDTO> GetAllItems()

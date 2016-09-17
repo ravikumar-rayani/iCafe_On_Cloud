@@ -78,7 +78,7 @@ namespace iCafe.Service.Controllers
 
         [HttpGet]
         [Route("tag/{id}")]
-        public Tag GetTag(int id)
+        public TagClientDTO GetTag(int id)
         {
             var tag = _service.GetTagById(id);
             return tag;

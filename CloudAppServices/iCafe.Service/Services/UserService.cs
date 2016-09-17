@@ -27,6 +27,36 @@ namespace iCafe.Service.Services
             this.unitOfWork = new UnitOfWork(dbFactory);
         }
 
+        #region Validation Methods
+
+        public string RegisterDevice(string username, string password, string DeviceUniqueId)
+        {
+            User user = userRepository.GetById(username);
+            if (user != null)
+            {
+                if (user.Password.Equals(password) && user.RoleId == 1)
+                {
+                    return "Connected";
+                }
+            }
+            return "Connection failed";
+        }
+
+        public string Signin(string username, string password)
+        {
+            User user = userRepository.GetById(username);
+            if (user != null)
+            {
+                if (user.Password.Equals(password))
+                {
+                    return roleRepository.GetById(user.RoleId).Name;
+                }
+            }
+            return "Login failed";
+        }
+
+        #endregion
+
         #region Get Methods
 
         public IEnumerable<User> GetUsers()
@@ -53,17 +83,6 @@ namespace iCafe.Service.Services
         //public IEnumerable<User> GetUsersById();
 
         //public User GetUsersById();
-        public int Signin(string username, string password)
-        {
-            if(userRepository.Any(x => x.UserName.Equals(username) && x.Password.Equals(password)))
-            {
-                return userRepository.Get(x => x.UserName.Equals(username) && x.Password.Equals(password)).RoleId;
-            }
-
-            return -1;
-        }
-
-
 
         #endregion
 

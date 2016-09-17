@@ -23,7 +23,7 @@ namespace iCafe.Data.Configuration
             Property(p => p.BranchId).IsRequired().HasColumnType("INT");
             Property(p => p.IsAvailable).IsRequired().HasColumnType("BIT");
             Property(p => p.ModifiedOn).HasColumnType("datetime2");
-
+            
             //Foreign Keys
             HasRequired(p => p.Item).WithMany(i => i.ItemsAvailablities).HasForeignKey(f => f.ItemId).WillCascadeOnDelete(false);
             HasRequired(p => p.Branch).WithMany(i => i.ItemsAvailablities).HasForeignKey(f => f.BranchId).WillCascadeOnDelete(true);
