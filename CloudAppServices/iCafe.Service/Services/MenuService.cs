@@ -82,7 +82,7 @@ namespace iCafe.Service.Services
             var tags = tagRepository.GetAll();
             var allTags = new List<TagClientDTO>();
             foreach (var tag in tagRepository.GetAll().Where(i =>
-                                    tagsAvailablityRepository.GetById(i.Id).IsAvailable).ToList())
+                                    tagsAvailablityRepository.GetAll().First(a => a.TagId.Equals(i.Id)).IsAvailable).ToList())
             {
                 allTags.Add(new TagClientDTO()
                 {
@@ -231,9 +231,9 @@ namespace iCafe.Service.Services
         public IList<ItemTagsClientDTO> GetAllItemTags()
         {
             var allitemTags = new List<ItemTagsClientDTO>();
-            foreach (var itemtag in itemTagRepository.GetAll().Where(i => 
-                                    tagsAvailablityRepository.GetById(i.TagID).IsAvailable && 
-                                    itemsAvailablityRepository.GetById(i.ItemID).IsAvailable).ToList())
+            foreach (var itemtag in itemTagRepository.GetAll().Where(i =>
+                                    tagsAvailablityRepository.GetAll().First(a => a.TagId.Equals(i.TagID)).IsAvailable &&
+                                    itemsAvailablityRepository.GetAll().First(a => a.ItemId.Equals(i.ItemID)).IsAvailable).ToList())
             {
                 allitemTags.Add(new ItemTagsClientDTO()
                 {
@@ -246,8 +246,9 @@ namespace iCafe.Service.Services
         
         public int[] GetTagsbyItem(int itemId)
         {
+
             var tags = itemTagRepository.GetAll().Where(t => t.ItemID.Equals(itemId) && 
-                        tagsAvailablityRepository.GetById(t.TagID).IsAvailable).Select(i => i.TagID).ToArray();
+                        tagsAvailablityRepository.GetAll().First( a => a.TagId.Equals(t.TagID)).IsAvailable).Select(i => i.TagID).ToArray();
             
             return tags;
         }

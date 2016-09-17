@@ -12,7 +12,7 @@ namespace iCafe.Model.Models
         public int TagID { get; set; }
         public int AccountId { get; set; }
         public System.DateTime CreatedOn { get; set; }
-        public System.DateTime ModifiedOn { get; set; }
+        public Nullable<System.DateTime> ModifiedOn { get; set; }
 
         public virtual Account Account { get; set; }
         public virtual Item Item { get; set; }

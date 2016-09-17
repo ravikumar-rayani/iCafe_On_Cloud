@@ -29,3 +29,4 @@ X:\WorkSpace\GitHub\iCafe_On_Cloud\CloudAppServices\iCafe.Data\obj\Release\iCafe
 X:\WorkSpace\GitHub\iCafe_On_Cloud\CloudAppServices\iCafe.Data\obj\Release\iCafe.Data.pdb
 X:\WorkSpace\GitHub\iCafe_On_Cloud\CloudAppServices\iCafe.Data\obj\Release\iCafe.Data.Migrations.iCafeDB.resources
 X:\WorkSpace\GitHub\iCafe_On_Cloud\CloudAppServices\iCafe.Data\obj\Release\iCafe.Data.csproj.GenerateResource.Cache
+X:\WorkSpace\GitHub\iCafe_On_Cloud\CloudAppServices\iCafe.Data\obj\Release\iCafe.Data.Migrations.iCafeDB1.resources
