@@ -80,13 +80,9 @@
     <Compile Include="Infrastructure\IUnitOfWork.cs" />
     <Compile Include="Infrastructure\RepositoryBase.cs" />
     <Compile Include="Infrastructure\UnitOfWork.cs" />
-    <Compile Include="Migrations\201609171433318_iCafeDB.cs" />
-    <Compile Include="Migrations\201609171433318_iCafeDB.Designer.cs">
-      <DependentUpon>201609171433318_iCafeDB.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201609171846295_iCafeDB1.cs" />
-    <Compile Include="Migrations\201609171846295_iCafeDB1.Designer.cs">
-      <DependentUpon>201609171846295_iCafeDB1.cs</DependentUpon>
+    <Compile Include="Migrations\201609200802036_iCafeDB.cs" />
+    <Compile Include="Migrations\201609200802036_iCafeDB.Designer.cs">
+      <DependentUpon>201609200802036_iCafeDB.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -105,11 +101,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201609171433318_iCafeDB.resx">
-      <DependentUpon>201609171433318_iCafeDB.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201609171846295_iCafeDB1.resx">
-      <DependentUpon>201609171846295_iCafeDB1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201609200802036_iCafeDB.resx">
+      <DependentUpon>201609200802036_iCafeDB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

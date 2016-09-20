@@ -229,7 +229,7 @@ namespace iCafe.Service.Services
         }
 
         public IList<ItemTagsClientDTO> GetAllItemTags()
-        {
+        {            
             var allitemTags = new List<ItemTagsClientDTO>();
             foreach (var itemtag in itemTagRepository.GetAll().Where(i =>
                                     tagsAvailablityRepository.GetAll().First(a => a.TagId.Equals(i.TagID)).IsAvailable &&
