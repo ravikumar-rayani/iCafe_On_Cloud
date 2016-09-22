@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Text;
 using System.Threading.Tasks;
-using iCafe.Model.Models;
+using iCafe.Entity;
 using iCafe.Data.Infrastructure;
 using iCafe.Repository.Interfaces;
 using iCafe.Repository.Classes;
@@ -44,7 +44,7 @@ namespace iCafe.Service.Services
                 orders.Add(new OrderClientDTO()
                 {
                     Id = order.Id,
-                    PaymentStatus = order.PaymentStatus.ToString(),
+                    PaymentStatus = order.PaymentStatu.ToString(),
                     TotalPrice = order.TotalPrice,
                     SubOrderIds = orderDetailRepository.GetAll().Where(o => o.OrderId.Equals(order.Id)).Select(od => od.SubOrderId).ToArray()
 
@@ -62,7 +62,7 @@ namespace iCafe.Service.Services
                 orders.Add(new OrderClientDTO()
                 {
                     Id = order.Id,
-                    PaymentStatus = order.PaymentStatus.ToString(),
+                    PaymentStatus = order.PaymentStatu.ToString(),
                     TotalPrice = order.TotalPrice,
                     SubOrderIds = orderDetailRepository.GetAll().Where(o => o.OrderId.Equals(order.Id)).Select(od => od.SubOrderId).ToArray()
 

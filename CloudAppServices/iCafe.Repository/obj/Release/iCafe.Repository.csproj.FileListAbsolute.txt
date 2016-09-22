@@ -14,6 +14,7 @@ X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Repository\bin\Release\Entity
 X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Repository\obj\Release\iCafe.Repository.csprojResolveAssemblyReference.cache
 X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Repository\obj\Release\iCafe.Repository.dll
 X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Repository\obj\Release\iCafe.Repository.pdb
+X:\WorkSpace\GitHub\iCafe_On_Cloud\CloudAppServices\iCafe.Repository\obj\Release\iCafe.Repository.csprojResolveAssemblyReference.cache
 X:\WorkSpace\GitHub\iCafe_On_Cloud\CloudAppServices\iCafe.Repository\bin\Release\iCafe.Repository.dll.config
 X:\WorkSpace\GitHub\iCafe_On_Cloud\CloudAppServices\iCafe.Repository\bin\Release\iCafe.Repository.dll
 X:\WorkSpace\GitHub\iCafe_On_Cloud\CloudAppServices\iCafe.Repository\bin\Release\iCafe.Repository.pdb
@@ -21,12 +22,11 @@ X:\WorkSpace\GitHub\iCafe_On_Cloud\CloudAppServices\iCafe.Repository\bin\Release
 X:\WorkSpace\GitHub\iCafe_On_Cloud\CloudAppServices\iCafe.Repository\bin\Release\EntityFramework.SqlServer.dll
 X:\WorkSpace\GitHub\iCafe_On_Cloud\CloudAppServices\iCafe.Repository\bin\Release\iCafe.Data.dll
 X:\WorkSpace\GitHub\iCafe_On_Cloud\CloudAppServices\iCafe.Repository\bin\Release\iCafe.DTO.dll
-X:\WorkSpace\GitHub\iCafe_On_Cloud\CloudAppServices\iCafe.Repository\bin\Release\iCafe.Model.dll
+X:\WorkSpace\GitHub\iCafe_On_Cloud\CloudAppServices\iCafe.Repository\bin\Release\iCafe.Entity.dll
 X:\WorkSpace\GitHub\iCafe_On_Cloud\CloudAppServices\iCafe.Repository\bin\Release\iCafe.Data.pdb
 X:\WorkSpace\GitHub\iCafe_On_Cloud\CloudAppServices\iCafe.Repository\bin\Release\iCafe.DTO.pdb
-X:\WorkSpace\GitHub\iCafe_On_Cloud\CloudAppServices\iCafe.Repository\bin\Release\iCafe.Model.pdb
+X:\WorkSpace\GitHub\iCafe_On_Cloud\CloudAppServices\iCafe.Repository\bin\Release\iCafe.Entity.pdb
 X:\WorkSpace\GitHub\iCafe_On_Cloud\CloudAppServices\iCafe.Repository\bin\Release\EntityFramework.xml
 X:\WorkSpace\GitHub\iCafe_On_Cloud\CloudAppServices\iCafe.Repository\bin\Release\EntityFramework.SqlServer.xml
-X:\WorkSpace\GitHub\iCafe_On_Cloud\CloudAppServices\iCafe.Repository\obj\Release\iCafe.Repository.csprojResolveAssemblyReference.cache
 X:\WorkSpace\GitHub\iCafe_On_Cloud\CloudAppServices\iCafe.Repository\obj\Release\iCafe.Repository.dll
 X:\WorkSpace\GitHub\iCafe_On_Cloud\CloudAppServices\iCafe.Repository\obj\Release\iCafe.Repository.pdb

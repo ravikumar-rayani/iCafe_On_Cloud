@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using iCafe.Model.Models;
+using iCafe.Entity;
 using iCafe.DTO.Client;
 using iCafe.Data;
 using iCafe.Data.Infrastructure;

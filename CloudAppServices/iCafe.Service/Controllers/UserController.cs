@@ -7,7 +7,7 @@ using System.Web.Http;
 using iCafe.Service.Services;
 using iCafe.DTO.Server;
 using iCafe.DTO.Client;
-using iCafe.Model.Models;
+using iCafe.Entity;
 
 namespace iCafe.Service.Controllers
 {

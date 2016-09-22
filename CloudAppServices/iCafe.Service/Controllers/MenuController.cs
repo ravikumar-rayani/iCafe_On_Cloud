@@ -6,7 +6,7 @@ using System.Net.Http;
 using System.Web.Http;
 //using AttributeRouting;
 //using AttributeRouting.Web.Http;
-using iCafe.Model.Models;
+using iCafe.Entity;
 using iCafe.Service.Services;
 using iCafe.DTO.Client;
 using iCafe.DTO.Server;

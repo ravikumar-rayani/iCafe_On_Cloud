@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Text;
 using System.Threading.Tasks;
-using iCafe.Model.Models;
+using iCafe.Entity;
 using iCafe.Data.Infrastructure;
 using iCafe.Repository.Interfaces;
 using iCafe.Repository.Classes;

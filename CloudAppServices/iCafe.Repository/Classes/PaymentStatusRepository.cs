@@ -3,31 +3,31 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using iCafe.Model.Models;
+using iCafe.Entity;
 using iCafe.Data.Infrastructure;
 using iCafe.Repository.Interfaces;
 
 namespace iCafe.Repository.Classes
 {
-    public class PaymentStatusRepository: RepositoryBase<PaymentStatus, int>, IPaymentStatusRepository
+    public class PaymentStatusRepository: RepositoryBase<PaymentStatu, int>, IPaymentStatusRepository
     {
         public PaymentStatusRepository(IDbFactory dbFactory)
             : base(dbFactory) { }
 
-        public PaymentStatus GetPaymentStatusByName(string PaymentStatusName)
+        public PaymentStatu GetPaymentStatusByName(string PaymentStatusName)
         {
             var paymentstatus = this.DbContext.PaymentStatus.Where(c => c.Name == PaymentStatusName).FirstOrDefault();
 
             return paymentstatus;
         }
 
-        public override void Add(PaymentStatus entity)
+        public override void Add(PaymentStatu entity)
         {
             entity.CreatedOn = DateTime.Now;
             base.Add(entity);
         }
 
-        public override void Update(PaymentStatus entity)
+        public override void Update(PaymentStatu entity)
         {
             entity.ModifiedOn = DateTime.Now;
             base.Update(entity);

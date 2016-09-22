@@ -20,6 +20,8 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -275,9 +277,9 @@
       <Project>{4cc6d0a9-2db3-4198-b82b-29e81d87858c}</Project>
       <Name>iCafe.DTO</Name>
     </ProjectReference>
-    <ProjectReference Include="..\iCafe.Model\iCafe.Model.csproj">
-      <Project>{4847ce66-d092-41b4-bdff-9146ff7d20b8}</Project>
-      <Name>iCafe.Model</Name>
+    <ProjectReference Include="..\iCafe.Entity\iCafe.Entity.csproj">
+      <Project>{544b90f3-eb2e-44db-a48a-44478958eb83}</Project>
+      <Name>iCafe.Entity</Name>
     </ProjectReference>
     <ProjectReference Include="..\iCafe.Repository\iCafe.Repository.csproj">
       <Project>{a6f3066f-b7f6-4c39-87e4-72386969831c}</Project>
@@ -309,6 +311,13 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
