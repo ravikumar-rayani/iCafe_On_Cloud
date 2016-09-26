@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{544B90F3-EB2E-44DB-A48A-44478958EB83}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>iCafe.Entity</RootNamespace>
+    <AssemblyName>iCafe.Entity</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account.cs">
+      <DependentUpon>iCafeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AccountSubscriptionDetail.cs">
+      <DependentUpon>iCafeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AccountType.cs">
+      <DependentUpon>iCafeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AccountTypeFeature.cs">
+      <DependentUpon>iCafeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Branch.cs">
+      <DependentUpon>iCafeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Customer.cs">
+      <DependentUpon>iCafeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Device.cs">
+      <DependentUpon>iCafeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Feature.cs">
+      <DependentUpon>iCafeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FeatureSubscriptionPricing.cs">
+      <DependentUpon>iCafeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="iCafeModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>iCafeModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="iCafeModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>iCafeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Item.cs">
+      <DependentUpon>iCafeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemCategoriesAvailablity.cs">
+      <DependentUpon>iCafeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemCategory.cs">
+      <DependentUpon>iCafeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemsAvailablity.cs">
+      <DependentUpon>iCafeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemTag.cs">
+      <DependentUpon>iCafeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Order.cs">
+      <DependentUpon>iCafeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrderDetail.cs">
+      <DependentUpon>iCafeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentStatu.cs">
+      <DependentUpon>iCafeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Role.cs">
+      <DependentUpon>iCafeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RoleAccess.cs">
+      <DependentUpon>iCafeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RoleFeatureAccess.cs">
+      <DependentUpon>iCafeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SubOrderDetail.cs">
+      <DependentUpon>iCafeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SubscriptionType.cs">
+      <DependentUpon>iCafeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Table.cs">
+      <DependentUpon>iCafeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tag.cs">
+      <DependentUpon>iCafeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TagsAvailablity.cs">
+      <DependentUpon>iCafeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
+      <DependentUpon>iCafeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WaiterTable.cs">
+      <DependentUpon>iCafeModel.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="iCafeModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>iCafeModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="iCafeModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>iCafeModel.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
