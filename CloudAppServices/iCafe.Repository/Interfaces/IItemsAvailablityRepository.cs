@@ -8,7 +8,7 @@ using iCafe.Data.Infrastructure;
 
 namespace iCafe.Repository.Interfaces
 {
-    public interface IAccountTypeFeaturesRepository : IRepository<AccountTypeFeature, int>
+    public interface IItemsAvailablityRepository : IRepository<ItemsAvailablity, int>
     {
     }
 }
