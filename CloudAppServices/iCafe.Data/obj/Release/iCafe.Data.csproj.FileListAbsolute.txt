@@ -15,7 +15,6 @@ X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Data\obj\Release\iCafe.Data.p
 X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Data\obj\Release\iCafe.Data.Migrations.iCafeDB3.resources
 X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Data\obj\Release\iCafe.Data.Migrations.iCafeDB.resources
 X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Data\obj\Release\iCafe.Data.Migrations.iCafeDB1.resources
-X:\WorkSpace\GitHub\iCafe_On_Cloud\CloudAppServices\iCafe.Data\obj\Release\iCafe.Data.csprojResolveAssemblyReference.cache
 X:\WorkSpace\GitHub\iCafe_On_Cloud\CloudAppServices\iCafe.Data\bin\Release\iCafe.Data.dll.config
 X:\WorkSpace\GitHub\iCafe_On_Cloud\CloudAppServices\iCafe.Data\bin\Release\iCafe.Data.dll
 X:\WorkSpace\GitHub\iCafe_On_Cloud\CloudAppServices\iCafe.Data\bin\Release\iCafe.Data.pdb
@@ -25,5 +24,6 @@ X:\WorkSpace\GitHub\iCafe_On_Cloud\CloudAppServices\iCafe.Data\bin\Release\iCafe
 X:\WorkSpace\GitHub\iCafe_On_Cloud\CloudAppServices\iCafe.Data\bin\Release\iCafe.Entity.pdb
 X:\WorkSpace\GitHub\iCafe_On_Cloud\CloudAppServices\iCafe.Data\bin\Release\EntityFramework.xml
 X:\WorkSpace\GitHub\iCafe_On_Cloud\CloudAppServices\iCafe.Data\bin\Release\EntityFramework.SqlServer.xml
+X:\WorkSpace\GitHub\iCafe_On_Cloud\CloudAppServices\iCafe.Data\obj\Release\iCafe.Data.csprojResolveAssemblyReference.cache
 X:\WorkSpace\GitHub\iCafe_On_Cloud\CloudAppServices\iCafe.Data\obj\Release\iCafe.Data.dll
 X:\WorkSpace\GitHub\iCafe_On_Cloud\CloudAppServices\iCafe.Data\obj\Release\iCafe.Data.pdb

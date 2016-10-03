@@ -17,3 +17,12 @@ X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Web\bin\System.Web.Helpers.xm
 X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Web\obj\Release\iCafe.Web.csprojResolveAssemblyReference.cache
 X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Web\obj\Release\iCafe.Web.dll
 X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Web\obj\Release\iCafe.Web.pdb
+X:\WorkSpace\GitHub\iCafe_On_Cloud\CloudAppServices\iCafe.Web\bin\iCafe.Web.dll
+X:\WorkSpace\GitHub\iCafe_On_Cloud\CloudAppServices\iCafe.Web\bin\iCafe.Web.pdb
+X:\WorkSpace\GitHub\iCafe_On_Cloud\CloudAppServices\iCafe.Web\bin\Microsoft.Web.Infrastructure.dll
+X:\WorkSpace\GitHub\iCafe_On_Cloud\CloudAppServices\iCafe.Web\bin\System.Web.Optimization.dll
+X:\WorkSpace\GitHub\iCafe_On_Cloud\CloudAppServices\iCafe.Web\bin\WebGrease.dll
+X:\WorkSpace\GitHub\iCafe_On_Cloud\CloudAppServices\iCafe.Web\bin\System.Web.Optimization.xml
+X:\WorkSpace\GitHub\iCafe_On_Cloud\CloudAppServices\iCafe.Web\obj\Release\iCafe.Web.csprojResolveAssemblyReference.cache
+X:\WorkSpace\GitHub\iCafe_On_Cloud\CloudAppServices\iCafe.Web\obj\Release\iCafe.Web.dll
+X:\WorkSpace\GitHub\iCafe_On_Cloud\CloudAppServices\iCafe.Web\obj\Release\iCafe.Web.pdb

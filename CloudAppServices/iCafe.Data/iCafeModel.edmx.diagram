@@ -82,6 +82,10 @@
         <AssociationConnector Association="iCafeModel.FK_dbo_Users_dbo_Roles_RoleId" ManuallyRouted="false" />
         <AssociationConnector Association="iCafeModel.FK_dbo_WaiterTables_dbo_Tables_TableId" ManuallyRouted="false" />
         <AssociationConnector Association="iCafeModel.FK_dbo_TagsAvailablities_dbo_Tags_TagId" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="iCafeModel.ItemCategoryTag" Width="1.5" PointX="10.5" PointY="37.75" />
+        <AssociationConnector Association="iCafeModel.FK_ItemCategoryTags_Account" />
+        <AssociationConnector Association="iCafeModel.FK_ItemCategoryTags_ItemCategories" />
+        <AssociationConnector Association="iCafeModel.FK_ItemCategoryTags_Tags" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -157,6 +157,18 @@
           <Property Name="ModifiedOn" Type="datetime2" Precision="7" />
           <Property Name="ModifiedBy" Type="nvarchar(max)" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ItemCategoryTags">
+          <Key>
+            <PropertyRef Name="ItemCategoryID" />
+            <PropertyRef Name="TagID" />
+            <PropertyRef Name="AccountID" />
+          </Key>
+          <Property Name="ItemCategoryID" Type="int" Nullable="false" />
+          <Property Name="TagID" Type="int" Nullable="false" />
+          <Property Name="AccountID" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="Items">
           <Key>
             <PropertyRef Name="Id" />
@@ -1011,6 +1023,48 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_ItemCategoryTags_Account">
+          <End Role="Account" Type="Self.Account" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ItemCategoryTags" Type="Self.ItemCategoryTags" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ItemCategoryTags">
+              <PropertyRef Name="AccountID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ItemCategoryTags_ItemCategories">
+          <End Role="ItemCategories" Type="Self.ItemCategories" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ItemCategoryTags" Type="Self.ItemCategoryTags" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ItemCategories">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ItemCategoryTags">
+              <PropertyRef Name="ItemCategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ItemCategoryTags_Tags">
+          <End Role="Tags" Type="Self.Tags" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ItemCategoryTags" Type="Self.ItemCategoryTags" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tags">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ItemCategoryTags">
+              <PropertyRef Name="TagID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_ModifiedUser_RoleFeatureAccess">
           <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
           <End Role="RoleFeatureAccess" Type="Self.RoleFeatureAccess" Multiplicity="*" />
@@ -1065,6 +1119,13 @@
           <EntitySet Name="TagsAvailablities" EntityType="Self.TagsAvailablities" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WaiterTables" EntityType="Self.WaiterTables" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ItemCategoryTags" EntityType="Self.ItemCategoryTags" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ItemCategoryTags].[ItemCategoryID] AS [ItemCategoryID], 
+    [ItemCategoryTags].[TagID] AS [TagID], 
+    [ItemCategoryTags].[AccountID] AS [AccountID]
+    FROM [dbo].[ItemCategoryTags] AS [ItemCategoryTags]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="FK_Account_RoleFeatureAccess" Association="Self.FK_Account_RoleFeatureAccess">
             <End Role="Account" EntitySet="Account" />
             <End Role="RoleFeatureAccess" EntitySet="RoleFeatureAccess" />
@@ -1257,6 +1318,18 @@
             <End Role="Features" EntitySet="Features" />
             <End Role="RoleFeatureAccess" EntitySet="RoleFeatureAccess" />
           </AssociationSet>
+          <AssociationSet Name="FK_ItemCategoryTags_Account" Association="Self.FK_ItemCategoryTags_Account">
+            <End Role="Account" EntitySet="Account" />
+            <End Role="ItemCategoryTags" EntitySet="ItemCategoryTags" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ItemCategoryTags_ItemCategories" Association="Self.FK_ItemCategoryTags_ItemCategories">
+            <End Role="ItemCategories" EntitySet="ItemCategories" />
+            <End Role="ItemCategoryTags" EntitySet="ItemCategoryTags" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ItemCategoryTags_Tags" Association="Self.FK_ItemCategoryTags_Tags">
+            <End Role="Tags" EntitySet="Tags" />
+            <End Role="ItemCategoryTags" EntitySet="ItemCategoryTags" />
+          </AssociationSet>
           <AssociationSet Name="FK_ModifiedUser_RoleFeatureAccess" Association="Self.FK_ModifiedUser_RoleFeatureAccess">
             <End Role="Users" EntitySet="Users" />
             <End Role="RoleFeatureAccess" EntitySet="RoleFeatureAccess" />
@@ -1303,6 +1376,7 @@
           <NavigationProperty Name="Users" Relationship="Self.FK_dbo_Users_dbo_Account_Account_Id" FromRole="Account" ToRole="Users" />
           <NavigationProperty Name="Users1" Relationship="Self.FK_dbo_Users_dbo_Account_AccountId" FromRole="Account" ToRole="Users" />
           <NavigationProperty Name="WaiterTables" Relationship="Self.FK_dbo_WaiterTables_dbo_Account_AccountId" FromRole="Account" ToRole="WaiterTables" />
+          <NavigationProperty Name="ItemCategoryTags" Relationship="iCafeModel.FK_ItemCategoryTags_Account" FromRole="Account" ToRole="ItemCategoryTag" />
         </EntityType>
         <EntityType Name="AccountSubscriptionDetail">
           <Key>
@@ -1457,6 +1531,7 @@
           <NavigationProperty Name="Account" Relationship="Self.FK_dbo_ItemCategories_dbo_Account_AccountId" FromRole="ItemCategories" ToRole="Account" />
           <NavigationProperty Name="ItemCategoriesAvailablities" Relationship="Self.FK_dbo_ItemCategoriesAvailablities_dbo_ItemCategories_ItemCategoryId" FromRole="ItemCategories" ToRole="ItemCategoriesAvailablities" />
           <NavigationProperty Name="Items" Relationship="Self.FK_dbo_Items_dbo_ItemCategories_ItemCategoryId" FromRole="ItemCategories" ToRole="Items" />
+          <NavigationProperty Name="ItemCategoryTags" Relationship="iCafeModel.FK_ItemCategoryTags_ItemCategories" FromRole="ItemCategory" ToRole="ItemCategoryTag" />
         </EntityType>
         <EntityType Name="ItemCategoriesAvailablity">
           <Key>
@@ -1684,6 +1759,7 @@
           <NavigationProperty Name="Account" Relationship="Self.FK_dbo_Tags_dbo_Account_AccountId" FromRole="Tags" ToRole="Account" />
           <NavigationProperty Name="ItemTags" Relationship="Self.FK_dbo_ItemTags_dbo_Tags_TagID" FromRole="Tags" ToRole="ItemTags" />
           <NavigationProperty Name="TagsAvailablities" Relationship="Self.FK_dbo_TagsAvailablities_dbo_Tags_TagId" FromRole="Tags" ToRole="TagsAvailablities" />
+          <NavigationProperty Name="ItemCategoryTags" Relationship="iCafeModel.FK_ItemCategoryTags_Tags" FromRole="Tag" ToRole="ItemCategoryTag" />
         </EntityType>
         <EntityType Name="TagsAvailablity">
           <Key>
@@ -2630,7 +2706,75 @@
             <End Role="Tags" EntitySet="Tags" />
             <End Role="TagsAvailablities" EntitySet="TagsAvailablities" />
           </AssociationSet>
+          <EntitySet Name="ItemCategoryTags" EntityType="iCafeModel.ItemCategoryTag" />
+          <AssociationSet Name="FK_ItemCategoryTags_Account" Association="iCafeModel.FK_ItemCategoryTags_Account">
+            <End Role="Account" EntitySet="Accounts" />
+            <End Role="ItemCategoryTag" EntitySet="ItemCategoryTags" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ItemCategoryTags_ItemCategories" Association="iCafeModel.FK_ItemCategoryTags_ItemCategories">
+            <End Role="ItemCategory" EntitySet="ItemCategories" />
+            <End Role="ItemCategoryTag" EntitySet="ItemCategoryTags" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ItemCategoryTags_Tags" Association="iCafeModel.FK_ItemCategoryTags_Tags">
+            <End Role="Tag" EntitySet="Tags" />
+            <End Role="ItemCategoryTag" EntitySet="ItemCategoryTags" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="ItemCategoryTag">
+          <Key>
+            <PropertyRef Name="ItemCategoryID" />
+            <PropertyRef Name="TagID" />
+            <PropertyRef Name="AccountID" />
+          </Key>
+          <Property Name="ItemCategoryID" Type="Int32" Nullable="false" />
+          <Property Name="TagID" Type="Int32" Nullable="false" />
+          <Property Name="AccountID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Account" Relationship="iCafeModel.FK_ItemCategoryTags_Account" FromRole="ItemCategoryTag" ToRole="Account" />
+          <NavigationProperty Name="ItemCategory" Relationship="iCafeModel.FK_ItemCategoryTags_ItemCategories" FromRole="ItemCategoryTag" ToRole="ItemCategory" />
+          <NavigationProperty Name="Tag" Relationship="iCafeModel.FK_ItemCategoryTags_Tags" FromRole="ItemCategoryTag" ToRole="Tag" />
+        </EntityType>
+        <Association Name="FK_ItemCategoryTags_Account">
+          <End Type="iCafeModel.Account" Role="Account" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="iCafeModel.ItemCategoryTag" Role="ItemCategoryTag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ItemCategoryTag">
+              <PropertyRef Name="AccountID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ItemCategoryTags_ItemCategories">
+          <End Type="iCafeModel.ItemCategory" Role="ItemCategory" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="iCafeModel.ItemCategoryTag" Role="ItemCategoryTag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ItemCategory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ItemCategoryTag">
+              <PropertyRef Name="ItemCategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ItemCategoryTags_Tags">
+          <End Type="iCafeModel.Tag" Role="Tag" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="iCafeModel.ItemCategoryTag" Role="ItemCategoryTag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tag">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ItemCategoryTag">
+              <PropertyRef Name="TagID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -3016,6 +3160,15 @@
                 <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
                 <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
                 <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ItemCategoryTags">
+            <EntityTypeMapping TypeName="iCafeModel.ItemCategoryTag">
+              <MappingFragment StoreEntitySet="ItemCategoryTags">
+                <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+                <ScalarProperty Name="TagID" ColumnName="TagID" />
+                <ScalarProperty Name="ItemCategoryID" ColumnName="ItemCategoryID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

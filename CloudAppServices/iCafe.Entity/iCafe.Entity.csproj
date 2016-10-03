@@ -96,6 +96,9 @@
     <Compile Include="ItemCategory.cs">
       <DependentUpon>iCafeModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="ItemCategoryTag.cs">
+      <DependentUpon>iCafeModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="ItemsAvailablity.cs">
       <DependentUpon>iCafeModel.tt</DependentUpon>
     </Compile>

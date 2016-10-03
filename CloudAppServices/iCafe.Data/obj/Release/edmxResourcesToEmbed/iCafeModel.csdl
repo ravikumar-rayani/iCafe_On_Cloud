@@ -1,0 +1,1435 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="iCafeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EmailId" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AccoutTypeId" Type="Int32" Nullable="false" />
+    <Property Name="IsMultiBranchesAllowed" Type="Boolean" Nullable="false" />
+    <Property Name="MaxBranches" Type="Int32" Nullable="false" />
+    <Property Name="EndDate" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="7" />
+    <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="RoleFeatureAccesses" Relationship="Self.FK_Account_RoleFeatureAccess" FromRole="Account" ToRole="RoleFeatureAccess" />
+    <NavigationProperty Name="AccountType" Relationship="Self.FK_dbo_Account_dbo_AccountTypes_AccoutTypeId" FromRole="Account" ToRole="AccountTypes" />
+    <NavigationProperty Name="AccountSubscriptionDetails" Relationship="Self.FK_dbo_AccountSubscriptionDetails_dbo_Account_AccountId" FromRole="Account" ToRole="AccountSubscriptionDetails" />
+    <NavigationProperty Name="Branches" Relationship="Self.FK_dbo_Branches_dbo_Account_AccountId" FromRole="Account" ToRole="Branches" />
+    <NavigationProperty Name="Customers" Relationship="Self.FK_dbo_Customers_dbo_Account_AccountId" FromRole="Account" ToRole="Customers" />
+    <NavigationProperty Name="Devices" Relationship="Self.FK_dbo_Devices_dbo_Account_AccountId" FromRole="Account" ToRole="Devices" />
+    <NavigationProperty Name="ItemCategories" Relationship="Self.FK_dbo_ItemCategories_dbo_Account_AccountId" FromRole="Account" ToRole="ItemCategories" />
+    <NavigationProperty Name="Items" Relationship="Self.FK_dbo_Items_dbo_Account_AccountId" FromRole="Account" ToRole="Items" />
+    <NavigationProperty Name="ItemTags" Relationship="Self.FK_dbo_ItemTags_dbo_Account_AccountId" FromRole="Account" ToRole="ItemTags" />
+    <NavigationProperty Name="Orders" Relationship="Self.FK_dbo_Orders_dbo_Account_AccountId" FromRole="Account" ToRole="Orders" />
+    <NavigationProperty Name="RoleAccesses" Relationship="Self.FK_dbo_RoleAccess_dbo_Account_AccountId" FromRole="Account" ToRole="RoleAccess" />
+    <NavigationProperty Name="Tables" Relationship="Self.FK_dbo_Tables_dbo_Account_AccountId" FromRole="Account" ToRole="Tables" />
+    <NavigationProperty Name="Tags" Relationship="Self.FK_dbo_Tags_dbo_Account_AccountId" FromRole="Account" ToRole="Tags" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_dbo_Users_dbo_Account_Account_Id" FromRole="Account" ToRole="Users" />
+    <NavigationProperty Name="Users1" Relationship="Self.FK_dbo_Users_dbo_Account_AccountId" FromRole="Account" ToRole="Users" />
+    <NavigationProperty Name="WaiterTables" Relationship="Self.FK_dbo_WaiterTables_dbo_Account_AccountId" FromRole="Account" ToRole="WaiterTables" />
+    <NavigationProperty Name="ItemCategoryTags" Relationship="iCafeModel.FK_ItemCategoryTags_Account" FromRole="Account" ToRole="ItemCategoryTag" />
+  </EntityType>
+  <EntityType Name="AccountSubscriptionDetail">
+    <Key>
+      <PropertyRef Name="AccountId" />
+      <PropertyRef Name="AccountTypeId" />
+      <PropertyRef Name="SubscriptionTypeId" />
+    </Key>
+    <Property Name="AccountId" Type="Int32" Nullable="false" />
+    <Property Name="AccountTypeId" Type="Int32" Nullable="false" />
+    <Property Name="SubscriptionTypeId" Type="Int32" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="IsPaid" Type="Boolean" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="7" />
+    <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Modified" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Account" Relationship="Self.FK_dbo_AccountSubscriptionDetails_dbo_Account_AccountId" FromRole="AccountSubscriptionDetails" ToRole="Account" />
+    <NavigationProperty Name="AccountType" Relationship="Self.FK_dbo_AccountSubscriptionDetails_dbo_AccountTypes_AccountTypeId" FromRole="AccountSubscriptionDetails" ToRole="AccountTypes" />
+    <NavigationProperty Name="SubscriptionType" Relationship="Self.FK_dbo_AccountSubscriptionDetails_dbo_SubscriptionTypes_SubscriptionTypeId" FromRole="AccountSubscriptionDetails" ToRole="SubscriptionTypes" />
+  </EntityType>
+  <EntityType Name="AccountTypeFeature">
+    <Key>
+      <PropertyRef Name="AccountTypeId" />
+      <PropertyRef Name="FeatureId" />
+    </Key>
+    <Property Name="AccountTypeId" Type="Int32" Nullable="false" />
+    <Property Name="FeatureId" Type="Int32" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="7" />
+    <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AccountType" Relationship="Self.FK_dbo_AccountTypeFeatures_dbo_AccountTypes_AccountTypeId" FromRole="AccountTypeFeatures" ToRole="AccountTypes" />
+    <NavigationProperty Name="Feature" Relationship="Self.FK_dbo_AccountTypeFeatures_dbo_Features_FeatureId" FromRole="AccountTypeFeatures" ToRole="Features" />
+  </EntityType>
+  <EntityType Name="AccountType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="7" />
+    <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Accounts" Relationship="Self.FK_dbo_Account_dbo_AccountTypes_AccoutTypeId" FromRole="AccountTypes" ToRole="Account" />
+    <NavigationProperty Name="AccountSubscriptionDetails" Relationship="Self.FK_dbo_AccountSubscriptionDetails_dbo_AccountTypes_AccountTypeId" FromRole="AccountTypes" ToRole="AccountSubscriptionDetails" />
+    <NavigationProperty Name="AccountTypeFeatures" Relationship="Self.FK_dbo_AccountTypeFeatures_dbo_AccountTypes_AccountTypeId" FromRole="AccountTypes" ToRole="AccountTypeFeatures" />
+  </EntityType>
+  <EntityType Name="Branch">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AccountId" Type="Int32" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="7" />
+    <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Account" Relationship="Self.FK_dbo_Branches_dbo_Account_AccountId" FromRole="Branches" ToRole="Account" />
+    <NavigationProperty Name="Devices" Relationship="Self.FK_dbo_Devices_dbo_Branches_BranchId" FromRole="Branches" ToRole="Devices" />
+    <NavigationProperty Name="ItemCategoriesAvailablities" Relationship="Self.FK_dbo_ItemCategoriesAvailablities_dbo_Branches_BranchId" FromRole="Branches" ToRole="ItemCategoriesAvailablities" />
+    <NavigationProperty Name="ItemsAvailablities" Relationship="Self.FK_dbo_ItemsAvailablities_dbo_Branches_BranchId" FromRole="Branches" ToRole="ItemsAvailablities" />
+    <NavigationProperty Name="Orders" Relationship="Self.FK_dbo_Orders_dbo_Branches_BranchId" FromRole="Branches" ToRole="Orders" />
+    <NavigationProperty Name="Tables" Relationship="Self.FK_dbo_Tables_dbo_Branches_BranchId" FromRole="Branches" ToRole="Tables" />
+    <NavigationProperty Name="TagsAvailablities" Relationship="Self.FK_dbo_TagsAvailablities_dbo_Branches_BranchId" FromRole="Branches" ToRole="TagsAvailablities" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_dbo_Users_dbo_Branches_BranchId" FromRole="Branches" ToRole="Users" />
+    <NavigationProperty Name="WaiterTables" Relationship="Self.FK_dbo_WaiterTables_dbo_Branches_BranchId" FromRole="Branches" ToRole="WaiterTables" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Phone" Type="Decimal" Precision="12" Scale="0" Nullable="false" />
+    <Property Name="EmailId" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="7" />
+    <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AccountId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Account" Relationship="Self.FK_dbo_Customers_dbo_Account_AccountId" FromRole="Customers" ToRole="Account" />
+    <NavigationProperty Name="Orders" Relationship="Self.FK_dbo_Orders_dbo_Customers_CustomerId" FromRole="Customers" ToRole="Orders" />
+  </EntityType>
+  <EntityType Name="Device">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="ModifiedOn" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="AccountId" Type="Int32" Nullable="false" />
+    <Property Name="BranchId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Account" Relationship="Self.FK_dbo_Devices_dbo_Account_AccountId" FromRole="Devices" ToRole="Account" />
+    <NavigationProperty Name="Branch" Relationship="Self.FK_dbo_Devices_dbo_Branches_BranchId" FromRole="Devices" ToRole="Branches" />
+    <NavigationProperty Name="Tables" Relationship="Self.FK_dbo_Tables_dbo_Devices_DeviceID" FromRole="Devices" ToRole="Tables" />
+  </EntityType>
+  <EntityType Name="Feature">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="7" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AccountTypeFeatures" Relationship="Self.FK_dbo_AccountTypeFeatures_dbo_Features_FeatureId" FromRole="Features" ToRole="AccountTypeFeatures" />
+    <NavigationProperty Name="FeatureSubscriptionPricings" Relationship="Self.FK_dbo_FeatureSubscriptionPricings_dbo_Features_FeatureId" FromRole="Features" ToRole="FeatureSubscriptionPricings" />
+    <NavigationProperty Name="RoleAccesses" Relationship="Self.FK_dbo_RoleAccess_dbo_Features_FeatureID" FromRole="Features" ToRole="RoleAccess" />
+    <NavigationProperty Name="RoleFeatureAccesses" Relationship="Self.FK_Feature_RoleFeatureAccess" FromRole="Features" ToRole="RoleFeatureAccess" />
+  </EntityType>
+  <EntityType Name="FeatureSubscriptionPricing">
+    <Key>
+      <PropertyRef Name="SubscriptionTypeId" />
+      <PropertyRef Name="FeatureId" />
+    </Key>
+    <Property Name="SubscriptionTypeId" Type="Int32" Nullable="false" />
+    <Property Name="FeatureId" Type="Int32" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="Discount" Type="Decimal" Precision="3" Scale="2" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="7" />
+    <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Modified" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Feature" Relationship="Self.FK_dbo_FeatureSubscriptionPricings_dbo_Features_FeatureId" FromRole="FeatureSubscriptionPricings" ToRole="Features" />
+    <NavigationProperty Name="SubscriptionType" Relationship="Self.FK_dbo_FeatureSubscriptionPricings_dbo_SubscriptionTypes_SubscriptionTypeId" FromRole="FeatureSubscriptionPricings" ToRole="SubscriptionTypes" />
+  </EntityType>
+  <EntityType Name="ItemCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Discount" Type="Decimal" Precision="3" Scale="2" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="7" />
+    <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AccountId" Type="Int32" Nullable="false" />
+    <Property Name="ImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Account" Relationship="Self.FK_dbo_ItemCategories_dbo_Account_AccountId" FromRole="ItemCategories" ToRole="Account" />
+    <NavigationProperty Name="ItemCategoriesAvailablities" Relationship="Self.FK_dbo_ItemCategoriesAvailablities_dbo_ItemCategories_ItemCategoryId" FromRole="ItemCategories" ToRole="ItemCategoriesAvailablities" />
+    <NavigationProperty Name="Items" Relationship="Self.FK_dbo_Items_dbo_ItemCategories_ItemCategoryId" FromRole="ItemCategories" ToRole="Items" />
+    <NavigationProperty Name="ItemCategoryTags" Relationship="iCafeModel.FK_ItemCategoryTags_ItemCategories" FromRole="ItemCategory" ToRole="ItemCategoryTag" />
+  </EntityType>
+  <EntityType Name="ItemCategoriesAvailablity">
+    <Key>
+      <PropertyRef Name="ItemCategoryId" />
+      <PropertyRef Name="BranchId" />
+    </Key>
+    <Property Name="ItemCategoryId" Type="Int32" Nullable="false" />
+    <Property Name="BranchId" Type="Int32" Nullable="false" />
+    <Property Name="IsAvailable" Type="Boolean" Nullable="false" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="7" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Branch" Relationship="Self.FK_dbo_ItemCategoriesAvailablities_dbo_Branches_BranchId" FromRole="ItemCategoriesAvailablities" ToRole="Branches" />
+    <NavigationProperty Name="ItemCategory" Relationship="Self.FK_dbo_ItemCategoriesAvailablities_dbo_ItemCategories_ItemCategoryId" FromRole="ItemCategoriesAvailablities" ToRole="ItemCategories" />
+  </EntityType>
+  <EntityType Name="Item">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ItemCategoryId" Type="Int32" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="SpicyLevel" Type="Int32" Nullable="false" />
+    <Property Name="Discount" Type="Decimal" Precision="3" Scale="2" />
+    <Property Name="Ingrediants" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="7" />
+    <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AccountId" Type="Int32" Nullable="false" />
+    <Property Name="SmallImageUrl" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="FullImageUrl" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Account" Relationship="Self.FK_dbo_Items_dbo_Account_AccountId" FromRole="Items" ToRole="Account" />
+    <NavigationProperty Name="ItemCategory" Relationship="Self.FK_dbo_Items_dbo_ItemCategories_ItemCategoryId" FromRole="Items" ToRole="ItemCategories" />
+    <NavigationProperty Name="ItemsAvailablities" Relationship="Self.FK_dbo_ItemsAvailablities_dbo_Items_ItemId" FromRole="Items" ToRole="ItemsAvailablities" />
+    <NavigationProperty Name="ItemTags" Relationship="Self.FK_dbo_ItemTags_dbo_Items_ItemID" FromRole="Items" ToRole="ItemTags" />
+    <NavigationProperty Name="SubOrderDetails" Relationship="Self.FK_dbo_SubOrderDetails_dbo_Items_ItemId" FromRole="Items" ToRole="SubOrderDetails" />
+  </EntityType>
+  <EntityType Name="ItemsAvailablity">
+    <Key>
+      <PropertyRef Name="ItemId" />
+      <PropertyRef Name="BranchId" />
+    </Key>
+    <Property Name="ItemId" Type="Int32" Nullable="false" />
+    <Property Name="BranchId" Type="Int32" Nullable="false" />
+    <Property Name="IsAvailable" Type="Boolean" Nullable="false" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="7" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Branch" Relationship="Self.FK_dbo_ItemsAvailablities_dbo_Branches_BranchId" FromRole="ItemsAvailablities" ToRole="Branches" />
+    <NavigationProperty Name="Item" Relationship="Self.FK_dbo_ItemsAvailablities_dbo_Items_ItemId" FromRole="ItemsAvailablities" ToRole="Items" />
+  </EntityType>
+  <EntityType Name="ItemTag">
+    <Key>
+      <PropertyRef Name="ItemID" />
+      <PropertyRef Name="TagID" />
+      <PropertyRef Name="AccountId" />
+    </Key>
+    <Property Name="ItemID" Type="Int32" Nullable="false" />
+    <Property Name="TagID" Type="Int32" Nullable="false" />
+    <Property Name="AccountId" Type="Int32" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="7" />
+    <NavigationProperty Name="Account" Relationship="Self.FK_dbo_ItemTags_dbo_Account_AccountId" FromRole="ItemTags" ToRole="Account" />
+    <NavigationProperty Name="Item" Relationship="Self.FK_dbo_ItemTags_dbo_Items_ItemID" FromRole="ItemTags" ToRole="Items" />
+    <NavigationProperty Name="Tag" Relationship="Self.FK_dbo_ItemTags_dbo_Tags_TagID" FromRole="ItemTags" ToRole="Tags" />
+  </EntityType>
+  <EntityType Name="OrderDetail">
+    <Key>
+      <PropertyRef Name="SubOrderId" />
+    </Key>
+    <Property Name="SubOrderId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderId" Type="Int32" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="ModifiedOn" Type="DateTime" Nullable="false" Precision="7" />
+    <NavigationProperty Name="Order" Relationship="Self.FK_dbo_OrderDetails_dbo_Orders_OrderId" FromRole="OrderDetails" ToRole="Orders" />
+    <NavigationProperty Name="SubOrderDetails" Relationship="Self.FK_dbo_SubOrderDetails_dbo_OrderDetails_SubOrderId" FromRole="OrderDetails" ToRole="SubOrderDetails" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerId" Type="Int32" Nullable="false" />
+    <Property Name="TotalPrice" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="PaymentStatusId" Type="Int32" Nullable="false" />
+    <Property Name="RatingOnFood" Type="Int32" />
+    <Property Name="RatingOnService" Type="Int32" />
+    <Property Name="Feedback" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="7" />
+    <Property Name="AccountId" Type="Int32" Nullable="false" />
+    <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BranchId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Account" Relationship="Self.FK_dbo_Orders_dbo_Account_AccountId" FromRole="Orders" ToRole="Account" />
+    <NavigationProperty Name="Branch" Relationship="Self.FK_dbo_Orders_dbo_Branches_BranchId" FromRole="Orders" ToRole="Branches" />
+    <NavigationProperty Name="Customer" Relationship="Self.FK_dbo_Orders_dbo_Customers_CustomerId" FromRole="Orders" ToRole="Customers" />
+    <NavigationProperty Name="OrderDetails" Relationship="Self.FK_dbo_OrderDetails_dbo_Orders_OrderId" FromRole="Orders" ToRole="OrderDetails" />
+    <NavigationProperty Name="PaymentStatu" Relationship="Self.FK_dbo_Orders_dbo_PaymentStatus_PaymentStatusId" FromRole="Orders" ToRole="PaymentStatus" />
+  </EntityType>
+  <EntityType Name="PaymentStatu">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="ModifiedOn" Type="DateTime" Nullable="false" Precision="7" />
+    <NavigationProperty Name="Orders" Relationship="Self.FK_dbo_Orders_dbo_PaymentStatus_PaymentStatusId" FromRole="PaymentStatus" ToRole="Orders" />
+  </EntityType>
+  <EntityType Name="RoleAccess">
+    <Key>
+      <PropertyRef Name="RoleID" />
+      <PropertyRef Name="FeatureID" />
+    </Key>
+    <Property Name="RoleID" Type="Int32" Nullable="false" />
+    <Property Name="FeatureID" Type="Int32" Nullable="false" />
+    <Property Name="WirtePermissions" Type="Boolean" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="7" />
+    <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AccountId" Type="Int32" Nullable="false" />
+    <Property Name="BranchId" Type="Int32" />
+    <NavigationProperty Name="Account" Relationship="Self.FK_dbo_RoleAccess_dbo_Account_AccountId" FromRole="RoleAccess" ToRole="Account" />
+    <NavigationProperty Name="Feature" Relationship="Self.FK_dbo_RoleAccess_dbo_Features_FeatureID" FromRole="RoleAccess" ToRole="Features" />
+    <NavigationProperty Name="Role" Relationship="Self.FK_dbo_RoleAccess_dbo_Roles_RoleID" FromRole="RoleAccess" ToRole="Roles" />
+  </EntityType>
+  <EntityType Name="RoleFeatureAccess">
+    <Key>
+      <PropertyRef Name="RoleID" />
+      <PropertyRef Name="FeatureID" />
+    </Key>
+    <Property Name="RoleID" Type="Int32" Nullable="false" />
+    <Property Name="FeatureID" Type="Int32" Nullable="false" />
+    <Property Name="WirtePermissions" Type="Boolean" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
+    <Property Name="CreatedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="AccountId" Type="Int32" Nullable="false" />
+    <Property Name="BranchId" Type="Int32" />
+    <NavigationProperty Name="Account" Relationship="Self.FK_Account_RoleFeatureAccess" FromRole="RoleFeatureAccess" ToRole="Account" />
+    <NavigationProperty Name="Feature" Relationship="Self.FK_Feature_RoleFeatureAccess" FromRole="RoleFeatureAccess" ToRole="Features" />
+    <NavigationProperty Name="User" Relationship="Self.FK_CreatedUsers_RoleFeatureAccess" FromRole="RoleFeatureAccess" ToRole="Users" />
+    <NavigationProperty Name="User1" Relationship="Self.FK_ModifiedUser_RoleFeatureAccess" FromRole="RoleFeatureAccess" ToRole="Users" />
+    <NavigationProperty Name="Role" Relationship="Self.FK_Role_RoleFeatureAccess" FromRole="RoleFeatureAccess" ToRole="Roles" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="ModifiedOn" Type="DateTime" Nullable="false" Precision="7" />
+    <NavigationProperty Name="RoleAccesses" Relationship="Self.FK_dbo_RoleAccess_dbo_Roles_RoleID" FromRole="Roles" ToRole="RoleAccess" />
+    <NavigationProperty Name="RoleFeatureAccesses" Relationship="Self.FK_Role_RoleFeatureAccess" FromRole="Roles" ToRole="RoleFeatureAccess" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_dbo_Users_dbo_Roles_RoleId" FromRole="Roles" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="SubOrderDetail">
+    <Key>
+      <PropertyRef Name="SubOrderId" />
+      <PropertyRef Name="ItemId" />
+    </Key>
+    <Property Name="SubOrderId" Type="Int32" Nullable="false" />
+    <Property Name="ItemId" Type="Int32" Nullable="false" />
+    <Property Name="OrderQuantity" Type="Int32" Nullable="false" />
+    <Property Name="OrderType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="OrderPreferences" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="ModifiedOn" Type="DateTime" Nullable="false" Precision="7" />
+    <NavigationProperty Name="Item" Relationship="Self.FK_dbo_SubOrderDetails_dbo_Items_ItemId" FromRole="SubOrderDetails" ToRole="Items" />
+    <NavigationProperty Name="OrderDetail" Relationship="Self.FK_dbo_SubOrderDetails_dbo_OrderDetails_SubOrderId" FromRole="SubOrderDetails" ToRole="OrderDetails" />
+  </EntityType>
+  <EntityType Name="SubscriptionType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="DurationInDays" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="7" />
+    <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AccountSubscriptionDetails" Relationship="Self.FK_dbo_AccountSubscriptionDetails_dbo_SubscriptionTypes_SubscriptionTypeId" FromRole="SubscriptionTypes" ToRole="AccountSubscriptionDetails" />
+    <NavigationProperty Name="FeatureSubscriptionPricings" Relationship="Self.FK_dbo_FeatureSubscriptionPricings_dbo_SubscriptionTypes_SubscriptionTypeId" FromRole="SubscriptionTypes" ToRole="FeatureSubscriptionPricings" />
+  </EntityType>
+  <EntityType Name="Table">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DeviceID" Type="Int32" Nullable="false" />
+    <Property Name="IsMultipleMode" Type="Boolean" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="ModifiedOn" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="AccountId" Type="Int32" Nullable="false" />
+    <Property Name="BranchId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Account" Relationship="Self.FK_dbo_Tables_dbo_Account_AccountId" FromRole="Tables" ToRole="Account" />
+    <NavigationProperty Name="Branch" Relationship="Self.FK_dbo_Tables_dbo_Branches_BranchId" FromRole="Tables" ToRole="Branches" />
+    <NavigationProperty Name="Device" Relationship="Self.FK_dbo_Tables_dbo_Devices_DeviceID" FromRole="Tables" ToRole="Devices" />
+    <NavigationProperty Name="WaiterTables" Relationship="Self.FK_dbo_WaiterTables_dbo_Tables_TableId" FromRole="Tables" ToRole="WaiterTables" />
+  </EntityType>
+  <EntityType Name="Tag">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Comments" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="7" />
+    <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AccountId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Account" Relationship="Self.FK_dbo_Tags_dbo_Account_AccountId" FromRole="Tags" ToRole="Account" />
+    <NavigationProperty Name="ItemTags" Relationship="Self.FK_dbo_ItemTags_dbo_Tags_TagID" FromRole="Tags" ToRole="ItemTags" />
+    <NavigationProperty Name="TagsAvailablities" Relationship="Self.FK_dbo_TagsAvailablities_dbo_Tags_TagId" FromRole="Tags" ToRole="TagsAvailablities" />
+    <NavigationProperty Name="ItemCategoryTags" Relationship="iCafeModel.FK_ItemCategoryTags_Tags" FromRole="Tag" ToRole="ItemCategoryTag" />
+  </EntityType>
+  <EntityType Name="TagsAvailablity">
+    <Key>
+      <PropertyRef Name="TagId" />
+      <PropertyRef Name="BranchId" />
+    </Key>
+    <Property Name="TagId" Type="Int32" Nullable="false" />
+    <Property Name="BranchId" Type="Int32" Nullable="false" />
+    <Property Name="IsAvailable" Type="Boolean" Nullable="false" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="7" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Branch" Relationship="Self.FK_dbo_TagsAvailablities_dbo_Branches_BranchId" FromRole="TagsAvailablities" ToRole="Branches" />
+    <NavigationProperty Name="Tag" Relationship="Self.FK_dbo_TagsAvailablities_dbo_Tags_TagId" FromRole="TagsAvailablities" ToRole="Tags" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserName" />
+    </Key>
+    <Property Name="UserName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RoleId" Type="Int32" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="AccountId" Type="Int32" Nullable="false" />
+    <Property Name="BranchId" Type="Int32" Nullable="false" />
+    <Property Name="Account_Id" Type="Int32" />
+    <NavigationProperty Name="Account" Relationship="Self.FK_dbo_Users_dbo_Account_Account_Id" FromRole="Users" ToRole="Account" />
+    <NavigationProperty Name="Account1" Relationship="Self.FK_dbo_Users_dbo_Account_AccountId" FromRole="Users" ToRole="Account" />
+    <NavigationProperty Name="Branch" Relationship="Self.FK_dbo_Users_dbo_Branches_BranchId" FromRole="Users" ToRole="Branches" />
+    <NavigationProperty Name="RoleFeatureAccesses" Relationship="Self.FK_CreatedUsers_RoleFeatureAccess" FromRole="Users" ToRole="RoleFeatureAccess" />
+    <NavigationProperty Name="RoleFeatureAccesses1" Relationship="Self.FK_ModifiedUser_RoleFeatureAccess" FromRole="Users" ToRole="RoleFeatureAccess" />
+    <NavigationProperty Name="Role" Relationship="Self.FK_dbo_Users_dbo_Roles_RoleId" FromRole="Users" ToRole="Roles" />
+  </EntityType>
+  <EntityType Name="WaiterTable">
+    <Key>
+      <PropertyRef Name="AccountId" />
+      <PropertyRef Name="BranchId" />
+      <PropertyRef Name="Waiter" />
+      <PropertyRef Name="TableId" />
+    </Key>
+    <Property Name="AccountId" Type="Int32" Nullable="false" />
+    <Property Name="BranchId" Type="Int32" Nullable="false" />
+    <Property Name="Waiter" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TableId" Type="Int32" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="7" />
+    <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Account" Relationship="Self.FK_dbo_WaiterTables_dbo_Account_AccountId" FromRole="WaiterTables" ToRole="Account" />
+    <NavigationProperty Name="Branch" Relationship="Self.FK_dbo_WaiterTables_dbo_Branches_BranchId" FromRole="WaiterTables" ToRole="Branches" />
+    <NavigationProperty Name="Table" Relationship="Self.FK_dbo_WaiterTables_dbo_Tables_TableId" FromRole="WaiterTables" ToRole="Tables" />
+  </EntityType>
+  <Association Name="FK_Account_RoleFeatureAccess">
+    <End Role="Account" Type="Self.Account" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="RoleFeatureAccess" Type="Self.RoleFeatureAccess" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RoleFeatureAccess">
+        <PropertyRef Name="AccountId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Account_dbo_AccountTypes_AccoutTypeId">
+    <End Role="AccountTypes" Type="Self.AccountType" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Account" Type="Self.Account" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AccountTypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Account">
+        <PropertyRef Name="AccoutTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AccountSubscriptionDetails_dbo_Account_AccountId">
+    <End Role="Account" Type="Self.Account" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AccountSubscriptionDetails" Type="Self.AccountSubscriptionDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AccountSubscriptionDetails">
+        <PropertyRef Name="AccountId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Branches_dbo_Account_AccountId">
+    <End Role="Account" Type="Self.Account" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Branches" Type="Self.Branch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Branches">
+        <PropertyRef Name="AccountId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Customers_dbo_Account_AccountId">
+    <End Role="Account" Type="Self.Account" Multiplicity="1" />
+    <End Role="Customers" Type="Self.Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Customers">
+        <PropertyRef Name="AccountId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Devices_dbo_Account_AccountId">
+    <End Role="Account" Type="Self.Account" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Devices" Type="Self.Device" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Devices">
+        <PropertyRef Name="AccountId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_ItemCategories_dbo_Account_AccountId">
+    <End Role="Account" Type="Self.Account" Multiplicity="1" />
+    <End Role="ItemCategories" Type="Self.ItemCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ItemCategories">
+        <PropertyRef Name="AccountId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Items_dbo_Account_AccountId">
+    <End Role="Account" Type="Self.Account" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Items" Type="Self.Item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Items">
+        <PropertyRef Name="AccountId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_ItemTags_dbo_Account_AccountId">
+    <End Role="Account" Type="Self.Account" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ItemTags" Type="Self.ItemTag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ItemTags">
+        <PropertyRef Name="AccountId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Orders_dbo_Account_AccountId">
+    <End Role="Account" Type="Self.Account" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="AccountId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_RoleAccess_dbo_Account_AccountId">
+    <End Role="Account" Type="Self.Account" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="RoleAccess" Type="Self.RoleAccess" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RoleAccess">
+        <PropertyRef Name="AccountId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Tables_dbo_Account_AccountId">
+    <End Role="Account" Type="Self.Account" Multiplicity="1" />
+    <End Role="Tables" Type="Self.Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Tables">
+        <PropertyRef Name="AccountId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Tags_dbo_Account_AccountId">
+    <End Role="Account" Type="Self.Account" Multiplicity="1" />
+    <End Role="Tags" Type="Self.Tag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Tags">
+        <PropertyRef Name="AccountId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Users_dbo_Account_Account_Id">
+    <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
+    <End Role="Users" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="Account_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Users_dbo_Account_AccountId">
+    <End Role="Account" Type="Self.Account" Multiplicity="1" />
+    <End Role="Users" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="AccountId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_WaiterTables_dbo_Account_AccountId">
+    <End Role="Account" Type="Self.Account" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="WaiterTables" Type="Self.WaiterTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="WaiterTables">
+        <PropertyRef Name="AccountId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AccountSubscriptionDetails_dbo_AccountTypes_AccountTypeId">
+    <End Role="AccountTypes" Type="Self.AccountType" Multiplicity="1" />
+    <End Role="AccountSubscriptionDetails" Type="Self.AccountSubscriptionDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AccountTypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AccountSubscriptionDetails">
+        <PropertyRef Name="AccountTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AccountSubscriptionDetails_dbo_SubscriptionTypes_SubscriptionTypeId">
+    <End Role="SubscriptionTypes" Type="Self.SubscriptionType" Multiplicity="1" />
+    <End Role="AccountSubscriptionDetails" Type="Self.AccountSubscriptionDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SubscriptionTypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AccountSubscriptionDetails">
+        <PropertyRef Name="SubscriptionTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AccountTypeFeatures_dbo_AccountTypes_AccountTypeId">
+    <End Role="AccountTypes" Type="Self.AccountType" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AccountTypeFeatures" Type="Self.AccountTypeFeature" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AccountTypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AccountTypeFeatures">
+        <PropertyRef Name="AccountTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AccountTypeFeatures_dbo_Features_FeatureId">
+    <End Role="Features" Type="Self.Feature" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AccountTypeFeatures" Type="Self.AccountTypeFeature" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Features">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AccountTypeFeatures">
+        <PropertyRef Name="FeatureId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Devices_dbo_Branches_BranchId">
+    <End Role="Branches" Type="Self.Branch" Multiplicity="1" />
+    <End Role="Devices" Type="Self.Device" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Branches">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Devices">
+        <PropertyRef Name="BranchId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_ItemCategoriesAvailablities_dbo_Branches_BranchId">
+    <End Role="Branches" Type="Self.Branch" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ItemCategoriesAvailablities" Type="Self.ItemCategoriesAvailablity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Branches">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ItemCategoriesAvailablities">
+        <PropertyRef Name="BranchId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_ItemsAvailablities_dbo_Branches_BranchId">
+    <End Role="Branches" Type="Self.Branch" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ItemsAvailablities" Type="Self.ItemsAvailablity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Branches">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ItemsAvailablities">
+        <PropertyRef Name="BranchId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Orders_dbo_Branches_BranchId">
+    <End Role="Branches" Type="Self.Branch" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Branches">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="BranchId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Tables_dbo_Branches_BranchId">
+    <End Role="Branches" Type="Self.Branch" Multiplicity="1" />
+    <End Role="Tables" Type="Self.Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Branches">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Tables">
+        <PropertyRef Name="BranchId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_TagsAvailablities_dbo_Branches_BranchId">
+    <End Role="Branches" Type="Self.Branch" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="TagsAvailablities" Type="Self.TagsAvailablity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Branches">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TagsAvailablities">
+        <PropertyRef Name="BranchId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Users_dbo_Branches_BranchId">
+    <End Role="Branches" Type="Self.Branch" Multiplicity="1" />
+    <End Role="Users" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Branches">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="BranchId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_WaiterTables_dbo_Branches_BranchId">
+    <End Role="Branches" Type="Self.Branch" Multiplicity="1" />
+    <End Role="WaiterTables" Type="Self.WaiterTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Branches">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="WaiterTables">
+        <PropertyRef Name="BranchId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Orders_dbo_Customers_CustomerId">
+    <End Role="Customers" Type="Self.Customer" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="CustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Tables_dbo_Devices_DeviceID">
+    <End Role="Devices" Type="Self.Device" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Tables" Type="Self.Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Devices">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Tables">
+        <PropertyRef Name="DeviceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_FeatureSubscriptionPricings_dbo_Features_FeatureId">
+    <End Role="Features" Type="Self.Feature" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="FeatureSubscriptionPricings" Type="Self.FeatureSubscriptionPricing" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Features">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FeatureSubscriptionPricings">
+        <PropertyRef Name="FeatureId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_RoleAccess_dbo_Features_FeatureID">
+    <End Role="Features" Type="Self.Feature" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="RoleAccess" Type="Self.RoleAccess" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Features">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RoleAccess">
+        <PropertyRef Name="FeatureID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Feature_RoleFeatureAccess">
+    <End Role="Features" Type="Self.Feature" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="RoleFeatureAccess" Type="Self.RoleFeatureAccess" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Features">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RoleFeatureAccess">
+        <PropertyRef Name="FeatureID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_FeatureSubscriptionPricings_dbo_SubscriptionTypes_SubscriptionTypeId">
+    <End Role="SubscriptionTypes" Type="Self.SubscriptionType" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="FeatureSubscriptionPricings" Type="Self.FeatureSubscriptionPricing" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SubscriptionTypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FeatureSubscriptionPricings">
+        <PropertyRef Name="SubscriptionTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_ItemCategoriesAvailablities_dbo_ItemCategories_ItemCategoryId">
+    <End Role="ItemCategories" Type="Self.ItemCategory" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ItemCategoriesAvailablities" Type="Self.ItemCategoriesAvailablity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ItemCategories">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ItemCategoriesAvailablities">
+        <PropertyRef Name="ItemCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Items_dbo_ItemCategories_ItemCategoryId">
+    <End Role="ItemCategories" Type="Self.ItemCategory" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Items" Type="Self.Item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ItemCategories">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Items">
+        <PropertyRef Name="ItemCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_ItemsAvailablities_dbo_Items_ItemId">
+    <End Role="Items" Type="Self.Item" Multiplicity="1" />
+    <End Role="ItemsAvailablities" Type="Self.ItemsAvailablity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Items">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ItemsAvailablities">
+        <PropertyRef Name="ItemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_ItemTags_dbo_Items_ItemID">
+    <End Role="Items" Type="Self.Item" Multiplicity="1" />
+    <End Role="ItemTags" Type="Self.ItemTag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Items">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ItemTags">
+        <PropertyRef Name="ItemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_SubOrderDetails_dbo_Items_ItemId">
+    <End Role="Items" Type="Self.Item" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="SubOrderDetails" Type="Self.SubOrderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Items">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SubOrderDetails">
+        <PropertyRef Name="ItemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_ItemTags_dbo_Tags_TagID">
+    <End Role="Tags" Type="Self.Tag" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ItemTags" Type="Self.ItemTag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tags">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ItemTags">
+        <PropertyRef Name="TagID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_OrderDetails_dbo_Orders_OrderId">
+    <End Role="Orders" Type="Self.Order" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="OrderDetails" Type="Self.OrderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Orders">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrderDetails">
+        <PropertyRef Name="OrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_SubOrderDetails_dbo_OrderDetails_SubOrderId">
+    <End Role="OrderDetails" Type="Self.OrderDetail" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="SubOrderDetails" Type="Self.SubOrderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OrderDetails">
+        <PropertyRef Name="SubOrderId" />
+      </Principal>
+      <Dependent Role="SubOrderDetails">
+        <PropertyRef Name="SubOrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Orders_dbo_PaymentStatus_PaymentStatusId">
+    <End Role="PaymentStatus" Type="Self.PaymentStatu" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PaymentStatus">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="PaymentStatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_RoleAccess_dbo_Roles_RoleID">
+    <End Role="Roles" Type="Self.Role" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="RoleAccess" Type="Self.RoleAccess" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RoleAccess">
+        <PropertyRef Name="RoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CreatedUsers_RoleFeatureAccess">
+    <End Role="Users" Type="Self.User" Multiplicity="1" />
+    <End Role="RoleFeatureAccess" Type="Self.RoleFeatureAccess" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserName" />
+      </Principal>
+      <Dependent Role="RoleFeatureAccess">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ModifiedUser_RoleFeatureAccess">
+    <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+    <End Role="RoleFeatureAccess" Type="Self.RoleFeatureAccess" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserName" />
+      </Principal>
+      <Dependent Role="RoleFeatureAccess">
+        <PropertyRef Name="ModifiedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Role_RoleFeatureAccess">
+    <End Role="Roles" Type="Self.Role" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="RoleFeatureAccess" Type="Self.RoleFeatureAccess" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RoleFeatureAccess">
+        <PropertyRef Name="RoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Users_dbo_Roles_RoleId">
+    <End Role="Roles" Type="Self.Role" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Users" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_WaiterTables_dbo_Tables_TableId">
+    <End Role="Tables" Type="Self.Table" Multiplicity="1" />
+    <End Role="WaiterTables" Type="Self.WaiterTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tables">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="WaiterTables">
+        <PropertyRef Name="TableId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_TagsAvailablities_dbo_Tags_TagId">
+    <End Role="Tags" Type="Self.Tag" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="TagsAvailablities" Type="Self.TagsAvailablity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tags">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TagsAvailablities">
+        <PropertyRef Name="TagId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="iCafeEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Accounts" EntityType="Self.Account" />
+    <EntitySet Name="AccountSubscriptionDetails" EntityType="Self.AccountSubscriptionDetail" />
+    <EntitySet Name="AccountTypeFeatures" EntityType="Self.AccountTypeFeature" />
+    <EntitySet Name="AccountTypes" EntityType="Self.AccountType" />
+    <EntitySet Name="Branches" EntityType="Self.Branch" />
+    <EntitySet Name="Customers" EntityType="Self.Customer" />
+    <EntitySet Name="Devices" EntityType="Self.Device" />
+    <EntitySet Name="Features" EntityType="Self.Feature" />
+    <EntitySet Name="FeatureSubscriptionPricings" EntityType="Self.FeatureSubscriptionPricing" />
+    <EntitySet Name="ItemCategories" EntityType="Self.ItemCategory" />
+    <EntitySet Name="ItemCategoriesAvailablities" EntityType="Self.ItemCategoriesAvailablity" />
+    <EntitySet Name="Items" EntityType="Self.Item" />
+    <EntitySet Name="ItemsAvailablities" EntityType="Self.ItemsAvailablity" />
+    <EntitySet Name="ItemTags" EntityType="Self.ItemTag" />
+    <EntitySet Name="OrderDetails" EntityType="Self.OrderDetail" />
+    <EntitySet Name="Orders" EntityType="Self.Order" />
+    <EntitySet Name="PaymentStatus" EntityType="Self.PaymentStatu" />
+    <EntitySet Name="RoleAccesses" EntityType="Self.RoleAccess" />
+    <EntitySet Name="RoleFeatureAccesses" EntityType="Self.RoleFeatureAccess" />
+    <EntitySet Name="Roles" EntityType="Self.Role" />
+    <EntitySet Name="SubOrderDetails" EntityType="Self.SubOrderDetail" />
+    <EntitySet Name="SubscriptionTypes" EntityType="Self.SubscriptionType" />
+    <EntitySet Name="Tables" EntityType="Self.Table" />
+    <EntitySet Name="Tags" EntityType="Self.Tag" />
+    <EntitySet Name="TagsAvailablities" EntityType="Self.TagsAvailablity" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <EntitySet Name="WaiterTables" EntityType="Self.WaiterTable" />
+    <AssociationSet Name="FK_Account_RoleFeatureAccess" Association="Self.FK_Account_RoleFeatureAccess">
+      <End Role="Account" EntitySet="Accounts" />
+      <End Role="RoleFeatureAccess" EntitySet="RoleFeatureAccesses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Account_dbo_AccountTypes_AccoutTypeId" Association="Self.FK_dbo_Account_dbo_AccountTypes_AccoutTypeId">
+      <End Role="AccountTypes" EntitySet="AccountTypes" />
+      <End Role="Account" EntitySet="Accounts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AccountSubscriptionDetails_dbo_Account_AccountId" Association="Self.FK_dbo_AccountSubscriptionDetails_dbo_Account_AccountId">
+      <End Role="Account" EntitySet="Accounts" />
+      <End Role="AccountSubscriptionDetails" EntitySet="AccountSubscriptionDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Branches_dbo_Account_AccountId" Association="Self.FK_dbo_Branches_dbo_Account_AccountId">
+      <End Role="Account" EntitySet="Accounts" />
+      <End Role="Branches" EntitySet="Branches" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Customers_dbo_Account_AccountId" Association="Self.FK_dbo_Customers_dbo_Account_AccountId">
+      <End Role="Account" EntitySet="Accounts" />
+      <End Role="Customers" EntitySet="Customers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Devices_dbo_Account_AccountId" Association="Self.FK_dbo_Devices_dbo_Account_AccountId">
+      <End Role="Account" EntitySet="Accounts" />
+      <End Role="Devices" EntitySet="Devices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_ItemCategories_dbo_Account_AccountId" Association="Self.FK_dbo_ItemCategories_dbo_Account_AccountId">
+      <End Role="Account" EntitySet="Accounts" />
+      <End Role="ItemCategories" EntitySet="ItemCategories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Items_dbo_Account_AccountId" Association="Self.FK_dbo_Items_dbo_Account_AccountId">
+      <End Role="Account" EntitySet="Accounts" />
+      <End Role="Items" EntitySet="Items" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_ItemTags_dbo_Account_AccountId" Association="Self.FK_dbo_ItemTags_dbo_Account_AccountId">
+      <End Role="Account" EntitySet="Accounts" />
+      <End Role="ItemTags" EntitySet="ItemTags" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Orders_dbo_Account_AccountId" Association="Self.FK_dbo_Orders_dbo_Account_AccountId">
+      <End Role="Account" EntitySet="Accounts" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_RoleAccess_dbo_Account_AccountId" Association="Self.FK_dbo_RoleAccess_dbo_Account_AccountId">
+      <End Role="Account" EntitySet="Accounts" />
+      <End Role="RoleAccess" EntitySet="RoleAccesses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Tables_dbo_Account_AccountId" Association="Self.FK_dbo_Tables_dbo_Account_AccountId">
+      <End Role="Account" EntitySet="Accounts" />
+      <End Role="Tables" EntitySet="Tables" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Tags_dbo_Account_AccountId" Association="Self.FK_dbo_Tags_dbo_Account_AccountId">
+      <End Role="Account" EntitySet="Accounts" />
+      <End Role="Tags" EntitySet="Tags" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Users_dbo_Account_Account_Id" Association="Self.FK_dbo_Users_dbo_Account_Account_Id">
+      <End Role="Account" EntitySet="Accounts" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Users_dbo_Account_AccountId" Association="Self.FK_dbo_Users_dbo_Account_AccountId">
+      <End Role="Account" EntitySet="Accounts" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_WaiterTables_dbo_Account_AccountId" Association="Self.FK_dbo_WaiterTables_dbo_Account_AccountId">
+      <End Role="Account" EntitySet="Accounts" />
+      <End Role="WaiterTables" EntitySet="WaiterTables" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AccountSubscriptionDetails_dbo_AccountTypes_AccountTypeId" Association="Self.FK_dbo_AccountSubscriptionDetails_dbo_AccountTypes_AccountTypeId">
+      <End Role="AccountTypes" EntitySet="AccountTypes" />
+      <End Role="AccountSubscriptionDetails" EntitySet="AccountSubscriptionDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AccountSubscriptionDetails_dbo_SubscriptionTypes_SubscriptionTypeId" Association="Self.FK_dbo_AccountSubscriptionDetails_dbo_SubscriptionTypes_SubscriptionTypeId">
+      <End Role="SubscriptionTypes" EntitySet="SubscriptionTypes" />
+      <End Role="AccountSubscriptionDetails" EntitySet="AccountSubscriptionDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AccountTypeFeatures_dbo_AccountTypes_AccountTypeId" Association="Self.FK_dbo_AccountTypeFeatures_dbo_AccountTypes_AccountTypeId">
+      <End Role="AccountTypes" EntitySet="AccountTypes" />
+      <End Role="AccountTypeFeatures" EntitySet="AccountTypeFeatures" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AccountTypeFeatures_dbo_Features_FeatureId" Association="Self.FK_dbo_AccountTypeFeatures_dbo_Features_FeatureId">
+      <End Role="Features" EntitySet="Features" />
+      <End Role="AccountTypeFeatures" EntitySet="AccountTypeFeatures" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Devices_dbo_Branches_BranchId" Association="Self.FK_dbo_Devices_dbo_Branches_BranchId">
+      <End Role="Branches" EntitySet="Branches" />
+      <End Role="Devices" EntitySet="Devices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_ItemCategoriesAvailablities_dbo_Branches_BranchId" Association="Self.FK_dbo_ItemCategoriesAvailablities_dbo_Branches_BranchId">
+      <End Role="Branches" EntitySet="Branches" />
+      <End Role="ItemCategoriesAvailablities" EntitySet="ItemCategoriesAvailablities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_ItemsAvailablities_dbo_Branches_BranchId" Association="Self.FK_dbo_ItemsAvailablities_dbo_Branches_BranchId">
+      <End Role="Branches" EntitySet="Branches" />
+      <End Role="ItemsAvailablities" EntitySet="ItemsAvailablities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Orders_dbo_Branches_BranchId" Association="Self.FK_dbo_Orders_dbo_Branches_BranchId">
+      <End Role="Branches" EntitySet="Branches" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Tables_dbo_Branches_BranchId" Association="Self.FK_dbo_Tables_dbo_Branches_BranchId">
+      <End Role="Branches" EntitySet="Branches" />
+      <End Role="Tables" EntitySet="Tables" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_TagsAvailablities_dbo_Branches_BranchId" Association="Self.FK_dbo_TagsAvailablities_dbo_Branches_BranchId">
+      <End Role="Branches" EntitySet="Branches" />
+      <End Role="TagsAvailablities" EntitySet="TagsAvailablities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Users_dbo_Branches_BranchId" Association="Self.FK_dbo_Users_dbo_Branches_BranchId">
+      <End Role="Branches" EntitySet="Branches" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_WaiterTables_dbo_Branches_BranchId" Association="Self.FK_dbo_WaiterTables_dbo_Branches_BranchId">
+      <End Role="Branches" EntitySet="Branches" />
+      <End Role="WaiterTables" EntitySet="WaiterTables" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Orders_dbo_Customers_CustomerId" Association="Self.FK_dbo_Orders_dbo_Customers_CustomerId">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Tables_dbo_Devices_DeviceID" Association="Self.FK_dbo_Tables_dbo_Devices_DeviceID">
+      <End Role="Devices" EntitySet="Devices" />
+      <End Role="Tables" EntitySet="Tables" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_FeatureSubscriptionPricings_dbo_Features_FeatureId" Association="Self.FK_dbo_FeatureSubscriptionPricings_dbo_Features_FeatureId">
+      <End Role="Features" EntitySet="Features" />
+      <End Role="FeatureSubscriptionPricings" EntitySet="FeatureSubscriptionPricings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_RoleAccess_dbo_Features_FeatureID" Association="Self.FK_dbo_RoleAccess_dbo_Features_FeatureID">
+      <End Role="Features" EntitySet="Features" />
+      <End Role="RoleAccess" EntitySet="RoleAccesses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Feature_RoleFeatureAccess" Association="Self.FK_Feature_RoleFeatureAccess">
+      <End Role="Features" EntitySet="Features" />
+      <End Role="RoleFeatureAccess" EntitySet="RoleFeatureAccesses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_FeatureSubscriptionPricings_dbo_SubscriptionTypes_SubscriptionTypeId" Association="Self.FK_dbo_FeatureSubscriptionPricings_dbo_SubscriptionTypes_SubscriptionTypeId">
+      <End Role="SubscriptionTypes" EntitySet="SubscriptionTypes" />
+      <End Role="FeatureSubscriptionPricings" EntitySet="FeatureSubscriptionPricings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_ItemCategoriesAvailablities_dbo_ItemCategories_ItemCategoryId" Association="Self.FK_dbo_ItemCategoriesAvailablities_dbo_ItemCategories_ItemCategoryId">
+      <End Role="ItemCategories" EntitySet="ItemCategories" />
+      <End Role="ItemCategoriesAvailablities" EntitySet="ItemCategoriesAvailablities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Items_dbo_ItemCategories_ItemCategoryId" Association="Self.FK_dbo_Items_dbo_ItemCategories_ItemCategoryId">
+      <End Role="ItemCategories" EntitySet="ItemCategories" />
+      <End Role="Items" EntitySet="Items" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_ItemsAvailablities_dbo_Items_ItemId" Association="Self.FK_dbo_ItemsAvailablities_dbo_Items_ItemId">
+      <End Role="Items" EntitySet="Items" />
+      <End Role="ItemsAvailablities" EntitySet="ItemsAvailablities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_ItemTags_dbo_Items_ItemID" Association="Self.FK_dbo_ItemTags_dbo_Items_ItemID">
+      <End Role="Items" EntitySet="Items" />
+      <End Role="ItemTags" EntitySet="ItemTags" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_SubOrderDetails_dbo_Items_ItemId" Association="Self.FK_dbo_SubOrderDetails_dbo_Items_ItemId">
+      <End Role="Items" EntitySet="Items" />
+      <End Role="SubOrderDetails" EntitySet="SubOrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_ItemTags_dbo_Tags_TagID" Association="Self.FK_dbo_ItemTags_dbo_Tags_TagID">
+      <End Role="Tags" EntitySet="Tags" />
+      <End Role="ItemTags" EntitySet="ItemTags" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_OrderDetails_dbo_Orders_OrderId" Association="Self.FK_dbo_OrderDetails_dbo_Orders_OrderId">
+      <End Role="Orders" EntitySet="Orders" />
+      <End Role="OrderDetails" EntitySet="OrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_SubOrderDetails_dbo_OrderDetails_SubOrderId" Association="Self.FK_dbo_SubOrderDetails_dbo_OrderDetails_SubOrderId">
+      <End Role="OrderDetails" EntitySet="OrderDetails" />
+      <End Role="SubOrderDetails" EntitySet="SubOrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Orders_dbo_PaymentStatus_PaymentStatusId" Association="Self.FK_dbo_Orders_dbo_PaymentStatus_PaymentStatusId">
+      <End Role="PaymentStatus" EntitySet="PaymentStatus" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_RoleAccess_dbo_Roles_RoleID" Association="Self.FK_dbo_RoleAccess_dbo_Roles_RoleID">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="RoleAccess" EntitySet="RoleAccesses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CreatedUsers_RoleFeatureAccess" Association="Self.FK_CreatedUsers_RoleFeatureAccess">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="RoleFeatureAccess" EntitySet="RoleFeatureAccesses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ModifiedUser_RoleFeatureAccess" Association="Self.FK_ModifiedUser_RoleFeatureAccess">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="RoleFeatureAccess" EntitySet="RoleFeatureAccesses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Role_RoleFeatureAccess" Association="Self.FK_Role_RoleFeatureAccess">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="RoleFeatureAccess" EntitySet="RoleFeatureAccesses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Users_dbo_Roles_RoleId" Association="Self.FK_dbo_Users_dbo_Roles_RoleId">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_WaiterTables_dbo_Tables_TableId" Association="Self.FK_dbo_WaiterTables_dbo_Tables_TableId">
+      <End Role="Tables" EntitySet="Tables" />
+      <End Role="WaiterTables" EntitySet="WaiterTables" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_TagsAvailablities_dbo_Tags_TagId" Association="Self.FK_dbo_TagsAvailablities_dbo_Tags_TagId">
+      <End Role="Tags" EntitySet="Tags" />
+      <End Role="TagsAvailablities" EntitySet="TagsAvailablities" />
+    </AssociationSet>
+    <EntitySet Name="ItemCategoryTags" EntityType="iCafeModel.ItemCategoryTag" />
+    <AssociationSet Name="FK_ItemCategoryTags_Account" Association="iCafeModel.FK_ItemCategoryTags_Account">
+      <End Role="Account" EntitySet="Accounts" />
+      <End Role="ItemCategoryTag" EntitySet="ItemCategoryTags" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ItemCategoryTags_ItemCategories" Association="iCafeModel.FK_ItemCategoryTags_ItemCategories">
+      <End Role="ItemCategory" EntitySet="ItemCategories" />
+      <End Role="ItemCategoryTag" EntitySet="ItemCategoryTags" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ItemCategoryTags_Tags" Association="iCafeModel.FK_ItemCategoryTags_Tags">
+      <End Role="Tag" EntitySet="Tags" />
+      <End Role="ItemCategoryTag" EntitySet="ItemCategoryTags" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="ItemCategoryTag">
+    <Key>
+      <PropertyRef Name="ItemCategoryID" />
+      <PropertyRef Name="TagID" />
+      <PropertyRef Name="AccountID" />
+    </Key>
+    <Property Name="ItemCategoryID" Type="Int32" Nullable="false" />
+    <Property Name="TagID" Type="Int32" Nullable="false" />
+    <Property Name="AccountID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Account" Relationship="iCafeModel.FK_ItemCategoryTags_Account" FromRole="ItemCategoryTag" ToRole="Account" />
+    <NavigationProperty Name="ItemCategory" Relationship="iCafeModel.FK_ItemCategoryTags_ItemCategories" FromRole="ItemCategoryTag" ToRole="ItemCategory" />
+    <NavigationProperty Name="Tag" Relationship="iCafeModel.FK_ItemCategoryTags_Tags" FromRole="ItemCategoryTag" ToRole="Tag" />
+  </EntityType>
+  <Association Name="FK_ItemCategoryTags_Account">
+    <End Type="iCafeModel.Account" Role="Account" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="iCafeModel.ItemCategoryTag" Role="ItemCategoryTag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ItemCategoryTag">
+        <PropertyRef Name="AccountID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ItemCategoryTags_ItemCategories">
+    <End Type="iCafeModel.ItemCategory" Role="ItemCategory" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="iCafeModel.ItemCategoryTag" Role="ItemCategoryTag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ItemCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ItemCategoryTag">
+        <PropertyRef Name="ItemCategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ItemCategoryTags_Tags">
+    <End Type="iCafeModel.Tag" Role="Tag" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="iCafeModel.ItemCategoryTag" Role="ItemCategoryTag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tag">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ItemCategoryTag">
+        <PropertyRef Name="TagID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

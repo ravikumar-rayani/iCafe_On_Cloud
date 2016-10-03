@@ -13,3 +13,15 @@ X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Data\obj\Debug\iCafe.Data.pdb
 X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Data\obj\Debug\iCafe.Data.Migrations.iCafeDB.resources
 X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Data\obj\Debug\iCafe.Data.csproj.GenerateResource.Cache
 X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Data\obj\Debug\iCafe.Data.Migrations.iCafeDB1.resources
+X:\WorkSpace\GitHub\iCafe_On_Cloud\CloudAppServices\iCafe.Data\bin\Debug\iCafe.Data.dll.config
+X:\WorkSpace\GitHub\iCafe_On_Cloud\CloudAppServices\iCafe.Data\bin\Debug\iCafe.Data.dll
+X:\WorkSpace\GitHub\iCafe_On_Cloud\CloudAppServices\iCafe.Data\bin\Debug\iCafe.Data.pdb
+X:\WorkSpace\GitHub\iCafe_On_Cloud\CloudAppServices\iCafe.Data\bin\Debug\EntityFramework.dll
+X:\WorkSpace\GitHub\iCafe_On_Cloud\CloudAppServices\iCafe.Data\bin\Debug\EntityFramework.SqlServer.dll
+X:\WorkSpace\GitHub\iCafe_On_Cloud\CloudAppServices\iCafe.Data\bin\Debug\iCafe.Entity.dll
+X:\WorkSpace\GitHub\iCafe_On_Cloud\CloudAppServices\iCafe.Data\bin\Debug\iCafe.Entity.pdb
+X:\WorkSpace\GitHub\iCafe_On_Cloud\CloudAppServices\iCafe.Data\bin\Debug\EntityFramework.xml
+X:\WorkSpace\GitHub\iCafe_On_Cloud\CloudAppServices\iCafe.Data\bin\Debug\EntityFramework.SqlServer.xml
+X:\WorkSpace\GitHub\iCafe_On_Cloud\CloudAppServices\iCafe.Data\obj\Debug\iCafe.Data.csprojResolveAssemblyReference.cache
+X:\WorkSpace\GitHub\iCafe_On_Cloud\CloudAppServices\iCafe.Data\obj\Debug\iCafe.Data.dll
+X:\WorkSpace\GitHub\iCafe_On_Cloud\CloudAppServices\iCafe.Data\obj\Debug\iCafe.Data.pdb

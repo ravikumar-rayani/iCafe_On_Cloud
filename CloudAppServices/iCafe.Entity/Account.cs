@@ -32,6 +32,7 @@ namespace iCafe.Entity
             this.Users = new HashSet<User>();
             this.Users1 = new HashSet<User>();
             this.WaiterTables = new HashSet<WaiterTable>();
+            this.ItemCategoryTags = new HashSet<ItemCategoryTag>();
         }
     
         public int Id { get; set; }
@@ -79,5 +80,7 @@ namespace iCafe.Entity
         public virtual ICollection<User> Users1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<WaiterTable> WaiterTables { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ItemCategoryTag> ItemCategoryTags { get; set; }
     }
 }

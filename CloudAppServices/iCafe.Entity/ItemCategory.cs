@@ -19,6 +19,7 @@ namespace iCafe.Entity
         {
             this.ItemCategoriesAvailablities = new HashSet<ItemCategoriesAvailablity>();
             this.Items = new HashSet<Item>();
+            this.ItemCategoryTags = new HashSet<ItemCategoryTag>();
         }
     
         public int Id { get; set; }
@@ -37,5 +38,7 @@ namespace iCafe.Entity
         public virtual ICollection<ItemCategoriesAvailablity> ItemCategoriesAvailablities { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Item> Items { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ItemCategoryTag> ItemCategoryTags { get; set; }
     }
 }

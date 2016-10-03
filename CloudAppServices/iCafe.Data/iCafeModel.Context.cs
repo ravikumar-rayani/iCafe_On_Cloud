@@ -27,7 +27,12 @@ namespace iCafe.Entity
         {
             this.Database.Log = s => System.Diagnostics.Debug.WriteLine(s);
         }
-    
+
+        public virtual void Commit()
+        {
+            base.SaveChanges();
+        }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
@@ -60,10 +65,6 @@ namespace iCafe.Entity
         public virtual DbSet<TagsAvailablity> TagsAvailablities { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<WaiterTable> WaiterTables { get; set; }
-
-        public virtual void Commit()
-        {
-            base.SaveChanges();
-        }
+        public virtual DbSet<ItemCategoryTag> ItemCategoryTags { get; set; }
     }
 }
