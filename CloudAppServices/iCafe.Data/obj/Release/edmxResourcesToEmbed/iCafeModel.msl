@@ -205,6 +205,7 @@
     <EntitySetMapping Name="OrderDetails">
       <EntityTypeMapping TypeName="iCafeModel.OrderDetail">
         <MappingFragment StoreEntitySet="OrderDetails">
+          <ScalarProperty Name="OrderStatusId" ColumnName="OrderStatusId" />
           <ScalarProperty Name="SubOrderId" ColumnName="SubOrderId" />
           <ScalarProperty Name="OrderId" ColumnName="OrderId" />
           <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
@@ -389,6 +390,17 @@
           <ScalarProperty Name="AccountID" ColumnName="AccountID" />
           <ScalarProperty Name="TagID" ColumnName="TagID" />
           <ScalarProperty Name="ItemCategoryID" ColumnName="ItemCategoryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderStatus">
+      <EntityTypeMapping TypeName="iCafeModel.OrderStatu">
+        <MappingFragment StoreEntitySet="OrderStatus">
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

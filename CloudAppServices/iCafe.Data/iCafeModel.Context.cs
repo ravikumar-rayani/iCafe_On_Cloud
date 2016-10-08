@@ -32,7 +32,7 @@ namespace iCafe.Entity
         {
             base.SaveChanges();
         }
-
+    
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
@@ -66,5 +66,6 @@ namespace iCafe.Entity
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<WaiterTable> WaiterTables { get; set; }
         public virtual DbSet<ItemCategoryTag> ItemCategoryTags { get; set; }
+        public virtual DbSet<OrderStatu> OrderStatus { get; set; }
     }
 }

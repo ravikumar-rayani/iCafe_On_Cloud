@@ -38,42 +38,6 @@ namespace iCafe.Service.Services.Mobile
            int[] GetTagsbyItem(int itemId);
 
         #endregion
-        
-        #region Add Methods
-
-        void Add(ItemCategory entity);
-
-        void Add(Tag tag);
-        
-        void Add(ItemTag itemTag);
-        
-        void Add(Item item);
-
-        #endregion
-
-        #region Update Methods
-
-        void Update(ItemCategory entity);
-
-        void Update(Tag tag);
-
-        void Update(ItemTag itemTag);
-
-        void Update(Item item);
-
-        #endregion
-
-        #region Delete Methods
-
-        void DeleteItemCategory(int id);
-
-        void DeleteTag(int id);
-        
-        void DeleteItemTag(int itemId, int tagId);
-
-        void DeleteItem(int id);
-
-        #endregion
 
         void Save();
     }

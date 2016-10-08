@@ -12,9 +12,9 @@
     <Property Name="AccoutTypeId" Type="int" Nullable="false" />
     <Property Name="IsMultiBranchesAllowed" Type="bit" Nullable="false" />
     <Property Name="MaxBranches" Type="int" Nullable="false" />
-    <Property Name="EndDate" Type="datetime2" Precision="7" Nullable="false" />
-    <Property Name="CreatedOn" Type="datetime2" Precision="7" Nullable="false" />
-    <Property Name="ModifiedOn" Type="datetime2" Precision="7" />
+    <Property Name="EndDate" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="ModifiedOn" Type="datetime2" Precision="0" />
     <Property Name="CreatedBy" Type="nvarchar(max)" />
     <Property Name="ModifiedBy" Type="nvarchar(max)" />
   </EntityType>
@@ -29,8 +29,8 @@
     <Property Name="SubscriptionTypeId" Type="int" Nullable="false" />
     <Property Name="Price" Type="decimal" Precision="10" Scale="2" Nullable="false" />
     <Property Name="IsPaid" Type="bit" Nullable="false" />
-    <Property Name="CreatedOn" Type="datetime2" Precision="7" Nullable="false" />
-    <Property Name="ModifiedOn" Type="datetime2" Precision="7" />
+    <Property Name="CreatedOn" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="ModifiedOn" Type="datetime2" Precision="0" />
     <Property Name="CreatedBy" Type="nvarchar(max)" />
     <Property Name="Modified" Type="nvarchar(max)" />
   </EntityType>
@@ -41,8 +41,8 @@
     </Key>
     <Property Name="AccountTypeId" Type="int" Nullable="false" />
     <Property Name="FeatureId" Type="int" Nullable="false" />
-    <Property Name="CreatedOn" Type="datetime2" Precision="7" Nullable="false" />
-    <Property Name="ModifiedOn" Type="datetime2" Precision="7" />
+    <Property Name="CreatedOn" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="ModifiedOn" Type="datetime2" Precision="0" />
     <Property Name="CreatedBy" Type="nvarchar(max)" />
     <Property Name="ModifiedBy" Type="nvarchar(max)" />
   </EntityType>
@@ -54,8 +54,8 @@
     <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="IsActive" Type="bit" Nullable="false" />
     <Property Name="Description" Type="nvarchar" MaxLength="255" />
-    <Property Name="CreatedOn" Type="datetime2" Precision="7" Nullable="false" />
-    <Property Name="ModifiedOn" Type="datetime2" Precision="7" />
+    <Property Name="CreatedOn" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="ModifiedOn" Type="datetime2" Precision="0" />
     <Property Name="CreatedBy" Type="nvarchar(max)" />
     <Property Name="ModifiedBy" Type="nvarchar(max)" />
   </EntityType>
@@ -66,8 +66,8 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="nvarchar" MaxLength="4000" Nullable="false" />
     <Property Name="AccountId" Type="int" Nullable="false" />
-    <Property Name="CreatedOn" Type="datetime2" Precision="7" Nullable="false" />
-    <Property Name="ModifiedOn" Type="datetime2" Precision="7" />
+    <Property Name="CreatedOn" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="ModifiedOn" Type="datetime2" Precision="0" />
     <Property Name="CreatedBy" Type="nvarchar(max)" />
     <Property Name="ModifiedBy" Type="nvarchar(max)" />
   </EntityType>
@@ -81,8 +81,8 @@
     <Property Name="EmailId" Type="nvarchar" MaxLength="100" />
     <Property Name="Address" Type="nvarchar" MaxLength="255" />
     <Property Name="Description" Type="nvarchar" MaxLength="255" />
-    <Property Name="CreatedOn" Type="datetime2" Precision="7" Nullable="false" />
-    <Property Name="ModifiedOn" Type="datetime2" Precision="7" />
+    <Property Name="CreatedOn" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="ModifiedOn" Type="datetime2" Precision="0" />
     <Property Name="CreatedBy" Type="nvarchar(max)" />
     <Property Name="ModifiedBy" Type="nvarchar(max)" />
     <Property Name="AccountId" Type="int" Nullable="false" />
@@ -94,8 +94,8 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Description" Type="nvarchar" MaxLength="255" />
-    <Property Name="CreatedOn" Type="datetime2" Precision="7" Nullable="false" />
-    <Property Name="ModifiedOn" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="ModifiedOn" Type="datetime2" Precision="0" Nullable="false" />
     <Property Name="AccountId" Type="int" Nullable="false" />
     <Property Name="BranchId" Type="int" Nullable="false" />
   </EntityType>
@@ -106,8 +106,8 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="IsActive" Type="bit" Nullable="false" />
-    <Property Name="CreatedOn" Type="datetime2" Precision="7" Nullable="false" />
-    <Property Name="ModifiedOn" Type="datetime2" Precision="7" />
+    <Property Name="CreatedOn" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="ModifiedOn" Type="datetime2" Precision="0" />
     <Property Name="Description" Type="nvarchar" MaxLength="255" />
     <Property Name="CreatedBy" Type="nvarchar(max)" />
     <Property Name="ModifiedBy" Type="nvarchar(max)" />
@@ -121,8 +121,8 @@
     <Property Name="FeatureId" Type="int" Nullable="false" />
     <Property Name="Price" Type="decimal" Precision="10" Scale="2" Nullable="false" />
     <Property Name="Discount" Type="decimal" Precision="3" Scale="2" />
-    <Property Name="CreatedOn" Type="datetime2" Precision="7" Nullable="false" />
-    <Property Name="ModifiedOn" Type="datetime2" Precision="7" />
+    <Property Name="CreatedOn" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="ModifiedOn" Type="datetime2" Precision="0" />
     <Property Name="CreatedBy" Type="nvarchar(max)" />
     <Property Name="Modified" Type="nvarchar(max)" />
   </EntityType>
@@ -134,8 +134,8 @@
     <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Discount" Type="decimal" Precision="3" Scale="2" />
     <Property Name="Description" Type="nvarchar" MaxLength="255" />
-    <Property Name="CreatedOn" Type="datetime2" Precision="7" Nullable="false" />
-    <Property Name="ModifiedOn" Type="datetime2" Precision="7" />
+    <Property Name="CreatedOn" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="ModifiedOn" Type="datetime2" Precision="0" />
     <Property Name="CreatedBy" Type="nvarchar(max)" />
     <Property Name="ModifiedBy" Type="nvarchar(max)" />
     <Property Name="AccountId" Type="int" Nullable="false" />
@@ -149,7 +149,7 @@
     <Property Name="ItemCategoryId" Type="int" Nullable="false" />
     <Property Name="BranchId" Type="int" Nullable="false" />
     <Property Name="IsAvailable" Type="bit" Nullable="false" />
-    <Property Name="ModifiedOn" Type="datetime2" Precision="7" />
+    <Property Name="ModifiedOn" Type="datetime2" Precision="0" />
     <Property Name="ModifiedBy" Type="nvarchar(max)" />
   </EntityType>
   <!--Errors Found During Generation:
@@ -176,8 +176,8 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
     <Property Name="Discount" Type="decimal" Precision="3" Scale="2" />
     <Property Name="Ingrediants" Type="nvarchar" MaxLength="255" />
     <Property Name="Description" Type="nvarchar" MaxLength="255" />
-    <Property Name="CreatedOn" Type="datetime2" Precision="7" Nullable="false" />
-    <Property Name="ModifiedOn" Type="datetime2" Precision="7" />
+    <Property Name="CreatedOn" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="ModifiedOn" Type="datetime2" Precision="0" />
     <Property Name="CreatedBy" Type="nvarchar(max)" />
     <Property Name="ModifiedBy" Type="nvarchar(max)" />
     <Property Name="AccountId" Type="int" Nullable="false" />
@@ -192,7 +192,7 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
     <Property Name="ItemId" Type="int" Nullable="false" />
     <Property Name="BranchId" Type="int" Nullable="false" />
     <Property Name="IsAvailable" Type="bit" Nullable="false" />
-    <Property Name="ModifiedOn" Type="datetime2" Precision="7" />
+    <Property Name="ModifiedOn" Type="datetime2" Precision="0" />
     <Property Name="ModifiedBy" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="ItemTags">
@@ -204,8 +204,8 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
     <Property Name="ItemID" Type="int" Nullable="false" />
     <Property Name="TagID" Type="int" Nullable="false" />
     <Property Name="AccountId" Type="int" Nullable="false" />
-    <Property Name="CreatedOn" Type="datetime2" Precision="7" Nullable="false" />
-    <Property Name="ModifiedOn" Type="datetime2" Precision="7" />
+    <Property Name="CreatedOn" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="ModifiedOn" Type="datetime2" Precision="0" />
   </EntityType>
   <EntityType Name="OrderDetails">
     <Key>
@@ -213,8 +213,9 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
     </Key>
     <Property Name="SubOrderId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="OrderId" Type="int" Nullable="false" />
-    <Property Name="CreatedOn" Type="datetime2" Precision="7" Nullable="false" />
-    <Property Name="ModifiedOn" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="OrderStatusId" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="ModifiedOn" Type="datetime2" Precision="0" />
   </EntityType>
   <EntityType Name="Orders">
     <Key>
@@ -227,12 +228,22 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
     <Property Name="RatingOnFood" Type="int" />
     <Property Name="RatingOnService" Type="int" />
     <Property Name="Feedback" Type="nvarchar" MaxLength="255" />
-    <Property Name="CreatedOn" Type="datetime2" Precision="7" Nullable="false" />
-    <Property Name="ModifiedOn" Type="datetime2" Precision="7" />
+    <Property Name="CreatedOn" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="ModifiedOn" Type="datetime2" Precision="0" />
     <Property Name="AccountId" Type="int" Nullable="false" />
     <Property Name="CreatedBy" Type="nvarchar(max)" />
     <Property Name="ModifiedBy" Type="nvarchar(max)" />
     <Property Name="BranchId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OrderStatus">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="255" />
+    <Property Name="CreatedOn" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="ModifiedOn" Type="datetime2" Precision="7" />
   </EntityType>
   <EntityType Name="PaymentStatus">
     <Key>
@@ -241,8 +252,8 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Description" Type="nvarchar" MaxLength="255" Nullable="false" />
-    <Property Name="CreatedOn" Type="datetime2" Precision="7" Nullable="false" />
-    <Property Name="ModifiedOn" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="ModifiedOn" Type="datetime2" Precision="0" Nullable="false" />
   </EntityType>
   <EntityType Name="RoleAccess">
     <Key>
@@ -252,8 +263,8 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
     <Property Name="RoleID" Type="int" Nullable="false" />
     <Property Name="FeatureID" Type="int" Nullable="false" />
     <Property Name="WirtePermissions" Type="bit" Nullable="false" />
-    <Property Name="CreatedOn" Type="datetime2" Precision="7" Nullable="false" />
-    <Property Name="ModifiedOn" Type="datetime2" Precision="7" />
+    <Property Name="CreatedOn" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="ModifiedOn" Type="datetime2" Precision="0" />
     <Property Name="CreatedBy" Type="nvarchar(max)" />
     <Property Name="ModifiedBy" Type="nvarchar(max)" />
     <Property Name="AccountId" Type="int" Nullable="false" />
@@ -281,8 +292,8 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Description" Type="nvarchar(max)" />
-    <Property Name="CreatedOn" Type="datetime2" Precision="7" Nullable="false" />
-    <Property Name="ModifiedOn" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="ModifiedOn" Type="datetime2" Precision="0" Nullable="false" />
   </EntityType>
   <EntityType Name="SubOrderDetails">
     <Key>
@@ -294,8 +305,8 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
     <Property Name="OrderQuantity" Type="int" Nullable="false" />
     <Property Name="OrderType" Type="nvarchar(max)" />
     <Property Name="OrderPreferences" Type="nvarchar(max)" />
-    <Property Name="CreatedOn" Type="datetime2" Precision="7" Nullable="false" />
-    <Property Name="ModifiedOn" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="ModifiedOn" Type="datetime2" Precision="0" Nullable="false" />
   </EntityType>
   <EntityType Name="SubscriptionTypes">
     <Key>
@@ -306,8 +317,8 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
     <Property Name="IsActive" Type="bit" Nullable="false" />
     <Property Name="DurationInDays" Type="int" Nullable="false" />
     <Property Name="Description" Type="nvarchar" MaxLength="255" />
-    <Property Name="CreatedOn" Type="datetime2" Precision="7" Nullable="false" />
-    <Property Name="ModifiedOn" Type="datetime2" Precision="7" />
+    <Property Name="CreatedOn" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="ModifiedOn" Type="datetime2" Precision="0" />
     <Property Name="CreatedBy" Type="nvarchar(max)" />
     <Property Name="ModifiedBy" Type="nvarchar(max)" />
   </EntityType>
@@ -320,8 +331,8 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
     <Property Name="DeviceID" Type="int" Nullable="false" />
     <Property Name="IsMultipleMode" Type="bit" Nullable="false" />
     <Property Name="Description" Type="nvarchar" MaxLength="255" />
-    <Property Name="CreatedOn" Type="datetime2" Precision="7" Nullable="false" />
-    <Property Name="ModifiedOn" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="ModifiedOn" Type="datetime2" Precision="0" Nullable="false" />
     <Property Name="AccountId" Type="int" Nullable="false" />
     <Property Name="BranchId" Type="int" Nullable="false" />
   </EntityType>
@@ -332,8 +343,8 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Comments" Type="nvarchar" MaxLength="255" />
-    <Property Name="CreatedOn" Type="datetime2" Precision="7" Nullable="false" />
-    <Property Name="ModifiedOn" Type="datetime2" Precision="7" />
+    <Property Name="CreatedOn" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="ModifiedOn" Type="datetime2" Precision="0" />
     <Property Name="CreatedBy" Type="nvarchar(max)" />
     <Property Name="ModifiedBy" Type="nvarchar(max)" />
     <Property Name="AccountId" Type="int" Nullable="false" />
@@ -346,7 +357,7 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
     <Property Name="TagId" Type="int" Nullable="false" />
     <Property Name="BranchId" Type="int" Nullable="false" />
     <Property Name="IsAvailable" Type="bit" Nullable="false" />
-    <Property Name="ModifiedOn" Type="datetime2" Precision="7" />
+    <Property Name="ModifiedOn" Type="datetime2" Precision="0" />
     <Property Name="ModifiedBy" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="Users">
@@ -377,8 +388,8 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
     <Property Name="BranchId" Type="int" Nullable="false" />
     <Property Name="Waiter" Type="nvarchar" MaxLength="20" Nullable="false" />
     <Property Name="TableId" Type="int" Nullable="false" />
-    <Property Name="CreatedOn" Type="datetime2" Precision="7" Nullable="false" />
-    <Property Name="ModifiedOn" Type="datetime2" Precision="7" />
+    <Property Name="CreatedOn" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="ModifiedOn" Type="datetime2" Precision="0" />
     <Property Name="CreatedBy" Type="nvarchar(max)" />
     <Property Name="ModifiedBy" Type="nvarchar(max)" />
   </EntityType>
@@ -1072,6 +1083,18 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_OrderDetails_OrderStatus">
+    <End Role="OrderStatus" Type="Self.OrderStatus" Multiplicity="1" />
+    <End Role="OrderDetails" Type="Self.OrderDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OrderStatus">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrderDetails">
+        <PropertyRef Name="OrderStatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Role_RoleFeatureAccess">
     <End Role="Roles" Type="Self.Roles" Multiplicity="1">
       <OnDelete Action="Cascade" />
@@ -1103,6 +1126,7 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
     <EntitySet Name="ItemTags" EntityType="Self.ItemTags" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="OrderDetails" EntityType="Self.OrderDetails" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrderStatus" EntityType="Self.OrderStatus" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PaymentStatus" EntityType="Self.PaymentStatus" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="RoleAccess" EntityType="Self.RoleAccess" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="RoleFeatureAccess" EntityType="Self.RoleFeatureAccess" Schema="dbo" store:Type="Tables" />
@@ -1328,6 +1352,10 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
     <AssociationSet Name="FK_ModifiedUser_RoleFeatureAccess" Association="Self.FK_ModifiedUser_RoleFeatureAccess">
       <End Role="Users" EntitySet="Users" />
       <End Role="RoleFeatureAccess" EntitySet="RoleFeatureAccess" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderDetails_OrderStatus" Association="Self.FK_OrderDetails_OrderStatus">
+      <End Role="OrderStatus" EntitySet="OrderStatus" />
+      <End Role="OrderDetails" EntitySet="OrderDetails" />
     </AssociationSet>
     <AssociationSet Name="FK_Role_RoleFeatureAccess" Association="Self.FK_Role_RoleFeatureAccess">
       <End Role="Roles" EntitySet="Roles" />

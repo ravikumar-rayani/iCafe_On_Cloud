@@ -86,6 +86,8 @@
         <AssociationConnector Association="iCafeModel.FK_ItemCategoryTags_Account" />
         <AssociationConnector Association="iCafeModel.FK_ItemCategoryTags_ItemCategories" />
         <AssociationConnector Association="iCafeModel.FK_ItemCategoryTags_Tags" />
+        <EntityTypeShape EntityType="iCafeModel.OrderStatu" Width="1.5" PointX="12.75" PointY="39" />
+        <AssociationConnector Association="iCafeModel.FK_OrderDetails_OrderStatus" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

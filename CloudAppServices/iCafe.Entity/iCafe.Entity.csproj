@@ -111,6 +111,9 @@
     <Compile Include="OrderDetail.cs">
       <DependentUpon>iCafeModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="OrderStatu.cs">
+      <DependentUpon>iCafeModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="PaymentStatu.cs">
       <DependentUpon>iCafeModel.tt</DependentUpon>
     </Compile>

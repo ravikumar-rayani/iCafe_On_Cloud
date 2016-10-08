@@ -49,6 +49,7 @@ namespace iCafe.Service.Controllers
         }
 
         [Route("AllItemCategories")]
+        [Route("ItemCategories")]
         public IEnumerable<ItemCategoryClientDTO> GetItemCategories()
         {
             var categories = _service.GetAllItemCategories();
@@ -56,6 +57,7 @@ namespace iCafe.Service.Controllers
         }
 
         [Route("AllTags")]
+        [Route("Tags")]
         public IEnumerable<TagClientDTO> GetTags()
         {
             var tags = _service.GetAllTags();
