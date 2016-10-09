@@ -18,6 +18,9 @@ namespace iCafe.Web
             bundles.Add(new ScriptBundle("~/bundles/bootstrapscripts").Include(                
                       "~/plugins/bootstrap/js/bootstrap.min.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/Knockoutjsscripts").Include(
+                      "~/plugins/Knockoutjs/knockout-3.4.0.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/flotscripts").Include(
                       "~/plugins/flot/jquery.flot.min.js"
                     , "~/plugins/flot/jquery.flot.time.min.js"

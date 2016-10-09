@@ -10,9 +10,9 @@ namespace iCafe.Web.Controllers
     {
         //
         // GET: /Base/
-        public ActionResult Index()
-        {
-            return View();
-        }
+        //public ActionResult Index()
+        //{
+        //    return View();
+        //}
 	}
 }

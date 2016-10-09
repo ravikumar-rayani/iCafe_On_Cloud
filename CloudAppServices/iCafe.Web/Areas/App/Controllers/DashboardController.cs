@@ -4,15 +4,17 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace iCafe.Web.Controllers
+namespace iCafe.Web.Areas.App.Controllers
 {
-    public class OrdersController : BaseController
+    public class DashboardController : Controller
     {
         //
-        // GET: /Orders/
+        // GET: /App/Dashboard/
+
         public ActionResult Index()
         {
             return View();
         }
-	}
+
+    }
 }

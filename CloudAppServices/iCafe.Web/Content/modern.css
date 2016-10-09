@@ -366,7 +366,6 @@ h5 {
 
 
 /* Switchery */
-
 .switch-sm .switchery {
     height: 15px;
     width: 25px;
@@ -2026,65 +2025,6 @@ ol.linenums {
     border-bottom-color: #ebebeb;
 }
 
-
-/* Tables */
-
-/*.table > tbody > tr > td, 
-.table > tbody > tr > th,
-.table > tfoot > tr > td, 
-.table > tfoot > tr > th,
-.table > thead > tr > td,
-.table > thead > tr > th,
-.table td {
-    padding: 15px!important;
-}
-
-.dataTables_wrapper .dataTables_filter input,
-.dataTables_wrapper .dataTables_length select {
-    background: #fff;
-    border-radius: 0;
-    border: 1px solid #dce1e4;
-    box-shadow: none!important;
-    font-size: 13px;
-    padding: 6px 10px!important;
-    -webkit-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
-}
-
-.dataTables_wrapper .dataTables_filter input:focus {
-    border: 1px solid #bdc5c9;
-    background: #fff;
-    outline: 0;
-}
-
-.dataTables_wrapper .dataTables_length select:focus {
-    outline: 0;
-}
-
-.dataTables_wrapper .dataTables_paginate .paginate_button.current, 
-.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
-    color: #5f5f5f!important;
-    border: 1px solid #ebebeb;
-    background: #f1f1f1!important;
-}
-
-.dataTables_wrapper .dataTables_paginate .paginate_button:hover,
-.dataTables_wrapper .dataTables_paginate .paginate_button:active,
-.dataTables_wrapper .dataTables_paginate .paginate_button:focus {
-    color: #5f5f5f!important;
-    border: 1px solid transparent;
-    background: #f7f7f7!important;
-    box-shadow: none;
-}
-
-tr.group,
-tr.group:hover {
-    background-color: #ddd !important;
-}*/
-
-
 /* Wysiwyg */
 
 .note-editor {
@@ -2161,8 +2101,7 @@ tr.group:hover {
 
 
 /* Date Picker */
-
-.datepicker {
+/*.datepicker {
     padding: 10px!important;
     border: 1px solid #e0e0e0!important;
     border-radius: 0!important;
@@ -2225,7 +2164,7 @@ tr.group:hover {
     color: #ffffff;
     background-color: #7a6fbe;
     border: 0;
-}
+}*/
 
 
 /* Colorpicker */

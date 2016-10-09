@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using iCafe.Web.ViewModels;
+using iCafe.Web.Areas.App.ViewModels;
+using iCafe.Web.Controllers;
 
-namespace iCafe.Web.Controllers
+namespace iCafe.Web.Areas.App.Controllers
 {
     public class MenuController : BaseController
     {
@@ -50,7 +51,6 @@ namespace iCafe.Web.Controllers
                     new Tag(){ ID = 8, Title = "Chinese", Description = "Chinese dishes", Discount = 5.50f, CreatedOn = DateTime.Now.Date.AddDays(-5), IsAvailable = false },
                     new Tag(){ ID = 9, Title = "South Indain", Description = "South Indain items", Discount = 0.00f, CreatedOn = DateTime.Now.Date.AddDays(-5), IsAvailable = true },
                     new Tag(){ ID = 10, Title = "North Indain", Description = "North Indain", Discount = 0.00f, CreatedOn = DateTime.Now.Date.AddDays(-5), IsAvailable = false },
-                    new Tag(){ ID = 11, Title = "egg", Description = "eggetarain items", Discount = 0.00f, CreatedOn = DateTime.Now.Date.AddDays(-5), IsAvailable = true }
                 
                 }
             };

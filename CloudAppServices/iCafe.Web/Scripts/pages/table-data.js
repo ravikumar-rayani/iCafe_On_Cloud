@@ -75,7 +75,7 @@ $(document).ready(function() {
     }   
     
     //turn to inline mode
-    $.fn.editable.defaults.mode = 'inline';
+    $.fn.editable.defaults.mode = 'popup'; //'inline';
     
     //editables 
     $('#example-editable td a').editable({
@@ -83,7 +83,6 @@ $(document).ready(function() {
            type: 'text',
            pk: 1,
            name: 'username',
-           title: 'Enter username'
     });
     
     // Datatables
@@ -155,4 +154,5 @@ $(document).ready(function() {
         orientation: "top auto",
         autoclose: true
     });
+        
 });

@@ -8,7 +8,7 @@
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{7C8EDF23-73A8-4117-AF9A-43F24B99A692}</ProjectGuid>
-    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>iCafe.Web</RootNamespace>
@@ -994,6 +994,8 @@
     <Content Include="Scripts\datatables\jquery.dataTables.js" />
     <Content Include="Scripts\datatables\jquery.dataTables.min.js" />
     <Content Include="Scripts\datatables\jquery.dataTables.yadcf.js" />
+    <Content Include="Plugins\Knockoutjs\knockout-3.4.0.debug.js" />
+    <Content Include="Plugins\Knockoutjs\knockout-3.4.0.js" />
     <Content Include="Scripts\login\prefixfree.min.js" />
     <Content Include="Scripts\modern.js" />
     <Content Include="Scripts\modern.min.js" />
@@ -1024,33 +1026,36 @@
     <Content Include="Scripts\pages\table-data.js" />
     <Content Include="Scripts\pages\timeline.js" />
     <Content Include="Scripts\ultrascripts.js" />
+    <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\App\AppAreaRegistration.cs" />
+    <Compile Include="Areas\App\Controllers\DashboardController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\LoginController.cs" />
-    <Compile Include="Controllers\MenuController.cs" />
-    <Compile Include="Controllers\OrdersController.cs" />
+    <Compile Include="Areas\App\Controllers\LoginController.cs" />
+    <Compile Include="Areas\App\Controllers\MenuController.cs" />
+    <Compile Include="Areas\App\Controllers\OrdersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\CategoriesVM.cs" />
-    <Compile Include="ViewModels\ItemsVM.cs" />
-    <Compile Include="ViewModels\TagsVM.cs" />
+    <Compile Include="Areas\App\ViewModels\CategoriesVM.cs" />
+    <Compile Include="Areas\App\ViewModels\ItemsVM.cs" />
+    <Compile Include="Areas\App\ViewModels\TagsVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\App\Views\Shared\_Layout.cshtml" />
     <Content Include="Views\_ViewStart.cshtml">
       <SubType>Code</SubType>
     </Content>
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Areas\App\Views\Dashboard\Index.cshtml" />
     <Content Include="Plugins\3d-bold-navigation\js\.DS_Store" />
     <Content Include="Plugins\3d-bold-navigation\partials\_layout.scss" />
     <Content Include="Plugins\3d-bold-navigation\partials\_mixins.scss" />
@@ -1126,9 +1131,9 @@
     <Content Include="Plugins\weather-icons-master\weather-icons\weather-icons.min.less" />
     <Content Include="Scripts\pages\ajax_children.json" />
     <Content Include="Scripts\pages\ajax_roots.json" />
-    <Content Include="Views\Login\Index.cshtml" />
-    <Content Include="Views\Menu\Items.cshtml" />
-    <Content Include="Views\Menu\Categories.cshtml" />
+    <Content Include="Areas\App\Views\Login\Index.cshtml" />
+    <Content Include="Areas\App\Views\Menu\Items.cshtml" />
+    <Content Include="Areas\App\Views\Menu\Categories.cshtml" />
     <Content Include="Plugins\datatables\extensions\AutoFill\Readme.md" />
     <Content Include="Plugins\datatables\extensions\Buttons\css\common.scss" />
     <Content Include="Plugins\datatables\extensions\Buttons\css\mixins.scss" />
@@ -1149,9 +1154,13 @@
     <Content Include="Plugins\datatables\extensions\TableTools\images\psd\file_types.psd" />
     <Content Include="Plugins\datatables\extensions\TableTools\images\psd\printer.psd" />
     <Content Include="Plugins\datatables\images\Sorting icons.psd" />
-    <Content Include="Views\Orders\Index.cshtml" />
-    <Content Include="Views\Menu\Tags.cshtml" />
-    <Content Include="Views\Login\Test.cshtml" />
+    <Content Include="Areas\App\Views\Orders\Index.cshtml" />
+    <Content Include="Areas\App\Views\Menu\Tags.cshtml" />
+    <Content Include="Areas\App\Views\Login\Test.cshtml" />
+    <Content Include="Areas\App\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\App\Views\web.config" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1161,6 +1170,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\App\Models\" />
     <Folder Include="Models\" />
     <Folder Include="Plugins\datatables\extensions\FixedColumns\examples\integration\" />
     <Folder Include="Views\Base\" />

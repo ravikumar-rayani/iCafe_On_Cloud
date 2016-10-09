@@ -49,7 +49,7 @@ $( document ).ready(function() {
     var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
     
     elems.forEach(function(html) {
-        var switchery = new Switchery(html, { color: '#23B7E5' });
+        var switchery = new Switchery(html, { color: '#22baa0' }); //new Switchery(html, { color: '#23B7E5' });
     });
     
     // Element Blocking

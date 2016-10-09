@@ -1,0 +1,253 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - iCafeApp</title>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+    @Styles.Render("~/Content/bootstrapstyles")
+    @Styles.Render("~/Content/bootstrapextendstyles")
+    @Styles.Render("~/Content/otherpluginstyles")
+    @Styles.Render("~/Content/gallerystyles")
+    @Styles.Render("~/Content/datatablestyles")
+    @Styles.Render("~/Content/imagegridstyles")
+    @Styles.Render("~/Content/appstyles")
+    <link href="~/Content/themes/green.css" class="theme-color" rel="stylesheet" type="text/css"/>
+</head>
+<body class="page-header-fixed">
+        <div class="overlay"></div>
+        <form class="search-form" action="#" method="GET">
+            <div class="input-group">
+                <input type="text" name="search" class="form-control search-input" placeholder="Search...">
+                <span class="input-group-btn">
+                    <button class="btn btn-default close-search waves-effect waves-button waves-classic" type="button"><i class="fa fa-times"></i></button>
+                </span>
+            </div><!-- Input Group -->
+        </form><!-- Search Form -->
+        <div class="page-content content-wrap">
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <div class="sidebar-pusher">
+                        <a href="javascript:void(0);" class="waves-effect waves-button waves-classic push-sidebar">
+                            <i class="fa fa-bars"></i>
+                        </a>
+                    </div>
+                    <div class="logo-box">
+                        <a href="@Url.Action("Index", "Home")" class="logo-text"><span>iCafe</span></a>
+                    </div><!-- Logo Box -->
+                    <div class="search-button">
+                        <a href="javascript:void(0);" class="waves-effect waves-button waves-classic show-search"><i class="fa fa-search"></i></a>
+                    </div>
+                    <div class="topmenu-outer">
+                        <div class="top-menu">
+                            <ul class="nav navbar-nav navbar-left">
+                                <li>		
+                                    <a href="javascript:void(0);" class="waves-effect waves-button waves-classic sidebar-toggle"><i class="fa fa-bars"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#cd-nav" class="waves-effect waves-button waves-classic cd-nav-trigger"><i class="fa fa-binoculars"></i></a>
+                                </li>
+                                <li>		
+                                    <a href="javascript:void(0);" class="waves-effect waves-button waves-classic toggle-fullscreen"><i class="fa fa-expand"></i></a>
+                                </li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li>	
+                                    <a href="javascript:void(0);" class="waves-effect waves-button waves-classic show-search"><i class="fa fa-search"></i></a>
+                                </li>                                
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle waves-effect waves-button waves-classic" data-toggle="dropdown">
+                                        <span class="user-name">Ravi<i class="fa fa-angle-down"></i></span>
+                                        <img class="img-circle avatar" src="~/Images/profile-icon.png" width="40" height="40" alt="">
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-list" role="menu">
+                                        <li role="presentation"><a href="profile.html"><i class="fa fa-user"></i>Profile</a></li>
+                                        <li role="presentation"><a href="calendar.html"><i class="fa fa-calendar"></i>Calendar</a></li>
+                                        <li role="presentation"><a href="inbox.html"><i class="fa fa-envelope"></i>Inbox<span class="badge badge-success pull-right">4</span></a></li>
+                                        <li role="presentation" class="divider"></li>
+                                        <li role="presentation"><a href="lock-screen.html"><i class="fa fa-lock"></i>Lock screen</a></li>
+                                        <li role="presentation"><a href="login.html"><i class="fa fa-sign-out m-r-xs"></i>Log out</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="login.html" class="log-out waves-effect waves-button waves-classic">
+                                        <span><i class="fa fa-sign-out m-r-xs"></i>Log out</span>
+                                    </a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle waves-effect waves-button waves-classic" data-toggle="dropdown">
+                                        <i class="fa fa-cog"></i>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-md dropdown-list theme-settings" role="menu">
+                                        <li class="li-group">
+                                            <ul class="list-unstyled">
+                                                <li class="no-link" role="presentation">
+                                                    Fixed Header 
+                                                    <div class="ios-switch pull-right switch-md">
+                                                        <input type="checkbox" class="js-switch pull-right fixed-header-check" checked>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="li-group">
+                                            <ul class="list-unstyled">
+                                                <li class="no-link" role="presentation">
+                                                    Fixed Sidebar 
+                                                    <div class="ios-switch pull-right switch-md">
+                                                        <input type="checkbox" class="js-switch pull-right fixed-sidebar-check">
+                                                    </div>
+                                                </li>
+                                                <li class="no-link" role="presentation">
+                                                    Horizontal bar 
+                                                    <div class="ios-switch pull-right switch-md">
+                                                        <input type="checkbox" class="js-switch pull-right horizontal-bar-check">
+                                                    </div>
+                                                </li>
+                                                <li class="no-link" role="presentation">
+                                                    Toggle Sidebar 
+                                                    <div class="ios-switch pull-right switch-md">
+                                                        <input type="checkbox" class="js-switch pull-right toggle-sidebar-check">
+                                                    </div>
+                                                </li>
+                                                <li class="no-link" role="presentation">
+                                                    Compact Menu 
+                                                    <div class="ios-switch pull-right switch-md">
+                                                        <input type="checkbox" class="js-switch pull-right compact-menu-check">
+                                                    </div>
+                                                </li>
+                                                <li class="no-link" role="presentation">
+                                                    Hover Menu 
+                                                    <div class="ios-switch pull-right switch-md">
+                                                        <input type="checkbox" class="js-switch pull-right hover-menu-check">
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="li-group">
+                                            <ul class="list-unstyled">
+                                                <li class="no-link" role="presentation">
+                                                    Boxed Layout 
+                                                    <div class="ios-switch pull-right switch-md">
+                                                        <input type="checkbox" class="js-switch pull-right boxed-layout-check">
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="li-group">
+                                            <ul class="list-unstyled">
+                                                <li class="no-link" role="presentation">
+                                                    Choose Theme Color
+                                                    <div class="color-switcher">
+                                                        <a class="colorbox color-blue" href="?theme=blue" title="Blue Theme" data-css="blue"></a>
+                                                        <a class="colorbox color-green" href="?theme=green" title="Green Theme" data-css="green"></a>
+                                                        <a class="colorbox color-red" href="?theme=red" title="Red Theme" data-css="red"></a>
+                                                        <a class="colorbox color-white" href="?theme=white" title="White Theme" data-css="white"></a>
+                                                        <a class="colorbox color-purple" href="?theme=purple" title="purple Theme" data-css="purple"></a>
+                                                        <a class="colorbox color-dark" href="?theme=dark" title="Dark Theme" data-css="dark"></a>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="no-link"><button class="btn btn-default reset-options">Reset Options</button></li>
+                                    </ul>
+                                </li>
+                            </ul><!-- Nav -->
+                        </div><!-- Top Menu -->
+                    </div>
+                </div>
+            </div><!-- Navbar -->
+            <div class="page-sidebar sidebar">
+                <div class="page-sidebar-inner slimscroll">
+                    <div class="sidebar-header">
+                        <div class="sidebar-profile">
+                            <a href="javascript:void(0);" id="profile-menu-link">
+                                <div class="sidebar-profile-image">
+                                    <img src="~/images/profile-icon.png" class="img-circle img-responsive" alt="">
+                                </div>
+                                <div class="sidebar-profile-details">
+                                    <span>Ravi Kumar<br><small>Developer</small></span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <ul class="menu accordion-menu">
+                        <li id="li_Dashboard"><a href="@Url.Action("Index", "Home")" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-home"></span><p>Dashboard</p></a></li>
+                        <li id="li_Menu" class="droplink"><a href="#" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-cutlery"></span><p>Menu</p><span class="arrow"></span></a>
+                            <ul class="sub-menu">
+                                <li id="li_Categories">@Html.ActionLink("Categories", "Categories", "Menu")</li>
+                                <li id="li_Tags">@Html.ActionLink("Tags", "Tags", "Menu")</li>
+                                <li id="li_Items">@Html.ActionLink("Items", "Items", "Menu")</li>
+                            </ul>
+                        </li>
+                        <li id="li_Orders" class="droplink"><a href="#" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-shopping-cart"></span><p>Orders</p><span class="arrow"></span></a>
+                            <ul class="sub-menu">
+                                <li id="li_InProgress">@Html.ActionLink("InProgress", "Index", "Orders")</li>
+                                <li id="li_Historical">@Html.ActionLink("Historical", "Historical", "Orders")</li>
+                            </ul>
+                        </li>
+                        <li class="droplink"><a href="#" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-user"></span><p>Users</p><span class="arrow"></span></a>
+                            <ul class="sub-menu">
+                                <li>@Html.ActionLink("Roles", "Roles", "UserAccount")</li>
+                                <li>@Html.ActionLink("Users", "Users", "UserAccount")</li>
+                            </ul>
+                        </li>                        
+                        <li class="droplink"><a href="#" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-wrench"></span><p>Configure</p><span class="arrow"></span></a>
+                            <ul class="sub-menu">
+                                <li>@Html.ActionLink("Tables", "Tables", "Configure")</li>
+                                <li>@Html.ActionLink("Devices", "Devices", "Configure")</li>
+                            </ul>
+                        </li>
+                        <li><a href="@Url.Action("Index", "Customers")" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-user"></span><p>Customers</p></a></li>                          
+                        <li><a href="@Url.Action("Index", "Profile")" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-user"></span><p>Profile</p></a></li>  
+                        <li><a href="@Url.Action("Index", "Reports")" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-stats"></span><p>Reports</p></a></li>  
+                        @*<li class="droplink"><a href="#" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-stats"></span><p>Reports</p><span class="arrow"></span></a>
+                            <ul class="sub-menu">
+                                <li>@Html.ActionLink("Sales", "Reports", "Reports")</li>
+                                <li>@Html.ActionLink("Accounts", "Reports", "Reports")</li>
+                            </ul>
+                        </li>    *@                    
+                    </ul>
+                </div><!-- Page Sidebar Inner -->
+            </div><!-- Page Sidebar -->
+            <div class="page-inner">
+                <div class="page-title">
+                    <h3>@ViewBag.Title</h3>
+                    <div class="page-breadcrumb">
+                        <ol class="breadcrumb">
+                            <li><a href="index.html">Home</a></li>
+                            <li class="active">@ViewBag.Title</li>
+                        </ol>
+                    </div>
+                </div>
+                <script type="text/javascript" src="~/Plugins/jquery/jquery-2.1.3.min.js"></script>
+                @RenderBody()                
+                <div class="page-footer">
+                    <p class="no-s">2016 &copy; iCafe.</p>
+                </div>
+            </div><!-- Page Inner -->
+        </div><!-- Page Content -->
+        <nav class="cd-nav-container" id="cd-nav">
+            <header>
+                <h3>On Track</h3>
+                <a href="#0" class="cd-close-nav">Close</a>
+            </header>            
+        </nav>
+        <div class="cd-overlay"></div>
+    
+    
+    @Scripts.Render("~/bundles/jqueryscripts")     
+    @Scripts.Render("~/bundles/bootstrapscripts")  
+    @Scripts.Render("~/bundles/Knockoutjsscripts")
+    @Scripts.Render("~/bundles/datatablescripts")
+    @Scripts.Render("~/bundles/flotscripts")
+    @Scripts.Render("~/bundles/offcanvasscripts")
+    @Scripts.Render("~/bundles/3d-boldscripts")
+    @Scripts.Render("~/bundles/otherpluginscripts")
+    @Scripts.Render("~/bundles/galleryscripts")
+    @Scripts.Render("~/bundles/imagegridscripts")
+    @Scripts.Render("~/bundles/appscripts")
+    @RenderSection("pagescripts", required: false)
+    @RenderSection("pagestyles",false)
+    
+</body>
+</html>
