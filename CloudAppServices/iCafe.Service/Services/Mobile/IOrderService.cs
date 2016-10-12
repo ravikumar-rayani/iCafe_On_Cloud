@@ -24,11 +24,13 @@ namespace iCafe.Service.Services.Mobile
 
         #endregion
 
-        #region Add Methods
+        #region Post Methods
 
-        void Add(Order entity);
+        Task<OrderClientDTO> PlaceOrder(int userId, int customerId, int orderId, OrderItem[] items);
 
-        void Add(OrderDetail entity);
+        int Add(Order entity);
+
+        int Add(OrderDetail entity);
 
         void Add(SubOrderDetail entity);
 

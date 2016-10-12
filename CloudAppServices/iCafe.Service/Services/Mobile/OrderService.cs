@@ -163,16 +163,21 @@ namespace iCafe.Service.Services.Mobile
         }
         #endregion
 
-        #region Add Methods
+        #region Post Methods
 
-        public void Add(Order entity)
+        public async Task<OrderClientDTO> PlaceOrder(int userId, int customerId, int orderId, OrderItem[] items)
         {
-
+            return new OrderClientDTO();
         }
 
-        public void Add(OrderDetail entity)
+        public int Add(Order entity)
         {
+            return orderRepository.AutoAdd(entity).Id;
+        }
 
+        public int Add(OrderDetail entity)
+        {
+            return orderDetailRepository.AutoAdd(entity).SubOrderId;
         }
 
         public void Add(SubOrderDetail entity)

@@ -30,7 +30,7 @@ namespace iCafe.Entity
         public System.DateTime CreatedOn { get; set; }
         public Nullable<System.DateTime> ModifiedOn { get; set; }
         public int AccountId { get; set; }
-        public Nullable<int> CreatedBy { get; set; }
+        public int CreatedBy { get; set; }
         public Nullable<int> ModifiedBy { get; set; }
         public int BranchId { get; set; }
     

@@ -38,4 +38,19 @@ namespace iCafe.DTO.Client
         public int UserId { get; set; }
         public int OrderId { get; set; }
     }
+
+    public class OrderingParameters
+    {
+        public int CustomerId { get; set; }
+        public int UserId { get; set; }
+        public int OrderId { get; set; }
+        public OrderItem[] items { get; set; }
+
+    }
+
+    public class OrderItem
+    {
+        public int ItemId { get; set; }
+        public int Quantity { get; set; }
+    }
 }

@@ -78,5 +78,28 @@ namespace iCafe.Service.Controllers
             return Ok(result);
         }
         #endregion
+
+        #region Post Apis
+
+        [ResponseType(typeof(OrderClientDTO))]
+        [HttpPost]
+        [Route("PlaceOrder")]
+        /*sample parameter:{"CustomerId":"1","UserId":"2","OrderId":3}*/
+        public async Task<IHttpActionResult> OrderRequest([FromBody] OrderingParameters parameters)
+        {
+            if (parameters != null)
+            {
+                var result = await _service.PlaceOrder(parameters.CustomerId, parameters.UserId, parameters.OrderId, parameters.items);
+                if (result == null)
+                {
+                    NotFound();
+                }
+                return Ok(result);
+            }
+            return BadRequest();
+        }
+
+
+        #endregion
     }
 }
