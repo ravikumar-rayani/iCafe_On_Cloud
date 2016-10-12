@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using iCafe.Data.Infrastructure;
+using iCafe.DTO.Client;
 using iCafe.Entity;
 using iCafe.Repository.Interfaces;
 
@@ -11,11 +12,11 @@ namespace iCafe.Service.Services.Mobile
 {
     public interface IUserService
     {
-        #region Get Methods
+        #region Validation Methods
 
         string RegisterDevice(string username, string password, string DeviceUniqueId);
 
-        string Signin(string username, string password);
+        Task<int> Authenticate(string username, string password);
  
         #endregion
 
@@ -26,6 +27,9 @@ namespace iCafe.Service.Services.Mobile
         IEnumerable<Role> GetRoles();
         
         IEnumerable<Feature> GetFeatures();
+
+        Task<WaiterInfoClientDTO> GetWaiterInfo(int waiterId);
+
         //IEnumerable<User> GetUsersByRoleId();
         //User GetUserById();
         //User GetUserFeaturesByID();
@@ -61,7 +65,7 @@ namespace iCafe.Service.Services.Mobile
 
         void DeleteRole(int id);
 
-        void DeleteUser(string Username);
+        void DeleteUser(int usreId);
 
         void DeleteRoleAccess(int roleId, int featureId);
 

@@ -40,6 +40,11 @@ namespace iCafe.Data.Infrastructure
             dbSet.Add(entity);
         }
 
+        public virtual T AutoAdd(T entity)
+        {
+            return dbSet.Add(entity);
+        }
+
         public virtual void Update(T entity)
         {
             dbSet.Attach(entity);
@@ -51,7 +56,7 @@ namespace iCafe.Data.Infrastructure
             dbSet.Remove(entity);
         }
 
-        public virtual void Delete(P id)
+        public virtual void Delete(int id)
         {
             dbSet.Remove(dbSet.Find(id));
         }

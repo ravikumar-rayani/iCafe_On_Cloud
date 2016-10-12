@@ -6,6 +6,8 @@ using iCafe.Entity;
 using iCafe.Data.Infrastructure;
 using iCafe.Repository.Interfaces;
 using iCafe.Repository.Classes;
+using System.Threading.Tasks;
+using iCafe.DTO.Client;
 
 namespace iCafe.Service.Services.Mobile
 {
@@ -15,6 +17,7 @@ namespace iCafe.Service.Services.Mobile
         private readonly IRoleRepository roleRepository;
         private readonly IFeatureRepository featureRepository;
         private readonly IRoleAccessRepository roleAccessRepository;
+        private readonly IWaiterTableRepository waiterTableRepository;
         private readonly IUnitOfWork unitOfWork;
 
         public UserService()
@@ -24,6 +27,7 @@ namespace iCafe.Service.Services.Mobile
             this.roleRepository = new RoleRepository(dbFactory);
             this.featureRepository = new FeatureRepository(dbFactory);
             this.roleAccessRepository = new RoleAccessRepository(dbFactory);
+            this.waiterTableRepository = new WaiterTableRepository(dbFactory);
             this.unitOfWork = new UnitOfWork(dbFactory);
         }
 
@@ -31,7 +35,7 @@ namespace iCafe.Service.Services.Mobile
 
         public string RegisterDevice(string username, string password, string DeviceUniqueId)
         {
-            User user = userRepository.GetById(username);
+            User user = userRepository.GetByUserName(username);
             if (user != null)
             {
                 if (user.Password.Equals(password) && user.RoleId == 1)
@@ -42,17 +46,17 @@ namespace iCafe.Service.Services.Mobile
             return "Connection failed";
         }
 
-        public string Signin(string username, string password)
+        public async Task<int> Authenticate(string username, string password)
         {
-            User user = userRepository.GetById(username);
+            User user = userRepository.GetByUserName(username);
             if (user != null)
             {
                 if (user.Password.Equals(password))
                 {
-                    return roleRepository.GetById(user.RoleId).Name;
+                    return user.RoleId; //roleRepository.GetById(user.RoleId).Name;
                 }
             }
-            return "Login failed";
+            return -1;
         }
 
         #endregion
@@ -70,6 +74,20 @@ namespace iCafe.Service.Services.Mobile
         public IEnumerable<Feature> GetFeatures()
         {
             return featureRepository.GetAll();
+        }
+
+        public async Task<WaiterInfoClientDTO> GetWaiterInfo(int waiterId)
+        {
+            WaiterInfoClientDTO waiterInfo = null;
+            if (userRepository.GetById(waiterId).RoleId.Equals(5))
+            {
+                waiterInfo = new WaiterInfoClientDTO();
+                waiterInfo.Name = userRepository.GetById(waiterId).FirstName;
+                waiterInfo.ImagePath = ""; // userRepository.GetById(username).Imagepath;
+                if (waiterTableRepository.Any(w => w.WaiterId.Equals(waiterId)))
+                    waiterInfo.assignedTables = waiterTableRepository.GetMany(w => w.WaiterId.Equals(waiterId)).Select(t => t.TableId).ToArray();
+            }
+            return waiterInfo;
         }
         //public IEnumerable<User> GetUserFeaturesByID()
         //{
@@ -141,9 +159,9 @@ namespace iCafe.Service.Services.Mobile
             roleRepository.Delete(id);
         }
 
-        public void DeleteUser(string username)
+        public void DeleteUser(int userId)
         {
-            userRepository.Delete(username);
+            userRepository.Delete(userId);
         }
 
         public void DeleteRoleAccess(int roleId, int featureId)

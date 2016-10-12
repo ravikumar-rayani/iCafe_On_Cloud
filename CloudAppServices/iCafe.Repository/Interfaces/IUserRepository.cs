@@ -8,8 +8,10 @@ using iCafe.Data.Infrastructure;
 
 namespace iCafe.Repository.Interfaces
 {
-    public interface IUserRepository: IRepository<User, string>
+    public interface IUserRepository: IRepository<User, int>
     {
+        User GetByUserName(string username);
 
+        Task<User> GetByUserNameAsync(string username);
     }
 }

@@ -30,7 +30,6 @@ namespace iCafe.Entity
             this.Tables = new HashSet<Table>();
             this.Tags = new HashSet<Tag>();
             this.Users = new HashSet<User>();
-            this.Users1 = new HashSet<User>();
             this.WaiterTables = new HashSet<WaiterTable>();
             this.ItemCategoryTags = new HashSet<ItemCategoryTag>();
         }
@@ -46,8 +45,8 @@ namespace iCafe.Entity
         public System.DateTime EndDate { get; set; }
         public System.DateTime CreatedOn { get; set; }
         public Nullable<System.DateTime> ModifiedOn { get; set; }
-        public string CreatedBy { get; set; }
-        public string ModifiedBy { get; set; }
+        public Nullable<int> CreatedBy { get; set; }
+        public Nullable<int> ModifiedBy { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RoleFeatureAccess> RoleFeatureAccesses { get; set; }
@@ -76,8 +75,6 @@ namespace iCafe.Entity
         public virtual ICollection<Tag> Tags { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<User> Users { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<User> Users1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<WaiterTable> WaiterTables { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

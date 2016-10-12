@@ -16,15 +16,16 @@ namespace iCafe.Entity
     {
         public int AccountId { get; set; }
         public int BranchId { get; set; }
-        public string Waiter { get; set; }
+        public int WaiterId { get; set; }
         public int TableId { get; set; }
         public System.DateTime CreatedOn { get; set; }
         public Nullable<System.DateTime> ModifiedOn { get; set; }
-        public string CreatedBy { get; set; }
-        public string ModifiedBy { get; set; }
+        public Nullable<int> CreatedBy { get; set; }
+        public Nullable<int> ModifiedBy { get; set; }
     
         public virtual Account Account { get; set; }
         public virtual Branch Branch { get; set; }
         public virtual Table Table { get; set; }
+        public virtual User User { get; set; }
     }
 }

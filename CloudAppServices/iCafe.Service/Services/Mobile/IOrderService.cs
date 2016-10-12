@@ -11,14 +11,16 @@ using iCafe.Repository.Interfaces;
 
 namespace iCafe.Service.Services.Mobile
 {
-    interface IOrderService
+    public interface IOrderService
     {
 
         #region Get Methods
 
-        IEnumerable<OrderClientDTO> GetOrders();
+        Task<OrderClientDTO> GetCustomerCurrentOrders(int userId, int customerId, int orderId = 0);
 
-        IEnumerable<OrderClientDTO> GetOrdersByCustomerId(int CustomerId);
+        Task<OrderClientDTO> GetCustomerCurrentOrders(int orderId);
+
+        Task<List<OrderClientDTO>> GetWaiterCurrentOrders(int waiterId);
 
         #endregion
 

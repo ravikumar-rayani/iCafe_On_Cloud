@@ -61,7 +61,7 @@ namespace iCafe.Service.Services.Web
 
         void DeleteRole(int id);
 
-        void DeleteUser(string Username);
+        void DeleteUser(int userId);
 
         void DeleteRoleAccess(int roleId, int featureId);
 

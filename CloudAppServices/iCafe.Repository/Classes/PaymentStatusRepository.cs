@@ -9,7 +9,7 @@ using iCafe.Repository.Interfaces;
 
 namespace iCafe.Repository.Classes
 {
-    public class PaymentStatusRepository: RepositoryBase<PaymentStatu, int>, IPaymentStatusRepository
+    public class PaymentStatusRepository : RepositoryBase<PaymentStatu, int>, IPaymentStatusRepository
     {
         public PaymentStatusRepository(IDbFactory dbFactory)
             : base(dbFactory) { }

@@ -3,3 +3,8 @@ X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.DTO\bin\Debug\iCafe.DTO.pdb
 X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.DTO\obj\Debug\iCafe.DTO.csprojResolveAssemblyReference.cache
 X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.DTO\obj\Debug\iCafe.DTO.dll
 X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.DTO\obj\Debug\iCafe.DTO.pdb
+X:\WorkSpace\GitHub\Master\iCafe_On_Cloud\CloudAppServices\iCafe.DTO\bin\Debug\iCafe.DTO.dll
+X:\WorkSpace\GitHub\Master\iCafe_On_Cloud\CloudAppServices\iCafe.DTO\bin\Debug\iCafe.DTO.pdb
+X:\WorkSpace\GitHub\Master\iCafe_On_Cloud\CloudAppServices\iCafe.DTO\obj\Debug\iCafe.DTO.csprojResolveAssemblyReference.cache
+X:\WorkSpace\GitHub\Master\iCafe_On_Cloud\CloudAppServices\iCafe.DTO\obj\Debug\iCafe.DTO.dll
+X:\WorkSpace\GitHub\Master\iCafe_On_Cloud\CloudAppServices\iCafe.DTO\obj\Debug\iCafe.DTO.pdb

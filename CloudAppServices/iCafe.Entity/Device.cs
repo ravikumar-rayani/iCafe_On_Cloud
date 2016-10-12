@@ -24,7 +24,7 @@ namespace iCafe.Entity
         public string Name { get; set; }
         public string Description { get; set; }
         public System.DateTime CreatedOn { get; set; }
-        public System.DateTime ModifiedOn { get; set; }
+        public Nullable<System.DateTime> ModifiedOn { get; set; }
         public int AccountId { get; set; }
         public int BranchId { get; set; }
     

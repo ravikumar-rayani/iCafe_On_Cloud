@@ -146,10 +146,10 @@ namespace iCafe.Service.Controllers
         }
 
         [HttpDelete]
-        [Route("deleteUser/{username}")]
-        public IHttpActionResult DeleteUser(string username)
+        [Route("deleteUser/{userId}")]
+        public IHttpActionResult DeleteUser(int userId)
         {
-            _service.DeleteUser(username);
+            _service.DeleteUser(userId);
             _service.Save();
             return Ok();
         }

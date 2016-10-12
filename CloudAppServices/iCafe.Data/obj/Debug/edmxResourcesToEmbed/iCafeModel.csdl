@@ -12,11 +12,11 @@
     <Property Name="AccoutTypeId" Type="Int32" Nullable="false" />
     <Property Name="IsMultiBranchesAllowed" Type="Boolean" Nullable="false" />
     <Property Name="MaxBranches" Type="Int32" Nullable="false" />
-    <Property Name="EndDate" Type="DateTime" Nullable="false" Precision="7" />
-    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="7" />
-    <Property Name="ModifiedOn" Type="DateTime" Precision="7" />
-    <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="ModifiedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EndDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="ModifiedBy" Type="Int32" />
     <NavigationProperty Name="RoleFeatureAccesses" Relationship="Self.FK_Account_RoleFeatureAccess" FromRole="Account" ToRole="RoleFeatureAccess" />
     <NavigationProperty Name="AccountType" Relationship="Self.FK_dbo_Account_dbo_AccountTypes_AccoutTypeId" FromRole="Account" ToRole="AccountTypes" />
     <NavigationProperty Name="AccountSubscriptionDetails" Relationship="Self.FK_dbo_AccountSubscriptionDetails_dbo_Account_AccountId" FromRole="Account" ToRole="AccountSubscriptionDetails" />
@@ -30,10 +30,9 @@
     <NavigationProperty Name="RoleAccesses" Relationship="Self.FK_dbo_RoleAccess_dbo_Account_AccountId" FromRole="Account" ToRole="RoleAccess" />
     <NavigationProperty Name="Tables" Relationship="Self.FK_dbo_Tables_dbo_Account_AccountId" FromRole="Account" ToRole="Tables" />
     <NavigationProperty Name="Tags" Relationship="Self.FK_dbo_Tags_dbo_Account_AccountId" FromRole="Account" ToRole="Tags" />
-    <NavigationProperty Name="Users" Relationship="Self.FK_dbo_Users_dbo_Account_Account_Id" FromRole="Account" ToRole="Users" />
-    <NavigationProperty Name="Users1" Relationship="Self.FK_dbo_Users_dbo_Account_AccountId" FromRole="Account" ToRole="Users" />
-    <NavigationProperty Name="WaiterTables" Relationship="Self.FK_dbo_WaiterTables_dbo_Account_AccountId" FromRole="Account" ToRole="WaiterTables" />
-    <NavigationProperty Name="ItemCategoryTags" Relationship="iCafeModel.FK_ItemCategoryTags_Account" FromRole="Account" ToRole="ItemCategoryTag" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_dbo_Users_dbo_Account_AccountId" FromRole="Account" ToRole="Users" />
+    <NavigationProperty Name="WaiterTables" Relationship="Self.FK_dbo_WaiterTables_dbo_Account_Id" FromRole="Account" ToRole="WaiterTables" />
+    <NavigationProperty Name="ItemCategoryTags" Relationship="Self.FK_ItemCategoryTags_Account" FromRole="Account" ToRole="ItemCategoryTags" />
   </EntityType>
   <EntityType Name="AccountSubscriptionDetail">
     <Key>
@@ -46,10 +45,10 @@
     <Property Name="SubscriptionTypeId" Type="Int32" Nullable="false" />
     <Property Name="Price" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
     <Property Name="IsPaid" Type="Boolean" Nullable="false" />
-    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="7" />
-    <Property Name="ModifiedOn" Type="DateTime" Precision="7" />
-    <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="Modified" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="ModifiedBy" Type="Int32" />
     <NavigationProperty Name="Account" Relationship="Self.FK_dbo_AccountSubscriptionDetails_dbo_Account_AccountId" FromRole="AccountSubscriptionDetails" ToRole="Account" />
     <NavigationProperty Name="AccountType" Relationship="Self.FK_dbo_AccountSubscriptionDetails_dbo_AccountTypes_AccountTypeId" FromRole="AccountSubscriptionDetails" ToRole="AccountTypes" />
     <NavigationProperty Name="SubscriptionType" Relationship="Self.FK_dbo_AccountSubscriptionDetails_dbo_SubscriptionTypes_SubscriptionTypeId" FromRole="AccountSubscriptionDetails" ToRole="SubscriptionTypes" />
@@ -61,10 +60,10 @@
     </Key>
     <Property Name="AccountTypeId" Type="Int32" Nullable="false" />
     <Property Name="FeatureId" Type="Int32" Nullable="false" />
-    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="7" />
-    <Property Name="ModifiedOn" Type="DateTime" Precision="7" />
-    <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="ModifiedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="ModifiedBy" Type="Int32" />
     <NavigationProperty Name="AccountType" Relationship="Self.FK_dbo_AccountTypeFeatures_dbo_AccountTypes_AccountTypeId" FromRole="AccountTypeFeatures" ToRole="AccountTypes" />
     <NavigationProperty Name="Feature" Relationship="Self.FK_dbo_AccountTypeFeatures_dbo_Features_FeatureId" FromRole="AccountTypeFeatures" ToRole="Features" />
   </EntityType>
@@ -76,10 +75,10 @@
     <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="IsActive" Type="Boolean" Nullable="false" />
     <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="7" />
-    <Property Name="ModifiedOn" Type="DateTime" Precision="7" />
-    <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="ModifiedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="ModifiedBy" Type="Int32" />
     <NavigationProperty Name="Accounts" Relationship="Self.FK_dbo_Account_dbo_AccountTypes_AccoutTypeId" FromRole="AccountTypes" ToRole="Account" />
     <NavigationProperty Name="AccountSubscriptionDetails" Relationship="Self.FK_dbo_AccountSubscriptionDetails_dbo_AccountTypes_AccountTypeId" FromRole="AccountTypes" ToRole="AccountSubscriptionDetails" />
     <NavigationProperty Name="AccountTypeFeatures" Relationship="Self.FK_dbo_AccountTypeFeatures_dbo_AccountTypes_AccountTypeId" FromRole="AccountTypes" ToRole="AccountTypeFeatures" />
@@ -91,10 +90,10 @@
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="AccountId" Type="Int32" Nullable="false" />
-    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="7" />
-    <Property Name="ModifiedOn" Type="DateTime" Precision="7" />
-    <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="ModifiedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="ModifiedBy" Type="Int32" />
     <NavigationProperty Name="Account" Relationship="Self.FK_dbo_Branches_dbo_Account_AccountId" FromRole="Branches" ToRole="Account" />
     <NavigationProperty Name="Devices" Relationship="Self.FK_dbo_Devices_dbo_Branches_BranchId" FromRole="Branches" ToRole="Devices" />
     <NavigationProperty Name="ItemCategoriesAvailablities" Relationship="Self.FK_dbo_ItemCategoriesAvailablities_dbo_Branches_BranchId" FromRole="Branches" ToRole="ItemCategoriesAvailablities" />
@@ -115,10 +114,10 @@
     <Property Name="EmailId" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="7" />
-    <Property Name="ModifiedOn" Type="DateTime" Precision="7" />
-    <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="ModifiedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="ModifiedBy" Type="Int32" />
     <Property Name="AccountId" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Account" Relationship="Self.FK_dbo_Customers_dbo_Account_AccountId" FromRole="Customers" ToRole="Account" />
     <NavigationProperty Name="Orders" Relationship="Self.FK_dbo_Orders_dbo_Customers_CustomerId" FromRole="Customers" ToRole="Orders" />
@@ -130,8 +129,8 @@
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="7" />
-    <Property Name="ModifiedOn" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
     <Property Name="AccountId" Type="Int32" Nullable="false" />
     <Property Name="BranchId" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Account" Relationship="Self.FK_dbo_Devices_dbo_Account_AccountId" FromRole="Devices" ToRole="Account" />
@@ -145,11 +144,11 @@
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="IsActive" Type="Boolean" Nullable="false" />
-    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="7" />
-    <Property Name="ModifiedOn" Type="DateTime" Precision="7" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
     <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="ModifiedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="ModifiedBy" Type="Int32" />
     <NavigationProperty Name="AccountTypeFeatures" Relationship="Self.FK_dbo_AccountTypeFeatures_dbo_Features_FeatureId" FromRole="Features" ToRole="AccountTypeFeatures" />
     <NavigationProperty Name="FeatureSubscriptionPricings" Relationship="Self.FK_dbo_FeatureSubscriptionPricings_dbo_Features_FeatureId" FromRole="Features" ToRole="FeatureSubscriptionPricings" />
     <NavigationProperty Name="RoleAccesses" Relationship="Self.FK_dbo_RoleAccess_dbo_Features_FeatureID" FromRole="Features" ToRole="RoleAccess" />
@@ -164,10 +163,10 @@
     <Property Name="FeatureId" Type="Int32" Nullable="false" />
     <Property Name="Price" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
     <Property Name="Discount" Type="Decimal" Precision="3" Scale="2" />
-    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="7" />
-    <Property Name="ModifiedOn" Type="DateTime" Precision="7" />
-    <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="Modified" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="ModifiedBy" Type="Int32" />
     <NavigationProperty Name="Feature" Relationship="Self.FK_dbo_FeatureSubscriptionPricings_dbo_Features_FeatureId" FromRole="FeatureSubscriptionPricings" ToRole="Features" />
     <NavigationProperty Name="SubscriptionType" Relationship="Self.FK_dbo_FeatureSubscriptionPricings_dbo_SubscriptionTypes_SubscriptionTypeId" FromRole="FeatureSubscriptionPricings" ToRole="SubscriptionTypes" />
   </EntityType>
@@ -179,16 +178,16 @@
     <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Discount" Type="Decimal" Precision="3" Scale="2" />
     <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="7" />
-    <Property Name="ModifiedOn" Type="DateTime" Precision="7" />
-    <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="ModifiedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="ModifiedBy" Type="Int32" />
     <Property Name="AccountId" Type="Int32" Nullable="false" />
     <Property Name="ImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Account" Relationship="Self.FK_dbo_ItemCategories_dbo_Account_AccountId" FromRole="ItemCategories" ToRole="Account" />
     <NavigationProperty Name="ItemCategoriesAvailablities" Relationship="Self.FK_dbo_ItemCategoriesAvailablities_dbo_ItemCategories_ItemCategoryId" FromRole="ItemCategories" ToRole="ItemCategoriesAvailablities" />
     <NavigationProperty Name="Items" Relationship="Self.FK_dbo_Items_dbo_ItemCategories_ItemCategoryId" FromRole="ItemCategories" ToRole="Items" />
-    <NavigationProperty Name="ItemCategoryTags" Relationship="iCafeModel.FK_ItemCategoryTags_ItemCategories" FromRole="ItemCategory" ToRole="ItemCategoryTag" />
+    <NavigationProperty Name="ItemCategoryTags" Relationship="Self.FK_ItemCategoryTags_ItemCategories" FromRole="ItemCategories" ToRole="ItemCategoryTags" />
   </EntityType>
   <EntityType Name="ItemCategoriesAvailablity">
     <Key>
@@ -198,8 +197,8 @@
     <Property Name="ItemCategoryId" Type="Int32" Nullable="false" />
     <Property Name="BranchId" Type="Int32" Nullable="false" />
     <Property Name="IsAvailable" Type="Boolean" Nullable="false" />
-    <Property Name="ModifiedOn" Type="DateTime" Precision="7" />
-    <Property Name="ModifiedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedBy" Type="Int32" />
     <NavigationProperty Name="Branch" Relationship="Self.FK_dbo_ItemCategoriesAvailablities_dbo_Branches_BranchId" FromRole="ItemCategoriesAvailablities" ToRole="Branches" />
     <NavigationProperty Name="ItemCategory" Relationship="Self.FK_dbo_ItemCategoriesAvailablities_dbo_ItemCategories_ItemCategoryId" FromRole="ItemCategoriesAvailablities" ToRole="ItemCategories" />
   </EntityType>
@@ -215,10 +214,10 @@
     <Property Name="Discount" Type="Decimal" Precision="3" Scale="2" />
     <Property Name="Ingrediants" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="7" />
-    <Property Name="ModifiedOn" Type="DateTime" Precision="7" />
-    <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="ModifiedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="ModifiedBy" Type="Int32" />
     <Property Name="AccountId" Type="Int32" Nullable="false" />
     <Property Name="SmallImageUrl" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="FullImageUrl" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
@@ -236,8 +235,8 @@
     <Property Name="ItemId" Type="Int32" Nullable="false" />
     <Property Name="BranchId" Type="Int32" Nullable="false" />
     <Property Name="IsAvailable" Type="Boolean" Nullable="false" />
-    <Property Name="ModifiedOn" Type="DateTime" Precision="7" />
-    <Property Name="ModifiedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedBy" Type="Int32" />
     <NavigationProperty Name="Branch" Relationship="Self.FK_dbo_ItemsAvailablities_dbo_Branches_BranchId" FromRole="ItemsAvailablities" ToRole="Branches" />
     <NavigationProperty Name="Item" Relationship="Self.FK_dbo_ItemsAvailablities_dbo_Items_ItemId" FromRole="ItemsAvailablities" ToRole="Items" />
   </EntityType>
@@ -250,8 +249,8 @@
     <Property Name="ItemID" Type="Int32" Nullable="false" />
     <Property Name="TagID" Type="Int32" Nullable="false" />
     <Property Name="AccountId" Type="Int32" Nullable="false" />
-    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="7" />
-    <Property Name="ModifiedOn" Type="DateTime" Precision="7" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
     <NavigationProperty Name="Account" Relationship="Self.FK_dbo_ItemTags_dbo_Account_AccountId" FromRole="ItemTags" ToRole="Account" />
     <NavigationProperty Name="Item" Relationship="Self.FK_dbo_ItemTags_dbo_Items_ItemID" FromRole="ItemTags" ToRole="Items" />
     <NavigationProperty Name="Tag" Relationship="Self.FK_dbo_ItemTags_dbo_Tags_TagID" FromRole="ItemTags" ToRole="Tags" />
@@ -262,10 +261,12 @@
     </Key>
     <Property Name="SubOrderId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="OrderId" Type="Int32" Nullable="false" />
-    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="7" />
-    <Property Name="ModifiedOn" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="OrderStatusId" Type="Int32" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
     <NavigationProperty Name="Order" Relationship="Self.FK_dbo_OrderDetails_dbo_Orders_OrderId" FromRole="OrderDetails" ToRole="Orders" />
     <NavigationProperty Name="SubOrderDetails" Relationship="Self.FK_dbo_SubOrderDetails_dbo_OrderDetails_SubOrderId" FromRole="OrderDetails" ToRole="SubOrderDetails" />
+    <NavigationProperty Name="OrderStatu" Relationship="Self.FK_OrderDetails_OrderStatus" FromRole="OrderDetails" ToRole="OrderStatus" />
   </EntityType>
   <EntityType Name="Order">
     <Key>
@@ -278,11 +279,11 @@
     <Property Name="RatingOnFood" Type="Int32" />
     <Property Name="RatingOnService" Type="Int32" />
     <Property Name="Feedback" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="7" />
-    <Property Name="ModifiedOn" Type="DateTime" Precision="7" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
     <Property Name="AccountId" Type="Int32" Nullable="false" />
-    <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="ModifiedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="ModifiedBy" Type="Int32" />
     <Property Name="BranchId" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Account" Relationship="Self.FK_dbo_Orders_dbo_Account_AccountId" FromRole="Orders" ToRole="Account" />
     <NavigationProperty Name="Branch" Relationship="Self.FK_dbo_Orders_dbo_Branches_BranchId" FromRole="Orders" ToRole="Branches" />
@@ -290,15 +291,26 @@
     <NavigationProperty Name="OrderDetails" Relationship="Self.FK_dbo_OrderDetails_dbo_Orders_OrderId" FromRole="Orders" ToRole="OrderDetails" />
     <NavigationProperty Name="PaymentStatu" Relationship="Self.FK_dbo_Orders_dbo_PaymentStatus_PaymentStatusId" FromRole="Orders" ToRole="PaymentStatus" />
   </EntityType>
+  <EntityType Name="OrderStatu">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="OrderDetails" Relationship="Self.FK_OrderDetails_OrderStatus" FromRole="OrderStatus" ToRole="OrderDetails" />
+  </EntityType>
   <EntityType Name="PaymentStatu">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="7" />
-    <Property Name="ModifiedOn" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
     <NavigationProperty Name="Orders" Relationship="Self.FK_dbo_Orders_dbo_PaymentStatus_PaymentStatusId" FromRole="PaymentStatus" ToRole="Orders" />
   </EntityType>
   <EntityType Name="RoleAccess">
@@ -309,10 +321,10 @@
     <Property Name="RoleID" Type="Int32" Nullable="false" />
     <Property Name="FeatureID" Type="Int32" Nullable="false" />
     <Property Name="WirtePermissions" Type="Boolean" Nullable="false" />
-    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="7" />
-    <Property Name="ModifiedOn" Type="DateTime" Precision="7" />
-    <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="ModifiedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="ModifiedBy" Type="Int32" />
     <Property Name="AccountId" Type="Int32" Nullable="false" />
     <Property Name="BranchId" Type="Int32" />
     <NavigationProperty Name="Account" Relationship="Self.FK_dbo_RoleAccess_dbo_Account_AccountId" FromRole="RoleAccess" ToRole="Account" />
@@ -329,14 +341,12 @@
     <Property Name="WirtePermissions" Type="Boolean" Nullable="false" />
     <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
-    <Property Name="CreatedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="ModifiedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="ModifiedBy" Type="Int32" />
     <Property Name="AccountId" Type="Int32" Nullable="false" />
     <Property Name="BranchId" Type="Int32" />
     <NavigationProperty Name="Account" Relationship="Self.FK_Account_RoleFeatureAccess" FromRole="RoleFeatureAccess" ToRole="Account" />
     <NavigationProperty Name="Feature" Relationship="Self.FK_Feature_RoleFeatureAccess" FromRole="RoleFeatureAccess" ToRole="Features" />
-    <NavigationProperty Name="User" Relationship="Self.FK_CreatedUsers_RoleFeatureAccess" FromRole="RoleFeatureAccess" ToRole="Users" />
-    <NavigationProperty Name="User1" Relationship="Self.FK_ModifiedUser_RoleFeatureAccess" FromRole="RoleFeatureAccess" ToRole="Users" />
     <NavigationProperty Name="Role" Relationship="Self.FK_Role_RoleFeatureAccess" FromRole="RoleFeatureAccess" ToRole="Roles" />
   </EntityType>
   <EntityType Name="Role">
@@ -346,8 +356,8 @@
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="7" />
-    <Property Name="ModifiedOn" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
     <NavigationProperty Name="RoleAccesses" Relationship="Self.FK_dbo_RoleAccess_dbo_Roles_RoleID" FromRole="Roles" ToRole="RoleAccess" />
     <NavigationProperty Name="RoleFeatureAccesses" Relationship="Self.FK_Role_RoleFeatureAccess" FromRole="Roles" ToRole="RoleFeatureAccess" />
     <NavigationProperty Name="Users" Relationship="Self.FK_dbo_Users_dbo_Roles_RoleId" FromRole="Roles" ToRole="Users" />
@@ -362,8 +372,8 @@
     <Property Name="OrderQuantity" Type="Int32" Nullable="false" />
     <Property Name="OrderType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="OrderPreferences" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="7" />
-    <Property Name="ModifiedOn" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
     <NavigationProperty Name="Item" Relationship="Self.FK_dbo_SubOrderDetails_dbo_Items_ItemId" FromRole="SubOrderDetails" ToRole="Items" />
     <NavigationProperty Name="OrderDetail" Relationship="Self.FK_dbo_SubOrderDetails_dbo_OrderDetails_SubOrderId" FromRole="SubOrderDetails" ToRole="OrderDetails" />
   </EntityType>
@@ -376,10 +386,10 @@
     <Property Name="IsActive" Type="Boolean" Nullable="false" />
     <Property Name="DurationInDays" Type="Int32" Nullable="false" />
     <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="7" />
-    <Property Name="ModifiedOn" Type="DateTime" Precision="7" />
-    <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="ModifiedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="ModifiedBy" Type="Int32" />
     <NavigationProperty Name="AccountSubscriptionDetails" Relationship="Self.FK_dbo_AccountSubscriptionDetails_dbo_SubscriptionTypes_SubscriptionTypeId" FromRole="SubscriptionTypes" ToRole="AccountSubscriptionDetails" />
     <NavigationProperty Name="FeatureSubscriptionPricings" Relationship="Self.FK_dbo_FeatureSubscriptionPricings_dbo_SubscriptionTypes_SubscriptionTypeId" FromRole="SubscriptionTypes" ToRole="FeatureSubscriptionPricings" />
   </EntityType>
@@ -392,8 +402,8 @@
     <Property Name="DeviceID" Type="Int32" Nullable="false" />
     <Property Name="IsMultipleMode" Type="Boolean" Nullable="false" />
     <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="7" />
-    <Property Name="ModifiedOn" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
     <Property Name="AccountId" Type="Int32" Nullable="false" />
     <Property Name="BranchId" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Account" Relationship="Self.FK_dbo_Tables_dbo_Account_AccountId" FromRole="Tables" ToRole="Account" />
@@ -408,15 +418,15 @@
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Comments" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="7" />
-    <Property Name="ModifiedOn" Type="DateTime" Precision="7" />
-    <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="ModifiedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="ModifiedBy" Type="Int32" />
     <Property Name="AccountId" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Account" Relationship="Self.FK_dbo_Tags_dbo_Account_AccountId" FromRole="Tags" ToRole="Account" />
     <NavigationProperty Name="ItemTags" Relationship="Self.FK_dbo_ItemTags_dbo_Tags_TagID" FromRole="Tags" ToRole="ItemTags" />
     <NavigationProperty Name="TagsAvailablities" Relationship="Self.FK_dbo_TagsAvailablities_dbo_Tags_TagId" FromRole="Tags" ToRole="TagsAvailablities" />
-    <NavigationProperty Name="ItemCategoryTags" Relationship="iCafeModel.FK_ItemCategoryTags_Tags" FromRole="Tag" ToRole="ItemCategoryTag" />
+    <NavigationProperty Name="ItemCategoryTags" Relationship="Self.FK_ItemCategoryTags_Tags" FromRole="Tags" ToRole="ItemCategoryTags" />
   </EntityType>
   <EntityType Name="TagsAvailablity">
     <Key>
@@ -426,52 +436,62 @@
     <Property Name="TagId" Type="Int32" Nullable="false" />
     <Property Name="BranchId" Type="Int32" Nullable="false" />
     <Property Name="IsAvailable" Type="Boolean" Nullable="false" />
-    <Property Name="ModifiedOn" Type="DateTime" Precision="7" />
-    <Property Name="ModifiedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedBy" Type="Int32" />
     <NavigationProperty Name="Branch" Relationship="Self.FK_dbo_TagsAvailablities_dbo_Branches_BranchId" FromRole="TagsAvailablities" ToRole="Branches" />
     <NavigationProperty Name="Tag" Relationship="Self.FK_dbo_TagsAvailablities_dbo_Tags_TagId" FromRole="TagsAvailablities" ToRole="Tags" />
   </EntityType>
   <EntityType Name="User">
     <Key>
-      <PropertyRef Name="UserName" />
+      <PropertyRef Name="Id" />
     </Key>
-    <Property Name="UserName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="RoleId" Type="Int32" Nullable="false" />
     <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="ModifiedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
     <Property Name="AccountId" Type="Int32" Nullable="false" />
     <Property Name="BranchId" Type="Int32" Nullable="false" />
-    <Property Name="Account_Id" Type="Int32" />
-    <NavigationProperty Name="Account" Relationship="Self.FK_dbo_Users_dbo_Account_Account_Id" FromRole="Users" ToRole="Account" />
-    <NavigationProperty Name="Account1" Relationship="Self.FK_dbo_Users_dbo_Account_AccountId" FromRole="Users" ToRole="Account" />
+    <NavigationProperty Name="Account" Relationship="Self.FK_dbo_Users_dbo_Account_AccountId" FromRole="Users" ToRole="Account" />
     <NavigationProperty Name="Branch" Relationship="Self.FK_dbo_Users_dbo_Branches_BranchId" FromRole="Users" ToRole="Branches" />
-    <NavigationProperty Name="RoleFeatureAccesses" Relationship="Self.FK_CreatedUsers_RoleFeatureAccess" FromRole="Users" ToRole="RoleFeatureAccess" />
-    <NavigationProperty Name="RoleFeatureAccesses1" Relationship="Self.FK_ModifiedUser_RoleFeatureAccess" FromRole="Users" ToRole="RoleFeatureAccess" />
     <NavigationProperty Name="Role" Relationship="Self.FK_dbo_Users_dbo_Roles_RoleId" FromRole="Users" ToRole="Roles" />
+    <NavigationProperty Name="WaiterTables" Relationship="Self.FK_WaiterTables_UserId" FromRole="Users" ToRole="WaiterTables" />
   </EntityType>
   <EntityType Name="WaiterTable">
     <Key>
       <PropertyRef Name="AccountId" />
       <PropertyRef Name="BranchId" />
-      <PropertyRef Name="Waiter" />
+      <PropertyRef Name="WaiterId" />
       <PropertyRef Name="TableId" />
     </Key>
     <Property Name="AccountId" Type="Int32" Nullable="false" />
     <Property Name="BranchId" Type="Int32" Nullable="false" />
-    <Property Name="Waiter" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="WaiterId" Type="Int32" Nullable="false" />
     <Property Name="TableId" Type="Int32" Nullable="false" />
-    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="7" />
-    <Property Name="ModifiedOn" Type="DateTime" Precision="7" />
-    <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="ModifiedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Account" Relationship="Self.FK_dbo_WaiterTables_dbo_Account_AccountId" FromRole="WaiterTables" ToRole="Account" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="ModifiedBy" Type="Int32" />
+    <NavigationProperty Name="Account" Relationship="Self.FK_dbo_WaiterTables_dbo_Account_Id" FromRole="WaiterTables" ToRole="Account" />
     <NavigationProperty Name="Branch" Relationship="Self.FK_dbo_WaiterTables_dbo_Branches_BranchId" FromRole="WaiterTables" ToRole="Branches" />
     <NavigationProperty Name="Table" Relationship="Self.FK_dbo_WaiterTables_dbo_Tables_TableId" FromRole="WaiterTables" ToRole="Tables" />
+    <NavigationProperty Name="User" Relationship="Self.FK_WaiterTables_UserId" FromRole="WaiterTables" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="ItemCategoryTag">
+    <Key>
+      <PropertyRef Name="ItemCategoryID" />
+      <PropertyRef Name="TagID" />
+      <PropertyRef Name="AccountID" />
+    </Key>
+    <Property Name="ItemCategoryID" Type="Int32" Nullable="false" />
+    <Property Name="TagID" Type="Int32" Nullable="false" />
+    <Property Name="AccountID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Account" Relationship="Self.FK_ItemCategoryTags_Account" FromRole="ItemCategoryTags" ToRole="Account" />
+    <NavigationProperty Name="ItemCategory" Relationship="Self.FK_ItemCategoryTags_ItemCategories" FromRole="ItemCategoryTags" ToRole="ItemCategories" />
+    <NavigationProperty Name="Tag" Relationship="Self.FK_ItemCategoryTags_Tags" FromRole="ItemCategoryTags" ToRole="Tags" />
   </EntityType>
   <Association Name="FK_Account_RoleFeatureAccess">
     <End Role="Account" Type="Self.Account" Multiplicity="1">
@@ -645,18 +665,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_dbo_Users_dbo_Account_Account_Id">
-    <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
-    <End Role="Users" Type="Self.User" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Account">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Users">
-        <PropertyRef Name="Account_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_dbo_Users_dbo_Account_AccountId">
     <End Role="Account" Type="Self.Account" Multiplicity="1" />
     <End Role="Users" Type="Self.User" Multiplicity="*" />
@@ -669,7 +677,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_dbo_WaiterTables_dbo_Account_AccountId">
+  <Association Name="FK_dbo_WaiterTables_dbo_Account_Id">
     <End Role="Account" Type="Self.Account" Multiplicity="1">
       <OnDelete Action="Cascade" />
     </End>
@@ -680,6 +688,20 @@
       </Principal>
       <Dependent Role="WaiterTables">
         <PropertyRef Name="AccountId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ItemCategoryTags_Account">
+    <End Role="Account" Type="Self.Account" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ItemCategoryTags" Type="Self.ItemCategoryTag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ItemCategoryTags">
+        <PropertyRef Name="AccountID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -949,6 +971,20 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_ItemCategoryTags_ItemCategories">
+    <End Role="ItemCategories" Type="Self.ItemCategory" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ItemCategoryTags" Type="Self.ItemCategoryTag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ItemCategories">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ItemCategoryTags">
+        <PropertyRef Name="ItemCategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_dbo_ItemsAvailablities_dbo_Items_ItemId">
     <End Role="Items" Type="Self.Item" Multiplicity="1" />
     <End Role="ItemsAvailablities" Type="Self.ItemsAvailablity" Multiplicity="*" />
@@ -1029,6 +1065,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_OrderDetails_OrderStatus">
+    <End Role="OrderStatus" Type="Self.OrderStatu" Multiplicity="1" />
+    <End Role="OrderDetails" Type="Self.OrderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OrderStatus">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrderDetails">
+        <PropertyRef Name="OrderStatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_dbo_Orders_dbo_PaymentStatus_PaymentStatusId">
     <End Role="PaymentStatus" Type="Self.PaymentStatu" Multiplicity="1">
       <OnDelete Action="Cascade" />
@@ -1054,30 +1102,6 @@
       </Principal>
       <Dependent Role="RoleAccess">
         <PropertyRef Name="RoleID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_CreatedUsers_RoleFeatureAccess">
-    <End Role="Users" Type="Self.User" Multiplicity="1" />
-    <End Role="RoleFeatureAccess" Type="Self.RoleFeatureAccess" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Users">
-        <PropertyRef Name="UserName" />
-      </Principal>
-      <Dependent Role="RoleFeatureAccess">
-        <PropertyRef Name="CreatedBy" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_ModifiedUser_RoleFeatureAccess">
-    <End Role="Users" Type="Self.User" Multiplicity="0..1" />
-    <End Role="RoleFeatureAccess" Type="Self.RoleFeatureAccess" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Users">
-        <PropertyRef Name="UserName" />
-      </Principal>
-      <Dependent Role="RoleFeatureAccess">
-        <PropertyRef Name="ModifiedBy" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -1135,6 +1159,32 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_ItemCategoryTags_Tags">
+    <End Role="Tags" Type="Self.Tag" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ItemCategoryTags" Type="Self.ItemCategoryTag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tags">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ItemCategoryTags">
+        <PropertyRef Name="TagID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WaiterTables_UserId">
+    <End Role="Users" Type="Self.User" Multiplicity="1" />
+    <End Role="WaiterTables" Type="Self.WaiterTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="WaiterTables">
+        <PropertyRef Name="WaiterId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="iCafeEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Accounts" EntityType="Self.Account" />
     <EntitySet Name="AccountSubscriptionDetails" EntityType="Self.AccountSubscriptionDetail" />
@@ -1152,6 +1202,7 @@
     <EntitySet Name="ItemTags" EntityType="Self.ItemTag" />
     <EntitySet Name="OrderDetails" EntityType="Self.OrderDetail" />
     <EntitySet Name="Orders" EntityType="Self.Order" />
+    <EntitySet Name="OrderStatus" EntityType="Self.OrderStatu" />
     <EntitySet Name="PaymentStatus" EntityType="Self.PaymentStatu" />
     <EntitySet Name="RoleAccesses" EntityType="Self.RoleAccess" />
     <EntitySet Name="RoleFeatureAccesses" EntityType="Self.RoleFeatureAccess" />
@@ -1163,6 +1214,7 @@
     <EntitySet Name="TagsAvailablities" EntityType="Self.TagsAvailablity" />
     <EntitySet Name="Users" EntityType="Self.User" />
     <EntitySet Name="WaiterTables" EntityType="Self.WaiterTable" />
+    <EntitySet Name="ItemCategoryTags" EntityType="Self.ItemCategoryTag" />
     <AssociationSet Name="FK_Account_RoleFeatureAccess" Association="Self.FK_Account_RoleFeatureAccess">
       <End Role="Account" EntitySet="Accounts" />
       <End Role="RoleFeatureAccess" EntitySet="RoleFeatureAccesses" />
@@ -1215,17 +1267,17 @@
       <End Role="Account" EntitySet="Accounts" />
       <End Role="Tags" EntitySet="Tags" />
     </AssociationSet>
-    <AssociationSet Name="FK_dbo_Users_dbo_Account_Account_Id" Association="Self.FK_dbo_Users_dbo_Account_Account_Id">
-      <End Role="Account" EntitySet="Accounts" />
-      <End Role="Users" EntitySet="Users" />
-    </AssociationSet>
     <AssociationSet Name="FK_dbo_Users_dbo_Account_AccountId" Association="Self.FK_dbo_Users_dbo_Account_AccountId">
       <End Role="Account" EntitySet="Accounts" />
       <End Role="Users" EntitySet="Users" />
     </AssociationSet>
-    <AssociationSet Name="FK_dbo_WaiterTables_dbo_Account_AccountId" Association="Self.FK_dbo_WaiterTables_dbo_Account_AccountId">
+    <AssociationSet Name="FK_dbo_WaiterTables_dbo_Account_Id" Association="Self.FK_dbo_WaiterTables_dbo_Account_Id">
       <End Role="Account" EntitySet="Accounts" />
       <End Role="WaiterTables" EntitySet="WaiterTables" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ItemCategoryTags_Account" Association="Self.FK_ItemCategoryTags_Account">
+      <End Role="Account" EntitySet="Accounts" />
+      <End Role="ItemCategoryTags" EntitySet="ItemCategoryTags" />
     </AssociationSet>
     <AssociationSet Name="FK_dbo_AccountSubscriptionDetails_dbo_AccountTypes_AccountTypeId" Association="Self.FK_dbo_AccountSubscriptionDetails_dbo_AccountTypes_AccountTypeId">
       <End Role="AccountTypes" EntitySet="AccountTypes" />
@@ -1307,6 +1359,10 @@
       <End Role="ItemCategories" EntitySet="ItemCategories" />
       <End Role="Items" EntitySet="Items" />
     </AssociationSet>
+    <AssociationSet Name="FK_ItemCategoryTags_ItemCategories" Association="Self.FK_ItemCategoryTags_ItemCategories">
+      <End Role="ItemCategories" EntitySet="ItemCategories" />
+      <End Role="ItemCategoryTags" EntitySet="ItemCategoryTags" />
+    </AssociationSet>
     <AssociationSet Name="FK_dbo_ItemsAvailablities_dbo_Items_ItemId" Association="Self.FK_dbo_ItemsAvailablities_dbo_Items_ItemId">
       <End Role="Items" EntitySet="Items" />
       <End Role="ItemsAvailablities" EntitySet="ItemsAvailablities" />
@@ -1331,6 +1387,10 @@
       <End Role="OrderDetails" EntitySet="OrderDetails" />
       <End Role="SubOrderDetails" EntitySet="SubOrderDetails" />
     </AssociationSet>
+    <AssociationSet Name="FK_OrderDetails_OrderStatus" Association="Self.FK_OrderDetails_OrderStatus">
+      <End Role="OrderStatus" EntitySet="OrderStatus" />
+      <End Role="OrderDetails" EntitySet="OrderDetails" />
+    </AssociationSet>
     <AssociationSet Name="FK_dbo_Orders_dbo_PaymentStatus_PaymentStatusId" Association="Self.FK_dbo_Orders_dbo_PaymentStatus_PaymentStatusId">
       <End Role="PaymentStatus" EntitySet="PaymentStatus" />
       <End Role="Orders" EntitySet="Orders" />
@@ -1338,14 +1398,6 @@
     <AssociationSet Name="FK_dbo_RoleAccess_dbo_Roles_RoleID" Association="Self.FK_dbo_RoleAccess_dbo_Roles_RoleID">
       <End Role="Roles" EntitySet="Roles" />
       <End Role="RoleAccess" EntitySet="RoleAccesses" />
-    </AssociationSet>
-    <AssociationSet Name="FK_CreatedUsers_RoleFeatureAccess" Association="Self.FK_CreatedUsers_RoleFeatureAccess">
-      <End Role="Users" EntitySet="Users" />
-      <End Role="RoleFeatureAccess" EntitySet="RoleFeatureAccesses" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ModifiedUser_RoleFeatureAccess" Association="Self.FK_ModifiedUser_RoleFeatureAccess">
-      <End Role="Users" EntitySet="Users" />
-      <End Role="RoleFeatureAccess" EntitySet="RoleFeatureAccesses" />
     </AssociationSet>
     <AssociationSet Name="FK_Role_RoleFeatureAccess" Association="Self.FK_Role_RoleFeatureAccess">
       <End Role="Roles" EntitySet="Roles" />
@@ -1363,73 +1415,13 @@
       <End Role="Tags" EntitySet="Tags" />
       <End Role="TagsAvailablities" EntitySet="TagsAvailablities" />
     </AssociationSet>
-    <EntitySet Name="ItemCategoryTags" EntityType="iCafeModel.ItemCategoryTag" />
-    <AssociationSet Name="FK_ItemCategoryTags_Account" Association="iCafeModel.FK_ItemCategoryTags_Account">
-      <End Role="Account" EntitySet="Accounts" />
-      <End Role="ItemCategoryTag" EntitySet="ItemCategoryTags" />
+    <AssociationSet Name="FK_ItemCategoryTags_Tags" Association="Self.FK_ItemCategoryTags_Tags">
+      <End Role="Tags" EntitySet="Tags" />
+      <End Role="ItemCategoryTags" EntitySet="ItemCategoryTags" />
     </AssociationSet>
-    <AssociationSet Name="FK_ItemCategoryTags_ItemCategories" Association="iCafeModel.FK_ItemCategoryTags_ItemCategories">
-      <End Role="ItemCategory" EntitySet="ItemCategories" />
-      <End Role="ItemCategoryTag" EntitySet="ItemCategoryTags" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ItemCategoryTags_Tags" Association="iCafeModel.FK_ItemCategoryTags_Tags">
-      <End Role="Tag" EntitySet="Tags" />
-      <End Role="ItemCategoryTag" EntitySet="ItemCategoryTags" />
+    <AssociationSet Name="FK_WaiterTables_UserId" Association="Self.FK_WaiterTables_UserId">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="WaiterTables" EntitySet="WaiterTables" />
     </AssociationSet>
   </EntityContainer>
-  <EntityType Name="ItemCategoryTag">
-    <Key>
-      <PropertyRef Name="ItemCategoryID" />
-      <PropertyRef Name="TagID" />
-      <PropertyRef Name="AccountID" />
-    </Key>
-    <Property Name="ItemCategoryID" Type="Int32" Nullable="false" />
-    <Property Name="TagID" Type="Int32" Nullable="false" />
-    <Property Name="AccountID" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Account" Relationship="iCafeModel.FK_ItemCategoryTags_Account" FromRole="ItemCategoryTag" ToRole="Account" />
-    <NavigationProperty Name="ItemCategory" Relationship="iCafeModel.FK_ItemCategoryTags_ItemCategories" FromRole="ItemCategoryTag" ToRole="ItemCategory" />
-    <NavigationProperty Name="Tag" Relationship="iCafeModel.FK_ItemCategoryTags_Tags" FromRole="ItemCategoryTag" ToRole="Tag" />
-  </EntityType>
-  <Association Name="FK_ItemCategoryTags_Account">
-    <End Type="iCafeModel.Account" Role="Account" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Type="iCafeModel.ItemCategoryTag" Role="ItemCategoryTag" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Account">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="ItemCategoryTag">
-        <PropertyRef Name="AccountID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_ItemCategoryTags_ItemCategories">
-    <End Type="iCafeModel.ItemCategory" Role="ItemCategory" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Type="iCafeModel.ItemCategoryTag" Role="ItemCategoryTag" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ItemCategory">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="ItemCategoryTag">
-        <PropertyRef Name="ItemCategoryID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_ItemCategoryTags_Tags">
-    <End Type="iCafeModel.Tag" Role="Tag" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Type="iCafeModel.ItemCategoryTag" Role="ItemCategoryTag" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Tag">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="ItemCategoryTag">
-        <PropertyRef Name="TagID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
 </Schema>

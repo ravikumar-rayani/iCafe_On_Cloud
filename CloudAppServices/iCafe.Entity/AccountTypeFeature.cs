@@ -18,8 +18,8 @@ namespace iCafe.Entity
         public int FeatureId { get; set; }
         public System.DateTime CreatedOn { get; set; }
         public Nullable<System.DateTime> ModifiedOn { get; set; }
-        public string CreatedBy { get; set; }
-        public string ModifiedBy { get; set; }
+        public Nullable<int> CreatedBy { get; set; }
+        public Nullable<int> ModifiedBy { get; set; }
     
         public virtual AccountType AccountType { get; set; }
         public virtual Feature Feature { get; set; }

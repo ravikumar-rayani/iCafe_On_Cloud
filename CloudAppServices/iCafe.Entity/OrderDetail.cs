@@ -22,9 +22,9 @@ namespace iCafe.Entity
     
         public int SubOrderId { get; set; }
         public int OrderId { get; set; }
+        public int OrderStatusId { get; set; }
         public System.DateTime CreatedOn { get; set; }
         public Nullable<System.DateTime> ModifiedOn { get; set; }
-        public int OrderStatusId { get; set; }
     
         public virtual Order Order { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

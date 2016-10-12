@@ -9,7 +9,7 @@ using iCafe.Repository.Interfaces;
 
 namespace iCafe.Repository.Classes
 {
-    public class UserRepository: RepositoryBase<User, string>, IUserRepository
+    public class UserRepository: RepositoryBase<User, int>, IUserRepository
     {
         public UserRepository(IDbFactory dbFactory)
             : base(dbFactory) { }
@@ -24,6 +24,16 @@ namespace iCafe.Repository.Classes
         {
             entity.ModifiedOn = DateTime.Now;
             base.Update(entity);
+        }
+
+        public User GetByUserName(string username)
+        {
+            return base.Get(u => u.UserName.Equals(username));
+        }
+
+        public async Task<User> GetByUserNameAsync(string username)
+        {
+            return base.Get(u => u.UserName.Equals(username));
         }
     }
 }

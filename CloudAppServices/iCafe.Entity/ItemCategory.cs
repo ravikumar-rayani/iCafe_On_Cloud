@@ -28,8 +28,8 @@ namespace iCafe.Entity
         public string Description { get; set; }
         public System.DateTime CreatedOn { get; set; }
         public Nullable<System.DateTime> ModifiedOn { get; set; }
-        public string CreatedBy { get; set; }
-        public string ModifiedBy { get; set; }
+        public Nullable<int> CreatedBy { get; set; }
+        public Nullable<int> ModifiedBy { get; set; }
         public int AccountId { get; set; }
         public string ImageUrl { get; set; }
     

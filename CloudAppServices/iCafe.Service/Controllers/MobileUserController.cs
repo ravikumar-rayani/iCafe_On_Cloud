@@ -8,6 +8,8 @@ using iCafe.Service.Services.Mobile;
 using iCafe.DTO.Server;
 using iCafe.DTO.Client;
 using iCafe.Entity;
+using System.Threading.Tasks;
+using System.Web.Http.Description;
 
 namespace iCafe.Service.Controllers
 {
@@ -23,6 +25,24 @@ namespace iCafe.Service.Controllers
         {
             _service = service;
         }
+
+        #region Validation Apis
+
+        [Route("{username}/Login")]
+        [Route("{username}/Signin")]
+        [Route("{username}/Authenticate")]
+        [HttpPost]
+        public async Task<IHttpActionResult> Authenticate(string username, [FromBody] string password)
+        {
+            var role = await _service.Authenticate(username, password);
+            if (role == -1)
+            {
+                return NotFound();
+            }
+            return Ok(role);
+        }
+
+        #endregion
 
         #region GetApis
 
@@ -50,6 +70,20 @@ namespace iCafe.Service.Controllers
         }
 
         #endregion GetAll
+
+
+        [ResponseType(typeof(WaiterInfoClientDTO))]
+        [Route("{waiterId}/WaiterInfo")]
+        public async Task<IHttpActionResult> GetWaiterInfo(int waiterId)
+        {
+            var waiterTables = await _service.GetWaiterInfo(waiterId);
+            if (waiterTables.assignedTables != null && waiterTables.assignedTables.Count() > 0)
+            {
+                return Ok(waiterTables);
+            }
+            return NotFound();            
+        }
+        
 
         #endregion
 
@@ -146,10 +180,10 @@ namespace iCafe.Service.Controllers
         }
 
         [HttpDelete]
-        [Route("deleteUser/{username}")]
-        public IHttpActionResult DeleteUser(string username)
+        [Route("deleteUser/{userId}")]
+        public IHttpActionResult DeleteUser(int userId)
         {
-            _service.DeleteUser(username);
+            _service.DeleteUser(userId);
             _service.Save();
             return Ok();
         }

@@ -4,34 +4,36 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="9e7a05f244a1403380f6f445d4e3702e" Name="Diagram1">
-        <EntityTypeShape EntityType="iCafeModel.Account" Width="1.5" PointX="3" PointY="26.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="iCafeModel.AccountSubscriptionDetail" Width="1.5" PointX="8.25" PointY="28.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="iCafeModel.AccountTypeFeature" Width="1.5" PointX="3" PointY="22.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="iCafeModel.AccountType" Width="1.5" PointX="0.75" PointY="28.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="iCafeModel.Branch" Width="1.5" PointX="5.25" PointY="25.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="iCafeModel.Customer" Width="1.5" PointX="5.25" PointY="30.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="iCafeModel.Device" Width="1.5" PointX="10.5" PointY="28.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="iCafeModel.Feature" Width="1.5" PointX="0.75" PointY="22.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="iCafeModel.FeatureSubscriptionPricing" Width="1.5" PointX="8.25" PointY="20" IsExpanded="true" />
-        <EntityTypeShape EntityType="iCafeModel.ItemCategory" Width="1.5" PointX="5.25" PointY="34.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="iCafeModel.ItemCategoriesAvailablity" Width="1.5" PointX="7.5" PointY="32.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="iCafeModel.Item" Width="1.5" PointX="13.5" PointY="30.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="iCafeModel.ItemsAvailablity" Width="1.5" PointX="7.5" PointY="24.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="iCafeModel.ItemTag" Width="1.5" PointX="15.75" PointY="37.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="iCafeModel.OrderDetail" Width="1.5" PointX="12.75" PointY="35.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="iCafeModel.Order" Width="1.5" PointX="10.5" PointY="31.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="iCafeModel.PaymentStatu" Width="1.5" PointX="8.25" PointY="40.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="iCafeModel.RoleAccess" Width="1.5" PointX="5.25" PointY="21.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="iCafeModel.RoleFeatureAccess" Width="1.5" PointX="12.75" PointY="24.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="iCafeModel.Role" Width="1.5" PointX="3" PointY="18.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="iCafeModel.SubOrderDetail" Width="1.5" PointX="15.75" PointY="32.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="iCafeModel.SubscriptionType" Width="1.5" PointX="6" PointY="17.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="iCafeModel.Table" Width="1.5" PointX="15.75" PointY="27.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="iCafeModel.Tag" Width="1.5" PointX="5.25" PointY="47.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="iCafeModel.TagsAvailablity" Width="1.5" PointX="7.5" PointY="37.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="iCafeModel.User" Width="1.5" PointX="10.5" PointY="22.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="iCafeModel.WaiterTable" Width="1.5" PointX="18" PointY="28" IsExpanded="true" />
+      <Diagram DiagramId="e4ed1aa1ca3d4f6590ae95e1922550a8" Name="Diagram1">
+        <EntityTypeShape EntityType="iCafeModel.Account" Width="1.5" PointX="3" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="iCafeModel.AccountSubscriptionDetail" Width="1.5" PointX="8.25" PointY="29.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="iCafeModel.AccountTypeFeature" Width="1.5" PointX="3" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="iCafeModel.AccountType" Width="1.5" PointX="0.75" PointY="29.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="iCafeModel.Branch" Width="1.5" PointX="5.25" PointY="26.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="iCafeModel.Customer" Width="1.5" PointX="5.25" PointY="31.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="iCafeModel.Device" Width="1.5" PointX="10.5" PointY="29" IsExpanded="true" />
+        <EntityTypeShape EntityType="iCafeModel.Feature" Width="1.5" PointX="0.75" PointY="23.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="iCafeModel.FeatureSubscriptionPricing" Width="1.5" PointX="8.25" PointY="17.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="iCafeModel.ItemCategory" Width="1.5" PointX="5.25" PointY="35.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="iCafeModel.ItemCategoriesAvailablity" Width="1.5" PointX="7.5" PointY="33.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="iCafeModel.Item" Width="1.5" PointX="13.5" PointY="31.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="iCafeModel.ItemsAvailablity" Width="1.5" PointX="7.5" PointY="25.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="iCafeModel.ItemTag" Width="1.5" PointX="15.75" PointY="38.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="iCafeModel.OrderDetail" Width="1.5" PointX="12.75" PointY="37.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="iCafeModel.Order" Width="1.5" PointX="10.5" PointY="33.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="iCafeModel.OrderStatu" Width="1.5" PointX="10.5" PointY="39.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="iCafeModel.PaymentStatu" Width="1.5" PointX="8.25" PointY="44.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="iCafeModel.RoleAccess" Width="1.5" PointX="5.25" PointY="22.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="iCafeModel.RoleFeatureAccess" Width="1.5" PointX="8.25" PointY="21.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="iCafeModel.Role" Width="1.5" PointX="6" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="iCafeModel.SubOrderDetail" Width="1.5" PointX="15.75" PointY="34.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="iCafeModel.SubscriptionType" Width="1.5" PointX="6" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="iCafeModel.Table" Width="1.5" PointX="12.75" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="iCafeModel.Tag" Width="1.5" PointX="5.25" PointY="48.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="iCafeModel.TagsAvailablity" Width="1.5" PointX="7.5" PointY="38" IsExpanded="true" />
+        <EntityTypeShape EntityType="iCafeModel.User" Width="1.5" PointX="10.5" PointY="23.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="iCafeModel.WaiterTable" Width="1.5" PointX="15" PointY="26.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="iCafeModel.ItemCategoryTag" Width="1.5" PointX="7.5" PointY="41.625" IsExpanded="true" />
         <AssociationConnector Association="iCafeModel.FK_Account_RoleFeatureAccess" ManuallyRouted="false" />
         <AssociationConnector Association="iCafeModel.FK_dbo_Account_dbo_AccountTypes_AccoutTypeId" ManuallyRouted="false" />
         <AssociationConnector Association="iCafeModel.FK_dbo_AccountSubscriptionDetails_dbo_Account_AccountId" ManuallyRouted="false" />
@@ -45,9 +47,9 @@
         <AssociationConnector Association="iCafeModel.FK_dbo_RoleAccess_dbo_Account_AccountId" ManuallyRouted="false" />
         <AssociationConnector Association="iCafeModel.FK_dbo_Tables_dbo_Account_AccountId" ManuallyRouted="false" />
         <AssociationConnector Association="iCafeModel.FK_dbo_Tags_dbo_Account_AccountId" ManuallyRouted="false" />
-        <AssociationConnector Association="iCafeModel.FK_dbo_Users_dbo_Account_Account_Id" ManuallyRouted="false" />
         <AssociationConnector Association="iCafeModel.FK_dbo_Users_dbo_Account_AccountId" ManuallyRouted="false" />
-        <AssociationConnector Association="iCafeModel.FK_dbo_WaiterTables_dbo_Account_AccountId" ManuallyRouted="false" />
+        <AssociationConnector Association="iCafeModel.FK_dbo_WaiterTables_dbo_Account_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="iCafeModel.FK_ItemCategoryTags_Account" ManuallyRouted="false" />
         <AssociationConnector Association="iCafeModel.FK_dbo_AccountSubscriptionDetails_dbo_AccountTypes_AccountTypeId" ManuallyRouted="false" />
         <AssociationConnector Association="iCafeModel.FK_dbo_AccountSubscriptionDetails_dbo_SubscriptionTypes_SubscriptionTypeId" ManuallyRouted="false" />
         <AssociationConnector Association="iCafeModel.FK_dbo_AccountTypeFeatures_dbo_AccountTypes_AccountTypeId" ManuallyRouted="false" />
@@ -68,26 +70,22 @@
         <AssociationConnector Association="iCafeModel.FK_dbo_FeatureSubscriptionPricings_dbo_SubscriptionTypes_SubscriptionTypeId" ManuallyRouted="false" />
         <AssociationConnector Association="iCafeModel.FK_dbo_ItemCategoriesAvailablities_dbo_ItemCategories_ItemCategoryId" ManuallyRouted="false" />
         <AssociationConnector Association="iCafeModel.FK_dbo_Items_dbo_ItemCategories_ItemCategoryId" ManuallyRouted="false" />
+        <AssociationConnector Association="iCafeModel.FK_ItemCategoryTags_ItemCategories" ManuallyRouted="false" />
         <AssociationConnector Association="iCafeModel.FK_dbo_ItemsAvailablities_dbo_Items_ItemId" ManuallyRouted="false" />
         <AssociationConnector Association="iCafeModel.FK_dbo_ItemTags_dbo_Items_ItemID" ManuallyRouted="false" />
         <AssociationConnector Association="iCafeModel.FK_dbo_SubOrderDetails_dbo_Items_ItemId" ManuallyRouted="false" />
         <AssociationConnector Association="iCafeModel.FK_dbo_ItemTags_dbo_Tags_TagID" ManuallyRouted="false" />
         <AssociationConnector Association="iCafeModel.FK_dbo_OrderDetails_dbo_Orders_OrderId" ManuallyRouted="false" />
         <AssociationConnector Association="iCafeModel.FK_dbo_SubOrderDetails_dbo_OrderDetails_SubOrderId" ManuallyRouted="false" />
+        <AssociationConnector Association="iCafeModel.FK_OrderDetails_OrderStatus" ManuallyRouted="false" />
         <AssociationConnector Association="iCafeModel.FK_dbo_Orders_dbo_PaymentStatus_PaymentStatusId" ManuallyRouted="false" />
         <AssociationConnector Association="iCafeModel.FK_dbo_RoleAccess_dbo_Roles_RoleID" ManuallyRouted="false" />
-        <AssociationConnector Association="iCafeModel.FK_CreatedUsers_RoleFeatureAccess" ManuallyRouted="false" />
-        <AssociationConnector Association="iCafeModel.FK_ModifiedUser_RoleFeatureAccess" ManuallyRouted="false" />
         <AssociationConnector Association="iCafeModel.FK_Role_RoleFeatureAccess" ManuallyRouted="false" />
         <AssociationConnector Association="iCafeModel.FK_dbo_Users_dbo_Roles_RoleId" ManuallyRouted="false" />
         <AssociationConnector Association="iCafeModel.FK_dbo_WaiterTables_dbo_Tables_TableId" ManuallyRouted="false" />
         <AssociationConnector Association="iCafeModel.FK_dbo_TagsAvailablities_dbo_Tags_TagId" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="iCafeModel.ItemCategoryTag" Width="1.5" PointX="10.5" PointY="37.75" />
-        <AssociationConnector Association="iCafeModel.FK_ItemCategoryTags_Account" />
-        <AssociationConnector Association="iCafeModel.FK_ItemCategoryTags_ItemCategories" />
-        <AssociationConnector Association="iCafeModel.FK_ItemCategoryTags_Tags" />
-        <EntityTypeShape EntityType="iCafeModel.OrderStatu" Width="1.5" PointX="12.75" PointY="39" />
-        <AssociationConnector Association="iCafeModel.FK_OrderDetails_OrderStatus" />
+        <AssociationConnector Association="iCafeModel.FK_ItemCategoryTags_Tags" ManuallyRouted="false" />
+        <AssociationConnector Association="iCafeModel.FK_WaiterTables_UserId" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

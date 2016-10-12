@@ -9,7 +9,7 @@ using iCafe.Data.Infrastructure;
 using iCafe.Repository.Interfaces;
 using iCafe.Repository.Classes;
 using iCafe.Common.Utilities;
-using iCafe.DTO.Client;
+using iCafe.DTO.Server;
 
 namespace iCafe.Service.Services.Web
 {
@@ -36,15 +36,15 @@ namespace iCafe.Service.Services.Web
         }
         #region Get Methods
 
-        public IEnumerable<OrderClientDTO> GetOrders()
+        public IEnumerable<OrderDetailServerDTO> GetOrders()
         {
-            var orders = new List<OrderClientDTO>();
+            var orders = new List<OrderDetailServerDTO>();
             foreach (var order in orderRepository.GetAll())
             {
-                orders.Add(new OrderClientDTO()
+                orders.Add(new OrderDetailServerDTO()
                 {
                     Id = order.Id,
-                    PaymentStatus = order.PaymentStatu.ToString(),
+                    PaymentStatusId = order.PaymentStatusId,
                     TotalPrice = order.TotalPrice,
                     SubOrderIds = orderDetailRepository.GetAll().Where(o => o.OrderId.Equals(order.Id)).Select(od => od.SubOrderId).ToArray()
 
@@ -53,16 +53,16 @@ namespace iCafe.Service.Services.Web
             return orders;
         }
 
-        public IEnumerable<OrderClientDTO> GetOrdersByCustomerId(int CustomerId)
+        public IEnumerable<OrderDetailServerDTO> GetOrdersByCustomerId(int CustomerId)
         {
 
-            var orders = new List<OrderClientDTO>();
+            var orders = new List<OrderDetailServerDTO>();
             foreach (var order in orderRepository.GetAll().Where(o => o.CustomerId.Equals(CustomerId)))
             {
-                orders.Add(new OrderClientDTO()
+                orders.Add(new OrderDetailServerDTO()
                 {
                     Id = order.Id,
-                    PaymentStatus = order.PaymentStatu.ToString(),
+                    PaymentStatusId = order.PaymentStatusId,
                     TotalPrice = order.TotalPrice,
                     SubOrderIds = orderDetailRepository.GetAll().Where(o => o.OrderId.Equals(order.Id)).Select(od => od.SubOrderId).ToArray()
 

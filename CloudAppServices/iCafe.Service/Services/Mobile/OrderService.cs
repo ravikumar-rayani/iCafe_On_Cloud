@@ -13,7 +13,7 @@ using iCafe.DTO.Client;
 
 namespace iCafe.Service.Services.Mobile
 {
-    public class OrderService
+    public class OrderService : IOrderService
     {
         private readonly IOrderRepository orderRepository;
         private readonly IOrderDetailRepository orderDetailRepository;
@@ -22,6 +22,7 @@ namespace iCafe.Service.Services.Mobile
         private readonly IUserRepository userRepository;
         private readonly ICustomerRepository customerRepository;
         private readonly IUnitOfWork unitOfWork;
+        private readonly int[] visibleOrderStatus = { 1, 2, 4 };
 
         public OrderService()
         {
@@ -36,41 +37,130 @@ namespace iCafe.Service.Services.Mobile
         }
         #region Get Methods
 
-        public IEnumerable<OrderClientDTO> GetOrders()
+        public async Task<OrderClientDTO> GetCustomerCurrentOrders(int customerId, int userId, int orderId = 0)
         {
-            var orders = new List<OrderClientDTO>();
-            foreach (var order in orderRepository.GetAll())
+            OrderClientDTO orderResult = null;
+            Order order = null;
+            order = orderId > 0 ?
+                orderRepository.GetById(orderId) :
+                orderRepository.GetMany(o => o.CustomerId.Equals(customerId) && o.CreatedBy.Equals(userId) && o.PaymentStatusId.Equals(1)).FirstOrDefault(); //&& order.PaymentStatusId.Equals(1));
+            if (order != null && order.CustomerId.Equals(customerId) && order.CreatedBy.Equals(userId) && order.PaymentStatusId.Equals(1))
             {
-                orders.Add(new OrderClientDTO()
+                orderResult = new OrderClientDTO();
+                orderResult.Id = order.Id;
+                orderResult.PaymentStatusId = order.PaymentStatusId;
+                orderResult.TotalPrice = order.TotalPrice;
+                orderResult.UserId = userId;
+                orderResult.customerId = customerId;
+                foreach (var suborder in orderDetailRepository.GetAll().Where(od => 
+                                                        od.OrderId.Equals(orderId) && visibleOrderStatus.Contains(od.OrderStatusId)).ToList())
                 {
-                    Id = order.Id,
-                    PaymentStatus = order.PaymentStatu.ToString(),
-                    TotalPrice = order.TotalPrice,
-                    SubOrderIds = orderDetailRepository.GetAll().Where(o => o.OrderId.Equals(order.Id)).Select(od => od.SubOrderId).ToArray()
-
-                });
+                    if (orderResult.SubOrders == null) 
+                        orderResult.SubOrders = new List<OrderDetailClientDTO>();
+                    var suborderDetail = new OrderDetailClientDTO();
+                    suborderDetail.SubOrderId = suborder.SubOrderId;
+                    suborderDetail.OrderStatusId = suborder.OrderStatusId;
+                    suborderDetail.SubTotalPrice = 0.00m;
+                    foreach (var ordereditem in subOrderDetailRepository.GetAll().Where(o => 
+                                                                o.SubOrderId.Equals(suborder.SubOrderId)))
+                    {
+                        if (suborderDetail.OrderItems == null) 
+                            suborderDetail.OrderItems = new List<OrderItemDetailClientDTO>();
+                        var item = new OrderItemDetailClientDTO();
+                        item.ItemId = ordereditem.ItemId;
+                        item.OrderQuantity = ordereditem.OrderQuantity;
+                        item.OrderPreferences = ordereditem.OrderPreferences;
+                        suborderDetail.OrderItems.Add(item);
+                    }
+                    orderResult.SubOrders.Add(suborderDetail);
+                }
             }
-            return orders;
+            return orderResult;
         }
 
-        public IEnumerable<OrderClientDTO> GetOrdersByCustomerId(int CustomerId)
+        public async Task<OrderClientDTO> GetCustomerCurrentOrders(int orderId)
         {
-
-            var orders = new List<OrderClientDTO>();
-            foreach (var order in orderRepository.GetAll().Where(o => o.CustomerId.Equals(CustomerId)))
+            OrderClientDTO orderResult = null;
+            Order order = null;
+            order = orderRepository.GetById(orderId);
+            if (order != null && order.PaymentStatusId.Equals(1))
             {
-                orders.Add(new OrderClientDTO()
+                orderResult = new OrderClientDTO();
+                orderResult.Id = order.Id;
+                orderResult.PaymentStatusId = order.PaymentStatusId;
+                orderResult.TotalPrice = order.TotalPrice;
+                orderResult.UserId = (int)order.CreatedBy;
+                orderResult.customerId = order.CustomerId;
+                foreach (var suborder in orderDetailRepository.GetAll().Where(od =>
+                                                        od.OrderId.Equals(orderId) &&
+                                                        visibleOrderStatus.Contains(od.OrderStatusId)).ToList())
                 {
-                    Id = order.Id,
-                    PaymentStatus = order.PaymentStatu.ToString(),
-                    TotalPrice = order.TotalPrice,
-                    SubOrderIds = orderDetailRepository.GetAll().Where(o => o.OrderId.Equals(order.Id)).Select(od => od.SubOrderId).ToArray()
-
-                });
+                    if (orderResult.SubOrders == null)
+                        orderResult.SubOrders = new List<OrderDetailClientDTO>();
+                    var suborderDetail = new OrderDetailClientDTO();
+                    suborderDetail.SubOrderId = suborder.SubOrderId;
+                    suborderDetail.OrderStatusId = suborder.OrderStatusId;
+                    suborderDetail.SubTotalPrice = 0.00m;
+                    var test = subOrderDetailRepository.GetAll();
+                    foreach (var ordereditem in subOrderDetailRepository.GetAll().Where(o =>
+                                                                o.SubOrderId.Equals(suborder.SubOrderId)))
+                    {
+                        if (suborderDetail.OrderItems == null)
+                            suborderDetail.OrderItems = new List<OrderItemDetailClientDTO>();
+                        var item = new OrderItemDetailClientDTO();
+                        item.ItemId = ordereditem.ItemId;
+                        item.OrderQuantity = ordereditem.OrderQuantity;
+                        item.OrderPreferences = ordereditem.OrderPreferences;
+                        suborderDetail.OrderItems.Add(item);
+                    }
+                    orderResult.SubOrders.Add(suborderDetail);
+                }
             }
-            return orders;
+            return orderResult;
         }
 
+        public async Task<List<OrderClientDTO>> GetWaiterCurrentOrders(int waiterId)
+        {
+            List<OrderClientDTO> orderResult = null;
+
+            if(userRepository.GetById(waiterId).RoleId.Equals(5))
+
+            foreach(var order in orderRepository.GetMany(o => o.CreatedBy.Equals(waiterId) && o.PaymentStatusId.Equals(1)).ToList())
+            {
+                if (orderResult == null)
+                    orderResult = new List<OrderClientDTO>();
+                var _order = new OrderClientDTO();
+                _order.Id = order.Id;
+                _order.PaymentStatusId = order.PaymentStatusId;
+                _order.TotalPrice = order.TotalPrice;
+                _order.UserId = (int)order.CreatedBy;
+                _order.customerId = order.CustomerId;
+                foreach (var suborder in orderDetailRepository.GetAll().Where(od =>
+                                                        od.OrderId.Equals(_order.Id) && visibleOrderStatus.Contains(od.OrderStatusId)).ToList())
+                {
+                    if (_order.SubOrders == null)
+                        _order.SubOrders = new List<OrderDetailClientDTO>();
+                    var suborderDetail = new OrderDetailClientDTO();
+                    suborderDetail.SubOrderId = suborder.SubOrderId;
+                    suborderDetail.OrderStatusId = suborder.OrderStatusId;
+                    suborderDetail.SubTotalPrice = 0.00m;
+                    foreach (var ordereditem in subOrderDetailRepository.GetAll().Where(o =>
+                                                                o.SubOrderId.Equals(suborder.SubOrderId)))
+                    {
+                        if (suborderDetail.OrderItems == null)
+                            suborderDetail.OrderItems = new List<OrderItemDetailClientDTO>();
+                        var item = new OrderItemDetailClientDTO();
+                        item.ItemId = ordereditem.ItemId;
+                        item.OrderQuantity = ordereditem.OrderQuantity;
+                        item.OrderPreferences = ordereditem.OrderPreferences;
+                        suborderDetail.OrderItems.Add(item);
+                    }
+                    _order.SubOrders.Add(suborderDetail);
+                }
+                orderResult.Add(_order);
+            }
+            return orderResult;
+        }
         #endregion
 
         #region Add Methods
@@ -135,7 +225,7 @@ namespace iCafe.Service.Services.Mobile
 
         #endregion
 
-        void Save()
+        public void Save()
         {
             unitOfWork.Commit();
         }

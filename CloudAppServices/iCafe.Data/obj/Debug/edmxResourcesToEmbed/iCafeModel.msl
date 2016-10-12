@@ -31,7 +31,7 @@
           <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
           <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
           <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
-          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -128,7 +128,7 @@
           <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
           <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
           <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
-          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -207,6 +207,7 @@
         <MappingFragment StoreEntitySet="OrderDetails">
           <ScalarProperty Name="SubOrderId" ColumnName="SubOrderId" />
           <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="OrderStatusId" ColumnName="OrderStatusId" />
           <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
           <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
         </MappingFragment>
@@ -228,6 +229,17 @@
           <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
           <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
           <ScalarProperty Name="BranchId" ColumnName="BranchId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderStatus">
+      <EntityTypeMapping TypeName="iCafeModel.OrderStatu">
+        <MappingFragment StoreEntitySet="OrderStatus">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -354,18 +366,16 @@
     <EntitySetMapping Name="Users">
       <EntityTypeMapping TypeName="iCafeModel.User">
         <MappingFragment StoreEntitySet="Users">
-          <ScalarProperty Name="UserName" ColumnName="UserName" />
           <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
           <ScalarProperty Name="FirstName" ColumnName="FirstName" />
           <ScalarProperty Name="LastName" ColumnName="LastName" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
           <ScalarProperty Name="Password" ColumnName="Password" />
           <ScalarProperty Name="RoleId" ColumnName="RoleId" />
           <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
           <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
           <ScalarProperty Name="AccountId" ColumnName="AccountId" />
           <ScalarProperty Name="BranchId" ColumnName="BranchId" />
-          <ScalarProperty Name="Account_Id" ColumnName="Account_Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -374,7 +384,7 @@
         <MappingFragment StoreEntitySet="WaiterTables">
           <ScalarProperty Name="AccountId" ColumnName="AccountId" />
           <ScalarProperty Name="BranchId" ColumnName="BranchId" />
-          <ScalarProperty Name="Waiter" ColumnName="Waiter" />
+          <ScalarProperty Name="WaiterId" ColumnName="WaiterId" />
           <ScalarProperty Name="TableId" ColumnName="TableId" />
           <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
           <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
@@ -386,9 +396,9 @@
     <EntitySetMapping Name="ItemCategoryTags">
       <EntityTypeMapping TypeName="iCafeModel.ItemCategoryTag">
         <MappingFragment StoreEntitySet="ItemCategoryTags">
-          <ScalarProperty Name="AccountID" ColumnName="AccountID" />
-          <ScalarProperty Name="TagID" ColumnName="TagID" />
           <ScalarProperty Name="ItemCategoryID" ColumnName="ItemCategoryID" />
+          <ScalarProperty Name="TagID" ColumnName="TagID" />
+          <ScalarProperty Name="AccountID" ColumnName="AccountID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="iCafeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="iCafeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Account">
           <Key>
             <PropertyRef Name="Id" />
@@ -20,8 +20,8 @@
           <Property Name="EndDate" Type="datetime2" Precision="0" Nullable="false" />
           <Property Name="CreatedOn" Type="datetime2" Precision="0" Nullable="false" />
           <Property Name="ModifiedOn" Type="datetime2" Precision="0" />
-          <Property Name="CreatedBy" Type="nvarchar(max)" />
-          <Property Name="ModifiedBy" Type="nvarchar(max)" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="ModifiedBy" Type="int" />
         </EntityType>
         <EntityType Name="AccountSubscriptionDetails">
           <Key>
@@ -36,8 +36,8 @@
           <Property Name="IsPaid" Type="bit" Nullable="false" />
           <Property Name="CreatedOn" Type="datetime2" Precision="0" Nullable="false" />
           <Property Name="ModifiedOn" Type="datetime2" Precision="0" />
-          <Property Name="CreatedBy" Type="nvarchar(max)" />
-          <Property Name="Modified" Type="nvarchar(max)" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="ModifiedBy" Type="int" />
         </EntityType>
         <EntityType Name="AccountTypeFeatures">
           <Key>
@@ -48,8 +48,8 @@
           <Property Name="FeatureId" Type="int" Nullable="false" />
           <Property Name="CreatedOn" Type="datetime2" Precision="0" Nullable="false" />
           <Property Name="ModifiedOn" Type="datetime2" Precision="0" />
-          <Property Name="CreatedBy" Type="nvarchar(max)" />
-          <Property Name="ModifiedBy" Type="nvarchar(max)" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="ModifiedBy" Type="int" />
         </EntityType>
         <EntityType Name="AccountTypes">
           <Key>
@@ -61,8 +61,8 @@
           <Property Name="Description" Type="nvarchar" MaxLength="255" />
           <Property Name="CreatedOn" Type="datetime2" Precision="0" Nullable="false" />
           <Property Name="ModifiedOn" Type="datetime2" Precision="0" />
-          <Property Name="CreatedBy" Type="nvarchar(max)" />
-          <Property Name="ModifiedBy" Type="nvarchar(max)" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="ModifiedBy" Type="int" />
         </EntityType>
         <EntityType Name="Branches">
           <Key>
@@ -73,8 +73,8 @@
           <Property Name="AccountId" Type="int" Nullable="false" />
           <Property Name="CreatedOn" Type="datetime2" Precision="0" Nullable="false" />
           <Property Name="ModifiedOn" Type="datetime2" Precision="0" />
-          <Property Name="CreatedBy" Type="nvarchar(max)" />
-          <Property Name="ModifiedBy" Type="nvarchar(max)" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="ModifiedBy" Type="int" />
         </EntityType>
         <EntityType Name="Customers">
           <Key>
@@ -88,8 +88,8 @@
           <Property Name="Description" Type="nvarchar" MaxLength="255" />
           <Property Name="CreatedOn" Type="datetime2" Precision="0" Nullable="false" />
           <Property Name="ModifiedOn" Type="datetime2" Precision="0" />
-          <Property Name="CreatedBy" Type="nvarchar(max)" />
-          <Property Name="ModifiedBy" Type="nvarchar(max)" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="ModifiedBy" Type="int" />
           <Property Name="AccountId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Devices">
@@ -100,7 +100,7 @@
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Description" Type="nvarchar" MaxLength="255" />
           <Property Name="CreatedOn" Type="datetime2" Precision="0" Nullable="false" />
-          <Property Name="ModifiedOn" Type="datetime2" Precision="0" Nullable="false" />
+          <Property Name="ModifiedOn" Type="datetime2" Precision="0" />
           <Property Name="AccountId" Type="int" Nullable="false" />
           <Property Name="BranchId" Type="int" Nullable="false" />
         </EntityType>
@@ -114,8 +114,8 @@
           <Property Name="CreatedOn" Type="datetime2" Precision="0" Nullable="false" />
           <Property Name="ModifiedOn" Type="datetime2" Precision="0" />
           <Property Name="Description" Type="nvarchar" MaxLength="255" />
-          <Property Name="CreatedBy" Type="nvarchar(max)" />
-          <Property Name="ModifiedBy" Type="nvarchar(max)" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="ModifiedBy" Type="int" />
         </EntityType>
         <EntityType Name="FeatureSubscriptionPricings">
           <Key>
@@ -128,8 +128,8 @@
           <Property Name="Discount" Type="decimal" Precision="3" Scale="2" />
           <Property Name="CreatedOn" Type="datetime2" Precision="0" Nullable="false" />
           <Property Name="ModifiedOn" Type="datetime2" Precision="0" />
-          <Property Name="CreatedBy" Type="nvarchar(max)" />
-          <Property Name="Modified" Type="nvarchar(max)" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="ModifiedBy" Type="int" />
         </EntityType>
         <EntityType Name="ItemCategories">
           <Key>
@@ -141,8 +141,8 @@
           <Property Name="Description" Type="nvarchar" MaxLength="255" />
           <Property Name="CreatedOn" Type="datetime2" Precision="0" Nullable="false" />
           <Property Name="ModifiedOn" Type="datetime2" Precision="0" />
-          <Property Name="CreatedBy" Type="nvarchar(max)" />
-          <Property Name="ModifiedBy" Type="nvarchar(max)" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="ModifiedBy" Type="int" />
           <Property Name="AccountId" Type="int" Nullable="false" />
           <Property Name="ImageUrl" Type="nvarchar(max)" />
         </EntityType>
@@ -155,7 +155,7 @@
           <Property Name="BranchId" Type="int" Nullable="false" />
           <Property Name="IsAvailable" Type="bit" Nullable="false" />
           <Property Name="ModifiedOn" Type="datetime2" Precision="0" />
-          <Property Name="ModifiedBy" Type="nvarchar(max)" />
+          <Property Name="ModifiedBy" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -183,8 +183,8 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
           <Property Name="Description" Type="nvarchar" MaxLength="255" />
           <Property Name="CreatedOn" Type="datetime2" Precision="0" Nullable="false" />
           <Property Name="ModifiedOn" Type="datetime2" Precision="0" />
-          <Property Name="CreatedBy" Type="nvarchar(max)" />
-          <Property Name="ModifiedBy" Type="nvarchar(max)" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="ModifiedBy" Type="int" />
           <Property Name="AccountId" Type="int" Nullable="false" />
           <Property Name="SmallImageUrl" Type="nvarchar" MaxLength="255" />
           <Property Name="FullImageUrl" Type="nvarchar" MaxLength="255" />
@@ -198,7 +198,7 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
           <Property Name="BranchId" Type="int" Nullable="false" />
           <Property Name="IsAvailable" Type="bit" Nullable="false" />
           <Property Name="ModifiedOn" Type="datetime2" Precision="0" />
-          <Property Name="ModifiedBy" Type="nvarchar(max)" />
+          <Property Name="ModifiedBy" Type="int" />
         </EntityType>
         <EntityType Name="ItemTags">
           <Key>
@@ -236,8 +236,8 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
           <Property Name="CreatedOn" Type="datetime2" Precision="0" Nullable="false" />
           <Property Name="ModifiedOn" Type="datetime2" Precision="0" />
           <Property Name="AccountId" Type="int" Nullable="false" />
-          <Property Name="CreatedBy" Type="nvarchar(max)" />
-          <Property Name="ModifiedBy" Type="nvarchar(max)" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="ModifiedBy" Type="int" />
           <Property Name="BranchId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="OrderStatus">
@@ -248,7 +248,7 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Description" Type="nvarchar" MaxLength="255" />
           <Property Name="CreatedOn" Type="datetime2" Precision="0" Nullable="false" />
-          <Property Name="ModifiedOn" Type="datetime2" Precision="7" />
+          <Property Name="ModifiedOn" Type="datetime2" Precision="0" />
         </EntityType>
         <EntityType Name="PaymentStatus">
           <Key>
@@ -256,9 +256,9 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Description" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="255" />
           <Property Name="CreatedOn" Type="datetime2" Precision="0" Nullable="false" />
-          <Property Name="ModifiedOn" Type="datetime2" Precision="0" Nullable="false" />
+          <Property Name="ModifiedOn" Type="datetime2" Precision="0" />
         </EntityType>
         <EntityType Name="RoleAccess">
           <Key>
@@ -270,8 +270,8 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
           <Property Name="WirtePermissions" Type="bit" Nullable="false" />
           <Property Name="CreatedOn" Type="datetime2" Precision="0" Nullable="false" />
           <Property Name="ModifiedOn" Type="datetime2" Precision="0" />
-          <Property Name="CreatedBy" Type="nvarchar(max)" />
-          <Property Name="ModifiedBy" Type="nvarchar(max)" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="ModifiedBy" Type="int" />
           <Property Name="AccountId" Type="int" Nullable="false" />
           <Property Name="BranchId" Type="int" />
         </EntityType>
@@ -285,8 +285,8 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
           <Property Name="WirtePermissions" Type="bit" Nullable="false" />
           <Property Name="CreatedOn" Type="datetime2" Precision="0" Nullable="false" />
           <Property Name="ModifiedOn" Type="datetime2" Precision="0" />
-          <Property Name="CreatedBy" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name="ModifiedBy" Type="nvarchar" MaxLength="20" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="ModifiedBy" Type="int" />
           <Property Name="AccountId" Type="int" Nullable="false" />
           <Property Name="BranchId" Type="int" />
         </EntityType>
@@ -298,7 +298,7 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Description" Type="nvarchar(max)" />
           <Property Name="CreatedOn" Type="datetime2" Precision="0" Nullable="false" />
-          <Property Name="ModifiedOn" Type="datetime2" Precision="0" Nullable="false" />
+          <Property Name="ModifiedOn" Type="datetime2" Precision="0" />
         </EntityType>
         <EntityType Name="SubOrderDetails">
           <Key>
@@ -311,7 +311,7 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
           <Property Name="OrderType" Type="nvarchar(max)" />
           <Property Name="OrderPreferences" Type="nvarchar(max)" />
           <Property Name="CreatedOn" Type="datetime2" Precision="0" Nullable="false" />
-          <Property Name="ModifiedOn" Type="datetime2" Precision="0" Nullable="false" />
+          <Property Name="ModifiedOn" Type="datetime2" Precision="0" />
         </EntityType>
         <EntityType Name="SubscriptionTypes">
           <Key>
@@ -324,8 +324,8 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
           <Property Name="Description" Type="nvarchar" MaxLength="255" />
           <Property Name="CreatedOn" Type="datetime2" Precision="0" Nullable="false" />
           <Property Name="ModifiedOn" Type="datetime2" Precision="0" />
-          <Property Name="CreatedBy" Type="nvarchar(max)" />
-          <Property Name="ModifiedBy" Type="nvarchar(max)" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="ModifiedBy" Type="int" />
         </EntityType>
         <EntityType Name="Tables">
           <Key>
@@ -337,7 +337,7 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
           <Property Name="IsMultipleMode" Type="bit" Nullable="false" />
           <Property Name="Description" Type="nvarchar" MaxLength="255" />
           <Property Name="CreatedOn" Type="datetime2" Precision="0" Nullable="false" />
-          <Property Name="ModifiedOn" Type="datetime2" Precision="0" Nullable="false" />
+          <Property Name="ModifiedOn" Type="datetime2" Precision="0" />
           <Property Name="AccountId" Type="int" Nullable="false" />
           <Property Name="BranchId" Type="int" Nullable="false" />
         </EntityType>
@@ -350,8 +350,8 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
           <Property Name="Comments" Type="nvarchar" MaxLength="255" />
           <Property Name="CreatedOn" Type="datetime2" Precision="0" Nullable="false" />
           <Property Name="ModifiedOn" Type="datetime2" Precision="0" />
-          <Property Name="CreatedBy" Type="nvarchar(max)" />
-          <Property Name="ModifiedBy" Type="nvarchar(max)" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="ModifiedBy" Type="int" />
           <Property Name="AccountId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="TagsAvailablities">
@@ -363,40 +363,38 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
           <Property Name="BranchId" Type="int" Nullable="false" />
           <Property Name="IsAvailable" Type="bit" Nullable="false" />
           <Property Name="ModifiedOn" Type="datetime2" Precision="0" />
-          <Property Name="ModifiedBy" Type="nvarchar(max)" />
+          <Property Name="ModifiedBy" Type="int" />
         </EntityType>
         <EntityType Name="Users">
           <Key>
-            <PropertyRef Name="UserName" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="UserName" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="LastName" Type="nvarchar" MaxLength="50" />
-          <Property Name="Description" Type="nvarchar" MaxLength="255" />
           <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
           <Property Name="RoleId" Type="int" Nullable="false" />
           <Property Name="CreatedOn" Type="datetime" Nullable="false" />
-          <Property Name="ModifiedOn" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedOn" Type="datetime" />
           <Property Name="AccountId" Type="int" Nullable="false" />
           <Property Name="BranchId" Type="int" Nullable="false" />
-          <Property Name="Account_Id" Type="int" />
         </EntityType>
         <EntityType Name="WaiterTables">
           <Key>
             <PropertyRef Name="AccountId" />
             <PropertyRef Name="BranchId" />
-            <PropertyRef Name="Waiter" />
+            <PropertyRef Name="WaiterId" />
             <PropertyRef Name="TableId" />
           </Key>
           <Property Name="AccountId" Type="int" Nullable="false" />
           <Property Name="BranchId" Type="int" Nullable="false" />
-          <Property Name="Waiter" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="WaiterId" Type="int" Nullable="false" />
           <Property Name="TableId" Type="int" Nullable="false" />
           <Property Name="CreatedOn" Type="datetime2" Precision="0" Nullable="false" />
           <Property Name="ModifiedOn" Type="datetime2" Precision="0" />
-          <Property Name="CreatedBy" Type="nvarchar(max)" />
-          <Property Name="ModifiedBy" Type="nvarchar(max)" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="ModifiedBy" Type="int" />
         </EntityType>
         <Association Name="FK_Account_RoleFeatureAccess">
           <End Role="Account" Type="Self.Account" Multiplicity="1">
@@ -409,18 +407,6 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
             </Principal>
             <Dependent Role="RoleFeatureAccess">
               <PropertyRef Name="AccountId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_CreatedUsers_RoleFeatureAccess">
-          <End Role="Users" Type="Self.Users" Multiplicity="1" />
-          <End Role="RoleFeatureAccess" Type="Self.RoleFeatureAccess" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Users">
-              <PropertyRef Name="UserName" />
-            </Principal>
-            <Dependent Role="RoleFeatureAccess">
-              <PropertyRef Name="CreatedBy" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -932,18 +918,6 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_dbo_Users_dbo_Account_Account_Id">
-          <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
-          <End Role="Users" Type="Self.Users" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Account">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Users">
-              <PropertyRef Name="Account_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_dbo_Users_dbo_Account_AccountId">
           <End Role="Account" Type="Self.Account" Multiplicity="1" />
           <End Role="Users" Type="Self.Users" Multiplicity="*" />
@@ -982,7 +956,7 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_dbo_WaiterTables_dbo_Account_AccountId">
+        <Association Name="FK_dbo_WaiterTables_dbo_Account_Id">
           <End Role="Account" Type="Self.Account" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -1076,18 +1050,6 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_ModifiedUser_RoleFeatureAccess">
-          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
-          <End Role="RoleFeatureAccess" Type="Self.RoleFeatureAccess" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Users">
-              <PropertyRef Name="UserName" />
-            </Principal>
-            <Dependent Role="RoleFeatureAccess">
-              <PropertyRef Name="ModifiedBy" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_OrderDetails_OrderStatus">
           <End Role="OrderStatus" Type="Self.OrderStatus" Multiplicity="1" />
           <End Role="OrderDetails" Type="Self.OrderDetails" Multiplicity="*" />
@@ -1111,6 +1073,18 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
             </Principal>
             <Dependent Role="RoleFeatureAccess">
               <PropertyRef Name="RoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WaiterTables_UserId">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="WaiterTables" Type="Self.WaiterTables" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="WaiterTables">
+              <PropertyRef Name="WaiterId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1152,10 +1126,6 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
           </EntitySet>
           <AssociationSet Name="FK_Account_RoleFeatureAccess" Association="Self.FK_Account_RoleFeatureAccess">
             <End Role="Account" EntitySet="Account" />
-            <End Role="RoleFeatureAccess" EntitySet="RoleFeatureAccess" />
-          </AssociationSet>
-          <AssociationSet Name="FK_CreatedUsers_RoleFeatureAccess" Association="Self.FK_CreatedUsers_RoleFeatureAccess">
-            <End Role="Users" EntitySet="Users" />
             <End Role="RoleFeatureAccess" EntitySet="RoleFeatureAccess" />
           </AssociationSet>
           <AssociationSet Name="FK_dbo_Account_dbo_AccountTypes_AccoutTypeId" Association="Self.FK_dbo_Account_dbo_AccountTypes_AccoutTypeId">
@@ -1310,10 +1280,6 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
             <End Role="Tags" EntitySet="Tags" />
             <End Role="TagsAvailablities" EntitySet="TagsAvailablities" />
           </AssociationSet>
-          <AssociationSet Name="FK_dbo_Users_dbo_Account_Account_Id" Association="Self.FK_dbo_Users_dbo_Account_Account_Id">
-            <End Role="Account" EntitySet="Account" />
-            <End Role="Users" EntitySet="Users" />
-          </AssociationSet>
           <AssociationSet Name="FK_dbo_Users_dbo_Account_AccountId" Association="Self.FK_dbo_Users_dbo_Account_AccountId">
             <End Role="Account" EntitySet="Account" />
             <End Role="Users" EntitySet="Users" />
@@ -1326,7 +1292,7 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
             <End Role="Roles" EntitySet="Roles" />
             <End Role="Users" EntitySet="Users" />
           </AssociationSet>
-          <AssociationSet Name="FK_dbo_WaiterTables_dbo_Account_AccountId" Association="Self.FK_dbo_WaiterTables_dbo_Account_AccountId">
+          <AssociationSet Name="FK_dbo_WaiterTables_dbo_Account_Id" Association="Self.FK_dbo_WaiterTables_dbo_Account_Id">
             <End Role="Account" EntitySet="Account" />
             <End Role="WaiterTables" EntitySet="WaiterTables" />
           </AssociationSet>
@@ -1354,10 +1320,6 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
             <End Role="Tags" EntitySet="Tags" />
             <End Role="ItemCategoryTags" EntitySet="ItemCategoryTags" />
           </AssociationSet>
-          <AssociationSet Name="FK_ModifiedUser_RoleFeatureAccess" Association="Self.FK_ModifiedUser_RoleFeatureAccess">
-            <End Role="Users" EntitySet="Users" />
-            <End Role="RoleFeatureAccess" EntitySet="RoleFeatureAccess" />
-          </AssociationSet>
           <AssociationSet Name="FK_OrderDetails_OrderStatus" Association="Self.FK_OrderDetails_OrderStatus">
             <End Role="OrderStatus" EntitySet="OrderStatus" />
             <End Role="OrderDetails" EntitySet="OrderDetails" />
@@ -1366,8 +1328,13 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
             <End Role="Roles" EntitySet="Roles" />
             <End Role="RoleFeatureAccess" EntitySet="RoleFeatureAccess" />
           </AssociationSet>
+          <AssociationSet Name="FK_WaiterTables_UserId" Association="Self.FK_WaiterTables_UserId">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="WaiterTables" EntitySet="WaiterTables" />
+          </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="iCafeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -1386,8 +1353,8 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
           <Property Name="EndDate" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
-          <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="ModifiedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="ModifiedBy" Type="Int32" />
           <NavigationProperty Name="RoleFeatureAccesses" Relationship="Self.FK_Account_RoleFeatureAccess" FromRole="Account" ToRole="RoleFeatureAccess" />
           <NavigationProperty Name="AccountType" Relationship="Self.FK_dbo_Account_dbo_AccountTypes_AccoutTypeId" FromRole="Account" ToRole="AccountTypes" />
           <NavigationProperty Name="AccountSubscriptionDetails" Relationship="Self.FK_dbo_AccountSubscriptionDetails_dbo_Account_AccountId" FromRole="Account" ToRole="AccountSubscriptionDetails" />
@@ -1401,10 +1368,9 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
           <NavigationProperty Name="RoleAccesses" Relationship="Self.FK_dbo_RoleAccess_dbo_Account_AccountId" FromRole="Account" ToRole="RoleAccess" />
           <NavigationProperty Name="Tables" Relationship="Self.FK_dbo_Tables_dbo_Account_AccountId" FromRole="Account" ToRole="Tables" />
           <NavigationProperty Name="Tags" Relationship="Self.FK_dbo_Tags_dbo_Account_AccountId" FromRole="Account" ToRole="Tags" />
-          <NavigationProperty Name="Users" Relationship="Self.FK_dbo_Users_dbo_Account_Account_Id" FromRole="Account" ToRole="Users" />
-          <NavigationProperty Name="Users1" Relationship="Self.FK_dbo_Users_dbo_Account_AccountId" FromRole="Account" ToRole="Users" />
-          <NavigationProperty Name="WaiterTables" Relationship="Self.FK_dbo_WaiterTables_dbo_Account_AccountId" FromRole="Account" ToRole="WaiterTables" />
-          <NavigationProperty Name="ItemCategoryTags" Relationship="iCafeModel.FK_ItemCategoryTags_Account" FromRole="Account" ToRole="ItemCategoryTag" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_dbo_Users_dbo_Account_AccountId" FromRole="Account" ToRole="Users" />
+          <NavigationProperty Name="WaiterTables" Relationship="Self.FK_dbo_WaiterTables_dbo_Account_Id" FromRole="Account" ToRole="WaiterTables" />
+          <NavigationProperty Name="ItemCategoryTags" Relationship="Self.FK_ItemCategoryTags_Account" FromRole="Account" ToRole="ItemCategoryTags" />
         </EntityType>
         <EntityType Name="AccountSubscriptionDetail">
           <Key>
@@ -1419,8 +1385,8 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
           <Property Name="IsPaid" Type="Boolean" Nullable="false" />
           <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
-          <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Modified" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="ModifiedBy" Type="Int32" />
           <NavigationProperty Name="Account" Relationship="Self.FK_dbo_AccountSubscriptionDetails_dbo_Account_AccountId" FromRole="AccountSubscriptionDetails" ToRole="Account" />
           <NavigationProperty Name="AccountType" Relationship="Self.FK_dbo_AccountSubscriptionDetails_dbo_AccountTypes_AccountTypeId" FromRole="AccountSubscriptionDetails" ToRole="AccountTypes" />
           <NavigationProperty Name="SubscriptionType" Relationship="Self.FK_dbo_AccountSubscriptionDetails_dbo_SubscriptionTypes_SubscriptionTypeId" FromRole="AccountSubscriptionDetails" ToRole="SubscriptionTypes" />
@@ -1434,8 +1400,8 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
           <Property Name="FeatureId" Type="Int32" Nullable="false" />
           <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
-          <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="ModifiedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="ModifiedBy" Type="Int32" />
           <NavigationProperty Name="AccountType" Relationship="Self.FK_dbo_AccountTypeFeatures_dbo_AccountTypes_AccountTypeId" FromRole="AccountTypeFeatures" ToRole="AccountTypes" />
           <NavigationProperty Name="Feature" Relationship="Self.FK_dbo_AccountTypeFeatures_dbo_Features_FeatureId" FromRole="AccountTypeFeatures" ToRole="Features" />
         </EntityType>
@@ -1449,8 +1415,8 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
           <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
-          <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="ModifiedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="ModifiedBy" Type="Int32" />
           <NavigationProperty Name="Accounts" Relationship="Self.FK_dbo_Account_dbo_AccountTypes_AccoutTypeId" FromRole="AccountTypes" ToRole="Account" />
           <NavigationProperty Name="AccountSubscriptionDetails" Relationship="Self.FK_dbo_AccountSubscriptionDetails_dbo_AccountTypes_AccountTypeId" FromRole="AccountTypes" ToRole="AccountSubscriptionDetails" />
           <NavigationProperty Name="AccountTypeFeatures" Relationship="Self.FK_dbo_AccountTypeFeatures_dbo_AccountTypes_AccountTypeId" FromRole="AccountTypes" ToRole="AccountTypeFeatures" />
@@ -1464,8 +1430,8 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
           <Property Name="AccountId" Type="Int32" Nullable="false" />
           <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
-          <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="ModifiedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="ModifiedBy" Type="Int32" />
           <NavigationProperty Name="Account" Relationship="Self.FK_dbo_Branches_dbo_Account_AccountId" FromRole="Branches" ToRole="Account" />
           <NavigationProperty Name="Devices" Relationship="Self.FK_dbo_Devices_dbo_Branches_BranchId" FromRole="Branches" ToRole="Devices" />
           <NavigationProperty Name="ItemCategoriesAvailablities" Relationship="Self.FK_dbo_ItemCategoriesAvailablities_dbo_Branches_BranchId" FromRole="Branches" ToRole="ItemCategoriesAvailablities" />
@@ -1488,8 +1454,8 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
           <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
-          <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="ModifiedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="ModifiedBy" Type="Int32" />
           <Property Name="AccountId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Account" Relationship="Self.FK_dbo_Customers_dbo_Account_AccountId" FromRole="Customers" ToRole="Account" />
           <NavigationProperty Name="Orders" Relationship="Self.FK_dbo_Orders_dbo_Customers_CustomerId" FromRole="Customers" ToRole="Orders" />
@@ -1502,7 +1468,7 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="ModifiedOn" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
           <Property Name="AccountId" Type="Int32" Nullable="false" />
           <Property Name="BranchId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Account" Relationship="Self.FK_dbo_Devices_dbo_Account_AccountId" FromRole="Devices" ToRole="Account" />
@@ -1519,8 +1485,8 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
           <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
           <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="ModifiedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="ModifiedBy" Type="Int32" />
           <NavigationProperty Name="AccountTypeFeatures" Relationship="Self.FK_dbo_AccountTypeFeatures_dbo_Features_FeatureId" FromRole="Features" ToRole="AccountTypeFeatures" />
           <NavigationProperty Name="FeatureSubscriptionPricings" Relationship="Self.FK_dbo_FeatureSubscriptionPricings_dbo_Features_FeatureId" FromRole="Features" ToRole="FeatureSubscriptionPricings" />
           <NavigationProperty Name="RoleAccesses" Relationship="Self.FK_dbo_RoleAccess_dbo_Features_FeatureID" FromRole="Features" ToRole="RoleAccess" />
@@ -1537,8 +1503,8 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
           <Property Name="Discount" Type="Decimal" Precision="3" Scale="2" />
           <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
-          <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Modified" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="ModifiedBy" Type="Int32" />
           <NavigationProperty Name="Feature" Relationship="Self.FK_dbo_FeatureSubscriptionPricings_dbo_Features_FeatureId" FromRole="FeatureSubscriptionPricings" ToRole="Features" />
           <NavigationProperty Name="SubscriptionType" Relationship="Self.FK_dbo_FeatureSubscriptionPricings_dbo_SubscriptionTypes_SubscriptionTypeId" FromRole="FeatureSubscriptionPricings" ToRole="SubscriptionTypes" />
         </EntityType>
@@ -1552,14 +1518,14 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
           <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
-          <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="ModifiedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="ModifiedBy" Type="Int32" />
           <Property Name="AccountId" Type="Int32" Nullable="false" />
           <Property Name="ImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Account" Relationship="Self.FK_dbo_ItemCategories_dbo_Account_AccountId" FromRole="ItemCategories" ToRole="Account" />
           <NavigationProperty Name="ItemCategoriesAvailablities" Relationship="Self.FK_dbo_ItemCategoriesAvailablities_dbo_ItemCategories_ItemCategoryId" FromRole="ItemCategories" ToRole="ItemCategoriesAvailablities" />
           <NavigationProperty Name="Items" Relationship="Self.FK_dbo_Items_dbo_ItemCategories_ItemCategoryId" FromRole="ItemCategories" ToRole="Items" />
-          <NavigationProperty Name="ItemCategoryTags" Relationship="iCafeModel.FK_ItemCategoryTags_ItemCategories" FromRole="ItemCategory" ToRole="ItemCategoryTag" />
+          <NavigationProperty Name="ItemCategoryTags" Relationship="Self.FK_ItemCategoryTags_ItemCategories" FromRole="ItemCategories" ToRole="ItemCategoryTags" />
         </EntityType>
         <EntityType Name="ItemCategoriesAvailablity">
           <Key>
@@ -1570,7 +1536,7 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
           <Property Name="BranchId" Type="Int32" Nullable="false" />
           <Property Name="IsAvailable" Type="Boolean" Nullable="false" />
           <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
-          <Property Name="ModifiedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ModifiedBy" Type="Int32" />
           <NavigationProperty Name="Branch" Relationship="Self.FK_dbo_ItemCategoriesAvailablities_dbo_Branches_BranchId" FromRole="ItemCategoriesAvailablities" ToRole="Branches" />
           <NavigationProperty Name="ItemCategory" Relationship="Self.FK_dbo_ItemCategoriesAvailablities_dbo_ItemCategories_ItemCategoryId" FromRole="ItemCategoriesAvailablities" ToRole="ItemCategories" />
         </EntityType>
@@ -1588,8 +1554,8 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
           <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
-          <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="ModifiedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="ModifiedBy" Type="Int32" />
           <Property Name="AccountId" Type="Int32" Nullable="false" />
           <Property Name="SmallImageUrl" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="FullImageUrl" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
@@ -1608,7 +1574,7 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
           <Property Name="BranchId" Type="Int32" Nullable="false" />
           <Property Name="IsAvailable" Type="Boolean" Nullable="false" />
           <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
-          <Property Name="ModifiedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ModifiedBy" Type="Int32" />
           <NavigationProperty Name="Branch" Relationship="Self.FK_dbo_ItemsAvailablities_dbo_Branches_BranchId" FromRole="ItemsAvailablities" ToRole="Branches" />
           <NavigationProperty Name="Item" Relationship="Self.FK_dbo_ItemsAvailablities_dbo_Items_ItemId" FromRole="ItemsAvailablities" ToRole="Items" />
         </EntityType>
@@ -1633,12 +1599,12 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
           </Key>
           <Property Name="SubOrderId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="OrderId" Type="Int32" Nullable="false" />
+          <Property Name="OrderStatusId" Type="Int32" Nullable="false" />
           <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
           <NavigationProperty Name="Order" Relationship="Self.FK_dbo_OrderDetails_dbo_Orders_OrderId" FromRole="OrderDetails" ToRole="Orders" />
           <NavigationProperty Name="SubOrderDetails" Relationship="Self.FK_dbo_SubOrderDetails_dbo_OrderDetails_SubOrderId" FromRole="OrderDetails" ToRole="SubOrderDetails" />
-          <Property Name="OrderStatusId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="OrderStatu" Relationship="iCafeModel.FK_OrderDetails_OrderStatus" FromRole="OrderDetail" ToRole="OrderStatu" />
+          <NavigationProperty Name="OrderStatu" Relationship="Self.FK_OrderDetails_OrderStatus" FromRole="OrderDetails" ToRole="OrderStatus" />
         </EntityType>
         <EntityType Name="Order">
           <Key>
@@ -1654,8 +1620,8 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
           <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
           <Property Name="AccountId" Type="Int32" Nullable="false" />
-          <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="ModifiedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="ModifiedBy" Type="Int32" />
           <Property Name="BranchId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Account" Relationship="Self.FK_dbo_Orders_dbo_Account_AccountId" FromRole="Orders" ToRole="Account" />
           <NavigationProperty Name="Branch" Relationship="Self.FK_dbo_Orders_dbo_Branches_BranchId" FromRole="Orders" ToRole="Branches" />
@@ -1663,15 +1629,26 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
           <NavigationProperty Name="OrderDetails" Relationship="Self.FK_dbo_OrderDetails_dbo_Orders_OrderId" FromRole="Orders" ToRole="OrderDetails" />
           <NavigationProperty Name="PaymentStatu" Relationship="Self.FK_dbo_Orders_dbo_PaymentStatus_PaymentStatusId" FromRole="Orders" ToRole="PaymentStatus" />
         </EntityType>
+        <EntityType Name="OrderStatu">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="OrderDetails" Relationship="Self.FK_OrderDetails_OrderStatus" FromRole="OrderStatus" ToRole="OrderDetails" />
+        </EntityType>
         <EntityType Name="PaymentStatu">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="ModifiedOn" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
           <NavigationProperty Name="Orders" Relationship="Self.FK_dbo_Orders_dbo_PaymentStatus_PaymentStatusId" FromRole="PaymentStatus" ToRole="Orders" />
         </EntityType>
         <EntityType Name="RoleAccess">
@@ -1684,8 +1661,8 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
           <Property Name="WirtePermissions" Type="Boolean" Nullable="false" />
           <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
-          <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="ModifiedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="ModifiedBy" Type="Int32" />
           <Property Name="AccountId" Type="Int32" Nullable="false" />
           <Property Name="BranchId" Type="Int32" />
           <NavigationProperty Name="Account" Relationship="Self.FK_dbo_RoleAccess_dbo_Account_AccountId" FromRole="RoleAccess" ToRole="Account" />
@@ -1702,14 +1679,12 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
           <Property Name="WirtePermissions" Type="Boolean" Nullable="false" />
           <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
-          <Property Name="CreatedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="ModifiedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="ModifiedBy" Type="Int32" />
           <Property Name="AccountId" Type="Int32" Nullable="false" />
           <Property Name="BranchId" Type="Int32" />
           <NavigationProperty Name="Account" Relationship="Self.FK_Account_RoleFeatureAccess" FromRole="RoleFeatureAccess" ToRole="Account" />
           <NavigationProperty Name="Feature" Relationship="Self.FK_Feature_RoleFeatureAccess" FromRole="RoleFeatureAccess" ToRole="Features" />
-          <NavigationProperty Name="User" Relationship="Self.FK_CreatedUsers_RoleFeatureAccess" FromRole="RoleFeatureAccess" ToRole="Users" />
-          <NavigationProperty Name="User1" Relationship="Self.FK_ModifiedUser_RoleFeatureAccess" FromRole="RoleFeatureAccess" ToRole="Users" />
           <NavigationProperty Name="Role" Relationship="Self.FK_Role_RoleFeatureAccess" FromRole="RoleFeatureAccess" ToRole="Roles" />
         </EntityType>
         <EntityType Name="Role">
@@ -1720,7 +1695,7 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="ModifiedOn" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
           <NavigationProperty Name="RoleAccesses" Relationship="Self.FK_dbo_RoleAccess_dbo_Roles_RoleID" FromRole="Roles" ToRole="RoleAccess" />
           <NavigationProperty Name="RoleFeatureAccesses" Relationship="Self.FK_Role_RoleFeatureAccess" FromRole="Roles" ToRole="RoleFeatureAccess" />
           <NavigationProperty Name="Users" Relationship="Self.FK_dbo_Users_dbo_Roles_RoleId" FromRole="Roles" ToRole="Users" />
@@ -1736,7 +1711,7 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
           <Property Name="OrderType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="OrderPreferences" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="ModifiedOn" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
           <NavigationProperty Name="Item" Relationship="Self.FK_dbo_SubOrderDetails_dbo_Items_ItemId" FromRole="SubOrderDetails" ToRole="Items" />
           <NavigationProperty Name="OrderDetail" Relationship="Self.FK_dbo_SubOrderDetails_dbo_OrderDetails_SubOrderId" FromRole="SubOrderDetails" ToRole="OrderDetails" />
         </EntityType>
@@ -1751,8 +1726,8 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
           <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
-          <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="ModifiedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="ModifiedBy" Type="Int32" />
           <NavigationProperty Name="AccountSubscriptionDetails" Relationship="Self.FK_dbo_AccountSubscriptionDetails_dbo_SubscriptionTypes_SubscriptionTypeId" FromRole="SubscriptionTypes" ToRole="AccountSubscriptionDetails" />
           <NavigationProperty Name="FeatureSubscriptionPricings" Relationship="Self.FK_dbo_FeatureSubscriptionPricings_dbo_SubscriptionTypes_SubscriptionTypeId" FromRole="SubscriptionTypes" ToRole="FeatureSubscriptionPricings" />
         </EntityType>
@@ -1766,7 +1741,7 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
           <Property Name="IsMultipleMode" Type="Boolean" Nullable="false" />
           <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="ModifiedOn" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
           <Property Name="AccountId" Type="Int32" Nullable="false" />
           <Property Name="BranchId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Account" Relationship="Self.FK_dbo_Tables_dbo_Account_AccountId" FromRole="Tables" ToRole="Account" />
@@ -1783,13 +1758,13 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
           <Property Name="Comments" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
-          <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="ModifiedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="ModifiedBy" Type="Int32" />
           <Property Name="AccountId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Account" Relationship="Self.FK_dbo_Tags_dbo_Account_AccountId" FromRole="Tags" ToRole="Account" />
           <NavigationProperty Name="ItemTags" Relationship="Self.FK_dbo_ItemTags_dbo_Tags_TagID" FromRole="Tags" ToRole="ItemTags" />
           <NavigationProperty Name="TagsAvailablities" Relationship="Self.FK_dbo_TagsAvailablities_dbo_Tags_TagId" FromRole="Tags" ToRole="TagsAvailablities" />
-          <NavigationProperty Name="ItemCategoryTags" Relationship="iCafeModel.FK_ItemCategoryTags_Tags" FromRole="Tag" ToRole="ItemCategoryTag" />
+          <NavigationProperty Name="ItemCategoryTags" Relationship="Self.FK_ItemCategoryTags_Tags" FromRole="Tags" ToRole="ItemCategoryTags" />
         </EntityType>
         <EntityType Name="TagsAvailablity">
           <Key>
@@ -1800,51 +1775,61 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
           <Property Name="BranchId" Type="Int32" Nullable="false" />
           <Property Name="IsAvailable" Type="Boolean" Nullable="false" />
           <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
-          <Property Name="ModifiedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ModifiedBy" Type="Int32" />
           <NavigationProperty Name="Branch" Relationship="Self.FK_dbo_TagsAvailablities_dbo_Branches_BranchId" FromRole="TagsAvailablities" ToRole="Branches" />
           <NavigationProperty Name="Tag" Relationship="Self.FK_dbo_TagsAvailablities_dbo_Tags_TagId" FromRole="TagsAvailablities" ToRole="Tags" />
         </EntityType>
         <EntityType Name="User">
           <Key>
-            <PropertyRef Name="UserName" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="UserName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="RoleId" Type="Int32" Nullable="false" />
           <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="ModifiedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
           <Property Name="AccountId" Type="Int32" Nullable="false" />
           <Property Name="BranchId" Type="Int32" Nullable="false" />
-          <Property Name="Account_Id" Type="Int32" />
-          <NavigationProperty Name="Account" Relationship="Self.FK_dbo_Users_dbo_Account_Account_Id" FromRole="Users" ToRole="Account" />
-          <NavigationProperty Name="Account1" Relationship="Self.FK_dbo_Users_dbo_Account_AccountId" FromRole="Users" ToRole="Account" />
+          <NavigationProperty Name="Account" Relationship="Self.FK_dbo_Users_dbo_Account_AccountId" FromRole="Users" ToRole="Account" />
           <NavigationProperty Name="Branch" Relationship="Self.FK_dbo_Users_dbo_Branches_BranchId" FromRole="Users" ToRole="Branches" />
-          <NavigationProperty Name="RoleFeatureAccesses" Relationship="Self.FK_CreatedUsers_RoleFeatureAccess" FromRole="Users" ToRole="RoleFeatureAccess" />
-          <NavigationProperty Name="RoleFeatureAccesses1" Relationship="Self.FK_ModifiedUser_RoleFeatureAccess" FromRole="Users" ToRole="RoleFeatureAccess" />
           <NavigationProperty Name="Role" Relationship="Self.FK_dbo_Users_dbo_Roles_RoleId" FromRole="Users" ToRole="Roles" />
+          <NavigationProperty Name="WaiterTables" Relationship="Self.FK_WaiterTables_UserId" FromRole="Users" ToRole="WaiterTables" />
         </EntityType>
         <EntityType Name="WaiterTable">
           <Key>
             <PropertyRef Name="AccountId" />
             <PropertyRef Name="BranchId" />
-            <PropertyRef Name="Waiter" />
+            <PropertyRef Name="WaiterId" />
             <PropertyRef Name="TableId" />
           </Key>
           <Property Name="AccountId" Type="Int32" Nullable="false" />
           <Property Name="BranchId" Type="Int32" Nullable="false" />
-          <Property Name="Waiter" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="WaiterId" Type="Int32" Nullable="false" />
           <Property Name="TableId" Type="Int32" Nullable="false" />
           <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
-          <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="ModifiedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Account" Relationship="Self.FK_dbo_WaiterTables_dbo_Account_AccountId" FromRole="WaiterTables" ToRole="Account" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="ModifiedBy" Type="Int32" />
+          <NavigationProperty Name="Account" Relationship="Self.FK_dbo_WaiterTables_dbo_Account_Id" FromRole="WaiterTables" ToRole="Account" />
           <NavigationProperty Name="Branch" Relationship="Self.FK_dbo_WaiterTables_dbo_Branches_BranchId" FromRole="WaiterTables" ToRole="Branches" />
           <NavigationProperty Name="Table" Relationship="Self.FK_dbo_WaiterTables_dbo_Tables_TableId" FromRole="WaiterTables" ToRole="Tables" />
+          <NavigationProperty Name="User" Relationship="Self.FK_WaiterTables_UserId" FromRole="WaiterTables" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="ItemCategoryTag">
+          <Key>
+            <PropertyRef Name="ItemCategoryID" />
+            <PropertyRef Name="TagID" />
+            <PropertyRef Name="AccountID" />
+          </Key>
+          <Property Name="ItemCategoryID" Type="Int32" Nullable="false" />
+          <Property Name="TagID" Type="Int32" Nullable="false" />
+          <Property Name="AccountID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Account" Relationship="Self.FK_ItemCategoryTags_Account" FromRole="ItemCategoryTags" ToRole="Account" />
+          <NavigationProperty Name="ItemCategory" Relationship="Self.FK_ItemCategoryTags_ItemCategories" FromRole="ItemCategoryTags" ToRole="ItemCategories" />
+          <NavigationProperty Name="Tag" Relationship="Self.FK_ItemCategoryTags_Tags" FromRole="ItemCategoryTags" ToRole="Tags" />
         </EntityType>
         <Association Name="FK_Account_RoleFeatureAccess">
           <End Role="Account" Type="Self.Account" Multiplicity="1">
@@ -2018,18 +2003,6 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_dbo_Users_dbo_Account_Account_Id">
-          <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
-          <End Role="Users" Type="Self.User" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Account">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Users">
-              <PropertyRef Name="Account_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_dbo_Users_dbo_Account_AccountId">
           <End Role="Account" Type="Self.Account" Multiplicity="1" />
           <End Role="Users" Type="Self.User" Multiplicity="*" />
@@ -2042,7 +2015,7 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_dbo_WaiterTables_dbo_Account_AccountId">
+        <Association Name="FK_dbo_WaiterTables_dbo_Account_Id">
           <End Role="Account" Type="Self.Account" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -2053,6 +2026,20 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
             </Principal>
             <Dependent Role="WaiterTables">
               <PropertyRef Name="AccountId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ItemCategoryTags_Account">
+          <End Role="Account" Type="Self.Account" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ItemCategoryTags" Type="Self.ItemCategoryTag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ItemCategoryTags">
+              <PropertyRef Name="AccountID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -2322,6 +2309,20 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_ItemCategoryTags_ItemCategories">
+          <End Role="ItemCategories" Type="Self.ItemCategory" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ItemCategoryTags" Type="Self.ItemCategoryTag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ItemCategories">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ItemCategoryTags">
+              <PropertyRef Name="ItemCategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_dbo_ItemsAvailablities_dbo_Items_ItemId">
           <End Role="Items" Type="Self.Item" Multiplicity="1" />
           <End Role="ItemsAvailablities" Type="Self.ItemsAvailablity" Multiplicity="*" />
@@ -2402,6 +2403,18 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_OrderDetails_OrderStatus">
+          <End Role="OrderStatus" Type="Self.OrderStatu" Multiplicity="1" />
+          <End Role="OrderDetails" Type="Self.OrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrderStatus">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrderDetails">
+              <PropertyRef Name="OrderStatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_dbo_Orders_dbo_PaymentStatus_PaymentStatusId">
           <End Role="PaymentStatus" Type="Self.PaymentStatu" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -2427,30 +2440,6 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
             </Principal>
             <Dependent Role="RoleAccess">
               <PropertyRef Name="RoleID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_CreatedUsers_RoleFeatureAccess">
-          <End Role="Users" Type="Self.User" Multiplicity="1" />
-          <End Role="RoleFeatureAccess" Type="Self.RoleFeatureAccess" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Users">
-              <PropertyRef Name="UserName" />
-            </Principal>
-            <Dependent Role="RoleFeatureAccess">
-              <PropertyRef Name="CreatedBy" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ModifiedUser_RoleFeatureAccess">
-          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
-          <End Role="RoleFeatureAccess" Type="Self.RoleFeatureAccess" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Users">
-              <PropertyRef Name="UserName" />
-            </Principal>
-            <Dependent Role="RoleFeatureAccess">
-              <PropertyRef Name="ModifiedBy" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -2508,6 +2497,32 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_ItemCategoryTags_Tags">
+          <End Role="Tags" Type="Self.Tag" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ItemCategoryTags" Type="Self.ItemCategoryTag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tags">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ItemCategoryTags">
+              <PropertyRef Name="TagID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WaiterTables_UserId">
+          <End Role="Users" Type="Self.User" Multiplicity="1" />
+          <End Role="WaiterTables" Type="Self.WaiterTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="WaiterTables">
+              <PropertyRef Name="WaiterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="iCafeEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Accounts" EntityType="Self.Account" />
           <EntitySet Name="AccountSubscriptionDetails" EntityType="Self.AccountSubscriptionDetail" />
@@ -2525,6 +2540,7 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
           <EntitySet Name="ItemTags" EntityType="Self.ItemTag" />
           <EntitySet Name="OrderDetails" EntityType="Self.OrderDetail" />
           <EntitySet Name="Orders" EntityType="Self.Order" />
+          <EntitySet Name="OrderStatus" EntityType="Self.OrderStatu" />
           <EntitySet Name="PaymentStatus" EntityType="Self.PaymentStatu" />
           <EntitySet Name="RoleAccesses" EntityType="Self.RoleAccess" />
           <EntitySet Name="RoleFeatureAccesses" EntityType="Self.RoleFeatureAccess" />
@@ -2536,6 +2552,7 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
           <EntitySet Name="TagsAvailablities" EntityType="Self.TagsAvailablity" />
           <EntitySet Name="Users" EntityType="Self.User" />
           <EntitySet Name="WaiterTables" EntityType="Self.WaiterTable" />
+          <EntitySet Name="ItemCategoryTags" EntityType="Self.ItemCategoryTag" />
           <AssociationSet Name="FK_Account_RoleFeatureAccess" Association="Self.FK_Account_RoleFeatureAccess">
             <End Role="Account" EntitySet="Accounts" />
             <End Role="RoleFeatureAccess" EntitySet="RoleFeatureAccesses" />
@@ -2588,17 +2605,17 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
             <End Role="Account" EntitySet="Accounts" />
             <End Role="Tags" EntitySet="Tags" />
           </AssociationSet>
-          <AssociationSet Name="FK_dbo_Users_dbo_Account_Account_Id" Association="Self.FK_dbo_Users_dbo_Account_Account_Id">
-            <End Role="Account" EntitySet="Accounts" />
-            <End Role="Users" EntitySet="Users" />
-          </AssociationSet>
           <AssociationSet Name="FK_dbo_Users_dbo_Account_AccountId" Association="Self.FK_dbo_Users_dbo_Account_AccountId">
             <End Role="Account" EntitySet="Accounts" />
             <End Role="Users" EntitySet="Users" />
           </AssociationSet>
-          <AssociationSet Name="FK_dbo_WaiterTables_dbo_Account_AccountId" Association="Self.FK_dbo_WaiterTables_dbo_Account_AccountId">
+          <AssociationSet Name="FK_dbo_WaiterTables_dbo_Account_Id" Association="Self.FK_dbo_WaiterTables_dbo_Account_Id">
             <End Role="Account" EntitySet="Accounts" />
             <End Role="WaiterTables" EntitySet="WaiterTables" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ItemCategoryTags_Account" Association="Self.FK_ItemCategoryTags_Account">
+            <End Role="Account" EntitySet="Accounts" />
+            <End Role="ItemCategoryTags" EntitySet="ItemCategoryTags" />
           </AssociationSet>
           <AssociationSet Name="FK_dbo_AccountSubscriptionDetails_dbo_AccountTypes_AccountTypeId" Association="Self.FK_dbo_AccountSubscriptionDetails_dbo_AccountTypes_AccountTypeId">
             <End Role="AccountTypes" EntitySet="AccountTypes" />
@@ -2680,6 +2697,10 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
             <End Role="ItemCategories" EntitySet="ItemCategories" />
             <End Role="Items" EntitySet="Items" />
           </AssociationSet>
+          <AssociationSet Name="FK_ItemCategoryTags_ItemCategories" Association="Self.FK_ItemCategoryTags_ItemCategories">
+            <End Role="ItemCategories" EntitySet="ItemCategories" />
+            <End Role="ItemCategoryTags" EntitySet="ItemCategoryTags" />
+          </AssociationSet>
           <AssociationSet Name="FK_dbo_ItemsAvailablities_dbo_Items_ItemId" Association="Self.FK_dbo_ItemsAvailablities_dbo_Items_ItemId">
             <End Role="Items" EntitySet="Items" />
             <End Role="ItemsAvailablities" EntitySet="ItemsAvailablities" />
@@ -2704,6 +2725,10 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
             <End Role="OrderDetails" EntitySet="OrderDetails" />
             <End Role="SubOrderDetails" EntitySet="SubOrderDetails" />
           </AssociationSet>
+          <AssociationSet Name="FK_OrderDetails_OrderStatus" Association="Self.FK_OrderDetails_OrderStatus">
+            <End Role="OrderStatus" EntitySet="OrderStatus" />
+            <End Role="OrderDetails" EntitySet="OrderDetails" />
+          </AssociationSet>
           <AssociationSet Name="FK_dbo_Orders_dbo_PaymentStatus_PaymentStatusId" Association="Self.FK_dbo_Orders_dbo_PaymentStatus_PaymentStatusId">
             <End Role="PaymentStatus" EntitySet="PaymentStatus" />
             <End Role="Orders" EntitySet="Orders" />
@@ -2711,14 +2736,6 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
           <AssociationSet Name="FK_dbo_RoleAccess_dbo_Roles_RoleID" Association="Self.FK_dbo_RoleAccess_dbo_Roles_RoleID">
             <End Role="Roles" EntitySet="Roles" />
             <End Role="RoleAccess" EntitySet="RoleAccesses" />
-          </AssociationSet>
-          <AssociationSet Name="FK_CreatedUsers_RoleFeatureAccess" Association="Self.FK_CreatedUsers_RoleFeatureAccess">
-            <End Role="Users" EntitySet="Users" />
-            <End Role="RoleFeatureAccess" EntitySet="RoleFeatureAccesses" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ModifiedUser_RoleFeatureAccess" Association="Self.FK_ModifiedUser_RoleFeatureAccess">
-            <End Role="Users" EntitySet="Users" />
-            <End Role="RoleFeatureAccess" EntitySet="RoleFeatureAccesses" />
           </AssociationSet>
           <AssociationSet Name="FK_Role_RoleFeatureAccess" Association="Self.FK_Role_RoleFeatureAccess">
             <End Role="Roles" EntitySet="Roles" />
@@ -2736,103 +2753,15 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
             <End Role="Tags" EntitySet="Tags" />
             <End Role="TagsAvailablities" EntitySet="TagsAvailablities" />
           </AssociationSet>
-          <EntitySet Name="ItemCategoryTags" EntityType="iCafeModel.ItemCategoryTag" />
-          <AssociationSet Name="FK_ItemCategoryTags_Account" Association="iCafeModel.FK_ItemCategoryTags_Account">
-            <End Role="Account" EntitySet="Accounts" />
-            <End Role="ItemCategoryTag" EntitySet="ItemCategoryTags" />
+          <AssociationSet Name="FK_ItemCategoryTags_Tags" Association="Self.FK_ItemCategoryTags_Tags">
+            <End Role="Tags" EntitySet="Tags" />
+            <End Role="ItemCategoryTags" EntitySet="ItemCategoryTags" />
           </AssociationSet>
-          <AssociationSet Name="FK_ItemCategoryTags_ItemCategories" Association="iCafeModel.FK_ItemCategoryTags_ItemCategories">
-            <End Role="ItemCategory" EntitySet="ItemCategories" />
-            <End Role="ItemCategoryTag" EntitySet="ItemCategoryTags" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ItemCategoryTags_Tags" Association="iCafeModel.FK_ItemCategoryTags_Tags">
-            <End Role="Tag" EntitySet="Tags" />
-            <End Role="ItemCategoryTag" EntitySet="ItemCategoryTags" />
-          </AssociationSet>
-          <EntitySet Name="OrderStatus" EntityType="iCafeModel.OrderStatu" />
-          <AssociationSet Name="FK_OrderDetails_OrderStatus" Association="iCafeModel.FK_OrderDetails_OrderStatus">
-            <End Role="OrderStatu" EntitySet="OrderStatus" />
-            <End Role="OrderDetail" EntitySet="OrderDetails" />
+          <AssociationSet Name="FK_WaiterTables_UserId" Association="Self.FK_WaiterTables_UserId">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="WaiterTables" EntitySet="WaiterTables" />
           </AssociationSet>
         </EntityContainer>
-        <EntityType Name="ItemCategoryTag">
-          <Key>
-            <PropertyRef Name="ItemCategoryID" />
-            <PropertyRef Name="TagID" />
-            <PropertyRef Name="AccountID" />
-          </Key>
-          <Property Name="ItemCategoryID" Type="Int32" Nullable="false" />
-          <Property Name="TagID" Type="Int32" Nullable="false" />
-          <Property Name="AccountID" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Account" Relationship="iCafeModel.FK_ItemCategoryTags_Account" FromRole="ItemCategoryTag" ToRole="Account" />
-          <NavigationProperty Name="ItemCategory" Relationship="iCafeModel.FK_ItemCategoryTags_ItemCategories" FromRole="ItemCategoryTag" ToRole="ItemCategory" />
-          <NavigationProperty Name="Tag" Relationship="iCafeModel.FK_ItemCategoryTags_Tags" FromRole="ItemCategoryTag" ToRole="Tag" />
-        </EntityType>
-        <Association Name="FK_ItemCategoryTags_Account">
-          <End Type="iCafeModel.Account" Role="Account" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Type="iCafeModel.ItemCategoryTag" Role="ItemCategoryTag" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Account">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="ItemCategoryTag">
-              <PropertyRef Name="AccountID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ItemCategoryTags_ItemCategories">
-          <End Type="iCafeModel.ItemCategory" Role="ItemCategory" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Type="iCafeModel.ItemCategoryTag" Role="ItemCategoryTag" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ItemCategory">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="ItemCategoryTag">
-              <PropertyRef Name="ItemCategoryID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ItemCategoryTags_Tags">
-          <End Type="iCafeModel.Tag" Role="Tag" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Type="iCafeModel.ItemCategoryTag" Role="ItemCategoryTag" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Tag">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="ItemCategoryTag">
-              <PropertyRef Name="TagID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityType Name="OrderStatu">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="ModifiedOn" Type="DateTime" Precision="7" />
-          <NavigationProperty Name="OrderDetails" Relationship="iCafeModel.FK_OrderDetails_OrderStatus" FromRole="OrderStatu" ToRole="OrderDetail" />
-        </EntityType>
-        <Association Name="FK_OrderDetails_OrderStatus">
-          <End Type="iCafeModel.OrderStatu" Role="OrderStatu" Multiplicity="1" />
-          <End Type="iCafeModel.OrderDetail" Role="OrderDetail" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="OrderStatu">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="OrderDetail">
-              <PropertyRef Name="OrderStatusId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2869,7 +2798,7 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
                 <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
                 <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
                 <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
-                <ScalarProperty Name="Modified" ColumnName="Modified" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2966,7 +2895,7 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
                 <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
                 <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
                 <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
-                <ScalarProperty Name="Modified" ColumnName="Modified" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -3043,9 +2972,9 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
           <EntitySetMapping Name="OrderDetails">
             <EntityTypeMapping TypeName="iCafeModel.OrderDetail">
               <MappingFragment StoreEntitySet="OrderDetails">
-                <ScalarProperty Name="OrderStatusId" ColumnName="OrderStatusId" />
                 <ScalarProperty Name="SubOrderId" ColumnName="SubOrderId" />
                 <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+                <ScalarProperty Name="OrderStatusId" ColumnName="OrderStatusId" />
                 <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
                 <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
               </MappingFragment>
@@ -3067,6 +2996,17 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
                 <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
                 <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
                 <ScalarProperty Name="BranchId" ColumnName="BranchId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderStatus">
+            <EntityTypeMapping TypeName="iCafeModel.OrderStatu">
+              <MappingFragment StoreEntitySet="OrderStatus">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -3193,18 +3133,16 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="iCafeModel.User">
               <MappingFragment StoreEntitySet="Users">
-                <ScalarProperty Name="UserName" ColumnName="UserName" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="RoleId" ColumnName="RoleId" />
                 <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
                 <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
                 <ScalarProperty Name="AccountId" ColumnName="AccountId" />
                 <ScalarProperty Name="BranchId" ColumnName="BranchId" />
-                <ScalarProperty Name="Account_Id" ColumnName="Account_Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -3213,7 +3151,7 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
               <MappingFragment StoreEntitySet="WaiterTables">
                 <ScalarProperty Name="AccountId" ColumnName="AccountId" />
                 <ScalarProperty Name="BranchId" ColumnName="BranchId" />
-                <ScalarProperty Name="Waiter" ColumnName="Waiter" />
+                <ScalarProperty Name="WaiterId" ColumnName="WaiterId" />
                 <ScalarProperty Name="TableId" ColumnName="TableId" />
                 <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
                 <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
@@ -3225,20 +3163,9 @@ warning 6002: The table/view 'iCafeDB.dbo.ItemCategoryTags' does not have a prim
           <EntitySetMapping Name="ItemCategoryTags">
             <EntityTypeMapping TypeName="iCafeModel.ItemCategoryTag">
               <MappingFragment StoreEntitySet="ItemCategoryTags">
-                <ScalarProperty Name="AccountID" ColumnName="AccountID" />
-                <ScalarProperty Name="TagID" ColumnName="TagID" />
                 <ScalarProperty Name="ItemCategoryID" ColumnName="ItemCategoryID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="OrderStatus">
-            <EntityTypeMapping TypeName="iCafeModel.OrderStatu">
-              <MappingFragment StoreEntitySet="OrderStatus">
-                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
-                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="TagID" ColumnName="TagID" />
+                <ScalarProperty Name="AccountID" ColumnName="AccountID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

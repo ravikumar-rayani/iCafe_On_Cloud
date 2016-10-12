@@ -31,7 +31,7 @@ namespace iCafe.Service.Services.Web
 
         public string RegisterDevice(string username, string password, string DeviceUniqueId)
         {
-            User user = userRepository.GetById(username);
+            User user = userRepository.GetByUserName(username);
             if (user != null)
             {
                 if (user.Password.Equals(password) && user.RoleId == 1)
@@ -44,7 +44,7 @@ namespace iCafe.Service.Services.Web
 
         public string Signin(string username, string password)
         {
-            User user = userRepository.GetById(username);
+            User user = userRepository.GetByUserName(username);
             if (user != null)
             {
                 if (user.Password.Equals(password))
@@ -141,9 +141,9 @@ namespace iCafe.Service.Services.Web
             roleRepository.Delete(id);
         }
 
-        public void DeleteUser(string username)
+        public void DeleteUser(int userId)
         {
-            userRepository.Delete(username);
+            userRepository.Delete(userId);
         }
 
         public void DeleteRoleAccess(int roleId, int featureId)

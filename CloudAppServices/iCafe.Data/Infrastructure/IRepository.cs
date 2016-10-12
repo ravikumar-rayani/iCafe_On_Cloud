@@ -12,11 +12,13 @@ namespace iCafe.Data.Infrastructure
     {
         // Marks an entity as new
         void Add(T entity);
+        // Marks an entity as new
+        T AutoAdd(T entity);
         // Marks an entity as modified
         void Update(T entity);
         // Marks an entity to be removed
         void Delete(T entity);
-        void Delete(P id);
+        void Delete(int id);
         void Delete(Expression<Func<T, bool>> where);
         // Get an entity by int id
         T GetById(P id);

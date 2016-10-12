@@ -20,7 +20,7 @@ namespace iCafe.Entity
         public string OrderType { get; set; }
         public string OrderPreferences { get; set; }
         public System.DateTime CreatedOn { get; set; }
-        public System.DateTime ModifiedOn { get; set; }
+        public Nullable<System.DateTime> ModifiedOn { get; set; }
     
         public virtual Item Item { get; set; }
         public virtual OrderDetail OrderDetail { get; set; }

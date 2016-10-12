@@ -18,7 +18,7 @@ namespace iCafe.Entity
         public int BranchId { get; set; }
         public bool IsAvailable { get; set; }
         public Nullable<System.DateTime> ModifiedOn { get; set; }
-        public string ModifiedBy { get; set; }
+        public Nullable<int> ModifiedBy { get; set; }
     
         public virtual Branch Branch { get; set; }
         public virtual Item Item { get; set; }

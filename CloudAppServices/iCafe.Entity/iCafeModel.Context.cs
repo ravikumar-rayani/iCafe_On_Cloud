@@ -41,6 +41,7 @@ namespace iCafe.Entity
         public virtual DbSet<ItemTag> ItemTags { get; set; }
         public virtual DbSet<OrderDetail> OrderDetails { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
+        public virtual DbSet<OrderStatu> OrderStatus { get; set; }
         public virtual DbSet<PaymentStatu> PaymentStatus { get; set; }
         public virtual DbSet<RoleAccess> RoleAccesses { get; set; }
         public virtual DbSet<RoleFeatureAccess> RoleFeatureAccesses { get; set; }
@@ -53,6 +54,5 @@ namespace iCafe.Entity
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<WaiterTable> WaiterTables { get; set; }
         public virtual DbSet<ItemCategoryTag> ItemCategoryTags { get; set; }
-        public virtual DbSet<OrderStatu> OrderStatus { get; set; }
     }
 }

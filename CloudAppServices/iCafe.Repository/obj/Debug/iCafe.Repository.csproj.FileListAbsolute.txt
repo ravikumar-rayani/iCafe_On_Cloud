@@ -14,3 +14,19 @@ X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Repository\bin\Debug\EntityFr
 X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Repository\obj\Debug\iCafe.Repository.csprojResolveAssemblyReference.cache
 X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Repository\obj\Debug\iCafe.Repository.dll
 X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Repository\obj\Debug\iCafe.Repository.pdb
+X:\WorkSpace\GitHub\Master\iCafe_On_Cloud\CloudAppServices\iCafe.Repository\obj\Debug\iCafe.Repository.csprojResolveAssemblyReference.cache
+X:\WorkSpace\GitHub\Master\iCafe_On_Cloud\CloudAppServices\iCafe.Repository\bin\Debug\iCafe.Repository.dll.config
+X:\WorkSpace\GitHub\Master\iCafe_On_Cloud\CloudAppServices\iCafe.Repository\bin\Debug\iCafe.Repository.dll
+X:\WorkSpace\GitHub\Master\iCafe_On_Cloud\CloudAppServices\iCafe.Repository\bin\Debug\iCafe.Repository.pdb
+X:\WorkSpace\GitHub\Master\iCafe_On_Cloud\CloudAppServices\iCafe.Repository\bin\Debug\EntityFramework.dll
+X:\WorkSpace\GitHub\Master\iCafe_On_Cloud\CloudAppServices\iCafe.Repository\bin\Debug\EntityFramework.SqlServer.dll
+X:\WorkSpace\GitHub\Master\iCafe_On_Cloud\CloudAppServices\iCafe.Repository\bin\Debug\iCafe.Data.dll
+X:\WorkSpace\GitHub\Master\iCafe_On_Cloud\CloudAppServices\iCafe.Repository\bin\Debug\iCafe.DTO.dll
+X:\WorkSpace\GitHub\Master\iCafe_On_Cloud\CloudAppServices\iCafe.Repository\bin\Debug\iCafe.Entity.dll
+X:\WorkSpace\GitHub\Master\iCafe_On_Cloud\CloudAppServices\iCafe.Repository\bin\Debug\iCafe.Data.pdb
+X:\WorkSpace\GitHub\Master\iCafe_On_Cloud\CloudAppServices\iCafe.Repository\bin\Debug\iCafe.DTO.pdb
+X:\WorkSpace\GitHub\Master\iCafe_On_Cloud\CloudAppServices\iCafe.Repository\bin\Debug\iCafe.Entity.pdb
+X:\WorkSpace\GitHub\Master\iCafe_On_Cloud\CloudAppServices\iCafe.Repository\bin\Debug\EntityFramework.xml
+X:\WorkSpace\GitHub\Master\iCafe_On_Cloud\CloudAppServices\iCafe.Repository\bin\Debug\EntityFramework.SqlServer.xml
+X:\WorkSpace\GitHub\Master\iCafe_On_Cloud\CloudAppServices\iCafe.Repository\obj\Debug\iCafe.Repository.dll
+X:\WorkSpace\GitHub\Master\iCafe_On_Cloud\CloudAppServices\iCafe.Repository\obj\Debug\iCafe.Repository.pdb
