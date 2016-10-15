@@ -87,9 +87,14 @@ namespace iCafe.Service.Controllers
         /*sample parameter:{"CustomerId":"1","UserId":"2","OrderId":3}*/
         public async Task<IHttpActionResult> OrderRequest([FromBody] OrderingParameters parameters)
         {
+            OrderClientDTO result;
             if (parameters != null)
             {
-                var result = await _service.PlaceOrder(parameters.CustomerId, parameters.UserId, parameters.OrderId, parameters.items);
+                if (parameters.OrderId > 0 && _service.ValidateRunningOrder(parameters.OrderId, parameters.UserId, parameters.CustomerId))
+                    result = await _service.PlaceOrder(parameters.UserId, parameters.CustomerId, parameters.OrderId, parameters.Items, parameters.TotalPrice);
+                else
+                    result = await _service.PlaceOrder(parameters.UserId, parameters.CustomerId, parameters.Items, parameters.TotalPrice);
+                
                 if (result == null)
                 {
                     NotFound();

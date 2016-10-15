@@ -27,6 +27,12 @@ namespace iCafe.Repository.Classes
             base.Add(entity);
         }
 
+        public override Table AutoAdd(Table entity)
+        {
+            entity.CreatedOn = DateTime.Now;
+            return base.AutoAdd(entity);
+        }
+
         public override void Update(Table entity)
         {
             entity.ModifiedOn = DateTime.Now;

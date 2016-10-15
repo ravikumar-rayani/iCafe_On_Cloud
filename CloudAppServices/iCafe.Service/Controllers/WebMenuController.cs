@@ -98,7 +98,7 @@ namespace iCafe.Service.Controllers
         #region GetByParentId
 
         [HttpGet]
-        [Route("{categoryid}/items")]
+        [Route("{categoryid}/Items")]
         public IList<ItemClientDTO> GetItemsByCategory(int categoryid)
         {
             var items = _service.GetItemsByCategoryId(categoryid);

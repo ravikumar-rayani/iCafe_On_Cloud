@@ -28,13 +28,13 @@ namespace iCafe.Service.Controllers
 
         #region Validation Apis
 
-        [Route("{username}/Login")]
-        [Route("{username}/Signin")]
-        [Route("{username}/Authenticate")]
+        [Route("Login")]
+        [Route("Signin")]
+        [Route("Authenticate")]
         [HttpPost]
-        public async Task<IHttpActionResult> Authenticate(string username, [FromBody] string password)
+        public async Task<IHttpActionResult> Authenticate([FromBody] Credentails _credentails)
         {
-            var role = await _service.Authenticate(username, password);
+            var role = await _service.Authenticate(_credentails.username, _credentails.password);
             if (role == -1)
             {
                 return NotFound();

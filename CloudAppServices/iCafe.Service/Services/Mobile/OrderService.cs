@@ -35,6 +35,18 @@ namespace iCafe.Service.Services.Mobile
             this.customerRepository = new CustomerRepository(dbFactory);
             this.unitOfWork = new UnitOfWork(dbFactory);
         }
+
+        #region Validation Methods
+
+        public bool ValidateRunningOrder(int orderId, int userId, int customerId)
+        {
+            var order = orderRepository.Any(O => O.Id.Equals(orderId) && O.CreatedBy.Equals(userId) && O.CustomerId.Equals(customerId));
+            
+            return order != true;
+        }
+
+        #endregion
+
         #region Get Methods
 
         public async Task<OrderClientDTO> GetCustomerCurrentOrders(int customerId, int userId, int orderId = 0)
@@ -165,9 +177,53 @@ namespace iCafe.Service.Services.Mobile
 
         #region Post Methods
 
-        public async Task<OrderClientDTO> PlaceOrder(int userId, int customerId, int orderId, OrderItem[] items)
+        public async Task<OrderClientDTO> PlaceOrder(int userId, int customerId, int orderId, OrderItem[] items, decimal totalPrice = 0.00m)
         {
-            return new OrderClientDTO();
+            var suborder =  orderDetailRepository.AutoAdd(new OrderDetail(){ OrderId = orderId, OrderStatusId = 1 });
+            if (suborder != null)
+            {
+                foreach (var i in items)
+                {
+                    subOrderDetailRepository.Add(new SubOrderDetail()
+                    {
+                        SubOrderId = suborder.SubOrderId,
+                        ItemId = i.ItemId,
+                        OrderQuantity = i.Quantity,
+                        OrderPreferences = i.Prefences
+                    });
+                }
+
+                Save();
+            }
+
+            return await GetCustomerCurrentOrders(customerId, userId, orderId);
+        }
+
+        public async Task<OrderClientDTO> PlaceOrder(int userId, int customerId, OrderItem[] items, decimal totalPrice = 0.00m)
+        {
+            var order = orderRepository.AutoAdd(new Order() { CustomerId= customerId, PaymentStatusId = 1, TotalPrice = totalPrice,  AccountId= 6, BranchId=6 });
+            Save();
+            if (order != null && order.Id != 0)
+            {
+                var suborder = orderDetailRepository.AutoAdd(new OrderDetail() { OrderId = order.Id, OrderStatusId = 1 });
+                Save();
+                if (suborder != null && suborder.SubOrderId != 0)
+                {
+                    foreach (var i in items)
+                    {
+                        subOrderDetailRepository.Add(new SubOrderDetail()
+                        {
+                            SubOrderId = suborder.SubOrderId,
+                            ItemId = i.ItemId,
+                            OrderQuantity = i.Quantity,
+                            OrderPreferences = i.Prefences
+                        });
+                    }
+                    Save();
+                }
+            }
+
+            return await GetCustomerCurrentOrders(customerId, userId, order != null ? order.Id : 0 );
         }
 
         public int Add(Order entity)

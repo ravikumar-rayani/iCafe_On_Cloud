@@ -45,7 +45,7 @@ namespace iCafe.Service.Controllers
 
         [ResponseType(typeof(int))]
         [HttpPost]
-        [Route("AddCustomer")]
+        [Route("NewCustomer")]
         public async Task<IHttpActionResult> PostCustomer(CustomerClientDTO customer)
         {
             var result = await _service.Add(customer);

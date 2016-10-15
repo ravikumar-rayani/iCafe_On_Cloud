@@ -64,6 +64,7 @@
     <Compile Include="Classes\ItemTagRepository.cs" />
     <Compile Include="Classes\OrderDetailRepository.cs" />
     <Compile Include="Classes\OrderRepository.cs" />
+    <Compile Include="Classes\OrderStatusRepository.cs" />
     <Compile Include="Classes\PaymentStatusRepository.cs" />
     <Compile Include="Classes\RoleAccessRepository.cs" />
     <Compile Include="Classes\RoleRepository.cs" />
@@ -88,6 +89,7 @@
     <Compile Include="Interfaces\IItemRepository.cs" />
     <Compile Include="Interfaces\IItemsAvailablityRepository.cs" />
     <Compile Include="Interfaces\IItemTagRepository.cs" />
+    <Compile Include="Interfaces\IOrderStatusRepository.cs" />
     <Compile Include="Interfaces\IOrderDetailRepository.cs" />
     <Compile Include="Interfaces\IOrderRepository.cs" />
     <Compile Include="Interfaces\IPaymentStatusRepository.cs" />

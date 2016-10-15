@@ -44,7 +44,8 @@ namespace iCafe.DTO.Client
         public int CustomerId { get; set; }
         public int UserId { get; set; }
         public int OrderId { get; set; }
-        public OrderItem[] items { get; set; }
+        public decimal TotalPrice { get; set; }
+        public OrderItem[] Items { get; set; }
 
     }
 
@@ -52,5 +53,6 @@ namespace iCafe.DTO.Client
     {
         public int ItemId { get; set; }
         public int Quantity { get; set; }
+        public string Prefences { get; set; }
     }
 }

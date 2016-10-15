@@ -20,6 +20,12 @@ namespace iCafe.Repository.Classes
             base.Add(entity);
         }
 
+        public override SubscriptionType AutoAdd(SubscriptionType entity)
+        {
+            entity.CreatedOn = DateTime.Now;
+            return base.AutoAdd(entity);
+        }
+
         public override void Update(SubscriptionType entity)
         {
             entity.ModifiedOn = DateTime.Now;

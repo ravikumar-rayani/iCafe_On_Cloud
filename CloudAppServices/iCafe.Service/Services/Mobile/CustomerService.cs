@@ -43,12 +43,14 @@ namespace iCafe.Service.Services.Mobile
             Customer customer = new Customer()
             {
                 Name = _customer.Name,
-                Phone = _customer.Phone,
+                Phone = (decimal)_customer.Phone,
                 EmailId = _customer.EmailId,
                 Address = _customer.Address,
                 AccountId = 6
             };
-            return customerRepository.AutoAdd(customer).Id;
+            var new_customer = customerRepository.AutoAdd(customer);
+            Save();
+            return new_customer.Id;
         }
 
         #endregion

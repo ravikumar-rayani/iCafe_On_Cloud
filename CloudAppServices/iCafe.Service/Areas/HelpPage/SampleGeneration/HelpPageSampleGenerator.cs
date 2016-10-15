@@ -174,7 +174,7 @@ namespace iCafe.Service.Areas.HelpPage
         /// <param name="type">The type.</param>
         /// <returns>The sample object.</returns>
         [SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes",
-            Justification = "Even if all items in SampleObjectFactories throw, problem will be visible as missing sample.")]
+            Justification = "Even if all Items in SampleObjectFactories throw, problem will be visible as missing sample.")]
         public virtual object GetSampleObject(Type type)
         {
             object sampleObject;

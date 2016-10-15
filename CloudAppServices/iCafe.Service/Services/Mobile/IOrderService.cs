@@ -14,6 +14,12 @@ namespace iCafe.Service.Services.Mobile
     public interface IOrderService
     {
 
+        #region Validation Methods
+
+        bool ValidateRunningOrder(int orderId, int userId, int customerId);
+
+        #endregion
+
         #region Get Methods
 
         Task<OrderClientDTO> GetCustomerCurrentOrders(int userId, int customerId, int orderId = 0);
@@ -21,12 +27,15 @@ namespace iCafe.Service.Services.Mobile
         Task<OrderClientDTO> GetCustomerCurrentOrders(int orderId);
 
         Task<List<OrderClientDTO>> GetWaiterCurrentOrders(int waiterId);
+        
 
         #endregion
 
         #region Post Methods
 
-        Task<OrderClientDTO> PlaceOrder(int userId, int customerId, int orderId, OrderItem[] items);
+        Task<OrderClientDTO> PlaceOrder(int userId, int customerId, int orderId, OrderItem[] items, decimal totalPrice);
+
+        Task<OrderClientDTO> PlaceOrder(int userId, int customerId, OrderItem[] items, decimal totalPrice);
 
         int Add(Order entity);
 
