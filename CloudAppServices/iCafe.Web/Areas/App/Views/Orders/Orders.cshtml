@@ -1,0 +1,192 @@
+﻿@model List<iCafe.Web.Areas.App.ViewModels.OrderVM>
+@{
+    ViewBag.Title = "Orders";
+}
+
+<div class="col-lg-12" style="margin-top:15px;">
+    <div class="row">
+        <div class="col-md-9 col-sm-12 col-xs-12">
+                    <div class="input-group primary">
+                        <span class="input-group-addon">
+                            <span class="arrow"></span>
+                            <i class="fa fa-search"></i>
+                        </span>
+                        <input type="search" class="form-control search-page-input input-sm" aria-controls="itemsTable">
+                    </div>
+                    <br>
+                </div>
+        <div class="col-md-3 col-sm-12 col-xs-12">
+                    <nav class='pull-right'>
+                        <ul class="pagination pull-right" style="margin: 0px;">
+                            <li><a href="#">«</a></li>
+                            <li class="active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">»</a></li>
+                        </ul>
+                    </nav>
+                </div>
+        <div class="col-md-12 col-sm-12 col-xs-12 search_data" style="margin-top: 12px;">
+            <div class="panel panel-default">				
+				<div class="panel-body">
+					<div class="table-responsive">
+                        <table class="display table">
+                            @{
+                                <thead>
+                                    <tr>
+                                        <th>OrderId</th>
+                                        <th>Customer</th>
+                                        <th>UserName</th>
+                                        <th>TotalPrice</th>
+                                        <th>PaymentStatus</th>
+                                        <th>PaymentType</th>
+                                        <th>RatingOnFood</th>
+                                        <th>RatingOnService</th>
+                                        <th>Feedback</th>
+                                        <th>CreatedOn</th>
+                                    </tr>
+                                </thead>
+        
+                                <tbody>
+                                @foreach(var o in Model)
+                                {
+                                        <tr>
+                                            <td>
+                                                @if (o.SubOrders != null && o.SubOrders.Count > 0)
+                                                {
+                                                    <span class="icon icon-e" style="float:left; cursor:pointer;"></span> 
+                                                }
+                                                else
+                                                {
+                                                    <span style="display:inline-block;width:14px">&nbsp;</span>
+                                                }
+                                                @o.OrderId
+                                            </td>
+                                            <td>@o.Customer</td>
+                                            <td>@o.UserName</td>
+                                            <td>@o.TotalPrice</td>
+                                            <td>@o.PaymentStatus</td>
+                                            <td>@o.PaymentType</td>
+                                            <td>@o.RatingOnFood</td>
+                                            <td>@o.RatingOnService</td>
+                                            <td>@o.Feedback</td>
+                                            <td>@o.CreatedOn</td>
+                                        </tr>
+                                        <tr style="display:none;">
+                                            @if (o.SubOrders != null && o.SubOrders.Count > 0)
+                                            {
+                                                <td colspan="100%" class="innerTable">
+                                                    <table class="display table">
+                                                    @{
+                                                        <thead>
+                                                            <tr>
+                                                                <th>SubOrderId</th>
+                                                                <th>OrderStatus</th>
+                                                                <th>SubTotalPrice</th>
+                                                                <th>CreatedOn</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        @foreach(var so in o.SubOrders)
+                                                        {
+                                                            <tr>
+                                                                <td>
+                                                                    @if (so.SubOrderDetails != null && so.SubOrderDetails.Count > 0)
+                                                                    {
+                                                                        <span class="icon icon-e" style="float:left; cursor:pointer;"></span> 
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        <span style="display:inline-block;width:14px">&nbsp;</span>
+                                                                    }
+                                                                    @so.SubOrderId
+                                                                </td>
+                                                                <td>@so.OrderStatus</td>
+                                                                <td>@so.SubTotalPrice</td>
+                                                                <td>@so.CreatedOn</td>
+                                                            </tr>
+                                                            <tr style="display:none;">
+                                                                @if (so.SubOrderDetails != null && so.SubOrderDetails.Count > 0)
+                                                                {
+                                                                    <td colspan="100%" class="innerTable">                                                
+                                                                        <table class="display table">
+                                                                        @{
+                                                                            <thead>
+                                                                                    <tr>
+                                                                                        <th>ItemName</th>
+                                                                                        <th>Quantity</th>
+                                                                                        <th>ItemType</th>
+                                                                                        <th>AppliedPrice</th>
+                                                                                    </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                            @foreach(var sod in so.SubOrderDetails)
+                                                                            {
+                                                                                <tr>
+                                                                                    <td>@sod.ItemName</td>
+                                                                                    <td>@sod.Quantity</td>
+                                                                                    <td>@sod.ItemType</td>
+                                                                                    <td>@sod.AppliedPrice</td>
+                                                                                </tr>
+                                                                            }
+                                                                            </tbody>
+                                                                            }
+                                                                            </table>  
+                                                                    </td>
+                                                                }
+                                                                else
+                                                                {
+                                                                    <td colspan="100%"></td>
+                                                                } 
+                                                             </tr>
+                                                        }
+                                                        </tbody>
+                                                      }
+                                                     </table>                                                 
+                                                 </td>
+                                             }
+                                             else
+                                             {
+                                                 <td colspan="100%"></td>
+                                             }                   
+                                        </tr>
+                                }
+                                </tbody>
+                            }
+                            </table>
+                    </div>					
+				</div>
+		    </div>	
+        </div>
+    </div>
+</div>
+@*</div>*@
+
+@* CSS *@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+<style>
+    .container{min-width:500px; overflow:hidden;}
+    .innerTable table{margin:0px auto; border-left-width:4px;}
+    td.innerTable {padding-left:20px !important;}
+    .icon {
+        background-image: url('../../images/ui-icons.png');
+        background-repeat:no-repeat;
+        width:16px;
+        height:16px;
+        display:inline-block;
+        float:left;
+    }
+    .icon-e{background-position:-32px -16px}
+    .icon-s{background-position:-64px -16px}
+</style>
+@* Jquery for Collapse/Expend *@
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.icon').click(function () {
+            var $pRow = $(this).parents('tr');
+            var $nextRow = $pRow.next('tr');
+            $nextRow.toggle();
+            $(this).toggleClass('icon-s icon-e');
+        });
+    })
+</script>

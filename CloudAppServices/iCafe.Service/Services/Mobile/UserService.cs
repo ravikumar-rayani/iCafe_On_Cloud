@@ -18,6 +18,7 @@ namespace iCafe.Service.Services.Mobile
         private readonly IFeatureRepository featureRepository;
         private readonly IRoleAccessRepository roleAccessRepository;
         private readonly IWaiterTableRepository waiterTableRepository;
+        private readonly ITableRepository tableRepository;
         private readonly IUnitOfWork unitOfWork;
 
         public UserService()
@@ -28,6 +29,7 @@ namespace iCafe.Service.Services.Mobile
             this.featureRepository = new FeatureRepository(dbFactory);
             this.roleAccessRepository = new RoleAccessRepository(dbFactory);
             this.waiterTableRepository = new WaiterTableRepository(dbFactory);
+            this.tableRepository = new TableRepository(dbFactory);
             this.unitOfWork = new UnitOfWork(dbFactory);
         }
 
@@ -79,14 +81,25 @@ namespace iCafe.Service.Services.Mobile
         public async Task<WaiterInfoClientDTO> GetWaiterInfo(int waiterId)
         {
             WaiterInfoClientDTO waiterInfo = null;
+
             if (userRepository.GetById(waiterId).RoleId.Equals(5))
             {
                 waiterInfo = new WaiterInfoClientDTO();
                 waiterInfo.Name = userRepository.GetById(waiterId).FirstName;
                 waiterInfo.ImagePath = ""; // userRepository.GetById(username).Imagepath;
                 if (waiterTableRepository.Any(w => w.WaiterId.Equals(waiterId)))
-                    waiterInfo.assignedTables = waiterTableRepository.GetMany(w => w.WaiterId.Equals(waiterId)).Select(t => t.TableId).ToArray();
+                {
+                    var assignedTables = waiterTableRepository.GetMany(w => w.WaiterId.Equals(waiterId)).Select(t => t.TableId).Distinct().ToList();
+                    if (waiterInfo.assignedTables == null)
+                        waiterInfo.assignedTables = new Dictionary<int, string>();
+                    assignedTables.ForEach(t =>
+                        {
+                            waiterInfo.assignedTables.Add(t, tableRepository.GetById(t).Name);
+                        });
+                }
+                
             }
+
             return waiterInfo;
         }
         //public IEnumerable<User> GetUserFeaturesByID()

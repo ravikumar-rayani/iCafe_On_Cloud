@@ -30,16 +30,15 @@
             <div class="panel panel-default">				
 				<div class="panel-body">
 					<div class="table-responsive">
-                        <table id="example-editable" class="display table" style="width: 100%;">
+                        <table id="tags-editable" class="display table" style="width: 100%;">
                             <thead>
                             <tr>
                                 <th class="tdhcenter"><input id="checkall" type="checkbox" class="iswitch iswitch-primary"></th>
-                                <th>Image</th>
                                 <th>Name</th>                                
                                 <th>Description</th>
                                 <th>Discount</th>
-                                <th>Type</th>
-                                <th>CreatedOn</th>
+                                <th>LastModifiedBy</th>
+                                <th>LastModifiedOn</th>
                                 <th>IsAvailable</th>    
                                 <th>Action</th>                            
                             </tr>                            
@@ -48,19 +47,18 @@
                                 @foreach(var tag in Model.Tags){
                                     <tr>
                                         <td class="tdhcenter" style="vertical-align:middle;"><input type="checkbox" class="iswitch iswitch-primary selectrow"></td>
-                                        <td><img class="thumbnail" title="user" src="~/Images/Menu/Items/Soups/albondigas-soup.png"></td>
                                         <td><a href="javascript:void(0);">@tag.Title</a></td>
                                         <td><a href="javascript:void(0);">@tag.Description</a></td>
-                                        <td class="tdhcenter"><a href="javascript:void(0);">@tag.Discount%</a></td>
-                                        <td><a class="fType" href="javascript:void(0);"></a></td>
-                                        <td class="tdhcenter"><a class="cdate" href="javascript:void(0);">@tag.CreatedOn.ToString("dd/MM/yyyy")</a></td>                                    
-                                        <td class="tdhcenter">
+                                        <td ><a href="javascript:void(0);">@tag.Discount%</a></td>
+                                        <td>Username</td>
+                                        <td>@tag.CreatedOn.ToString("dd/MM/yyyy")</td>                                    
+                                        <td >
                                             <div class="ios-switch switch-md">
                                                 <input type="checkbox" class="js-switch"  checked="@tag.IsAvailable">
                                             </div>
                                             <!--<input type="checkbox" checked="@tag.IsAvailable" class="iswitch iswitch-primary">!-->
                                         </td>                                                                       
-                                        <td class="tdhcenter">
+                                        <td >
                                             <button style="background:none; border:none "><span class="glyphicon glyphicon-edit"></span></button>
                                             <button style="margin-left:15px; background:none; border:none "><span class="glyphicon glyphicon-trash"></span></button>                                        
                                         </td>
@@ -70,10 +68,14 @@
                         </table>  
                     </div>					
 				</div>
-		</div>	
+		    </div>	
         </div>
+        <!-- Delete Items -->
+        <button class="site-action2 btn-raised btn btn-success btn-floating" type="button">
+                <i class="icon glyphicon glyphicon-trash" aria-hidden="true"></i>
+                </button>
         <!--Add Item form -->
-        <button class="site-action btn-raised btn btn-success btn-floating" data-target="#CreateTabs"
+        <button class="site-action1 btn-raised btn btn-success btn-floating" data-target="#CreateTabs"
                 data-toggle="modal" type="button">
                 <i class="icon glyphicon glyphicon-plus" aria-hidden="true"></i>
                 </button>
@@ -231,7 +233,7 @@
     };
 
         $(document).ready(function () {
-
+            $('select').select2();
             ko.applyBindings(new ViewModel());
 
             //$.fn.editable.defaults.mode = 'inline';

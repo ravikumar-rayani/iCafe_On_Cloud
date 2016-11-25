@@ -26,3 +26,12 @@ X:\WorkSpace\GitHub\iCafe_On_Cloud\CloudAppServices\iCafe.Web\bin\System.Web.Opt
 X:\WorkSpace\GitHub\iCafe_On_Cloud\CloudAppServices\iCafe.Web\obj\Release\iCafe.Web.csprojResolveAssemblyReference.cache
 X:\WorkSpace\GitHub\iCafe_On_Cloud\CloudAppServices\iCafe.Web\obj\Release\iCafe.Web.dll
 X:\WorkSpace\GitHub\iCafe_On_Cloud\CloudAppServices\iCafe.Web\obj\Release\iCafe.Web.pdb
+X:\WorkSpace\GitHub\Master\iCafe_On_Cloud\CloudAppServices\iCafe.Web\bin\iCafe.Web.dll
+X:\WorkSpace\GitHub\Master\iCafe_On_Cloud\CloudAppServices\iCafe.Web\bin\iCafe.Web.pdb
+X:\WorkSpace\GitHub\Master\iCafe_On_Cloud\CloudAppServices\iCafe.Web\bin\Microsoft.Web.Infrastructure.dll
+X:\WorkSpace\GitHub\Master\iCafe_On_Cloud\CloudAppServices\iCafe.Web\bin\System.Web.Optimization.dll
+X:\WorkSpace\GitHub\Master\iCafe_On_Cloud\CloudAppServices\iCafe.Web\bin\WebGrease.dll
+X:\WorkSpace\GitHub\Master\iCafe_On_Cloud\CloudAppServices\iCafe.Web\bin\System.Web.Optimization.xml
+X:\WorkSpace\GitHub\Master\iCafe_On_Cloud\CloudAppServices\iCafe.Web\obj\Release\iCafe.Web.csprojResolveAssemblyReference.cache
+X:\WorkSpace\GitHub\Master\iCafe_On_Cloud\CloudAppServices\iCafe.Web\obj\Release\iCafe.Web.dll
+X:\WorkSpace\GitHub\Master\iCafe_On_Cloud\CloudAppServices\iCafe.Web\obj\Release\iCafe.Web.pdb

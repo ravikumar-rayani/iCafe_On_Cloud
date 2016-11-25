@@ -5,7 +5,7 @@
 .nav-tabs.vertical.left-aligned li {
     display: block;
     width: 100%;
-    min-width: 120px;
+    min-width: 60px;
 }
 .nav-tabs.vertical.left-aligned li a {
     margin-right: 0px;
@@ -204,28 +204,28 @@
 /*---------------------------------------------
     Fab button
 ----------------------------------------------*/
-.site-action {
+.site-action2 {
     position: fixed;
     right: 32px;
-    bottom: 55px;
+    bottom: 95px;
     z-index: 1290;
     border-radius:100%;
 }
 
-    .site-action input {
+    .site-action2 input {
         display: none;
     }
 
-    .site-action .btn {
+    .site-action2 .btn {
         -webkit-box-shadow: 0 10px 10px 0 rgba(60,60,60,.1);
         box-shadow: 0 10px 10px 0 rgba(60,60,60,.1);
     }
 
-    .site-action .back-icon {
+    .site-action2 .back-icon {
         display: none;
     }
 
-.site-action-buttons {
+.site-action2-buttons {
     position: absolute;
     top: -130px;
     left: 0;
@@ -234,30 +234,67 @@
     text-align: center;
 }
 
-    .site-action-buttons .btn {
+    .site-action2-buttons .btn {
         display: block;
         margin: 0 auto;
         margin-bottom: 10px;
     }
 
-.site-action-toggle .back-icon {
+
+.site-action1 {
+    position: fixed;
+    right: 32px;
+    bottom: 25px;
+    z-index: 1290;
+    border-radius:100%;
+}
+
+    .site-action1 input {
+        display: none;
+    }
+
+    .site-action1 .btn {
+        -webkit-box-shadow: 0 10px 10px 0 rgba(60,60,60,.1);
+        box-shadow: 0 10px 10px 0 rgba(60,60,60,.1);
+    }
+
+    .site-action1 .back-icon {
+        display: none;
+    }
+
+.site-action1-buttons {
+    position: absolute;
+    top: -130px;
+    left: 0;
+    display: none;
+    width: 100%;
+    text-align: center;
+}
+
+    .site-action1-buttons .btn {
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 10px;
+    }
+
+.site-action1-toggle .back-icon {
     display: block;
 }
 
-.site-action-toggle .front-icon {
+.site-action1-toggle .front-icon {
     display: none;
 }
 
-.site-action-toggle .site-action-buttons {
+.site-action1-toggle .site-action1-buttons {
     display: block;
 }
 
 @media (max-width:480px) {
-    .site-action-buttons {
+    .site-action1-buttons {
         top: -100px;
     }
 
-    .site-action .btn {
+    .site-action1 .btn {
         width: 40px;
         height: 40px;
         padding: 0;

@@ -55,3 +55,22 @@ X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Web\bin\System.Web.Helpers.xm
 X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Web\obj\Debug\iCafe.Web.csprojResolveAssemblyReference.cache
 X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Web\obj\Debug\iCafe.Web.dll
 X:\WorkSpace\VS\VersionWise\iCafe\iCafe v2.0\iCafe.Web\obj\Debug\iCafe.Web.pdb
+X:\WorkSpace\GitHub\Master\iCafe_On_Cloud\CloudAppServices\iCafe.Web\bin\iCafe.Web.dll
+X:\WorkSpace\GitHub\Master\iCafe_On_Cloud\CloudAppServices\iCafe.Web\bin\iCafe.Web.pdb
+X:\WorkSpace\GitHub\Master\iCafe_On_Cloud\CloudAppServices\iCafe.Web\bin\Microsoft.Web.Infrastructure.dll
+X:\WorkSpace\GitHub\Master\iCafe_On_Cloud\CloudAppServices\iCafe.Web\bin\System.Web.Helpers.dll
+X:\WorkSpace\GitHub\Master\iCafe_On_Cloud\CloudAppServices\iCafe.Web\bin\System.Web.Optimization.dll
+X:\WorkSpace\GitHub\Master\iCafe_On_Cloud\CloudAppServices\iCafe.Web\bin\System.Web.Razor.dll
+X:\WorkSpace\GitHub\Master\iCafe_On_Cloud\CloudAppServices\iCafe.Web\bin\System.Web.WebPages.Deployment.dll
+X:\WorkSpace\GitHub\Master\iCafe_On_Cloud\CloudAppServices\iCafe.Web\bin\System.Web.WebPages.dll
+X:\WorkSpace\GitHub\Master\iCafe_On_Cloud\CloudAppServices\iCafe.Web\bin\System.Web.WebPages.Razor.dll
+X:\WorkSpace\GitHub\Master\iCafe_On_Cloud\CloudAppServices\iCafe.Web\bin\WebGrease.dll
+X:\WorkSpace\GitHub\Master\iCafe_On_Cloud\CloudAppServices\iCafe.Web\bin\System.Web.Helpers.xml
+X:\WorkSpace\GitHub\Master\iCafe_On_Cloud\CloudAppServices\iCafe.Web\bin\System.Web.Optimization.xml
+X:\WorkSpace\GitHub\Master\iCafe_On_Cloud\CloudAppServices\iCafe.Web\bin\System.Web.Razor.xml
+X:\WorkSpace\GitHub\Master\iCafe_On_Cloud\CloudAppServices\iCafe.Web\bin\System.Web.WebPages.xml
+X:\WorkSpace\GitHub\Master\iCafe_On_Cloud\CloudAppServices\iCafe.Web\bin\System.Web.WebPages.Deployment.xml
+X:\WorkSpace\GitHub\Master\iCafe_On_Cloud\CloudAppServices\iCafe.Web\bin\System.Web.WebPages.Razor.xml
+X:\WorkSpace\GitHub\Master\iCafe_On_Cloud\CloudAppServices\iCafe.Web\obj\Debug\iCafe.Web.csprojResolveAssemblyReference.cache
+X:\WorkSpace\GitHub\Master\iCafe_On_Cloud\CloudAppServices\iCafe.Web\obj\Debug\iCafe.Web.dll
+X:\WorkSpace\GitHub\Master\iCafe_On_Cloud\CloudAppServices\iCafe.Web\obj\Debug\iCafe.Web.pdb

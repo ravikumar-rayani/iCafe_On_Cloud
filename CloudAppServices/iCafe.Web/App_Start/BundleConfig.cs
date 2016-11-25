@@ -13,7 +13,8 @@ namespace iCafe.Web
                       "~/plugins/jquery-ui/jquery-ui.min.js"
                     , "~/plugins/jquery-blockui/jquery.blockui.js"
                     , "~/plugins/jquery-slimscroll/jquery.slimscroll.min.js"
-                    , "~/plugins/jquery-counterup/jquery.counterup.min.js"));
+                    , "~/plugins/jquery-counterup/jquery.counterup.min.js"
+                    , "~/plugins/nicescroll/jquery.nicescroll.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrapscripts").Include(                
                       "~/plugins/bootstrap/js/bootstrap.min.js"));
@@ -63,20 +64,12 @@ namespace iCafe.Web
                     "~/plugins/perfect-scrollbar/perfect-scrollbar.min.js"
                     , "~/plugins/prettyphoto/jquery.prettyPhoto.js"));
 
-            //bundles.Add(new ScriptBundle("~/bundles/datatablescripts").Include(
-            //        "~/plugins/datatables/js/jquery.dataTables.min.js")); 
-
             bundles.Add(new ScriptBundle("~/bundles/datatablescripts").Include(
                       "~/plugins/jquery-mockjax-master/jquery.mockjax.js"
                     , "~/plugins/datatables/js/jquery.datatables.min.js"
                     , "~/plugins/x-editable/bootstrap3-editable/js/bootstrap-editable.js"
+                    , "~/plugins/select2/js/select2.full.min.js"
                     , "~/Scripts/pages/table-data.js"));
-            
-            //bundles.Add(new ScriptBundle("~/bundles/datatablescripts").Include(
-            //        "~/Scripts/datatables/jquery.dataTables.min.js"
-            //        , "~/Scripts/datatables/dataTables.bootstrap.js"
-            //        , "~/Scripts/datatables/jquery.dataTables.yadcf.js"
-            //        , "~/Scripts/datatables/dataTables.tableTools.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/imagegridscripts").Include(
                     "~/plugins/jRespond/jRespond.min.js"
@@ -127,13 +120,9 @@ namespace iCafe.Web
                     "~/plugins/bootstrap/css/bootstrap.min.css"
                     , "~/plugins/datatables/css/jquery.datatables.min.css"
                     , "~/plugins/x-editable/bootstrap3-editable/css/bootstrap-editable.css"
+                    , "~/plugins/select2/css/select2.min.css"
                     , "~/plugins/bootstrap-datepicker/css/datepicker3.css"
                     , "~/Content/modern.min.css"));
-
-            //bundles.Add(new StyleBundle("~/Content/datatablestyles").Include(
-            //          "~/Content/xenon-core.css"
-            //          , "~/plugins/fontawesome/css/font-awesome.min.css"
-            //          ));
 
             bundles.Add(new StyleBundle("~/Content/imagegridstyles").Include(
                       "~/Content/image-grid.css"

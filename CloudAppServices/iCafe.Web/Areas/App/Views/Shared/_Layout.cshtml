@@ -76,7 +76,7 @@
                                 </li>
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle waves-effect waves-button waves-classic" data-toggle="dropdown">
-                                        <i class="fa fa-cog"></i>
+                                        <i class="fa fa-paint-brush"></i>
                                     </a>
                                     <ul class="dropdown-menu dropdown-md dropdown-list theme-settings" role="menu">
                                         <li class="li-group">
@@ -171,7 +171,7 @@
                         </div>
                     </div>
                     <ul class="menu accordion-menu">
-                        <li id="li_Dashboard"><a href="@Url.Action("Index", "Home")" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-home"></span><p>Dashboard</p></a></li>
+                        <li id="li_Dashboard"><a href="@Url.Action("Index", "Dashboard")" class="waves-effect waves-button"><span class="menu-icon fa fa-tachometer fa-4x"></span><p>Dashboard</p></a></li>
                         <li id="li_Menu" class="droplink"><a href="#" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-cutlery"></span><p>Menu</p><span class="arrow"></span></a>
                             <ul class="sub-menu">
                                 <li id="li_Categories">@Html.ActionLink("Categories", "Categories", "Menu")</li>
@@ -187,8 +187,8 @@
                         </li>
                         <li class="droplink"><a href="#" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-user"></span><p>Users</p><span class="arrow"></span></a>
                             <ul class="sub-menu">
-                                <li>@Html.ActionLink("Roles", "Roles", "UserAccount")</li>
-                                <li>@Html.ActionLink("Users", "Users", "UserAccount")</li>
+                                <li>@Html.ActionLink("Roles", "Roles", "Users")</li>
+                                <li>@Html.ActionLink("Users", "Users", "Users")</li>
                             </ul>
                         </li>                        
                         <li class="droplink"><a href="#" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-wrench"></span><p>Configure</p><span class="arrow"></span></a>
@@ -197,9 +197,10 @@
                                 <li>@Html.ActionLink("Devices", "Devices", "Configure")</li>
                             </ul>
                         </li>
-                        <li><a href="@Url.Action("Index", "Customers")" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-user"></span><p>Customers</p></a></li>                          
+                        <li><a href="@Url.Action("Index", "Customers")" class="waves-effect waves-button"><span class="menu-icon fa fa-users fa-4x"></span><p>Customers</p></a></li>                          
                         <li><a href="@Url.Action("Index", "Profile")" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-user"></span><p>Profile</p></a></li>  
-                        <li><a href="@Url.Action("Index", "Reports")" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-stats"></span><p>Reports</p></a></li>  
+                        <li><a href="@Url.Action("Index", "Reports")" class="waves-effect waves-button"><span class="menu-icon fa fa-bar-chart fa-4x"></span><p>Reports</p></a></li>  
+                        <li><a href="@Url.Action("Index", "AccountSettings")" class="waves-effect waves-button"><span class="menu-icon fa fa-cogs fa-4x"></span><p>Account <br /> Settings</p></a></li>  
                         @*<li class="droplink"><a href="#" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-stats"></span><p>Reports</p><span class="arrow"></span></a>
                             <ul class="sub-menu">
                                 <li>@Html.ActionLink("Sales", "Reports", "Reports")</li>
@@ -211,7 +212,7 @@
             </div><!-- Page Sidebar -->
             <div class="page-inner">
                 <div class="page-title">
-                    <h3>@ViewBag.Title</h3>
+                    <h3>@ViewBag.Title</h3> 
                     <div class="page-breadcrumb">
                         <ol class="breadcrumb">
                             <li><a href="index.html">Home</a></li>
@@ -234,7 +235,13 @@
         </nav>
         <div class="cd-overlay"></div>
     
+    <script>
+        $(document).ready(function () {
+            $("html").niceScroll({ styler: "fb", cursorcolor: "#22baa0", cursorwidth: '6', cursorborderradius: '10px', background: '#404040', spacebarenabled: false, cursorborder: '', zindex: '1000' });
+        });
+  </script>
     
+
     @Scripts.Render("~/bundles/jqueryscripts")     
     @Scripts.Render("~/bundles/bootstrapscripts")  
     @Scripts.Render("~/bundles/Knockoutjsscripts")

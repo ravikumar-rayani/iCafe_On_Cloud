@@ -462,42 +462,5 @@ $( document ).ready(function() {
     if(($('.page-content').hasClass('container'))&&(boxedLayoutCheck.checked == 0)){
         $('.boxed-layout-check').prop('checked', true);
     }
-    }
-    
-    
-    // Chat Sidebar
-    var menuRight = document.getElementById( 'cbp-spmenu-s1' ),
-        showRight = document.getElementById( 'showRight' ),
-        closeRight = document.getElementById( 'closeRight' ),
-        menuRight2 = document.getElementById( 'cbp-spmenu-s2' ),
-        closeRight2 = document.getElementById( 'closeRight2' ),
-        body = document.body;
-    
-    showRight.onclick = function() {
-        classie.toggle( menuRight, 'cbp-spmenu-open' );
-    };
-    
-    closeRight.onclick = function() {
-        classie.toggle( menuRight, 'cbp-spmenu-open' );
-    };
-    
-    closeRight2.onclick = function() {
-        classie.toggle( menuRight2, 'cbp-spmenu-open' );
-    };
-    
-    $('.showRight2').click(function() {
-        classie.toggle( menuRight2, 'cbp-spmenu-open' );
-    });
-    
-    $(".chat-write form input").keypress(function (e) {
-        if ((e.which == 13)&&(!$(this).val().length == 0)) {
-            $('<div class="chat-item chat-item-right"><div class="chat-message">' + $(this).val() + '</div></div>').insertAfter(".chat .chat-item:last-child");
-            $(this).val('');
-        } else if(e.which == 13) {
-            return;
-        }
-        $('.chat').slimscroll({
-            allowPageScroll: true
-        });
-    });
+    }    
 });

@@ -10,6 +10,6 @@ namespace iCafe.DTO.Client
     {
         public string Name { get; set; }
         public string ImagePath { get; set; }
-        public int[] assignedTables { get; set; }
+        public Dictionary<int, string> assignedTables { get; set; }
     }
 }

@@ -285,12 +285,16 @@
                         </div>-->
                     </div>
                 </div>
-                <!--Add Item form -->
-                <button class="site-action btn-raised btn btn-success btn-floating" data-target="#CreateTabs"
+                <!-- Delete Items -->
+        <button class="site-action2 btn-raised btn btn-success btn-floating" type="button">
+                <i class="icon glyphicon glyphicon-trash" aria-hidden="true"></i>
+                </button>
+        <!--Add Item form -->
+        <button class="site-action1 btn-raised btn btn-success btn-floating" data-target="#CreateTabs"
                 data-toggle="modal" type="button">
                 <i class="icon glyphicon glyphicon-plus" aria-hidden="true"></i>
                 </button>
-                <div class="modal fade modal-success" id="CreateTabs" aria-hidden="true" aria-labelledby="exampleModalTabs"
+        <div class="modal fade modal-success" id="CreateTabs" aria-hidden="true" aria-labelledby="exampleModalTabs"
                   role="dialog" tabindex="-1">
                     <div class="modal-dialog">
                       <div class="modal-content">
@@ -301,48 +305,61 @@
                           <h4 class="modal-title" id="CreateModalTabs">New Item</h4>
                         </div>
                         <ul class="nav nav-tabs modal-nav-tabs-line" data-plugin="nav-tabs" role="tablist">
-                          <li class="active" style="width:25%; text-align:center;" role="presentation"><a data-toggle="tab" href="#BasicTab" aria-controls="BasicTab"
+                          <li class="active" style="width:33%; text-align:center;" role="presentation"><a data-toggle="tab" href="#BasicTab" aria-controls="BasicTab"
                             role="tab">Basic</a></li>
-                          <li role="presentation" style="width:25%; text-align:center;"><a data-toggle="tab" href="#ImageTab" aria-controls="ImageTab"
-                            role="tab">Images</a></li>
-                          <li role="presentation" style="width:25%; text-align:center;"><a data-toggle="tab" href="#DetailsTab" aria-controls="DetailsTab"
+                          <li role="presentation" style="width:33%; text-align:center;"><a data-toggle="tab" href="#DetailsTab" aria-controls="DetailsTab"
                             role="tab">Advanced</a></li>
-                          <li role="presentation" style="width:25%; text-align:center;"><a data-toggle="tab" href="#AdditionalTab" aria-controls="AdditionalTab"
+                          <li role="presentation" style="width:33%; text-align:center;"><a data-toggle="tab" href="#AdditionalTab" aria-controls="AdditionalTab"
                             role="tab">Additional</a></li>
                         </ul>
                         <div class="modal-body">
                           <div class="tab-content padding-top-10">
                             <div class="tab-pane active" id="BasicTab" role="tabpanel">                              
                                 <div class="row">
-                            <div class="col-lg-4 form-group">
-                              <input type="text" class="form-control" name="firstName" placeholder="First Name">
-                            </div>
-                            <div class="col-lg-4 form-group">
-                              <input type="email" class="form-control" name="lastName" placeholder="Last Name">
-                            </div>
-                            <div class="col-lg-4 form-group">
-                              <input type="email" class="form-control" name="email" placeholder="Your Email">
-                            </div>
-                            <div class="col-lg-12 form-group">
-                              <textarea class="form-control" rows="5" placeholder="Type your message"></textarea>
-                            </div>
+                                    <div class="col-lg-5">
+                                        <div></div>
+                                    </div>
+                                    <div class="col-lg-7">
+                                        <div class="form-group">
+                                          @*<input type="text" class="form-control" name="firstName" placeholder="First Name">*@
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                                <input type="text" class="form-control" placeholder="Name" data-toggle="tooltip" data-placement="top" title="Item Name"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">                                                                                      
+                                                    <select class="form-control select">
+                                                        <option value="" disabled selected>Select a Category</option>
+                                                        <option>Soups</option>
+                                                        <option>Rotis</option>
+                                                        <option>Curries</option>
+                                                        <option>Noodles</option>
+                                                        <option>Pizzas</option>
+                                                    </select>
+                                            </div>
+                                        <div class=" form-group">
+                                          @*<input type="email" class="form-control" name="lastName" placeholder="Last Name">*@
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><span class="fa fa-inr"></span></span>
+                                                <input type="text" class="form-control" placeholder="Price"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                          @*<input type="email" class="form-control" name="email" placeholder="Your Email">*@
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><span class="fa fa-percent"></span></span>
+                                                <input type="text" class="form-control" placeholder="Discount"/>
+                                            </div>
+                                        </div>
+                                    </div>                                    
+                                    <div class="col-lg-12 form-group">
+                                        <textarea class="form-control" rows="5" placeholder="Type your message"></textarea>
+                                    </div>
+
                             @*<div class="col-sm-12 pull-right">
                               <button class="btn btn-primary btn-outline" data-dismiss="modal" type="button">Add Comment</button>
                             </div>*@
                           </div>
-                            </div>
-
-                            <div class="tab-pane" id="ImageTab" role="tabpanel">
-                              Tenuit omni magistra quale honoris, maluisti invidi, successerit feramus fere omnium
-                              impetum locus suscipiantur ullum, gessisse afranius
-                              stabilique repellendus longinquitate sentiamus torquatos
-                              rem. Bene continens, depulsa soluta domesticarum
-                              inscientia excruciant artes epicuri, huic similique
-                              constringendos probo animadversionis claris sententia
-                              atqui vocent constituit, epicuri hosti iniuste naturales
-                              multos, optimus animadvertat stoicis nullae, fieri
-                              futura tempore philosophia expleantur putarent doloris
-                              delectus viris.
                             </div>
 
                             <div class="tab-pane" id="DetailsTab" role="tabpanel">
@@ -373,8 +390,11 @@
                           </div>
                         </div>                                                  
                         <div class="modal-footer">
-                          <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
-                          <button type="button" class="btn btn-success">Add</button>
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                          <button type="button" class="btn btn-success">Create</button>
+                          
+                        @*<button type="button" class="btn btn-primary btn-addon m-b-sm btn-rounded btn-md"><i class="fa fa-close"></i>Cancel</button>
+                        <button type="button" class="btn btn-success btn-addon m-b-sm btn-rounded btn-md"><i class="fa fa-plus"></i>Create</button>*@
                         </div>
                       </div>
                     </div>

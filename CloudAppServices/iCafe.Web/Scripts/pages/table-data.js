@@ -78,7 +78,7 @@ $(document).ready(function() {
     $.fn.editable.defaults.mode = 'popup'; //'inline';
     
     //editables 
-    $('#example-editable td a').editable({
+    $('#tags-editable td a').editable({
            url: '/post',
            type: 'text',
            pk: 1,
@@ -87,7 +87,7 @@ $(document).ready(function() {
     
     // Datatables
     $('#example').DataTable();
-    $('#example-editable').DataTable();
+    $('#tags-editable').DataTable();
     
     var table = $('#example2').DataTable({
         "columnDefs": [
