@@ -1229,6 +1229,7 @@
     <Content Include="Areas\App\Views\Customers\Index.cshtml" />
     <Content Include="Areas\App\Views\Profile\Index.cshtml" />
     <Content Include="Areas\App\Views\Orders\Orders.cshtml" />
+    <Content Include="App_Code\OrdersData.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
