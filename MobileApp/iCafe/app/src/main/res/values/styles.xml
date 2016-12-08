@@ -39,11 +39,6 @@
         <item name="android:background">@android:color/transparent</item>
     </style>
 
-    <style name="DialogAnimation">
-        <item name="android:windowEnterAnimation">@anim/slide_left_to_right</item>
-        <item name="android:windowExitAnimation">@anim/slide_right_to_left</item>
-    </style>
-
     <style name="CallLogCardStyle" parent="CardView">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
