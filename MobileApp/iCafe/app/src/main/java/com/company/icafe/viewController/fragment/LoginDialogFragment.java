@@ -78,13 +78,16 @@ public class LoginDialogFragment extends DialogFragment implements View.OnClickL
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.serverConnectionButton:
-                loginHttpRequest();
-                if(userNameEditText.getText().toString().equals("1")) {
-                    loginActionListener.loginActionCallback(Constants.WAITER_USER_MODE);
-                }else if(userNameEditText.getText().toString().equals("11")) {
-                    loginActionListener.loginActionCallback(Constants.TABLE_USER_MODE);
+                if(Constants.DEMO_MODE) {
+                    if (userNameEditText.getText().toString().equals("1")) {
+                        loginActionListener.loginActionCallback(Constants.WAITER_USER_MODE);
+                    } else if (userNameEditText.getText().toString().equals("2")) {
+                        loginActionListener.loginActionCallback(Constants.TABLE_USER_MODE);
+                    }
+                    getDialog().dismiss();
+                } else {
+                    loginHttpRequest();
                 }
-
                 break;
         }
     }

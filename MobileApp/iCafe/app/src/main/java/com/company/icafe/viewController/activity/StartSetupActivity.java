@@ -39,7 +39,8 @@ public class StartSetupActivity extends FragmentActivity {
     }
 
     private boolean initialDataLoaded(){
-        SharedPreferences sharedPreferences = this.getSharedPreferences(Constants.APP_SHARED_PREF, Context.MODE_PRIVATE);
+        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences(Constants.APP_SHARED_PREF, Context.MODE_PRIVATE);
         return sharedPreferences.getBoolean(Constants.SH_PREF_INITIAL_DATA_LOAD, false);
+//        return false;
     }
 }

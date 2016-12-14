@@ -161,6 +161,18 @@ public class MenuDBHandler extends DBHandler implements CategoryItemActionListen
     }
 
     @Override
+    public ArrayList<MenuItem> searchMenuItems(String text) {
+        ArrayList<MenuItem> menuItemArrayList = getAllMenuItems();
+        ArrayList<MenuItem> searchResultMenuItems = new ArrayList<MenuItem>();
+
+        for (MenuItem menuItem: menuItemArrayList) {
+            if(menuItem.getName().contains(text) || Arrays.asList(menuItem.getTags()).contains(text))
+                searchResultMenuItems.add(menuItem);
+        }
+        return searchResultMenuItems;
+    }
+
+    @Override
     public int getMenuItemCount() {
         int num = 0;
         SQLiteDatabase db = this.getReadableDatabase();

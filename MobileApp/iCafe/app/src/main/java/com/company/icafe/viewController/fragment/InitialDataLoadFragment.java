@@ -53,17 +53,21 @@ public class InitialDataLoadFragment  extends Fragment implements InitialDataLoa
 
     @Override
     public void dataLoaded() {
+        // Add initial data load as 'true' to shared preference
         SharedPreferences sharedPreferences = getActivity().getSharedPreferences(Constants.APP_SHARED_PREF, Context.MODE_PRIVATE);
         SharedPreferences.Editor sharedPrefEditor = sharedPreferences.edit();
         sharedPrefEditor.putBoolean(Constants.SH_PREF_INITIAL_DATA_LOAD, true);
         sharedPrefEditor.commit();
 
+        // launch main screen of the application
+        showHomeActivity();
+    }
+
+    private void showHomeActivity() {
         Intent intent = new Intent(getActivity(), AppHomeActivity.class);
         intent.putExtra(Constants.CURRENT_USER_MODE, Constants.DIGITAL_MENU_MODE);
         startActivity(intent);
         getActivity().finish();
-
-
     }
 
     private void createTableList(){

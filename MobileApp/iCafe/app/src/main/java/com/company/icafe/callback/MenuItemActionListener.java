@@ -19,4 +19,6 @@ public interface MenuItemActionListener {
     public int getMenuItemCount();
 
     public ArrayList<MenuItem> getMenuItemsFromCategory(int categoryId);
+
+    public ArrayList<MenuItem> searchMenuItems(String text);
 }

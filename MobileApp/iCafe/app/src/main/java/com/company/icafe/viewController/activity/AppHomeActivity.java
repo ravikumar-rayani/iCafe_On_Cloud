@@ -17,7 +17,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
@@ -31,6 +31,7 @@ import com.company.icafe.database.MenuDBHandler;
 import com.company.icafe.database.OrderDBHandler;
 import com.company.icafe.model.CategoryItem;
 import com.company.icafe.model.Constants;
+import com.company.icafe.ui.control.MaterialSearchView;
 import com.company.icafe.viewController.fragment.CustomerVerificationFragment;
 import com.company.icafe.viewController.fragment.LoginDialogFragment;
 import com.company.icafe.viewController.fragment.WelcomeDialogFragment;
@@ -41,7 +42,7 @@ import java.util.LinkedHashMap;
 public class AppHomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, LoginActionListener {
 
-    private final String LOG_TAG = AppHomeActivity.class.getSimpleName();
+    private final String TAG = AppHomeActivity.class.getSimpleName();
 
     boolean doubleBackToExitPressedOnce = false;
     private static FloatingActionButton actionFab, waiterProfileFab;
@@ -51,10 +52,12 @@ public class AppHomeActivity extends AppCompatActivity
     private DigitalMenuViewPagerAdapter digitalMenuViewPagerAdapter;
     private WaiterViewPagerAdapter waiterViewPagerAdapter;
 
+    private MaterialSearchView searchView;
+
     public static int currentViewMode = Constants.GRID_VIEW_MODE;
 
-    public static int menuMode = Constants.TABLE_USER_MODE;
-    private final int loginActivityRequestCode = 1111;
+    public static int menuMode = Constants.DIGITAL_MENU_MODE;
+    private final int loginActivityRequestCode = 1221;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +65,7 @@ public class AppHomeActivity extends AppCompatActivity
         setContentView(R.layout.activity_start_up);
 
         Intent intent = getIntent();
-        menuMode = intent.getIntExtra(Constants.CURRENT_USER_MODE, Constants.TABLE_USER_MODE);
+        menuMode = intent.getIntExtra(Constants.CURRENT_USER_MODE, Constants.DIGITAL_MENU_MODE);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -97,6 +100,8 @@ public class AppHomeActivity extends AppCompatActivity
 
         loadDatabaseValues();
 
+        initSearchView();
+
 //        loadCustomerVerificationDialog();
     }
 
@@ -105,7 +110,7 @@ public class AppHomeActivity extends AppCompatActivity
         invalidateOptionsMenu();
         super.onResume();
 
-        changeView(Constants.TABLE_USER_MODE);
+        changeView(menuMode);
     }
 
     private TabLayout.OnTabSelectedListener onTabSelectedListener(final ViewPager pager) {
@@ -129,36 +134,40 @@ public class AppHomeActivity extends AppCompatActivity
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
+
+        if (searchView.isSearchOpen()) {
+            searchView.closeSearch();
         } else {
-            super.onBackPressed();
-            return;
-        }
-
-        if (doubleBackToExitPressedOnce) {
-            super.onBackPressed();
-            return;
-        }
-
-        this.doubleBackToExitPressedOnce = true;
-        Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
-
-        new Handler().postDelayed(new Runnable() {
-
-            @Override
-            public void run() {
-                doubleBackToExitPressedOnce = false;
+            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+            if (drawer.isDrawerOpen(GravityCompat.START)) {
+                drawer.closeDrawer(GravityCompat.START);
+            } else {
+                super.onBackPressed();
+                return;
             }
-        }, 2000);
+
+            if (doubleBackToExitPressedOnce) {
+                super.onBackPressed();
+                return;
+            }
+
+            this.doubleBackToExitPressedOnce = true;
+            Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
+
+            new Handler().postDelayed(new Runnable() {
+
+                @Override
+                public void run() {
+                    doubleBackToExitPressedOnce = false;
+                }
+            }, 2000);
+        }
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
 
-        Log.e(Constants.APP_LOG_TAG,LOG_TAG+"onNavigation"+item.getItemId());
         switch (item.getItemId()){
             case R.id.nav_login:
                 LoginDialogFragment loginDialogFragment = LoginDialogFragment.newInstance(this);
@@ -175,6 +184,17 @@ public class AppHomeActivity extends AppCompatActivity
 
         DialogFragment welcomeDialogFragment = new WelcomeDialogFragment();
         welcomeDialogFragment.show(getSupportFragmentManager(), "WelcomeDialog");
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        super.onCreateOptionsMenu(menu);
+        getMenuInflater().inflate(R.menu.action_menu_search, menu);
+
+        android.view.MenuItem item = menu.findItem(R.id.action_search_menu);
+        searchView.setMenuItem(item);
+
+        return true;
     }
 
     @Override
@@ -214,10 +234,10 @@ public class AppHomeActivity extends AppCompatActivity
     }
 
     private void changeView(int mode){
+
         switch (mode) {
             case Constants.DIGITAL_MENU_MODE:
             case Constants.TABLE_USER_MODE:
-
                 LinkedHashMap<CategoryItem, ArrayList<com.company.icafe.model.MenuItem>> categoryItemArrayListLinkedHashMap =
                         MenuDBHandler.getInstance(getApplicationContext()).getCategoryItemsWithMenuItems();
 
@@ -267,6 +287,41 @@ public class AppHomeActivity extends AppCompatActivity
 //                .commit();
     }
 
+    private void initSearchView() {
+        searchView = (MaterialSearchView) findViewById(R.id.search_view);
+        searchView.setVoiceSearch(false);
+        searchView.setCursorDrawable(R.drawable.custom_cursor);
+        searchView.setEllipsize(true);
+
+        searchView.setOnQueryTextListener(new MaterialSearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                Intent searchIntent = new Intent(AppHomeActivity.this, SearchResultActivity.class);
+                searchIntent.putExtra(Constants.SEARCH_INTENT_TAG, query);
+                startActivity(searchIntent);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                //Do some magic
+                return false;
+            }
+        });
+
+        searchView.setOnSearchViewListener(new MaterialSearchView.SearchViewListener() {
+            @Override
+            public void onSearchViewShown() {
+                //Do some magic
+                searchView.setSuggestions(getSearchSuggestionList());
+            }
+
+            @Override
+            public void onSearchViewClosed() {
+                //Do some magic
+            }
+        });
+    }
 
     @Override
     public boolean onOptionsItemSelected(android.view.MenuItem item) {
@@ -277,5 +332,18 @@ public class AppHomeActivity extends AppCompatActivity
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private String[] getSearchSuggestionList(){
+        ArrayList<com.company.icafe.model.MenuItem> menuItems = MenuDBHandler.getInstance(this).getAllMenuItems();
+        ArrayList<String> suggestions = new ArrayList<>();
+        for (com.company.icafe.model.MenuItem menuItem:menuItems) {
+            suggestions.add(menuItem.getName());
+            String[] tagValues = menuItem.getTags();
+            for (String tag:tagValues) {
+                suggestions.add(tag);
+            }
+        }
+        return suggestions.toArray(new String[suggestions.size()]);
     }
 }

@@ -91,7 +91,8 @@ public class DigitalMenuListViewAdapter extends RecyclerView.Adapter<DigitalMenu
                 menuItem.increaseQuantity();
                 holder.itemQuantityEditText.setText(Integer.toString(menuItem.getQuantity()));
                 CartDBHandler.getInstance(mContext).insertOrUpdateMenuItemToCart(menuItem);
-                cartItemsUpdated.cartItemsUpdated();
+                if(cartItemsUpdated != null)
+                    cartItemsUpdated.cartItemsUpdated();
             }
         });
         holder.itemDecreaseQuantityButton.setOnClickListener(new View.OnClickListener() {
@@ -100,7 +101,8 @@ public class DigitalMenuListViewAdapter extends RecyclerView.Adapter<DigitalMenu
                 menuItem.decreaseQuantity();
                 holder.itemQuantityEditText.setText(Integer.toString(menuItem.getQuantity()));
                 CartDBHandler.getInstance(mContext).insertOrUpdateMenuItemToCart(menuItem);
-                cartItemsUpdated.cartItemsUpdated();
+                if(cartItemsUpdated != null)
+                    cartItemsUpdated.cartItemsUpdated();
             }
         });
         holder.mView.setOnClickListener(new View.OnClickListener() {

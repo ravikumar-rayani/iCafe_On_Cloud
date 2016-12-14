@@ -3,9 +3,7 @@ package com.company.icafe.adapter;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
-import android.util.Log;
 
-import com.company.icafe.model.Constants;
 import com.company.icafe.model.Order;
 import com.company.icafe.viewController.fragment.OrderViewFragment;
 

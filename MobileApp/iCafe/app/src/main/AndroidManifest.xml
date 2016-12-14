@@ -15,7 +15,6 @@
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -51,20 +50,11 @@
             android:configChanges="fontScale|keyboard|keyboardHidden|layoutDirection|locale|mcc|mnc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|touchscreen|uiMode"
             android:parentActivityName=".viewController.activity.AppHomeActivity"/>
 
-        <activity android:name=".viewController.activity.SearchableActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.SEARCH"/>
-            </intent-filter>
-            <meta-data
-                android:name="android.app.searchable"
-                android:resource="@xml/searchable"/>
+        <activity android:name=".viewController.activity.SearchResultActivity"
+            android:label="@string/search_hint"
+            android:configChanges="fontScale|keyboard|keyboardHidden|layoutDirection|locale|mcc|mnc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|touchscreen|uiMode"
+            android:parentActivityName=".viewController.activity.AppHomeActivity">
         </activity>
-
-        <provider
-            android:name=".common.SearchSuggestionProvider"
-            android:authorities="com.company.icafe.common.searchsuggestionprovider"
-            android:enabled="true"
-            android:exported="true"/>
     </application>
 
 </manifest>

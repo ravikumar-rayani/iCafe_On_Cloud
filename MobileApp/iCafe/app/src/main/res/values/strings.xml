@@ -70,4 +70,6 @@
     <string name="mobile_no_hint">+000-0000000000</string>
     <string name="enter_mobile_no">Enter your mobile no</string>
     <string name="hint_search">Searching for…</string>
+
+    <string name="search_hint">Search</string>
 </resources>

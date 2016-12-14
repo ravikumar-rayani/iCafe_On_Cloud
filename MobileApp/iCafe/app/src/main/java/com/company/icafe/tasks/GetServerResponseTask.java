@@ -38,7 +38,6 @@ public class GetServerResponseTask extends AsyncTask<String, Integer, String> {
     private Context mContext;
     private ProgressDialog pDialog;
     private InitialDataLoadInterface mCallback;
-    boolean offlineMode = true;
 
     public GetServerResponseTask(Context context, InitialDataLoadInterface callback) {
         this.mContext = context;
@@ -55,7 +54,7 @@ public class GetServerResponseTask extends AsyncTask<String, Integer, String> {
 
         // Get Items Category
         String response;
-        if(offlineMode)
+        if(Constants.DEMO_MODE)
             response = "[{\"Id\":6,\"Name\":\"Bread\",\"IsAvailable\":true,\"Discount\":null,\"ImageUrl\":null,\"Description\":\"Rotis\"},{\"Id\":7,\"Name\":\"Curry\",\"IsAvailable\":true,\"Discount\":null,\"ImageUrl\":null,\"Description\":\"Curry\"},{\"Id\":8,\"Name\":\"Soup\",\"IsAvailable\":true,\"Discount\":null,\"ImageUrl\":null,\"Description\":\"Soup\"},{\"Id\":9,\"Name\":\"Starter\",\"IsAvailable\":true,\"Discount\":null,\"ImageUrl\":null,\"Description\":\"Starter\"},{\"Id\":15,\"Name\":\"Rice\",\"IsAvailable\":true,\"Discount\":null,\"ImageUrl\":null,\"Description\":\"Rice\"}]";
         else
             response = getStringFromURL(Constants.LOCAL_SERVER_URL + Constants.GET_CATEGORY_URL);
@@ -66,7 +65,7 @@ public class GetServerResponseTask extends AsyncTask<String, Integer, String> {
 
         // Get All menu items
         String itemResponse;
-        if(offlineMode)
+        if(Constants.DEMO_MODE)
             itemResponse = "[{\"Id\":2,\"Name\":\"Naan\",\"ItemCategoryId\":6,\"IsAvailable\":true,\"Discount\":0.00,\"Price\":40.00,\"SpicyLevel\":3,\"Ingrediants\":[\"\"],\"Tags\":[2],\"Description\":null,\"SmallImage\":null,\"FullImage\":null},{\"Id\":3,\"Name\":\"Pulka\",\"ItemCategoryId\":6,\"IsAvailable\":true,\"Discount\":0.00,\"Price\":50.00,\"SpicyLevel\":2,\"Ingrediants\":[\"\"],\"Tags\":[2],\"Description\":null,\"SmallImage\":null,\"FullImage\":null},{\"Id\":4,\"Name\":\"Paneer Masala\",\"ItemCategoryId\":7,\"IsAvailable\":true,\"Discount\":1.00,\"Price\":210.00,\"SpicyLevel\":1,\"Ingrediants\":[\"\"],\"Tags\":[2],\"Description\":null,\"SmallImage\":null,\"FullImage\":null},{\"Id\":5,\"Name\":\"Chicken Masala\",\"ItemCategoryId\":7,\"IsAvailable\":true,\"Discount\":1.00,\"Price\":250.00,\"SpicyLevel\":5,\"Ingrediants\":[\"\"],\"Tags\":[3],\"Description\":null,\"SmallImage\":null,\"FullImage\":null},{\"Id\":6,\"Name\":\"Tundoori\",\"ItemCategoryId\":8,\"IsAvailable\":true,\"Discount\":0.00,\"Price\":40.00,\"SpicyLevel\":3,\"Ingrediants\":[\"\"],\"Tags\":[2],\"Description\":null,\"SmallImage\":\"small image\",\"FullImage\":\"full image\"},{\"Id\":7,\"Name\":\"Pulcha\",\"ItemCategoryId\":8,\"IsAvailable\":true,\"Discount\":0.00,\"Price\":50.00,\"SpicyLevel\":2,\"Ingrediants\":[\"\"],\"Tags\":[2],\"Description\":null,\"SmallImage\":\"small image\",\"FullImage\":\"full image\"},{\"Id\":8,\"Name\":\"Mixed Veg Curry\",\"ItemCategoryId\":9,\"IsAvailable\":true,\"Discount\":1.00,\"Price\":210.00,\"SpicyLevel\":1,\"Ingrediants\":[\"\"],\"Tags\":[2],\"Description\":null,\"SmallImage\":\"small image\",\"FullImage\":\"full image\"},{\"Id\":9,\"Name\":\"Chicken Masala\",\"ItemCategoryId\":9,\"IsAvailable\":true,\"Discount\":1.00,\"Price\":250.00,\"SpicyLevel\":5,\"Ingrediants\":[\"\"],\"Tags\":[3],\"Description\":null,\"SmallImage\":\"small image\",\"FullImage\":\"full image\"}]";
         else
             itemResponse = getStringFromURL(Constants.LOCAL_SERVER_URL + Constants.GET_MENU_ITEM_URL);

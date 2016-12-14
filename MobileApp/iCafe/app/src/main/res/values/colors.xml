@@ -17,4 +17,6 @@
 
     <color name="trans_black_25">#40000000</color>
     <color name="chrome_grey">#F2F2F2</color>
+
+    <color name="search_layover_bg">#50000000</color>
 </resources>
