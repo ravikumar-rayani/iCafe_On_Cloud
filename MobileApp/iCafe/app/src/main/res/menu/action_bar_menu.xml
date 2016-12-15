@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/action_view_menu"
+        android:name="@string/action_list_view"
+        android:icon="@drawable/action_list_view"
+        app:showAsAction="always"/>
+
+    <item android:id="@+id/action_filter"
+        android:name="@string/action_filter"
+        android:icon="@drawable/action_filter"
+        android:visible="false"
+        app:showAsAction="always">
+        <menu>
+            <group
+                android:id="@+id/action_filter_checkable_group"
+                android:checkableBehavior="single">
+                <item
+                    android:id="@+id/action_filter_none"
+                    android:checked="true"
+                    android:name="@string/none"
+                    android:title="@string/none"/>
+                <item
+                    android:id="@+id/action_filter_breakfast"
+                    android:name="@string/breakfast"
+                    android:title="@string/breakfast"/>
+                <item
+                    android:id="@+id/action_filter_lunch"
+                    android:name="@string/lunch"
+                    android:title="@string/lunch"/>
+                <item
+                    android:id="@+id/action_filter_snacks"
+                    android:name="@string/snacks"
+                    android:title="@string/snacks"/>
+                <item
+                    android:id="@+id/action_filter_dinner"
+                    android:name="@string/dinner"
+                    android:title="@string/dinner"/>
+                <item
+                    android:id="@+id/action_filter_beverage"
+                    android:name="@string/beverage"
+                    android:title="@string/beverage"/>
+                <item
+                    android:id="@+id/action_filter_sweets"
+                    android:name="@string/sweets"
+                    android:title="@string/sweets"/>
+            </group>
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/action_add_cart"
+        android:name="@string/action_login"
+        app:actionLayout="@layout/cart_menu_option_layout"
+        android:visible="true"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_order_status"
+        android:name="@string/order_status"
+        android:icon="@drawable/action_stopwatch"
+        android:visible="true"
+        app:showAsAction="always" />
+</menu>

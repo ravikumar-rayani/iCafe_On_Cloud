@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/action_add_cart_item_layout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:clickable="true"
+    android:layout_gravity="center"
+    style="@android:style/Widget.ActionButton"
+    android:padding="5dp">
+
+    <RelativeLayout
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:gravity="center">
+    <ImageView
+        android:id="@+id/action_add_cart_image_view"
+        android:src="@drawable/action_cart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="40dp"
+        android:layout_height="40dp">
+        <TextView
+            android:id="@+id/action_add_cart_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textAlignment="center"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:gravity="center"
+            android:textColor="#FFF"
+            android:textSize="11sp"
+            android:background="@drawable/menu_bubble"/>
+    </RelativeLayout>
+</RelativeLayout>

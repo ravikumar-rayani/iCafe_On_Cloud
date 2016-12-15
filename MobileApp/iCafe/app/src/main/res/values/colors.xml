@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bg_color">#fce7e8</color>
+    <color name="colorPrimary">#FF5056</color>
+    <color name="colorPrimaryDark">#FF5056</color>
+    <color name="colorAccent">#AA2F21</color>
+    <color name="black_transparent">#99000000</color>
+
+    <color name="grey_shade_0">#DADADA</color>
+    <color name="grey_shade_1">#CECECE</color>
+    <color name="grey_shade_2">#B5B5B5</color>
+    <color name="grey_shade_3">#999999</color>
+    <color name="grey_shade_4">#828282</color>
+    <!--<color name="colorPrimary">#FF5056</color>
+    <color name="colorPrimaryDark">#FF5056</color>
+    <color name="colorAccent">#AA2F21</color>-->
+
+    <color name="trans_black_25">#40000000</color>
+    <color name="chrome_grey">#F2F2F2</color>
+
+    <color name="search_layover_bg">#50000000</color>
+</resources>

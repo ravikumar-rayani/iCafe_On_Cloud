@@ -1,0 +1,255 @@
+[
+  {
+    "id": "11111",
+    "name": "Roti",
+    "itemCategoryId": "Bread",
+    "isAvailable": true,
+    "price": 12,
+    "spicyLevel": 0,
+    "ingrediants": [
+      "Wheat",
+      "water",
+      "cornflour"
+    ],
+    "description": "This is indian Food.\nIt can be eaten with curry or dal\r\n",
+    "createdOn": "31-08-1982 10:20:56",
+    "modifiedOn": "31-08-1982 10:20:56",
+    "tags": [
+      "bread",
+      "indian",
+      "dinnner",
+      "lunch",
+      "wheat"
+    ],
+    "picture": "http://lorempixel.com/150/150/food",
+    "fullpicture": "http://lorempixel.com/100/100/food"
+  },
+  {
+    "id": "222222",
+    "name": "Matar Paneer",
+    "itemCategoryId": "Curry",
+    "isAvailable": "true",
+    "price": 160,
+    "spicyLevel": 2,
+    "ingrediants": [
+      "Paneer",
+      "matar",
+      "garlic",
+      "Tomato",
+      "Indian Spice"
+    ],
+    "description": "Indian curry.\r\n",
+    "createdOn": "31-08-1982 10:20:56",
+    "modifiedOn": "31-08-1982 10:20:56",
+    "tags": [
+      "curry",
+      "dinner",
+      "Panner",
+      "Veg"
+    ],
+    "picture": "http://lorempixel.com/150/150/food",
+    "fullpicture": "http://lorempixel.com/100/100/food"
+  },
+  {
+    "id": "33333",
+    "name": "Veg Mix",
+    "itemCategoryId": "Curry",
+    "isAvailable": "true",
+    "price": 140,
+    "spicyLevel": 2,
+    "ingrediants": [
+      "Vegitables",
+      "peeper",
+      "garlic",
+      "tomato",
+      "Butter"
+    ],
+    "description": "Indian curry.\r\n",
+    "createdOn": "31-08-1982 10:20:56",
+    "modifiedOn": "31-08-1982 10:20:56",
+    "tags": [
+      "non",
+      "ut",
+      "quis",
+      "aute",
+      "ullamco",
+      "veniam",
+      "duis"
+    ],
+    "picture": "http://lorempixel.com/150/150/food",
+    "fullpicture": "http://lorempixel.com/100/100/food"
+  },
+  {
+    "id": "44444",
+    "name": "Corn Soup",
+    "itemCategoryId": "Soup",
+    "isAvailable": "true",
+    "price": 80,
+    "spicyLevel": 2,
+    "ingrediants": [
+      "Corn",
+      "peeper",
+      "garlic"
+    ],
+    "description": "Soup Category\r\n",
+    "createdOn": "31-08-1982 10:20:56",
+    "modifiedOn": "31-08-1982 10:20:56",
+    "tags": [
+      "non",
+      "ut",
+      "quis",
+      "aute",
+      "ullamco",
+      "veniam",
+      "duis"
+    ],
+    "picture": "http://lorempixel.com/150/150/food",
+    "fullpicture": "http://lorempixel.com/100/100/food"
+  },
+  {
+    "id": "55555",
+    "name": "Tomato Soup",
+    "itemCategoryId": "Soup",
+    "isAvailable": "true",
+    "price": 75,
+    "spicyLevel": 1,
+    "ingrediants": [
+      "salt",
+      "peeper",
+      "garlic",
+      "wheat",
+      "Cheese"
+    ],
+    "description": "Soup Category\r\n",
+    "createdOn": "31-08-1982 10:20:56",
+    "modifiedOn": "31-08-1982 10:20:56",
+    "tags": [
+      "non",
+      "ut",
+      "quis",
+      "aute",
+      "ullamco",
+      "veniam",
+      "duis"
+    ],
+    "picture": "http://lorempixel.com/150/150/food",
+    "fullpicture": "http://lorempixel.com/100/100/food"
+  },
+  {
+    "id": "66666",
+    "name": "Chicken Masala",
+    "itemCategoryId": "Curry",
+    "isAvailable": "true",
+    "price": 230,
+    "spicyLevel": 2,
+    "ingrediants": [
+      "salt",
+      "peeper",
+      "garlic",
+      "Chicken",
+      "Cheese"
+    ],
+    "description": "Best Non-Veg Curry.\r\n",
+    "createdOn": "31-08-1982 10:20:56",
+    "modifiedOn": "31-08-1982 10:20:56",
+    "tags": [
+      "chicken",
+      "ut",
+      "quis",
+      "aute",
+      "ullamco",
+      "veniam",
+      "duis"
+    ],
+    "picture": "http://lorempixel.com/150/150/food",
+    "fullpicture": "http://lorempixel.com/100/100/food"
+  },
+  {
+    "id": "77777",
+    "name": "Veg Biryani",
+    "itemCategoryId": "Rice",
+    "isAvailable": "true",
+    "price": 210,
+    "spicyLevel": 2,
+    "ingrediants": [
+      "salt",
+      "peeper",
+      "garlic",
+      "rice",
+      "Vegitable"
+    ],
+    "description": "Biryani Indian flavour, great dinner option\r\n",
+    "createdOn": "31-08-1982 10:20:56",
+    "modifiedOn": "31-08-1982 10:20:56",
+    "tags": [
+      "rice",
+      "dinner",
+      "quis",
+      "aute",
+      "ullamco",
+      "veniam",
+      "duis"
+    ],
+    "picture": "http://lorempixel.com/150/150/food",
+    "fullpicture": "http://lorempixel.com/100/100/food"
+  },
+  {
+    "id": "88888",
+    "name": "Chicken Biryani",
+    "itemCategoryId": "Rice",
+    "isAvailable": "true",
+    "price": 270,
+    "spicyLevel": 2,
+    "ingrediants": [
+      "salt",
+      "peeper",
+      "garlic",
+      "rice",
+      "Chicken",
+      "Vegitable"
+    ],
+    "description": "Best Chicken Biryani, great option for dinner.\r\n",
+    "createdOn": "31-08-1982 10:20:56",
+    "modifiedOn": "31-08-1982 10:20:56",
+    "tags": [
+      "non",
+      "ut",
+      "quis",
+      "aute",
+      "ullamco",
+      "veniam",
+      "duis"
+    ],
+    "picture": "http://lorempixel.com/150/150/food",
+    "fullpicture": "http://lorempixel.com/100/100/food"
+  },
+  {
+    "id": "99999",
+    "name": "Veg Manchurian",
+    "itemCategoryId": "Starter",
+    "isAvailable": "true",
+    "price": 90,
+    "spicyLevel": 2,
+    "ingrediants": [
+      "cornfloor",
+      "peeper",
+      "garlic",
+      "wheat",
+      "Cheese"
+    ],
+    "description": "Starter option wih vegi overloaded.\r\n",
+    "createdOn": "31-08-1982 10:20:56",
+    "modifiedOn": "31-08-1982 10:20:56",
+    "tags": [
+      "non",
+      "ut",
+      "quis",
+      "aute",
+      "ullamco",
+      "veniam",
+      "duis"
+    ],
+    "picture": "http://lorempixel.com/150/150/food",
+    "fullpicture": "http://lorempixel.com/100/100/food"
+  }
+]
