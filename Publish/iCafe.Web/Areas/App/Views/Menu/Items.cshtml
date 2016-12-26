@@ -1,0 +1,455 @@
+﻿@model iCafe.Web.Areas.App.ViewModels.ItemsVM
+@{
+    ViewBag.Title = "Items";
+}
+
+<div class="col-lg-12" style="margin-top:15px;">
+            <div class="row">
+                <div class="col-md-9 col-sm-12 col-xs-12">
+                    <div class="input-group primary">
+                        <span class="input-group-addon">
+                            <span class="arrow"></span>
+                            <i class="fa fa-search"></i>
+                        </span>
+                        <input type="text" class="form-control search-page-input" placeholder="Search" value="Graphic Design">
+                    </div>
+                    <br>
+                </div>
+                <div class="col-md-3 col-sm-12 col-xs-12">
+                    <nav class='pull-right'>
+                        <ul class="pagination pull-right" style="margin: 0px;">
+                            <li><a href="#">«</a></li>
+                            <li class="active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">»</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12 search_data" style="margin-top: 12px;">
+                    <ul class="nav nav-tabs vertical col-md-2 col-lg-2 col-sm-3 col-xs-3 left-aligned">                        
+                        @foreach(var category in Model.Categories)
+                        {
+                            if(Model.DefaultActiveCategory == category.Id )
+                            {
+                                <li class="active">
+                                    <a href="#@category.Id" data-toggle="tab">
+                                        @*<i class="fa fa-glass"></i>*@
+                                        @category.Title
+                                    </a>
+                                </li>
+                            }
+                            else
+                            {
+                                <li>
+                                    <a href="#@category.Id" data-toggle="tab">
+                                        @*<i class="fa fa-glass"></i>*@
+                                        @category.Title
+                                    </a>
+                                </li>
+                            }
+                        }
+                        <!--<li>
+                            <a href="#images-1" data-toggle="tab">
+                                <i class="fa fa-square"></i>Starters
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#contacts-1" data-toggle="tab">
+                                <i class="fa fa-circle"></i>Rotis
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#projects-1" data-toggle="tab">
+                                <i class="fa fa-square"></i>Curries
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#map-1" data-toggle="tab">
+                                <i class="fa fa-glass"></i>Beverages
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#videos-1" data-toggle="tab">
+                                <i class="fa fa-pie-chart"></i>Pizzas
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#messages-1" data-toggle="tab">
+                                <i class="fa fa-pie-chart"></i>Salads
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#profile-1" data-toggle="tab">
+                                <i class="fa fa-ship"></i>Deserts
+                            </a>
+                        </li>-->
+                    </ul>
+
+                    <div class="tab-content vertical col-md-10 col-lg-10 col-sm-9 col-xs-9 left-aligned">
+                        @foreach (var category in Model.Categories)
+                        {
+                            <div class="tab-pane @(@Model.DefaultActiveCategory == category.Id ? "fade in active" : "fade")" id="@category.Id">
+                            @if (Model.Items.Any(c => c.CategoryID.Equals(category.Id)))                                
+                            {
+                                <div class="row mix-grid">
+                                <div class="gallery" data-lightbox="gallery">
+                                @foreach (var item in Model.Items.Where(c => c.CategoryID.Equals(category.Id)).ToList()) 
+                                { 
+                                    <div class="col-md-3 col-sm-4 mb-20 mix mix_all">
+                                    <div class="img-container">
+                                        <img class="img-responsive" alt="Image not available" src="@Url.Content(item.ImagePath)">
+                                        <div class="img-details">
+                                            <div class="img-controls">
+                                                <a href="javascript:;" class="img-select">
+                                                    <i class="fa fa-circle-o"></i>
+                                                    <i class="fa fa-circle"></i>
+                                                </a>
+                                                <a class="img-preview" data-lightbox="gallery-item" href="@Url.Content(item.ImagePath)" title="Canai Roti">
+                                                    <i class="fa fa-search"></i>
+                                                </a>
+                                                <a href="javascript:;" class="img-visible">
+                                                    <i class="fa fa-eye"></i>
+                                                </a>
+                                            </div>                                            
+                                            <h3 class="custom-font">@item.Name</h3>
+                                            <h5 class="custom-font" style="margin-left:10px; text-align:left;">@item.Description</h5>
+                                            <h5 class="custom-font" style="margin-left:10px; text-align:left;">Price: @item.Price</h5>
+                                            <h5 class="custom-font" style="margin-right:10px; text-align:right;">Discount:@item.Discount%</h5> 
+                                        </div>
+                                    </div>
+                                </div>                              
+                                }
+                                </div>
+                            </div>
+                            }
+                            else
+                            {
+                                <p class="col-md-12">No items available in @category.Title</p>
+                            }
+                            </div> 
+                        }
+
+                        <!--<div class="tab-pane fade in active" id="soups">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <div id='portfolio' class="">
+                                        <div class="text-center">
+                                            <ul class="portfolio-filter list-inline">
+                                                <li><a class="btn btn-primary active" href="#" data-filter="*"><i class="fa fa-tags" style="color: black" aria-hidden="true"></i>All Items</a></li>
+                                                <li><a class="btn btn-primary " href="#" data-filter=".non-veg"><i class="fa fa-tags" style="color: black" aria-hidden="true"></i>Non-Veg</a></li>
+                                                <li><a class="btn btn-primary " href="#" data-filter=".veg"><i class="fa fa-tags" style="color: black" aria-hidden="true"></i>Veg</a></li>
+                                                <li><a class="btn btn-primary " href="#" data-filter=".indian"><i class="fa fa-tags" style="color: black" aria-hidden="true"></i>Indian</a></li>                                                
+                                                <li><a class="btn btn-primary " href="#" data-filter=".chinese"><i class="fa fa-tags" style="color: black" aria-hidden="true"></i>Chinese</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="portfolio-items">
+                                            <div class="portfolio-item col-md-3 col-sm-6 col-xs-12  creative">
+                                                <div class="portfolio-item-inner">
+                                                    <img class="img-responsive" src="~/Images/Menu/Items/Soups/albondigas-soup.png" alt="Albondigas">
+                                                    <div class="portfolio-info animated fadeInUp animated-duration-600ms">
+                                                        <h3>Albondigas</h3>
+                                                        <span class='desc'>A traditional Mexican meatball soup.</span>
+                                                        @*<a class="preview" href="~/Images/Menu/Items/Soups/albondigas-soup.png" rel="prettyPhoto"><i class="fa fa-eye"></i></a>*@
+                                                        <a class="delete" href="#" rel="prettyPhoto"><i class="fa fa-trash-o"></i></a>
+                                                        <a class="edit" href="#" rel="prettyPhoto"><i class="fa fa-edit"></i></a>
+                                                        <a class="visiblity" href="#" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                                                        <a class="preview" href="~/Images/Menu/Items/Soups/albondigas-soup.png" rel="prettyPhoto"><i class="fa fa-search"></i></a>                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="portfolio-item col-md-3 col-sm-6 col-xs-12  corporate portfolio">
+                                                <div class="portfolio-item-inner">
+                                                    <img class="img-responsive" src="~/Images/Menu/Items/Soups/Avgolemono.png" alt="">
+                                                    <div class="portfolio-info animated fadeInUp animated-duration-600ms">
+                                                        <h3>Avgolemono</h3>
+                                                        <span class='desc'>Avgolemono in Greece means egg-lemon</span>
+                                                        <a class="delete" href="#" rel="prettyPhoto"><i class="fa fa-trash-o"></i></a>
+                                                        <a class="edit" href="#" rel="prettyPhoto"><i class="fa fa-edit"></i></a>
+                                                        <a class="visiblity" href="#" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                                                        <a class="preview" href="~/Images/Menu/Items/Soups/Avgolemono.png" rel="prettyPhoto"><i class="fa fa-search"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="portfolio-item col-md-3 col-sm-6 col-xs-12  creative">
+                                                <div class="portfolio-item-inner">
+                                                    <img class="img-responsive" src="~/Images/Menu/Items/Soups/Borscht-soup.png" alt="">
+                                                    <div class="portfolio-info animated fadeInUp animated-duration-600ms">
+                                                        <h3>Borscht</h3>
+                                                        <span class='desc'>A strong red coloured vegetable soup from Eastern Europe.</span>
+                                                        <a class="delete" href="#" rel="prettyPhoto"><i class="fa fa-trash-o"></i></a>
+                                                        <a class="edit" href="#" rel="prettyPhoto"><i class="fa fa-edit"></i></a>
+                                                        <a class="visiblity" href="#" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                                                        <a class="preview" href="~/Images/Menu/Items/Soups/Borscht-soup.png" rel="prettyPhoto"><i class="fa fa-search"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="portfolio-item col-md-3 col-sm-6 col-xs-12  corporate">
+                                                <div class="portfolio-item-inner">
+                                                    <img class="img-responsive" src="~/Images/Menu/Items/Soups/Bouillabaisse-soup.png" alt="">
+                                                    <div class="portfolio-info animated fadeInUp animated-duration-600ms">
+                                                        <h3>Bouillabaisse</h3>
+                                                        <span class='desc'>It's originating from the city of Marseille of France.</span>
+                                                        <a class="delete" href="#" rel="prettyPhoto"><i class="fa fa-trash-o"></i></a>
+                                                        <a class="edit" href="#" rel="prettyPhoto"><i class="fa fa-edit"></i></a>
+                                                        <a class="visiblity" href="#" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                                                        <a class="preview" href="~/Images/Menu/Items/Soups/Bouillabaisse-soup.png" rel="prettyPhoto"><i class="fa fa-search"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="portfolio-item col-md-3 col-sm-6 col-xs-12  creative portfolio">
+                                                <div class="portfolio-item-inner">
+                                                    <img class="img-responsive" src="~/Images/Menu/Items/Soups/BroccoliCheese-soup.png" alt="">
+                                                    <div class="portfolio-info animated fadeInUp animated-duration-600ms">
+                                                        <h3>Broccoli Cheese </h3>
+                                                        <span class='desc'>Broccoli cheese soup is thick, creamy and cheesy.</span>
+                                                        <a class="delete" href="#" rel="prettyPhoto"><i class="fa fa-trash-o"></i></a>
+                                                        <a class="edit" href="#" rel="prettyPhoto"><i class="fa fa-edit"></i></a>
+                                                        <a class="visiblity" href="#" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                                                        <a class="preview" href="~/Images/Menu/Items/Soups/BroccoliCheese-soup.png" rel="prettyPhoto"><i class="fa fa-search"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="portfolio-item col-md-3 col-sm-6 col-xs-12  corporate">
+                                                <div class="portfolio-item-inner">
+                                                    <img class="img-responsive" src="~/Images/Menu/Items/Soups/CaldoVerde-soup.png" alt="">
+                                                    <div class="portfolio-info animated fadeInUp animated-duration-600ms">
+                                                        <h3>Caldo verde</h3>
+                                                        <span class='desc'>Northern Portugal comes this soup made of mashed potatoes.</span>
+                                                        <a class="delete" href="#" rel="prettyPhoto"><i class="fa fa-trash-o"></i></a>
+                                                        <a class="edit" href="#" rel="prettyPhoto"><i class="fa fa-edit"></i></a>
+                                                        <a class="visiblity" href="#" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                                                        <a class="preview" href="~/Images/Menu/Items/Soups/CaldoVerde-soup.png" rel="prettyPhoto"><i class="fa fa-search"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="portfolio-item col-md-3 col-sm-6 col-xs-12  creative portfolio">
+                                                <div class="portfolio-item-inner">
+                                                    <img class="img-responsive" src="~/Images/Menu/Items/Soups/Callaloo-soup.png" alt="">
+                                                    <div class="portfolio-info animated fadeInUp animated-duration-600ms">
+                                                        <h3>Callaloo</h3>
+                                                        <span class='desc'>The creamy soup made with okra and crab meat from Trinidad.</span>
+                                                        <a class="delete" href="#" rel="prettyPhoto"><i class="fa fa-trash-o"></i></a>
+                                                        <a class="edit" href="#" rel="prettyPhoto"><i class="fa fa-edit"></i></a>
+                                                        <a class="visiblity" href="#" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                                                        <a class="preview" href="~/Images/Menu/Items/Soups/Callaloo-soup.png" rel="prettyPhoto"><i class="fa fa-search"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="portfolio-item col-md-3 col-sm-6 col-xs-12  corporate">
+                                                <div class="portfolio-item-inner">
+                                                    <img class="img-responsive" src="~/Images/Menu/Items/Soups/default-soup.png" alt="">
+                                                    <div class="portfolio-info animated fadeInUp animated-duration-600ms">
+                                                        <h3>Cock-a-leekie</h3>
+                                                        <span class='desc'>From Scotland, the soup dish of leeks, potatoes, chicken.</span>
+                                                        <a class="delete" href="#" rel="prettyPhoto"><i class="fa fa-trash-o"></i></a>
+                                                        <a class="edit" href="#" rel="prettyPhoto"><i class="fa fa-edit"></i></a>
+                                                        <a class="visiblity" href="#" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                                                        <a class="preview" href="~/Images/Menu/Items/Soups/default-soup.png" rel="prettyPhoto"><i class="fa fa-search"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="images-1">
+                            <p class="col-md-12">Images Search Results</p>
+                        </div>
+                        <div class="tab-pane fade" id="contacts-1">
+                            <p>Contacts Search Results</p>
+                        </div>
+                        <div class="tab-pane fade" id="projects-1">
+                            <p>Projects Search Results</p>
+                        </div>
+                        <div class="tab-pane fade" id="map-1">
+                            <p>Location and Maps Search Results</p>
+                        </div>
+                        <div class="tab-pane fade" id="videos-1">
+                            <p>Videos Search Results</p>
+                        </div>
+                        <div class="tab-pane fade" id="messages-1">
+                            <p>Messages Search Results</p>
+                        </div>
+                        <div class="tab-pane fade" id="profile-1">
+                            <p>Profile Search Results</p>
+                        </div>-->
+                    </div>
+                </div>
+                <!-- Delete Items -->
+        <button class="site-action2 btn-raised btn btn-success btn-floating" type="button">
+                <i class="icon glyphicon glyphicon-trash" aria-hidden="true"></i>
+                </button>
+        <!--Add Item form -->
+        <button class="site-action1 btn-raised btn btn-success btn-floating" data-target="#CreateTabs"
+                data-toggle="modal" type="button">
+                <i class="icon glyphicon glyphicon-plus" aria-hidden="true"></i>
+                </button>
+        <div class="modal fade modal-success" id="CreateTabs" aria-hidden="true" aria-labelledby="exampleModalTabs"
+                  role="dialog" tabindex="-1">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                          </button>
+                          <h4 class="modal-title" id="CreateModalTabs">New Item</h4>
+                        </div>
+                        <ul class="nav nav-tabs modal-nav-tabs-line" data-plugin="nav-tabs" role="tablist">
+                          <li class="active" style="width:33%; text-align:center;" role="presentation"><a data-toggle="tab" href="#BasicTab" aria-controls="BasicTab"
+                            role="tab">Basic</a></li>
+                          <li role="presentation" style="width:33%; text-align:center;"><a data-toggle="tab" href="#DetailsTab" aria-controls="DetailsTab"
+                            role="tab">Advanced</a></li>
+                          <li role="presentation" style="width:33%; text-align:center;"><a data-toggle="tab" href="#AdditionalTab" aria-controls="AdditionalTab"
+                            role="tab">Additional</a></li>
+                        </ul>
+                        <div class="modal-body">
+                          <div class="tab-content padding-top-10">
+                            <div class="tab-pane active" id="BasicTab" role="tabpanel">                              
+                                <div class="row">
+                                    <div class="col-lg-5">
+                                        <div></div>
+                                    </div>
+                                    <div class="col-lg-7">
+                                        <div class="form-group">
+                                          @*<input type="text" class="form-control" name="firstName" placeholder="First Name">*@
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                                <input type="text" class="form-control" placeholder="Name" data-toggle="tooltip" data-placement="top" title="Item Name"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">                                                                                      
+                                                    <select class="form-control select">
+                                                        <option value="" disabled selected>Select a Category</option>
+                                                        <option>Soups</option>
+                                                        <option>Rotis</option>
+                                                        <option>Curries</option>
+                                                        <option>Noodles</option>
+                                                        <option>Pizzas</option>
+                                                    </select>
+                                            </div>
+                                        <div class=" form-group">
+                                          @*<input type="email" class="form-control" name="lastName" placeholder="Last Name">*@
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><span class="fa fa-inr"></span></span>
+                                                <input type="text" class="form-control" placeholder="Price"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                          @*<input type="email" class="form-control" name="email" placeholder="Your Email">*@
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><span class="fa fa-percent"></span></span>
+                                                <input type="text" class="form-control" placeholder="Discount"/>
+                                            </div>
+                                        </div>
+                                    </div>                                    
+                                    <div class="col-lg-12 form-group">
+                                        <textarea class="form-control" rows="5" placeholder="Type your message"></textarea>
+                                    </div>
+
+                            @*<div class="col-sm-12 pull-right">
+                              <button class="btn btn-primary btn-outline" data-dismiss="modal" type="button">Add Comment</button>
+                            </div>*@
+                          </div>
+                            </div>
+
+                            <div class="tab-pane" id="DetailsTab" role="tabpanel">
+                              Cernimus nutu. Maioribus solet. Iustitiam conciliant reliquisti instituendarum
+                              solido quicquid, superstitione placet illis privatione
+                              clariora audeam repellat morbos accusantibus, quaeso
+                              copulationes. Percurri salutatus derigatur praeter
+                              involuta canes afflueret iam amotio quin. Dicent
+                              dialectica evertunt astris venire senserit. Vulgo
+                              supplicii amputata ipsarum ennius insolens meminerunt
+                              quisquam, volumus occulte l videor contenta numen,
+                              patrioque. Dixerit cernimus consequentium definitiones
+                              interrogari, maximo, avocent opes.
+                            </div>
+
+                            <div class="tab-pane" id="AdditionalTab" role="tabpanel">
+                              Nec iste vellem, accusamus inesse exhorrescere tertium dominationis licebit perpetiuntur,
+                              adduci concederetur memoriter omnesque aliquem etsi
+                              salutatus administrari aliquid graviter, mandamus
+                              celeritas patet fortibus. Dolorum tantis nostram
+                              fortitudo probarentur utrumvis insipientiam, putent,
+                              esset p fortitudo repetitis concursionibus interiret
+                              clariora. Fabulae aperiri. Omnes aspernari placuit
+                              detraxit familias aeternum eum mediocritatem, videantur
+                              partis nondum indoctis, emancipaverat probatum intus
+                              iactant petulantes, levitatibus copiosae.
+                            </div>
+                          </div>
+                        </div>                                                  
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                          <button type="button" class="btn btn-success">Create</button>
+                          
+                        @*<button type="button" class="btn btn-primary btn-addon m-b-sm btn-rounded btn-md"><i class="fa fa-close"></i>Cancel</button>
+                        <button type="button" class="btn btn-success btn-addon m-b-sm btn-rounded btn-md"><i class="fa fa-plus"></i>Create</button>*@
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+</div>
+<script>
+    $(window).load(function(){
+        $('.mix-grid').mixItUp();
+        $('.mix-controls .select-all input').change(function(){
+            if($(this).is(":checked")) {
+                $('.gallery').find('.mix').addClass('selected');
+                enableGalleryTools(true);
+            } else {
+                $('.gallery').find('.mix').removeClass('selected');
+                enableGalleryTools(false);
+            }
+        });
+        $('.mix .img-select').click(function(){
+            var mix = $(this).parents('.mix');
+            if(mix.hasClass('selected')) {
+                mix.removeClass('selected');
+                enableGalleryTools(false);
+            } else {
+                mix.addClass('selected');
+                enableGalleryTools(true);
+            }
+        });
+        var enableGalleryTools = function(enable) {
+            if (enable) {
+                $('.mix-controls li.mix-control').removeClass('disabled');
+            } else {
+                var selected = false;
+                $('.gallery .mix').each(function(){
+                    if($(this).hasClass('selected')) {
+                        selected = true;
+                    }
+                });
+                if(!selected) {
+                    $('.mix-controls li.mix-control').addClass('disabled');
+                }
+            }
+        }
+
+        $('.img-visible').click(function () {
+            var i = $(this).children('i');
+            if (i.hasClass('fa-eye')) {
+                i.removeClass('fa-eye');
+                i.addClass('fa-eye-slash');
+            } else {
+                i.removeClass('fa-eye-slash');
+                i.addClass('fa-eye');
+            }
+        });
+
+    });
+    </script>
+

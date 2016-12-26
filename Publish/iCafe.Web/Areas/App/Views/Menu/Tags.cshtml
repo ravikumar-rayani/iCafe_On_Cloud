@@ -1,0 +1,283 @@
+﻿@model iCafe.Web.Areas.App.ViewModels.TagsVM
+@{
+    ViewBag.Title = "Tags";
+}
+
+<div class="col-lg-12" style="margin-top:15px;">
+    <div class="row">
+        <div class="col-md-9 col-sm-12 col-xs-12">
+                    <div class="input-group primary">
+                        <span class="input-group-addon">
+                            <span class="arrow"></span>
+                            <i class="fa fa-search"></i>
+                        </span>
+                        <input type="search" class="form-control search-page-input input-sm" aria-controls="itemsTable">
+                    </div>
+                    <br>
+                </div>
+        <div class="col-md-3 col-sm-12 col-xs-12">
+                    <nav class='pull-right'>
+                        <ul class="pagination pull-right" style="margin: 0px;">
+                            <li><a href="#">«</a></li>
+                            <li class="active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">»</a></li>
+                        </ul>
+                    </nav>
+                </div>
+        <div class="col-md-12 col-sm-12 col-xs-12 search_data" style="margin-top: 12px;">
+            <div class="panel panel-default">				
+				<div class="panel-body">
+					<div class="table-responsive">
+                        <table id="tags-editable" class="display table" style="width: 100%;">
+                            <thead>
+                            <tr>
+                                <th class="tdhcenter"><input id="checkall" type="checkbox" class="iswitch iswitch-primary"></th>
+                                <th>Name</th>                                
+                                <th>Description</th>
+                                <th>Discount</th>
+                                <th>LastModifiedBy</th>
+                                <th>LastModifiedOn</th>
+                                <th>IsAvailable</th>    
+                                <th>Action</th>                            
+                            </tr>                            
+                        </thead>
+                            <tbody>
+                                @foreach(var tag in Model.Tags){
+                                    <tr>
+                                        <td class="tdhcenter" style="vertical-align:middle;"><input type="checkbox" class="iswitch iswitch-primary selectrow"></td>
+                                        <td><a href="javascript:void(0);">@tag.Title</a></td>
+                                        <td><a href="javascript:void(0);">@tag.Description</a></td>
+                                        <td ><a href="javascript:void(0);">@tag.Discount%</a></td>
+                                        <td>Username</td>
+                                        <td>@tag.CreatedOn.ToString("dd/MM/yyyy")</td>                                    
+                                        <td >
+                                            <div class="ios-switch switch-md">
+                                                <input type="checkbox" class="js-switch"  checked="@tag.IsAvailable">
+                                            </div>
+                                            <!--<input type="checkbox" checked="@tag.IsAvailable" class="iswitch iswitch-primary">!-->
+                                        </td>                                                                       
+                                        <td >
+                                            <button style="background:none; border:none "><span class="glyphicon glyphicon-edit"></span></button>
+                                            <button style="margin-left:15px; background:none; border:none "><span class="glyphicon glyphicon-trash"></span></button>                                        
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>  
+                    </div>					
+				</div>
+		    </div>	
+        </div>
+        <!-- Delete Items -->
+        <button class="site-action2 btn-raised btn btn-success btn-floating" type="button">
+                <i class="icon glyphicon glyphicon-trash" aria-hidden="true"></i>
+                </button>
+        <!--Add Item form -->
+        <button class="site-action1 btn-raised btn btn-success btn-floating" data-target="#CreateTabs"
+                data-toggle="modal" type="button">
+                <i class="icon glyphicon glyphicon-plus" aria-hidden="true"></i>
+                </button>
+        <div class="modal fade modal-success" id="CreateTabs" aria-hidden="true" aria-labelledby="exampleModalTabs"
+                  role="dialog" tabindex="-1">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                          </button>
+                          <h4 class="modal-title" id="CreateModalTabs">New Item</h4>
+                        </div>
+                        <ul class="nav nav-tabs modal-nav-tabs-line" data-plugin="nav-tabs" role="tablist">
+                          <li class="active" style="width:25%; text-align:center;" role="presentation"><a data-toggle="tab" href="#BasicTab" aria-controls="BasicTab"
+                            role="tab">Basic</a></li>
+                          <li role="presentation" style="width:25%; text-align:center;"><a data-toggle="tab" href="#ImageTab" aria-controls="ImageTab"
+                            role="tab">Images</a></li>
+                          <li role="presentation" style="width:25%; text-align:center;"><a data-toggle="tab" href="#DetailsTab" aria-controls="DetailsTab"
+                            role="tab">Advanced</a></li>
+                          <li role="presentation" style="width:25%; text-align:center;"><a data-toggle="tab" href="#AdditionalTab" aria-controls="AdditionalTab"
+                            role="tab">Additional</a></li>
+                        </ul>
+                        <div class="modal-body">
+                          <div class="tab-content padding-top-10">
+                            <div class="tab-pane active" id="BasicTab" role="tabpanel">                              
+                                <div class="row">
+                            <div class="col-lg-4 form-group">
+                              <input type="text" class="form-control" name="firstName" placeholder="First Name">
+                            </div>
+                            <div class="col-lg-4 form-group">
+                              <input type="email" class="form-control" name="lastName" placeholder="Last Name">
+                            </div>
+                            <div class="col-lg-4 form-group">
+                              <input type="email" class="form-control" name="email" placeholder="Your Email">
+                            </div>
+                            <div class="col-lg-12 form-group">
+                              <textarea class="form-control" rows="5" placeholder="Type your message"></textarea>
+                            </div>
+                            @*<div class="col-sm-12 pull-right">
+                              <button class="btn btn-primary btn-outline" data-dismiss="modal" type="button">Add Comment</button>
+                            </div>*@
+                          </div>
+                            </div>
+
+                            <div class="tab-pane" id="ImageTab" role="tabpanel">
+                              Tenuit omni magistra quale honoris, maluisti invidi, successerit feramus fere omnium
+                              impetum locus suscipiantur ullum, gessisse afranius
+                              stabilique repellendus longinquitate sentiamus torquatos
+                              rem. Bene continens, depulsa soluta domesticarum
+                              inscientia excruciant artes epicuri, huic similique
+                              constringendos probo animadversionis claris sententia
+                              atqui vocent constituit, epicuri hosti iniuste naturales
+                              multos, optimus animadvertat stoicis nullae, fieri
+                              futura tempore philosophia expleantur putarent doloris
+                              delectus viris.
+                            </div>
+
+                            <div class="tab-pane" id="DetailsTab" role="tabpanel">
+                              Cernimus nutu. Maioribus solet. Iustitiam conciliant reliquisti instituendarum
+                              solido quicquid, superstitione placet illis privatione
+                              clariora audeam repellat morbos accusantibus, quaeso
+                              copulationes. Percurri salutatus derigatur praeter
+                              involuta canes afflueret iam amotio quin. Dicent
+                              dialectica evertunt astris venire senserit. Vulgo
+                              supplicii amputata ipsarum ennius insolens meminerunt
+                              quisquam, volumus occulte l videor contenta numen,
+                              patrioque. Dixerit cernimus consequentium definitiones
+                              interrogari, maximo, avocent opes.
+                            </div>
+
+                            <div class="tab-pane" id="AdditionalTab" role="tabpanel">
+                              Nec iste vellem, accusamus inesse exhorrescere tertium dominationis licebit perpetiuntur,
+                              adduci concederetur memoriter omnesque aliquem etsi
+                              salutatus administrari aliquid graviter, mandamus
+                              celeritas patet fortibus. Dolorum tantis nostram
+                              fortitudo probarentur utrumvis insipientiam, putent,
+                              esset p fortitudo repetitis concursionibus interiret
+                              clariora. Fabulae aperiri. Omnes aspernari placuit
+                              detraxit familias aeternum eum mediocritatem, videantur
+                              partis nondum indoctis, emancipaverat probatum intus
+                              iactant petulantes, levitatibus copiosae.
+                            </div>
+                          </div>
+                        </div>                                                  
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                          <button type="button" class="btn btn-success">Create</button>
+                          
+                        @*<button type="button" class="btn btn-primary btn-addon m-b-sm btn-rounded btn-md"><i class="fa fa-close"></i>Cancel</button>
+                        <button type="button" class="btn btn-success btn-addon m-b-sm btn-rounded btn-md"><i class="fa fa-plus"></i>Create</button>*@
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+    </div>
+</div>
+  
+<script type="text/javascript">
+
+    var ViewModel = function () {
+        var self = this;
+        self.item = {
+            Name: ko.observable(),
+            Description: ko.observable(),
+            IsAvailable: ko.observable(),
+            Discount: ko.observable(),
+            Price: ko.observable(),
+            SpicyLevel: ko.observable()
+        }
+        self.Error = ko.observable();
+        self.items = ko.observableArray([]);
+        
+
+        var baseUri = 'http://localhost/iCafe.Service/Api/Web/Menu'
+        var itemsUri = '/items';
+        var tagsUri = '/tags'
+        var categoriesUri = '/itemcategories';
+
+        function ajaxHelper(uri, method, data) {
+            return $.ajax({
+                type: method,
+                url: uri,
+                dataType: 'json',
+                contentType: 'application/json',
+                data: data ? JSON.stringify(data) : null
+            }).fail(function (jqXHR, textStatus, errorThrown) {
+                self.error(errorThrown);
+            });
+        }
+
+
+        function getAllitems() {
+            ajaxHelper(baseUri + itemsUri, 'GET').done(function (data) {
+                self.items(data);
+            });
+        }
+
+        function getAllTags() {
+            ajaxHelper(baseUri + tagsUri, 'GET').done(function (data) {
+                self.books(data);
+            });
+        }
+
+        function getAllCategories() {
+            ajaxHelper(baseUri + categoriesUri, 'GET').done(function (data) {
+                self.authors(data);
+            });
+        }
+
+        // Fetch the initial data.
+        getAllitems();
+        //getAllTags();
+        //getAllCategories();
+    };
+
+        $(document).ready(function () {
+            $('select').select2();
+            ko.applyBindings(new ViewModel());
+
+            //$.fn.editable.defaults.mode = 'inline';
+
+            $('.fType').editable({
+                url:'/post',
+                type:'select',
+            pk:'1',
+            value: 1,
+            source: [
+                {value: 1, text: 'Breakfast'},
+                {value: 2, text: 'Lunch'},
+                {value: 3, text: 'Dinner'},
+                {value: 4, text: 'Snacks'}
+            ],
+            select2: {
+                width: 200,
+                placeholder: 'Select',
+                allowClear: true
+            }
+            });
+
+            $('.cdate').editable({
+                url: '/post',
+                type: 'date',                
+                format: 'yyyy-mm-dd',
+                placement:'left',
+                viewformat: 'dd/mm/yyyy',    
+                datepicker: {
+                    weekStart: 1
+                },
+                pk: '1',
+            });
+
+            $('.selectrow').change(function () {
+                if ($(this).is(":checked")) {
+                    $(this).closest('tr').addClass('selectedtr');//.siblings().removeClass("selectedtr");;
+                }
+                else {
+                    if ($(this).closest('tr').hasClass('selectedtr'))
+                    {
+                        $(this).closest('tr').removeClass('selectedtr');
+                    }
+                }
+            });
+        });
+</script>
