@@ -74,3 +74,5 @@ X:\WorkSpace\GitHub\Master\iCafe_On_Cloud\CloudAppServices\iCafe.Web\bin\System.
 X:\WorkSpace\GitHub\Master\iCafe_On_Cloud\CloudAppServices\iCafe.Web\obj\Debug\iCafe.Web.csprojResolveAssemblyReference.cache
 X:\WorkSpace\GitHub\Master\iCafe_On_Cloud\CloudAppServices\iCafe.Web\obj\Debug\iCafe.Web.dll
 X:\WorkSpace\GitHub\Master\iCafe_On_Cloud\CloudAppServices\iCafe.Web\obj\Debug\iCafe.Web.pdb
+X:\WorkSpace\GitHub\Master\iCafe_On_Cloud\CloudAppServices\iCafe.Web\bin\System.Web.Mvc.dll
+X:\WorkSpace\GitHub\Master\iCafe_On_Cloud\CloudAppServices\iCafe.Web\bin\System.Web.Mvc.xml
